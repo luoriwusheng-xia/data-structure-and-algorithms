@@ -5,9 +5,13 @@ import { renderSandbox } from 'vitepress-plugin-sandpack'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'zh-CN',
+
 	title: '数据结构与算法',
 	description: 'A VitePress Site',
 	themeConfig: {
+    outline: 'deep',
+    lastUpdated: true,
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: '首页', link: '/' },
@@ -39,6 +43,7 @@ export default defineConfig({
 	},
 
 	markdown: {
+    lineNumbers: true,
 		config(md) {
 			md
 				// the second parameter is html tag name
