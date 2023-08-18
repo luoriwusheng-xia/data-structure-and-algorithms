@@ -1,0 +1,12 @@
+{
+  "description": "数据结构和算法",
+  "repository": {
+    "url": "https://gitee.com/luoriwusheng/data-structure-and-algorithms.git",
+    "type": "https"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}
