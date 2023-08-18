@@ -4,9 +4,16 @@
     "url": "https://gitee.com/luoriwusheng/data-structure-and-algorithms.git",
     "type": "https"
   },
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "markdown-it-container": "^3.0.0",
+    "vitepress": "^1.0.0-rc.4",
+    "vitepress-plugin-sandpack": "^1.0.3"
   }
 }

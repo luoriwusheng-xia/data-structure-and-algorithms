@@ -1,85 +1,17 @@
 # Markdown Extension Examples
+ASsASA - 大家好
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+::: sandbox {template=vue3-ts}
+```vue /src/App.vue
+<script setup lang="ts">
+import { ref } from 'vue';
 
-## Syntax Highlighting
+const person = ref<string>('Lil54545y');
+</script>
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
-
-````
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+<template>
+  <h1>Hi, I am {{ person }}</h1>
+</template>
 ```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
 :::
 
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-```
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
