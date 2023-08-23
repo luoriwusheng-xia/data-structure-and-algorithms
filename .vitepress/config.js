@@ -23,6 +23,7 @@ export default defineConfig({
 			{ text: '首页', link: '/' },
 			{ text: 'Examples', link: '/markdown-examples' },
 			{ text: '数据结构', link: '/docs/list/' },
+      { text: '参考文章', link: '/docs/referenceArticle' },
 		],
 
 		sidebar: {
@@ -38,6 +39,7 @@ export default defineConfig({
 						{ text: '动态规划', link: '/docs/list/06/index' },
 						{ text: '位运算', link: '/docs/list/07/index' },
 						{ text: '双指针', link: '/docs/list/08/index' },
+            { text: '素数个数统计', link: '/docs/list/09/index' },
 					],
 				},
 			],
