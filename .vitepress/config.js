@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 import container from 'markdown-it-container'
 import { renderSandbox } from 'vitepress-plugin-sandpack'
 
-import viteSvgIcons, {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
+// import viteSvgIcons, {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,9 +12,9 @@ export default defineConfig({
 	title: '数据结构与算法',
 	description: 'A VitePress Site',
 	themeConfig: {
-    search: {
-      provider: 'local'
-    },
+    // search: {
+    //   provider: 'local'
+    // },
 
     outline: 'deep',
     lastUpdated: true,
@@ -66,10 +66,10 @@ export default defineConfig({
   vite: {
     plugins: [
       //引入SVG图标素材文件
-      createSvgIconsPlugin({
-        iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
-        symbolId: '[name]',
-    })
+      // createSvgIconsPlugin({
+      //   iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
+      //   symbolId: '[name]',
+      // })
     ]
   }
 })
