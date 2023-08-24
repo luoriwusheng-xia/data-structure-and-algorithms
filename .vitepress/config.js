@@ -31,6 +31,23 @@ export default defineConfig({
 					{ text: '参考文章', link: '/docs/referenceArticle' },
 				],
 			},
+      {
+        text: '后端',
+        items: [
+          {
+            text: 'jwt登录',
+            link: '/docs/backend/jwt'
+          },
+          {
+            text: 'api服务',
+            link: '/docs/backend/api-server'
+          },
+          {
+            text: '邮件',
+            link: '/docs/backend/email'
+          }
+        ]
+      },
 
 			{
 				text: 'vitepress配置',
