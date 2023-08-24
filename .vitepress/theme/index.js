@@ -1,4 +1,6 @@
 import DefaultTheme from 'vitepress/theme';
+// 自定义主题样式
+import './index.less';
 
 import { Sandbox } from 'vitepress-plugin-sandpack';
 

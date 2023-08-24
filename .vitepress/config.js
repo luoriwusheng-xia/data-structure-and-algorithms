@@ -3,27 +3,26 @@ import { defineConfig } from 'vitepress'
 import container from 'markdown-it-container'
 import { renderSandbox } from 'vitepress-plugin-sandpack'
 
+import mathjax3 from 'markdown-it-mathjax3'
+import customElements from './md-latex.js'
+
 // import viteSvgIcons, {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-CN',
+	lang: 'zh-CN',
 
 	title: '数据结构与算法',
 	description: 'A VitePress Site',
 	themeConfig: {
-    // search: {
-    //   provider: 'local'
-    // },
-
-    outline: 'deep',
-    lastUpdated: true,
+		outline: 'deep',
+		lastUpdated: true,
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: '首页', link: '/' },
 			{ text: 'Examples', link: '/markdown-examples' },
 			{ text: '数据结构', link: '/docs/list/' },
-      { text: '参考文章', link: '/docs/referenceArticle' },
+			{ text: '参考文章', link: '/docs/referenceArticle' },
 		],
 
 		sidebar: {
@@ -39,7 +38,7 @@ export default defineConfig({
 						{ text: '动态规划', link: '/docs/list/06/index' },
 						{ text: '位运算', link: '/docs/list/07/index' },
 						{ text: '双指针', link: '/docs/list/08/index' },
-            { text: '素数个数统计', link: '/docs/list/09/index' },
+						{ text: '素数个数统计', link: '/docs/list/09/index' },
 					],
 				},
 			],
@@ -50,9 +49,8 @@ export default defineConfig({
 		],
 	},
 
-
 	markdown: {
-    lineNumbers: true,
+		lineNumbers: true,
 		config(md) {
 			md
 				// the second parameter is html tag name
@@ -61,17 +59,27 @@ export default defineConfig({
 						return renderSandbox(tokens, idx, 'sandbox')
 					},
 				})
+
+			md.use(mathjax3)
 		},
 	},
 
-  // vite.config.js 相关的配置
-  vite: {
-    plugins: [
-      //引入SVG图标素材文件
-      // createSvgIconsPlugin({
-      //   iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
-      //   symbolId: '[name]',
-      // })
-    ]
-  }
+	vue: {
+		template: {
+			compilerOptions: {
+				isCustomElement: (tag) => customElements.includes(tag),
+			},
+		},
+	},
+
+	// vite.config.js 相关的配置
+	vite: {
+		plugins: [
+			//引入SVG图标素材文件
+			// createSvgIconsPlugin({
+			//   iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
+			//   symbolId: '[name]',
+			// })
+		],
+	},
 })

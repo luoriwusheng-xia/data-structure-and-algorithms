@@ -12,7 +12,9 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "less": "^4.2.0",
     "markdown-it-container": "^3.0.0",
+    "markdown-it-mathjax3": "^4.3.2",
     "vite-plugin-svg-icons": "^2.0.1",
     "vitepress": "^1.0.0-rc.4",
     "vitepress-plugin-sandpack": "^1.0.3"
