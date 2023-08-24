@@ -21,29 +21,38 @@ export default defineConfig({
 		nav: [
 			{ text: '首页', link: '/' },
 			{ text: 'Examples', link: '/markdown-examples' },
-			{ text: '数据结构', link: '/docs/list/' },
-			{ text: '参考文章', link: '/docs/referenceArticle' },
-      {
-        text: 'vitepress配置',
-        link: '/docs/vitepress-config/'
-      },
-      {
-        text: '源码学习',
-        items: [
-          {
-            text: 'lodash',
-            link: '/docs/lodash/'
-          },
-          {
-            text: 'vue2',
-            link: '/docs/vue2/'
-          },
-          {
-            text: 'vue3',
-            link: '/docs/vue3/'
-          }
-        ]
-      }
+			{
+				text: '数据结构',
+				items: [
+					{
+						text: '数据结构',
+						link: '/docs/list/',
+					},
+					{ text: '参考文章', link: '/docs/referenceArticle' },
+				],
+			},
+
+			{
+				text: 'vitepress配置',
+				link: '/docs/vitepress-config/',
+			},
+			{
+				text: '源码学习',
+				items: [
+					{
+						text: 'lodash',
+						link: '/docs/lodash/',
+					},
+					{
+						text: 'vue2',
+						link: '/docs/vue2/',
+					},
+					{
+						text: 'vue3',
+						link: '/docs/vue3/',
+					},
+				],
+			},
 		],
 
 		sidebar: {
@@ -65,37 +74,46 @@ export default defineConfig({
 				},
 			],
 
-      '/docs/vitepress-config/': [
-        {
-          text: 'vitepress',
-          items: [
+			'/docs/vitepress-config/': [
+				{
+					text: 'vitepress',
+					items: [
+						{
+							text: '评论功能',
+							link: '/docs/vitepress-config/01/index',
+						},
+						{
+							text: '多语言',
+							link: '/docs/vitepress-config/02/index',
+						},
+						{
+							text: '主题开发',
+							link: '/docs/vitepress-config/03/index',
+						},
             {
-              text: '评论功能',
-              link: '/docs/vitepress-config/01/index'
-            },
+							text: 'element-plus接入',
+							link: '/docs/vitepress-config/04/index',
+						},
             {
-              text: '多语言',
-              link: '/docs/vitepress-config/01/index'
-            },
-            {
-              text: '主体开发',
-              link: '/docs/vitepress-config/01/index'
-            },
-            {
-              text: '插件开发',
-              link: '/docs/vitepress-config/01/index'
-            },
-            {
-              text: '全局搜索',
-              link: '/docs/vitepress-config/01/index'
-            },
-            {
-              text: '部署',
-              link: '/docs/vitepress-config/01/index'
-            }
-          ]
-        }
-      ]
+							text: 'sandpack接入',
+							link: '/docs/vitepress-config/05/index',
+						},
+
+						{
+							text: '插件开发',
+							link: '/docs/vitepress-config/01/index',
+						},
+						{
+							text: '全局搜索',
+							link: '/docs/vitepress-config/01/index',
+						},
+						{
+							text: '部署',
+							link: '/docs/vitepress-config/01/index',
+						},
+					],
+				},
+			],
 		},
 
 		socialLinks: [

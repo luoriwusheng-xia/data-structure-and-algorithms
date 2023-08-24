@@ -1,8 +1,12 @@
-import DefaultTheme from 'vitepress/theme';
-// 自定义主题样式
-// import './index.less';
+# element-plus
 
-import { Sandbox } from 'vitepress-plugin-sandpack';
+```shell
+pnpm add element-plus -S
+```
+
+**.vitepress/theme/index.js**
+```js
+import DefaultTheme from 'vitepress/theme';
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -11,10 +15,9 @@ export default {
   ...DefaultTheme,
   enhanceApp (ctx) {
     DefaultTheme.enhanceApp(ctx);
-    ctx.app.component('Sandbox', Sandbox);
 
     ctx.app.use(ElementPlus, {
-      // locale
     })
-  },
+  }
 }
+```
