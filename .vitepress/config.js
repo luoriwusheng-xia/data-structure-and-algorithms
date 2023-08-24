@@ -12,7 +12,7 @@ import customElements from './md-latex.js'
 export default defineConfig({
 	lang: 'zh-CN',
 
-	title: '数据结构与算法',
+	title: '前端杂货铺',
 	description: 'A VitePress Site',
 	themeConfig: {
 		outline: 'deep',
@@ -23,6 +23,27 @@ export default defineConfig({
 			{ text: 'Examples', link: '/markdown-examples' },
 			{ text: '数据结构', link: '/docs/list/' },
 			{ text: '参考文章', link: '/docs/referenceArticle' },
+      {
+        text: 'vitepress配置',
+        link: '/docs/vitepress-config/'
+      },
+      {
+        text: '源码学习',
+        items: [
+          {
+            text: 'lodash',
+            link: '/docs/lodash/'
+          },
+          {
+            text: 'vue2',
+            link: '/docs/vue2/'
+          },
+          {
+            text: 'vue3',
+            link: '/docs/vue3/'
+          }
+        ]
+      }
 		],
 
 		sidebar: {
@@ -42,6 +63,38 @@ export default defineConfig({
 					],
 				},
 			],
+
+      '/docs/vitepress-config/': [
+        {
+          text: 'vitepress',
+          items: [
+            {
+              text: '评论功能',
+              link: '/docs/vitepress-config/01/index'
+            },
+            {
+              text: '多语言',
+              link: '/docs/vitepress-config/01/index'
+            },
+            {
+              text: '主体开发',
+              link: '/docs/vitepress-config/01/index'
+            },
+            {
+              text: '插件开发',
+              link: '/docs/vitepress-config/01/index'
+            },
+            {
+              text: '全局搜索',
+              link: '/docs/vitepress-config/01/index'
+            },
+            {
+              text: '部署',
+              link: '/docs/vitepress-config/01/index'
+            }
+          ]
+        }
+      ]
 		},
 
 		socialLinks: [

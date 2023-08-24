@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "数据结构和算法"
-  text: "javascript实现"
+  name: "前端杂货铺"
+  text: "javascript的日常"
   actions:
     - theme: brand
       text: Markdown Examples
