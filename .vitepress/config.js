@@ -199,6 +199,10 @@ export default defineConfig({
             {
               text: '自动检测更新',
               link: '/docs/frontend/03/'
+            },
+            {
+              text: '妙用位运算-算法-找唯一数字',
+              link: '/docs/frontend/04/'
             }
           ]
         }
