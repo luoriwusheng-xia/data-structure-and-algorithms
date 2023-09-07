@@ -32,6 +32,10 @@ export default defineConfig({
         ],
       },
       {
+        text: '前端',
+        link: '/docs/frontend/'
+      },
+      {
         text: '后端',
         items: [
           {
@@ -176,6 +180,27 @@ export default defineConfig({
         {
           text: 'websocket',
           link: '/docs/backend/websocket/01'
+        }
+      ],
+
+      '/docs/frontend/': [
+        {
+          text: '渡一前端',
+          link: '/docs/frontend/01/',
+          items: [
+            {
+              text: '判断函数是否标记了async',
+              link: '/docs/frontend/01/'
+            },
+            {
+              text: '消除异步的传染性',
+              link: '/docs/frontend/02/'
+            },
+            {
+              text: '自动检测更新',
+              link: '/docs/frontend/03/'
+            }
+          ]
         }
       ]
     },
