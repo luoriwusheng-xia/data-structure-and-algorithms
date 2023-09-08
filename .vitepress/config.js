@@ -103,6 +103,25 @@ export default defineConfig({
             { text: '双指针', link: '/docs/list/08/index' },
             { text: '素数个数统计', link: '/docs/list/09/index' },
             { text: '数学', link: '/docs/list/10/index' },
+
+            {
+              text: '简单',
+              items: [
+                {
+                  text: '回文数',
+                  link: '/docs/list/11/index'
+                }
+              ]
+            },
+            {
+              text: '中等',
+              items: [
+                {
+                  text: '寻找两个正序数组的中位数',
+                  link: '/docs/list/12/index'
+                }
+              ]
+            }
           ],
         },
       ],
