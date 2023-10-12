@@ -244,6 +244,10 @@ export default defineConfig({
           link: '/docs/vue2/03'
         },
         {
+          text: '04-异步更新',
+          link: '/docs/vue2/04'
+        },
+        {
           text: '2.7.14 调试',
           link: '/docs/vue2/30'
         },
