@@ -225,6 +225,32 @@ export default defineConfig({
             }
           ]
         }
+      ],
+      '/docs/vue2/': [
+        {
+          text: '源码首页',
+          link: '/docs/vue2/'
+        },
+        {
+          text: '01-',
+          link: '/docs/vue2/01'
+        },
+        {
+          text: '02-',
+          link: '/docs/vue2/02'
+        },
+        {
+          text: '03-响应式原理',
+          link: '/docs/vue2/03'
+        },
+        {
+          text: '2.7.14 调试',
+          link: '/docs/vue2/30'
+        },
+        {
+          text: '变更日志',
+          link: '/docs/vue2/changelog'
+        }
       ]
     },
 
