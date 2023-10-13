@@ -83,6 +83,10 @@ export default defineConfig({
             text: 'vue3',
             link: '/docs/vue3/',
           },
+          {
+            text: '收藏夹',
+            link: '/docs/favorites/',
+          },
         ],
       },
     ],
@@ -245,6 +249,10 @@ export default defineConfig({
         {
           text: '04-异步更新',
           link: '/docs/vue2/04'
+        },
+        {
+          text: '05-全局API实现原理',
+          link: '/docs/vue2/05'
         },
         {
           text: '2.7.14 调试',
