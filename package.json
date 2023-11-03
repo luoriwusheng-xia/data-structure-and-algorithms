@@ -16,11 +16,11 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vitepress": "^1.0.0-rc.20",
-    "vitepress-plugin-sandpack": "^1.1.2"
+    "vitepress": "^1.0.0-rc.24",
+    "vitepress-plugin-sandpack": "^1.1.4"
   },
   "dependencies": {
-    "element-plus": "^2.3.14"
+    "element-plus": "^2.4.1"
   },
   "engines": {
     "node": ">19"
