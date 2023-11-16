@@ -8,31 +8,24 @@
 
 ![Alt text](image.png)
 
-
 JavaScript 的数据类型有下图所示
 
 > 其中，前 7 种类型为基础类型，最后 `1 种（Object）为引用类型`
+
 > ，也是你需要重点关注的，因为它在日常工作中是使用得最频繁，也是需要关注最多技术细节的数据类型
 
-- `JavaScript` 一共有8种数据类型，其中有7种基本数据类型：`Undefined`
-  、`Null` 、`Boolean` 、`Number` 、`String` 、`Symbol` （`es6`
-  新增，表示独一无二的值）和`BigInt` （`es10` 新增）；
-- 1种引用数据类型——`Object`
-  （Object本质上是由一组无序的名值对组成的）。里面包含
-  `function、Array、Date`
-  等。JavaScript不支持任何创建自定义类型的机制，而所有值最终都将是上述 8
-  种数据类型之一。
-  - **引用数据类型:** 对象`Object` （包含普通对象-`Object`
-    ，数组对象-`Array` ，正则对象-`RegExp` ，日期对象-`Date`
-    ，数学函数-`Math` ，函数对象-`Function` ）
+* `JavaScript` 一共有8种数据类型，其中有7种基本数据类型：`Undefined`
+  、 `Null` 、 `Boolean` 、 `Number` 、 `String` 、 `Symbol` （ `es6`新增，表示独一无二的值）和 `BigInt` （ `es10` 新增）；
+* 1种引用数据类型——`Object`
+  （Object本质上是由一组无序的名值对组成的）。里面包含`function、Array、Date`等。JavaScript不支持任何创建自定义类型的机制，而所有值最终都将是上述 8种数据类型之一。
+  + **引用数据类型:** 对象`Object` （包含普通对象-`Object`，数组对象- `Array` ，正则对象- `RegExp` ，日期对象- `Date`，数学函数- `Math` ，函数对象- `Function`, `Set`, `Map`, `Symbol` ）
 
 > 在这里，我想先请你重点了解下面两点，因为各种 JavaScript
 > 的数据类型最后都会在初始化之后放在不同的内存中，因此上面的数据类型大致可以分成两类来进行存储：
 
-
-- **原始数据类型**
+* **原始数据类型**
   ：基础类型存储在栈内存，被引用或拷贝时，会创建一个完全相等的变量；占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储。
-- **引用数据类型**
+* **引用数据类型**
   ：引用类型存储在堆内存，存储的是地址，多个引用指向同一个地址，这里会涉及一个“共享”的概念；占据空间大、大小不固定。引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
 
 **JavaScript 中的数据是如何存储在内存中的？**
@@ -40,13 +33,418 @@ JavaScript 的数据类型有下图所示
 > 在 JavaScript
 > 中，原始类型的赋值会完整复制变量值，而引用类型的赋值是复制引用地址。
 
-在 JavaScript 的执行过程中， 主要有三种类型内存空间，分别是`代码空间`
-、`栈空间` 、`堆空间`。其中的代码空间主要是存储可执行代码的，原始类型(`Number、String、Null、Undefined、Boolean、Symbol、BigInt`
-)的数据值都是直接保存在“栈”中的，引用类型(Object)的值是存放在“堆”中的。因此在栈空间中(执行上下文)，原始类型存储的是变量的值，而引用类型存储的是其在
+在 JavaScript 的执行过程中， 主要有三种类型内存空间，分别是 `代码空间`、 `栈空间` 、 `堆空间` 。其中的代码空间主要是存储可执行代码的，原始类型( `Number、String、Null、Undefined、Boolean、Symbol、BigInt`)的数据值都是直接保存在“栈”中的，引用类型(Object)的值是存放在“堆”中的。因此在栈空间中(执行上下文)，原始类型存储的是变量的值，而引用类型存储的是其在
 "堆空间 "中的地址，当 JavaScript需要访问该数据的时候，是通过栈中的引用地址来访问的，相当于多了一道转手流程。
 
-在编译过程中，如果 JavaScript引擎判断到一个闭包，也会在堆空间创建换一个`“closure(fn)”`的对象（这是一个内部对象，JavaScript是无法访问的），用来保存闭包中的变量。所以闭包中的变量是存储在“堆空间”中的。
+在编译过程中，如果 JavaScript引擎判断到一个闭包，也会在堆空间创建换一个 `“closure(fn)”` 的对象（这是一个内部对象，JavaScript是无法访问的），用来保存闭包中的变量。所以闭包中的变量是存储在“堆空间”中的。
 
 JavaScript引擎需要用栈来维护程序执行期间上下文的状态，如果栈空间大了话，所有的数据都存放在栈空间里面，那么会影响到上下文切换的效率，进而又影响到整个程序的执行效率。通常情况下，栈空间都不会设置太大，主要用来存放一些原始类型的小数据。而引用类型的数据占用的空间都比较大，所以这一类数据会被存放到堆中，堆空间很大，能存放很多大的数据，不过缺点是分配内存和回收内存都会占用一定的时间。因此需要“栈”和“堆”两种空间。
+
+```javascript
+let a = {
+    name: 'Julia',
+    age: 20
+}
+
+function change(o) {
+    o.age = 24;
+    o = {
+        name: 'Kath',
+        age: 30
+    }
+    return o;
+}
+let b = change(a); // 注意这里没有new，后面new相关会有专门文章讲解
+console.log(b.age); // 第一个console
+console.log(a.age); // 第二个console
+```
+
+这道题涉及了 `function` ，你通过上述代码可以看到第一个 `console`
+
+的结果是 `30` ， `b` 最后打印结果是 `{name: "Kath ", age: 30}` ；第二个
+`console` 的返回结果是 `24` ，而 `a` 最后的打印结果是
+`{name: "Julia ", age: 24}` 。
+
+是不是和你预想的有些区别？你要注意的是，这里的 `function` 和 `return`
+
+带来了不一样的东西。
+
+> 原因在于：函数传参进来的 `o`
+
+> ，传递的是对象在堆中的内存地址值，通过调用 `o.age = 24` （第 7
+> 行代码）确实改变了 `a` 对象的 `age` 属性；但是第 12 行代码的 `return`
+
+> 却又把 `o` 变成了另一个内存地址，将 `{name: "Kath ", age: 30}`
+
+> 存入其中，最后返回 `b` 的值就变成了 `{name: "Kath ", age: 30}`
+
+> 。而如果把第 12 行去掉，那么 `b` 就会返回 `undefined`
+
+**2. 数据类型检测**
+
+**（1）typeof**
+
+> typeof 对于原始类型来说，除了 null 都可以显示正确的类型
+
+```js
+console.log(typeof 2); // number
+console.log(typeof true); // boolean
+console.log(typeof 'str'); // string
+console.log(typeof []); // object     []数组的数据类型在 typeof 中被解释为 object
+console.log(typeof
+    function() {}); // function
+console.log(typeof {}); // object
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object     null 的数据类型被 typeof 解释为 object
+```
+
+> `typeof` 对于对象来说，除了函数都会显示 `object` ，所以说 `typeof`
+
+> 并不能准确判断变量到底是什么类型, 所以想判断一个对象的正确类型，这时候可以考虑使用
+> `instanceof`
+
+**（2）instanceof**
+
+> `instanceof`
+
+> 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的
+> `prototype`
+
+```js
+// 我们也可以试着实现一下 instanceof
+function _instanceof(left, right) {
+    // 由于instance要检测的是某对象，需要有一个前置判断条件
+    //基本数据类型直接返回false
+    if (typeof left !== 'object' || left === null) return false;
+
+    // 获得类型的原型
+    let prototype = right.prototype
+    // 获得对象的原型
+    left = left.__proto__
+    // 判断对象的类型是否等于类型的原型
+    while (true) {
+        if (left === null)
+            return false
+        if (prototype === left)
+            return true
+        left = left.__proto__
+    }
+}
+
+console.log('test', _instanceof(null, Array)) // false
+console.log('test', _instanceof([], Array)) // true
+console.log('test', _instanceof('', Array)) // false
+console.log('test', _instanceof({}, Object)) // true
+```
+
+**（3）constructor**
+
+```js
+console.log((2).constructor === Number); // true
+console.log((true).constructor === Boolean); // true
+console.log(('str').constructor === String); // true
+console.log(([]).constructor === Array); // true
+console.log((function() {}).constructor === Function); // true
+console.log(({}).constructor === Object); // true
+```
+
+> 这里有一个坑，如果我创建一个对象，更改它的原型， `constructor`
+
+> 就会变得不可靠了
+
+```js
+function Fn() {};
+
+Fn.prototype = new Array();
+
+var f = new Fn();
+
+console.log(f.constructor === Fn); // false
+console.log(f.constructor === Array); // true
+```
+
+**（4）Object.prototype.toString.call()**
+
+> `toString()` 是 `Object` 的原型方法，调用该方法，可以统一返回格式为
+> `“[object Xxx]”` 的字符串，其中 `Xxx` 就是对象的类型。对于 `Object`
+> 对象，直接调用 `toString()` 就能返回 `[object Object]`
+> ；而对于其他对象，则需要通过 `call`
+> 来调用，才能返回正确的类型信息。我们来看一下代码。
+
+```js
+Object.prototype.toString({})       // "[object Object]"
+Object.prototype.toString.call({})  // 同上结果，加上call也ok
+Object.prototype.toString.call(1)    // "[object Number]"
+Object.prototype.toString.call('1')  // "[object String]"
+Object.prototype.toString.call(true)  // "[object Boolean]"
+Object.prototype.toString.call(function(){})  // "[object Function]"
+Object.prototype.toString.call(null)   //"[object Null]"
+Object.prototype.toString.call(undefined) //"[object Undefined]"
+Object.prototype.toString.call(/123/g)    //"[object RegExp]"
+Object.prototype.toString.call(new Date()) //"[object Date]"
+Object.prototype.toString.call([])       //"[object Array]"
+Object.prototype.toString.call(document)  //"[object HTMLDocument]"
+Object.prototype.toString.call(window)   //"[object Window]"
+Object.prototype.toString.call(Symbol) // '[object Function]'
+Object.prototype.toString.call(Set)  // '[object Function]'
+Object.prototype.toString.call(Map)  // '[object Function]'
+// 从上面这段代码可以看出，Object.prototype.toString.call() 可以很好地判断引用类型，甚至可以把 document 和 window 都区分开来。
+
+```
+
+> 实现一个全局通用的数据类型判断方法，来加深你的理解，代码如下
+
+
+```js
+function getType(obj){
+  let type  = typeof obj;
+  if (type !== "object") {    // 先进行typeof判断，如果是基础数据类型，直接返回
+    return type;
+  }
+  // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
+  return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1');  // 注意正则中间有个空格
+}
+/* 代码验证，需要注意大小写，哪些是typeof判断，哪些是toString判断？思考下 */
+getType([])     // "Array" typeof []是object，因此toString返回
+getType('123')  // "string" typeof 直接返回
+getType(window) // "Window" toString返回
+getType(null)   // "Null"首字母大写，typeof null是object，需toString来判断
+getType(undefined)   // "undefined" typeof 直接返回
+getType()            // "undefined" typeof 直接返回
+getType(function(){}) // "function" typeof能判断，因此首字母小写
+getType(/123/g)      //"RegExp" toString返回
+
+```
+
+**小结**
+
+- `typeof`
+  - 直接在计算机底层基于数据类型的值（二进制）进行检测
+  - `typeof null` 为`object` 原因是对象存在在计算机中，都是以`000`
+    开始的二进制存储，所以检测出来的结果是对象
+  - `typeof` 普通对象/数组对象/正则对象/日期对象 都是`object`
+  - `typeof NaN === 'number'`
+- `instanceof`
+  - 检测当前实例是否属于这个类的
+  - 底层机制：只要当前类出现在实例的原型上，结果都是true
+  - 不能检测基本数据类型
+- `constructor`
+  - 支持基本类型
+  - constructor可以随便改，也不准
+- `Object.prototype.toString.call([val])`
+  - 返回当前实例所属类信息
+
+> 判断 `Target` 的类型，单单用 `typeof` 并无法完全满足，这其实并不是
+> `bug` ，本质原因是 `JS`
+> 的万物皆对象的理论。因此要真正完美判断时，我们需要区分对待:
+
+- 基本类型(`null` ): 使用 `String(null)`
+- 基本类型(`string / number / boolean / undefined` ) + `function` : -
+  直接使用 `typeof` 即可
+- 其余引用类型(`Array / Date / RegExp Error` ): 调用`toString`
+  后根据`[object XXX]` 进行判断
+
+#### 3. 数据类型转换
+
+我们先看一段代码，了解下大致的情况。
+
+
+```js
+'123' == 123   // true
+'' == null    // false
+'' == 0        // true
+[] == 0        // true
+[] == ''       // true
+[] == ![]      // true
+null == undefined //  true
+Number(null)     // 返回 0
+Number('')      // 返回0
+parseInt('');    // 返回 NaN
+{}+10           // 返回 10
+
+let obj = {
+    [Symbol.toPrimitive]() {
+        return 200;
+    },
+    valueOf() {
+        return 300;
+    },
+    toString() {
+        return 'Hello';
+    }
+}
+console.log(obj + 200); // 这里打印出来是多少？
+```
+
+
+> 首先我们要知道，在 `JS` 中类型转换只有三种情况，分别是：
+
+- 转换为布尔值
+- 转换为数字
+- 转换为字符串
+
+![Alt text](image-1.png)
+
+##### 转Boolean
+
+> 在条件判断时，除了 `undefined` ，`null` ， `false` ， `NaN` ， `''` ，
+> `0` ， `-0` ，其他所有值都转为 `true` ，包括所有对象
+
+
+```js
+Boolean(0)          //false
+Boolean(null)       //false
+Boolean(undefined)  //false
+Boolean(NaN)        //false
+Boolean(1)          //true
+Boolean(13)         //true
+Boolean('12')       //true
+```
+
+##### 对象转原始类型
+
+> 对象在转换类型的时候，会调用内置的 `[[ToPrimitive]]`
+> 函数，对于该函数来说，算法逻辑一般来说如下
+
+- 如果已经是原始类型了，那就不需要转换了
+- 调用 `x.valueOf()` ，如果转换为基础类型，就返回转换的值
+- 调用 `x.toString()` ，如果转换为基础类型，就返回转换的值
+- 如果都没有返回原始类型，就会报错
+
+> 当然你也可以重写 `Symbol.toPrimitive`
+> ，该方法在转原始类型时调用优先级最高。
+
+
+
+##### 四则运算符
+
+> 它有以下几个特点：
+
+- 运算中其中一方为字符串，那么就会把另一方也转换为字符串
+- 如果一方不是字符串或者数字，那么会将它转换为数字或者字符串
+
+- 对于第一行代码来说，触发特点一，所以将数字 `1` 转换为字符串，得到结果
+  `'11'`
+- 对于第二行代码来说，触发特点二，所以将 `true` 转为数字 `1`
+- 对于第三行代码来说，触发特点二，所以将数组通过 `toString` 转为字符串
+  `1,2,3` ，得到结果 `41,2,3`
+
+> 另外对于加法还需要注意这个表达式 `'a' + + 'b'`
+
+
+
+
+- 因为 `+ 'b'` 等于 `NaN` ，所以结果为 `"aNaN "`
+  ，你可能也会在一些代码中看到过 `+ '1'` 的形式来快速获取 `number`
+  类型。
+- 那么对于除了加法的运算符来说，只要其中一方是数字，那么另一方就会被转为数字
+
+
+
+
+##### 比较运算符
+
+- 如果是对象，就通过 `toPrimitive` 转换对象
+- 如果是字符串，就通过 `unicode` 字符索引来比较
+
+
+
+> 在以上代码中，因为 `a` 是对象，所以会通过 `valueOf`
+> 转换为原始类型再比较值。
+
+
+##### 强制类型转换
+
+> 强制类型转换方式包括 `Number()` 、`parseInt()` 、`parseFloat()`
+> 、`toString()` 、`String()` 、`Boolean()` ，这几种方法都比较类似
+
+- `Number()` 方法的强制转换规则
+- 如果是布尔值，`true` 和 `false` 分别被转换为 `1` 和 `0` ；
+- 如果是数字，返回自身；
+- 如果是 `null` ，返回 `0` ；
+- 如果是 `undefined` ，返回 `NaN` ；
+- 如果是字符串，遵循以下规则：如果字符串中只包含数字（或者是 `0X / 0x`
+  开头的十六进制数字字符串，允许包含正负号），则将其转换为十进制；如果字符串中包含有效的浮点格式，将其转换为浮点数值；如果是空字符串，将其转换为
+  `0` ；如果不是以上格式的字符串，均返回 NaN；
+- 如果是 `Symbol` ，抛出错误；
+- 如果是对象，并且部署了 `[Symbol.toPrimitive]`
+  ，那么调用此方法，否则调用对象的 `valueOf()`
+  方法，然后依据前面的规则转换返回的值；如果转换的结果是 `NaN`
+  ，则调用对象的 `toString()` 方法，再次依照前面的顺序转换返回对应的值。
+
+
+
+
+**Object 的转换规则**
+
+> 对象转换的规则，会先调用内置的 `[ToPrimitive]` 函数，其规则逻辑如下：
+
+- 如果部署了 `Symbol.toPrimitive` 方法，优先调用再返回；
+- 调用 `valueOf()` ，如果转换为基础类型，则返回；
+- 调用 `toString()` ，如果转换为基础类型，则返回；
+- 如果都没有返回基础类型，会报错。
+
+
+
+**'==' 的隐式类型转换规则**
+
+- 如果类型相同，无须进行类型转换；
+- 如果其中一个操作值是 `null` 或者 `undefined` ，那么另一个操作符必须为`null` 或者 `undefined` ，才会返回 `true` ，否则都返回 `false` ；
+- 如果其中一个是 `Symbol` 类型，那么返回 `false` ；
+- 两个操作值如果为 `string` 和 number 类型，那么就会将字符串转换为`number` ；
+- 如果一个操作值是 `boolean` ，那么转换成 `number` ；
+- 如果一个操作值为 `object` 且另一方为 `string` 、`number` 或者 `symbol`，就会把 `object` 转为原始类型再进行判断（调用 `object` 的  `valueOf/toString` 方法进行转换）。
+
+
+**'+' 的隐式类型转换规则**
+
+> '+' 号操作符，不仅可以用作数字相加，还可以用作字符串拼接。仅当 '+'
+> 号两边都是数字时，进行的是加法运算；如果两边都是字符串，则直接拼接，无须进行隐式类型转换。
+
+- 如果其中有一个是字符串，另外一个是 `undefined` 、`null`
+  或布尔型，则调用 `toString()`
+  方法进行字符串拼接；如果是纯对象、数组、正则等，则默认调用对象的转换方法会存在优先级，然后再进行拼接。
+- 如果其中有一个是数字，另外一个是 `undefined` 、`null`
+  、布尔型或数字，则会将其转换成数字进行加法运算，对象的情况还是参考上一条规则。
+- 如果其中一个是字符串、一个是数字，则按照字符串规则进行拼接
+
+
+
+> 整体来看，如果数据中有字符串，JavaScript
+> 类型转换还是更倾向于转换成字符串，因为第三条规则中可以看到，在字符串和数字相加的过程中最后返回的还是字符串，这里需要关注一下
+
+**null 和 undefined 的区别？**
+
+- 首先 `Undefined` 和 `Null`
+  都是基本数据类型，这两个基本数据类型分别都只有一个值，就是 `undefined`
+  和 `null` 。
+- `undefined` 代表的含义是未定义， `null`
+  代表的含义是空对象（其实不是真的对象，请看下面的注意！）。一般变量声明了但还没有定义的时候会返回
+  `undefined` ，`null`
+  主要用于赋值给一些可能会返回对象的变量，作为初始化。
+
+> 其实 null 不是对象，虽然 typeof null 会输出 object，但是这只是 JS
+> 存在的一个悠久 Bug。在 JS 的最初版本中使用的是 32
+> 位系统，为了性能考虑使用低位存储变量的类型信息，000
+> 开头代表是对象，然而 null 表示为全零，所以将它错误的判断为 object
+> 。虽然现在的内部类型判断代码已经改变了，但是对于这个 Bug
+> 却是一直流传下来。
+
+- undefined 在 js 中不是一个保留字，这意味着我们可以使用 `undefined`
+  来作为一个变量名，这样的做法是非常危险的，它会影响我们对 undefined
+  值的判断。但是我们可以通过一些方法获得安全的 `undefined` 值，比如说
+  `void 0` 。
+- 当我们对两种类型使用 typeof 进行判断的时候，Null 类型化会返回
+  “object”，这是一个历史遗留的问题。当我们使用双等号对两种类型的值进行比较时会返回
+  true，使用三个等号时会返回 false。
+
+### 2 This
+
+
+> 不同情况的调用，`this` 指向分别如何。顺带可以提一下 `es6`
+> 中箭头函数没有 `this` , `arguments` , `super`
+> 等，这些只依赖包含箭头函数最接近的函数
+
+> 我们先来看几个函数调用的场景
 
 </div>

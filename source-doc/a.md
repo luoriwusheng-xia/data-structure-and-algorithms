@@ -1,2066 +1,9 @@
-<div id="app" server-rendered="true">
 
-<div class="theme-container posr">
-
-<div>
-
-<div class="navbar">
-
-<div class="sidebar-button">
-
-<img
-src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHZpZXdib3g9IjAgMCA0NDggNTEyIiBjbGFzcz0iaWNvbiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNNDM2IDEyNEgxMmMtNi42MjcgMC0xMi01LjM3My0xMi0xMlY4MGMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDQyNGM2LjYyNyAwIDEyIDUuMzczIDEyIDEydjMyYzAgNi42MjctNS4zNzMgMTItMTIgMTJ6bTAgMTYwSDEyYy02LjYyNyAwLTEyLTUuMzczLTEyLTEydi0zMmMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDQyNGM2LjYyNyAwIDEyIDUuMzczIDEyIDEydjMyYzAgNi42MjctNS4zNzMgMTItMTIgMTJ6bTAgMTYwSDEyYy02LjYyNyAwLTEyLTUuMzczLTEyLTEydi0zMmMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDQyNGM2LjYyNyAwIDEyIDUuMzczIDEyIDEydjMyYzAgNi42MjctNS4zNzMgMTItMTIgMTJ6Ij48L3BhdGg+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3N2Zz4="
-class="icon" />
-
-</div>
-
-<a href="/" class="home-link router-link-active"><img src="/logo.png"
-class="logo" alt="前端进阶之旅" /> <span
-class="site-name can-hide">前端进阶之旅</span></a>
-
-<div class="links">
-
-<div class="search-box">
-
-</div>
-
-<span class="login-btn"> *登录* </span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="sidebar-mask">
-
-</div>
-
-- <div class="section sidebar-group collapsable depth-0">
-
-  基础进阶 <span class="arrow down"></span>
-
-  - <a href="/docs/base.html" class="sidebar-link">基础篇</a>
-  - <a href="/docs/base/improve.html" class="active sidebar-link"
-    aria-current="page">进阶篇</a>
-    - <a href="/docs/base/improve.html#一、js基础"
-      class="sidebar-link">一、JS基础</a>
-      - <a href="/docs/base/improve.html#_1-类型及检测方式"
-        class="sidebar-link">1 类型及检测方式</a>
-      - <a href="/docs/base/improve.html#_2-this" class="sidebar-link">2
-        This</a>
-      - <a href="/docs/base/improve.html#_3-apply-call-bind-原理"
-        class="sidebar-link">3 apply/call/bind 原理</a>
-      - <a href="/docs/base/improve.html#_4-变量提升" class="sidebar-link">4
-        变量提升</a>
-      - <a href="/docs/base/improve.html#_5-执行上下文" class="sidebar-link">5
-        执行上下文</a>
-      - <a href="/docs/base/improve.html#_6-作用域" class="sidebar-link">6
-        作用域</a>
-      - <a href="/docs/base/improve.html#_7-闭包" class="sidebar-link">7
-        闭包</a>
-      - <a href="/docs/base/improve.html#_8-new的原理" class="sidebar-link">8
-        New的原理</a>
-      - <a href="/docs/base/improve.html#_9-原型-原型链" class="sidebar-link">9
-        原型/原型链</a>
-      - <a href="/docs/base/improve.html#_10-继承" class="sidebar-link">10
-        继承</a>
-      - <a href="/docs/base/improve.html#_11-面向对象" class="sidebar-link">11
-        面向对象</a>
-      - <a href="/docs/base/improve.html#_12-事件机制" class="sidebar-link">12
-        事件机制</a>
-      - <a href="/docs/base/improve.html#_13-模块化" class="sidebar-link">13
-        模块化</a>
-      - <a href="/docs/base/improve.html#_14-iterator迭代器"
-        class="sidebar-link">14 Iterator迭代器</a>
-      - <a href="/docs/base/improve.html#_15-promise" class="sidebar-link">15
-        Promise</a>
-      - <a href="/docs/base/improve.html#_16-generator" class="sidebar-link">16
-        Generator</a>
-      - <a href="/docs/base/improve.html#_17-async-await"
-        class="sidebar-link">17 async/await</a>
-      - <a href="/docs/base/improve.html#_18-事件循环" class="sidebar-link">18
-        事件循环</a>
-      - <a href="/docs/base/improve.html#_19-垃圾回收" class="sidebar-link">19
-        垃圾回收</a>
-      - <a href="/docs/base/improve.html#_20-内存泄露" class="sidebar-link">20
-        内存泄露</a>
-      - <a href="/docs/base/improve.html#_21-深浅拷贝" class="sidebar-link">21
-        深浅拷贝</a>
-      - <a href="/docs/base/improve.html#_22-节流与防抖" class="sidebar-link">22
-        节流与防抖</a>
-      - <a href="/docs/base/improve.html#_23-proxy代理" class="sidebar-link">23
-        Proxy代理</a>
-      - <a href="/docs/base/improve.html#_24-ajax" class="sidebar-link">24
-        Ajax</a>
-      - <a href="/docs/base/improve.html#_25-深入数组" class="sidebar-link">25
-        深入数组</a>
-    - <a href="/docs/base/improve.html#二、html"
-      class="sidebar-link">二、HTML</a>
-      - <a href="/docs/base/improve.html#_1-meta-标签-自动刷新-跳转"
-        class="sidebar-link">1 meta 标签：自动刷新/跳转</a>
-      - <a href="/docs/base/improve.html#_2-viewport" class="sidebar-link">2
-        viewport</a>
-      - <a href="/docs/base/improve.html#_3-性能优化" class="sidebar-link">3
-        性能优化</a>
-      - <a href="/docs/base/improve.html#_4-如何高效操作dom"
-        class="sidebar-link">4 如何高效操作DOM</a>
-    - <a href="/docs/base/improve.html#三、css基础"
-      class="sidebar-link">三、CSS基础</a>
-      - <a href="/docs/base/improve.html#_1-盒模型" class="sidebar-link">1
-        盒模型</a>
-      - <a href="/docs/base/improve.html#_2-bfc" class="sidebar-link">2 BFC</a>
-      - <a href="/docs/base/improve.html#_3-层叠上下文" class="sidebar-link">3
-        层叠上下文</a>
-      - <a href="/docs/base/improve.html#_4-左右居中方案" class="sidebar-link">4
-        左右居中方案</a>
-      - <a href="/docs/base/improve.html#_5-上下垂直居中方案"
-        class="sidebar-link">5 上下垂直居中方案</a>
-      - <a href="/docs/base/improve.html#_6-选择器权重计算方式"
-        class="sidebar-link">6 选择器权重计算方式</a>
-      - <a href="/docs/base/improve.html#_7-清除浮动" class="sidebar-link">7
-        清除浮动</a>
-      - <a href="/docs/base/improve.html#_8-左边定宽-右边自适应方案"
-        class="sidebar-link">8 左边定宽，右边自适应方案</a>
-      - <a href="/docs/base/improve.html#_9-左右两边定宽-中间自适应"
-        class="sidebar-link">9 左右两边定宽，中间自适应</a>
-      - <a href="/docs/base/improve.html#_10-css动画和过渡"
-        class="sidebar-link">10 CSS动画和过渡</a>
-      - <a href="/docs/base/improve.html#_11-css3的新特性"
-        class="sidebar-link">11 CSS3的新特性</a>
-      - <a
-        href="/docs/base/improve.html#_12-列举几个css中可继承和不可继承的元素"
-        class="sidebar-link">12 列举几个css中可继承和不可继承的元素</a>
-    - <a href="/docs/base/improve.html#四、浏览器"
-      class="sidebar-link">四、浏览器</a>
-      - <a href="/docs/base/improve.html#_1-浏览器架构" class="sidebar-link">1
-        浏览器架构</a>
-      - <a href="/docs/base/improve.html#_2-javascript单线程模型"
-        class="sidebar-link">2 JavaScript单线程模型</a>
-      - <a
-        href="/docs/base/improve.html#_3-chrome-打开一个页面需要启动多少进程-分别有哪些进程"
-        class="sidebar-link">3 Chrome
-        打开一个页面需要启动多少进程？分别有哪些进程？</a>
-      - <a href="/docs/base/improve.html#_4-渲染机制" class="sidebar-link">4
-        渲染机制</a>
-      - <a href="/docs/base/improve.html#_5-缓存机制" class="sidebar-link">5
-        缓存机制</a>
-      - <a href="/docs/base/improve.html#_6-浏览器存储" class="sidebar-link">6
-        浏览器存储</a>
-      - <a href="/docs/base/improve.html#_7-跨域方案" class="sidebar-link">7
-        跨域方案</a>
-      - <a href="/docs/base/improve.html#_8-xss-和-csrf" class="sidebar-link">8
-        XSS 和 CSRF</a>
-      - <a href="/docs/base/improve.html#_9-service-worker"
-        class="sidebar-link">9 Service Worker</a>
-      - <a href="/docs/base/improve.html#_10-dom-节点操作"
-        class="sidebar-link">10 DOM 节点操作</a>
-      - <a href="/docs/base/improve.html#_11-掌握页面的加载过程"
-        class="sidebar-link">11 掌握页面的加载过程</a>
-      - <a href="/docs/base/improve.html#_12-从输入url到页面展示过程"
-        class="sidebar-link">12 从输入URL到页面展示过程</a>
-      - <a
-        href="/docs/base/improve.html#_13-渲染引擎什么情况下才会为特定的节点创建新的图层"
-        class="sidebar-link">13
-        渲染引擎什么情况下才会为特定的节点创建新的图层</a>
-      - <a
-        href="/docs/base/improve.html#_14-定时器与requestanimationframe、requestidlecallback"
-        class="sidebar-link">14
-        定时器与requestAnimationFrame、requestIdleCallback</a>
-    - <a href="/docs/base/improve.html#五、框架通识"
-      class="sidebar-link">五、框架通识</a>
-    - <a href="/docs/base/improve.html#六、vue"
-      class="sidebar-link">六、Vue</a>
-      - <a href="/docs/base/improve.html#_1-vue-响应式原理"
-        class="sidebar-link">1 Vue 响应式原理</a>
-      - <a href="/docs/base/improve.html#_2-发布订阅模式和观察者模式"
-        class="sidebar-link">2 发布订阅模式和观察者模式</a>
-      - <a href="/docs/base/improve.html#_3-为什么使用-virtual-dom"
-        class="sidebar-link">3 为什么使用 Virtual DOM</a>
-      - <a href="/docs/base/improve.html#_4-vdom-三个-part"
-        class="sidebar-link">4 VDOM：三个 part</a>
-      - <a href="/docs/base/improve.html#_5-vue-和-react技术选型"
-        class="sidebar-link">5 vue 和 react技术选型</a>
-      - <a href="/docs/base/improve.html#_6-nexttick" class="sidebar-link">6
-        nextTick</a>
-      - <a href="/docs/base/improve.html#_7-生命周期" class="sidebar-link">7
-        生命周期</a>
-      - <a href="/docs/base/improve.html#_8-vue-router" class="sidebar-link">8
-        vue-router</a>
-      - <a href="/docs/base/improve.html#_9-vuex" class="sidebar-link">9
-        vuex</a>
-      - <a href="/docs/base/improve.html#_10-vue3带来的新特性-亮点"
-        class="sidebar-link">10 vue3带来的新特性/亮点</a>
-      - <a href="/docs/base/improve.html#_11-compositon-api"
-        class="sidebar-link">11 Compositon api</a>
-      - <a href="/docs/base/improve.html#_12-computed-的实现原理"
-        class="sidebar-link">12 computed 的实现原理</a>
-      - <a href="/docs/base/improve.html#_13-watch-的理解"
-        class="sidebar-link">13 watch 的理解</a>
-      - <a href="/docs/base/improve.html#_14-vue-渲染过程"
-        class="sidebar-link">14 vue 渲染过程</a>
-      - <a href="/docs/base/improve.html#_15-说一说keep-alive实现原理"
-        class="sidebar-link">15 说一说keep-alive实现原理</a>
-      - <a href="/docs/base/improve.html#_16-为什么访问data属性不需要带data"
-        class="sidebar-link">16 为什么访问data属性不需要带data</a>
-      - <a href="/docs/base/improve.html#_17-template预编译是什么"
-        class="sidebar-link">17 template预编译是什么</a>
-      - <a href="/docs/base/improve.html#_18-介绍一下vue中的diff算法"
-        class="sidebar-link">18 介绍一下Vue中的Diff算法</a>
-      - <a href="/docs/base/improve.html#_19-说说vue2-0和vue3-0有什么区别"
-        class="sidebar-link">19 说说Vue2.0和Vue3.0有什么区别</a>
-    - <a href="/docs/base/improve.html#七、react"
-      class="sidebar-link">七、React</a>
-      - <a href="/docs/base/improve.html#_0-对虚拟dom的理解"
-        class="sidebar-link">0 对虚拟DOM的理解</a>
-      - <a href="/docs/base/improve.html#_1-谈谈你对react的理解"
-        class="sidebar-link">1 谈谈你对React的理解</a>
-      - <a href="/docs/base/improve.html#_2-如何避免react生命周期中的坑"
-        class="sidebar-link">2 如何避免React生命周期中的坑</a>
-      - <a href="/docs/base/improve.html#_3-react-fiber架构"
-        class="sidebar-link">3 React Fiber架构</a>
-      - <a href="/docs/base/improve.html#_4-createelement过程"
-        class="sidebar-link">4 createElement过程</a>
-      - <a href="/docs/base/improve.html#_5-调和阶段-setstate内部干了什么"
-        class="sidebar-link">5 调和阶段 setState内部干了什么</a>
-      - <a href="/docs/base/improve.html#_6-setstate" class="sidebar-link">6
-        setState</a>
-      - <a href="/docs/base/improve.html#_7-setstate原理分析"
-        class="sidebar-link">7 setState原理分析</a>
-      - <a href="/docs/base/improve.html#_8-react事务机制"
-        class="sidebar-link">8 React事务机制</a>
-      - <a href="/docs/base/improve.html#_9-react组件和渲染更新过程"
-        class="sidebar-link">9 React组件和渲染更新过程</a>
-      - <a href="/docs/base/improve.html#_10-如何解释-react-的渲染流程"
-        class="sidebar-link">10 如何解释 React 的渲染流程</a>
-      - <a href="/docs/base/improve.html#_11-diff算法是怎么运作"
-        class="sidebar-link">11 diff算法是怎么运作</a>
-      - <a href="/docs/base/improve.html#_12-合成事件原理"
-        class="sidebar-link">12 合成事件原理</a>
-      - <a href="/docs/base/improve.html#_13-jsx语法糖本质"
-        class="sidebar-link">13 JSX语法糖本质</a>
-      - <a
-        href="/docs/base/improve.html#_14-为什么-react-元素有一个-typeof-属性"
-        class="sidebar-link">14 为什么 React 元素有一个 $$typeof 属性</a>
-      - <a href="/docs/base/improve.html#_15-virtual-dom-的工作原理是什么"
-        class="sidebar-link">15 Virtual DOM 的工作原理是什么</a>
-      - <a href="/docs/base/improve.html#_16-react有哪些优化性能的手段"
-        class="sidebar-link">16 React有哪些优化性能的手段</a>
-      - <a href="/docs/base/improve.html#_17-redux实现原理解析"
-        class="sidebar-link">17 Redux实现原理解析</a>
-      - <a href="/docs/base/improve.html#_18-谈谈你对状态管理的理解"
-        class="sidebar-link">18 谈谈你对状态管理的理解</a>
-      - <a href="/docs/base/improve.html#_19-connect组件原理分析"
-        class="sidebar-link">19 connect组件原理分析</a>
-      - <a href="/docs/base/improve.html#_20-react-hooks"
-        class="sidebar-link">20 React Hooks</a>
-      - <a href="/docs/base/improve.html#_21-受控组件和非受控组件"
-        class="sidebar-link">21 受控组件和非受控组件</a>
-      - <a href="/docs/base/improve.html#_22-如何避免ajax数据请求重新获取"
-        class="sidebar-link">22 如何避免ajax数据请求重新获取</a>
-      - <a href="/docs/base/improve.html#_23-组件之间通信"
-        class="sidebar-link">23 组件之间通信</a>
-      - <a href="/docs/base/improve.html#_24-类组件与函数组件有什么区别呢"
-        class="sidebar-link">24 类组件与函数组件有什么区别呢？</a>
-      - <a href="/docs/base/improve.html#_25-如何设计react组件"
-        class="sidebar-link">25 如何设计React组件</a>
-      - <a href="/docs/base/improve.html#_26-组件的协同及-不-可控组件"
-        class="sidebar-link">26 组件的协同及（不）可控组件</a>
-      - <a
-        href="/docs/base/improve.html#_27-react-router-的实现原理及工作方式分别是什么"
-        class="sidebar-link">27 React-Router 的实现原理及工作方式分别是什么</a>
-      - <a href="/docs/base/improve.html#_28-react-17-带来了哪些改变"
-        class="sidebar-link">28 React 17 带来了哪些改变</a>
-    - <a href="/docs/base/improve.html#八、性能"
-      class="sidebar-link">八、性能</a>
-      - <a href="/docs/base/improve.html#_1-dns-预解析" class="sidebar-link">1
-        DNS 预解析</a>
-      - <a href="/docs/base/improve.html#_2-缓存" class="sidebar-link">2
-        缓存</a>
-      - <a href="/docs/base/improve.html#_3-使用-http-2-0"
-        class="sidebar-link">3 使用 HTTP / 2.0</a>
-      - <a href="/docs/base/improve.html#_4-预加载" class="sidebar-link">4
-        预加载</a>
-      - <a href="/docs/base/improve.html#_5-预渲染" class="sidebar-link">5
-        预渲染</a>
-      - <a href="/docs/base/improve.html#_6-懒执行与懒加载"
-        class="sidebar-link">6 懒执行与懒加载</a>
-      - <a href="/docs/base/improve.html#_7-文件优化" class="sidebar-link">7
-        文件优化</a>
-      - <a href="/docs/base/improve.html#_8-其他" class="sidebar-link">8
-        其他</a>
-      - <a href="/docs/base/improve.html#_9-如何根据chrome的timing优化"
-        class="sidebar-link">9 如何根据chrome的timing优化</a>
-      - <a href="/docs/base/improve.html#_10-移动端优化" class="sidebar-link">10
-        移动端优化</a>
-    - <a href="/docs/base/improve.html#九、工程化"
-      class="sidebar-link">九、工程化</a>
-      - <a href="/docs/base/improve.html#_1-介绍一下-webpack-的构建流程"
-        class="sidebar-link">1 介绍一下 webpack 的构建流程</a>
-      - <a href="/docs/base/improve.html#_2-介绍-loader" class="sidebar-link">2
-        介绍 Loader</a>
-      - <a href="/docs/base/improve.html#_3-介绍-plugin" class="sidebar-link">3
-        介绍 plugin</a>
-      - <a href="/docs/base/improve.html#_4-webpack-热更新实现原理"
-        class="sidebar-link">4 webpack 热更新实现原理</a>
-      - <a href="/docs/base/improve.html#_5-webpack-层面如何做性能优化"
-        class="sidebar-link">5 webpack 层面如何做性能优化</a>
-      - <a href="/docs/base/improve.html#_6-介绍一下-tree-shaking"
-        class="sidebar-link">6 介绍一下 Tree Shaking</a>
-      - <a href="/docs/base/improve.html#_7-介绍一下-webpack-scope-hosting"
-        class="sidebar-link">7 介绍一下 webpack scope hosting</a>
-      - <a
-        href="/docs/base/improve.html#_8-webpack-proxy工作原理-为什么能解决跨域"
-        class="sidebar-link">8 Webpack Proxy工作原理？为什么能解决跨域</a>
-      - <a href="/docs/base/improve.html#_9-介绍一下-babel原理"
-        class="sidebar-link">9 介绍一下 babel原理</a>
-      - <a href="/docs/base/improve.html#_10-介绍一下rollup"
-        class="sidebar-link">10 介绍一下Rollup</a>
-    - <a href="/docs/base/improve.html#十、http"
-      class="sidebar-link">十、HTTP</a>
-      - <a href="/docs/base/improve.html#http状态码"
-        class="sidebar-link">HTTP状态码</a>
-      - <a href="/docs/base/improve.html#_1-http前生今世" class="sidebar-link">1
-        HTTP前生今世</a>
-      - <a href="/docs/base/improve.html#_2-http世界全览" class="sidebar-link">2
-        HTTP世界全览</a>
-      - <a href="/docs/base/improve.html#_3-http分层" class="sidebar-link">3
-        HTTP分层</a>
-      - <a href="/docs/base/improve.html#_4-http报文是什么样子的"
-        class="sidebar-link">4 HTTP报文是什么样子的</a>
-      - <a href="/docs/base/improve.html#_5-http之url" class="sidebar-link">5
-        HTTP之URL</a>
-      - <a href="/docs/base/improve.html#_6-http实体数据" class="sidebar-link">6
-        HTTP实体数据</a>
-      - <a href="/docs/base/improve.html#_7-谈一谈http协议优缺点"
-        class="sidebar-link">7 谈一谈HTTP协议优缺点</a>
-      - <a href="/docs/base/improve.html#_8-说一说http-的请求方法"
-        class="sidebar-link">8 说一说HTTP 的请求方法</a>
-      - <a href="/docs/base/improve.html#_9-谈一谈get-和-post-的区别"
-        class="sidebar-link">9 谈一谈GET 和 POST 的区别</a>
-      - <a href="/docs/base/improve.html#_10-谈一谈队头阻塞问题"
-        class="sidebar-link">10 谈一谈队头阻塞问题</a>
-      - <a href="/docs/base/improve.html#_11-谈一谈http数据传输"
-        class="sidebar-link">11 谈一谈HTTP数据传输</a>
-      - <a href="/docs/base/improve.html#_12-cookie-和-session"
-        class="sidebar-link">12 cookie 和 session</a>
-      - <a href="/docs/base/improve.html#_13-介绍一下https和http区别"
-        class="sidebar-link">13 介绍一下HTTPS和HTTP区别</a>
-      - <a href="/docs/base/improve.html#_14-https握手过程"
-        class="sidebar-link">14 HTTPS握手过程</a>
-      - <a href="/docs/base/improve.html#_15-介绍一个https工作原理"
-        class="sidebar-link">15 介绍一个HTTPS工作原理</a>
-      - <a href="/docs/base/improve.html#_16-ssl-连接断开后如何恢复"
-        class="sidebar-link">16 SSL 连接断开后如何恢复</a>
-      - <a href="/docs/base/improve.html#_17-谈一谈你对http-2理解"
-        class="sidebar-link">17 谈一谈你对HTTP/2理解</a>
-      - <a href="/docs/base/improve.html#_18-http3" class="sidebar-link">18
-        HTTP3</a>
-      - <a
-        href="/docs/base/improve.html#_19-http-1-0-http1-1-http2-0版本之间的差异"
-        class="sidebar-link">19 HTTP/1.0 HTTP1.1 HTTP2.0版本之间的差异</a>
-      - <a href="/docs/base/improve.html#_20-dns如何工作的"
-        class="sidebar-link">20 DNS如何工作的</a>
-      - <a
-        href="/docs/base/improve.html#_21-短轮询、长轮询和-websocket-间的区别"
-        class="sidebar-link">21 短轮询、长轮询和 WebSocket 间的区别</a>
-      - <a href="/docs/base/improve.html#_22-说一说正向代理和反向代理"
-        class="sidebar-link">22 说一说正向代理和反向代理</a>
-      - <a href="/docs/base/improve.html#_23-介绍一下connection-keep-alive"
-        class="sidebar-link">23 介绍一下Connection:keep-alive</a>
-      - <a href="/docs/base/improve.html#_24-http-https-协议总结"
-        class="sidebar-link">24 http/https 协议总结</a>
-      - <a href="/docs/base/improve.html#_25-tcp为什么要三次握手"
-        class="sidebar-link">25 TCP为什么要三次握手</a>
-      - <a href="/docs/base/improve.html#_26-为什么要有-websocket"
-        class="sidebar-link">26 为什么要有 WebSocket</a>
-      - <a href="/docs/base/improve.html#_27-udp和tcp有什么区别"
-        class="sidebar-link">27 UDP和TCP有什么区别</a>
-    - <a href="/docs/base/improve.html#十一、9种前端常见的设计模式"
-      class="sidebar-link">十一、9种前端常见的设计模式</a>
-      - <a href="/docs/base/improve.html#_1-外观模式" class="sidebar-link">1.
-        外观模式</a>
-      - <a href="/docs/base/improve.html#_2-代理模式" class="sidebar-link">2.
-        代理模式</a>
-      - <a href="/docs/base/improve.html#_3-工厂模式" class="sidebar-link">3.
-        工厂模式</a>
-      - <a href="/docs/base/improve.html#_4-单例模式" class="sidebar-link">4.
-        单例模式</a>
-      - <a href="/docs/base/improve.html#_5-策略模式" class="sidebar-link">5.
-        策略模式</a>
-      - <a href="/docs/base/improve.html#_6-迭代器模式" class="sidebar-link">6.
-        迭代器模式</a>
-      - <a href="/docs/base/improve.html#_7-观察者模式" class="sidebar-link">7.
-        观察者模式</a>
-      - <a href="/docs/base/improve.html#_8-中介者模式" class="sidebar-link">8.
-        中介者模式</a>
-      - <a href="/docs/base/improve.html#_9-访问者模式" class="sidebar-link">9.
-        访问者模式</a>
-    - <a href="/docs/base/improve.html#十二、综合问题"
-      class="sidebar-link">十二、综合问题</a>
-      - <a href="/docs/base/improve.html#前端常见面试流程"
-        class="sidebar-link">前端常见面试流程</a>
-      - <a href="/docs/base/improve.html#面试一定要问这几个问题"
-        class="sidebar-link">面试一定要问这几个问题</a>
-      - <a href="/docs/base/improve.html#经历" class="sidebar-link">经历</a>
-      - <a href="/docs/base/improve.html#项目相关"
-        class="sidebar-link">项目相关</a>
-      - <a href="/docs/base/improve.html#项目难点问题分析"
-        class="sidebar-link">项目难点问题分析</a>
-      - <a href="/docs/base/improve.html#项目流程相关面试题"
-        class="sidebar-link">项目流程相关面试题</a>
-      - <a href="/docs/base/improve.html#把握投递简历的黄金时间段"
-        class="sidebar-link">把握投递简历的黄金时间段</a>
-      - <a href="/docs/base/improve.html#把握面试时的关键点"
-        class="sidebar-link">把握面试时的关键点</a>
-      - <a href="/docs/base/improve.html#工作交接流程-福利衔接"
-        class="sidebar-link">工作交接流程 &amp;福利衔接</a>
-    - <a href="/docs/base/improve.html#十三、人事面"
-      class="sidebar-link">十三、人事面</a>
-      - <a href="/docs/base/improve.html#第一个要点-你是否胜任这份工作"
-        class="sidebar-link">第一个要点: 你是否胜任这份工作？</a>
-      - <a href="/docs/base/improve.html#第二个要点-你是怎样的人"
-        class="sidebar-link">第二个要点：你是怎样的人？</a>
-      - <a href="/docs/base/improve.html#第三个要点-你是否适合这个企业"
-        class="sidebar-link">第三个要点：你是否适合这个企业？</a>
-      - <a href="/docs/base/improve.html#第四个要点-聘用你-公司需付出多少"
-        class="sidebar-link">第四个要点：聘用你，公司需付出多少？</a>
-  - <a href="/docs/base/high-frequency.html" class="sidebar-link">高频篇</a>
-  - <a href="/docs/base/handwritten.html" class="sidebar-link">手写篇</a>
-  - <a href="/docs/base/comprehensive.html"
-    class="sidebar-link">综合题型</a>
-  - <a href="/docs/base/other-questions.html"
-    class="sidebar-link">其他问题</a>
-  - <a href="/docs/base/design-pattern.html"
-    class="sidebar-link">设计模式</a>
-
-  </div>
-
-- <div class="section sidebar-group collapsable depth-0">
-
-  精选模块 <span class="arrow right"></span>
-
-  </div>
-
-<div class="page" role="main">
-
-<div id="container" class="theme-default-content l">
-
-<div class="content__default">
-
-# <a href="#进阶篇" class="header-anchor">#</a> 进阶篇
-
-## <a href="#一、js基础" class="header-anchor">#</a> 一、JS基础
-
-### <a href="#_1-类型及检测方式" class="header-anchor">#</a> 1 类型及检测方式
-
-**1. JS内置类型**
-
-JavaScript 的数据类型有下图所示
-
-> 其中，前 7 种类型为基础类型，最后 `1 种（Object）为引用类型`
-> ，也是你需要重点关注的，因为它在日常工作中是使用得最频繁，也是需要关注最多技术细节的数据类型
-
-- `JavaScript` 一共有8种数据类型，其中有7种基本数据类型：`Undefined`
-  、`Null` 、`Boolean` 、`Number` 、`String` 、`Symbol` （`es6`
-  新增，表示独一无二的值）和`BigInt` （`es10` 新增）；
-- 1种引用数据类型——`Object`
-  （Object本质上是由一组无序的名值对组成的）。里面包含
-  `function、Array、Date`
-  等。JavaScript不支持任何创建自定义类型的机制，而所有值最终都将是上述 8
-  种数据类型之一。
-  - **引用数据类型:** 对象`Object` （包含普通对象-`Object`
-    ，数组对象-`Array` ，正则对象-`RegExp` ，日期对象-`Date`
-    ，数学函数-`Math` ，函数对象-`Function` ）
-
-> 在这里，我想先请你重点了解下面两点，因为各种 JavaScript
-> 的数据类型最后都会在初始化之后放在不同的内存中，因此上面的数据类型大致可以分成两类来进行存储：
-
-- **原始数据类型**
-  ：基础类型存储在栈内存，被引用或拷贝时，会创建一个完全相等的变量；占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储。
-- **引用数据类型**
-  ：引用类型存储在堆内存，存储的是地址，多个引用指向同一个地址，这里会涉及一个“共享”的概念；占据空间大、大小不固定。引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
-
-**JavaScript 中的数据是如何存储在内存中的？**
-
-> 在 JavaScript
-> 中，原始类型的赋值会完整复制变量值，而引用类型的赋值是复制引用地址。
-
-在 JavaScript 的执行过程中， 主要有三种类型内存空间，分别是`代码空间`
-、`栈空间` 、`堆空间`
-。其中的代码空间主要是存储可执行代码的，原始类型(`Number、String、Null、Undefined、Boolean、Symbol、BigInt`
-)的数据值都是直接保存在“栈”中的，引用类型(Object)的值是存放在“堆”中的。因此在栈空间中(执行上下文)，原始类型存储的是变量的值，而引用类型存储的是其在
-"堆空间 "中的地址，当 JavaScript
-需要访问该数据的时候，是通过栈中的引用地址来访问的，相当于多了一道转手流程。
-
-在编译过程中，如果 JavaScript
-引擎判断到一个闭包，也会在堆空间创建换一个`“closure(fn)”`
-的对象（这是一个内部对象，JavaScript
-是无法访问的），用来保存闭包中的变量。所以闭包中的变量是存储在“堆空间”中的。
-
-JavaScript
-引擎需要用栈来维护程序执行期间上下文的状态，如果栈空间大了话，所有的数据都存放在栈空间里面，那么会影响到上下文切换的效率，进而又影响到整个程序的执行效率。通常情况下，栈空间都不会设置太大，主要用来存放一些原始类型的小数据。而引用类型的数据占用的空间都比较大，所以这一类数据会被存放到堆中，堆空间很大，能存放很多大的数据，不过缺点是分配内存和回收内存都会占用一定的时间。因此需要“栈”和“堆”两种空间。
-
-> 题目一：初出茅庐
 
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        let
-                                        a =
-                                        {
-                                        name
-                                        :
-                                        'lee'
-                                        ,
-                                        age
-                                        :
-                                        18
-                                        }
-                                        let
-                                        b =
-                                        a;
-                                        console.
-                                        log
-                                        (
-                                        a.
-                                        name)
-                                        ;
-                                        //第一个console
-                                        b.
-                                        name =
-                                        'son'
-                                        ;
-                                        console.
-                                        log
-                                        (
-                                        a.
-                                        name)
-                                        ;
-                                        //第二个console
-                                        console.
-                                        log
-                                        (
-                                        b.
-                                        name)
-                                        ;
-                                        //第三个console
-                                    
-                                
-```
 
-</div>
-
-> 这道题比较简单，我们可以看到第一个 console 打出来 name 是
-> 'lee'，这应该没什么疑问；但是在执行了 b.name='son' 之后，结果你会发现
-> a 和 b 的属性 name 都是
-> 'son'，第二个和第三个打印结果是一样的，这里就体现了引用类型的“共享”的特性，即这两个值都存在同一块内存中共享，一个发生了改变，另外一个也随之跟着变化。
-
-你可以直接在 Chrome
-控制台敲一遍，深入理解一下这部分概念。下面我们再看一段代码，它是比题目一稍复杂一些的对象属性变化问题。
-
-> 题目二：渐入佳境
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        let
-                                        a =
-                                        {
-                                        name
-                                        :
-                                        'Julia'
-                                        ,
-                                        age
-                                        :
-                                        20
-                                        }
-                                        function
-                                        change
-                                        (
-                                        o
-                                        )
-                                        {
-                                        o.
-                                        age =
-                                        24
-                                        ;
-                                        o =
-                                        {
-                                        name
-                                        :
-                                        'Kath'
-                                        ,
-                                        age
-                                        :
-                                        30
-                                        }
-                                        return
-                                        o;
-                                        }
-                                        let
-                                        b =
-                                        change
-                                        (
-                                        a)
-                                        ;
-                                        // 注意这里没有new，后面new相关会有专门文章讲解
-                                        console.
-                                        log
-                                        (
-                                        b.
-                                        age)
-                                        ;
-                                        // 第一个console
-                                        console.
-                                        log
-                                        (
-                                        a.
-                                        age)
-                                        ;
-                                        // 第二个console
-                                    
-                                
-```
-
-</div>
-
-这道题涉及了 `function` ，你通过上述代码可以看到第一个 `console`
-的结果是 `30` ，`b` 最后打印结果是 `{name: "Kath ", age: 30}` ；第二个
-`console` 的返回结果是 `24` ，而 `a` 最后的打印结果是
-`{name: "Julia ", age: 24}` 。
-
-是不是和你预想的有些区别？你要注意的是，这里的 `function` 和 `return`
-带来了不一样的东西。
-
-> 原因在于：函数传参进来的 `o`
-> ，传递的是对象在堆中的内存地址值，通过调用 `o.age = 24` （第 7
-> 行代码）确实改变了 `a` 对象的 `age` 属性；但是第 12 行代码的 `return`
-> 却又把 `o` 变成了另一个内存地址，将 `{name: "Kath ", age: 30}`
-> 存入其中，最后返回 `b` 的值就变成了 `{name: "Kath ", age: 30}`
-> 。而如果把第 12 行去掉，那么 `b` 就会返回 `undefined`
-
-**2. 数据类型检测**
-
-**（1）typeof**
-
-> typeof 对于原始类型来说，除了 null 都可以显示正确的类型
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        2
-                                        )
-                                        ;
-                                        // number
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        true
-                                        )
-                                        ;
-                                        // boolean
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        'str'
-                                        )
-                                        ;
-                                        // string
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        [
-                                        ]
-                                        )
-                                        ;
-                                        // object     []数组的数据类型在 typeof 中被解释为 object
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        function
-                                        (
-                                        )
-                                        {
-                                        }
-                                        )
-                                        ;
-                                        // function
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        {
-                                        }
-                                        )
-                                        ;
-                                        // object
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        undefined
-                                        )
-                                        ;
-                                        // undefined
-                                        console.
-                                        log
-                                        (
-                                        typeof
-                                        null
-                                        )
-                                        ;
-                                        // object     null 的数据类型被 typeof 解释为 object
-                                    
-                                
-```
-
-</div>
-
-> `typeof` 对于对象来说，除了函数都会显示 `object` ，所以说 `typeof`
-> 并不能准确判断变量到底是什么类型,所以想判断一个对象的正确类型，这时候可以考虑使用
-> `instanceof`
-
-**（2）instanceof**
-
-> `instanceof`
-> 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的
-> `prototype`
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        console.
-                                        log
-                                        (
-                                        2
-                                        instanceof
-                                        Number
-                                        )
-                                        ;
-                                        // false
-                                        console.
-                                        log
-                                        (
-                                        true
-                                        instanceof
-                                        Boolean
-                                        )
-                                        ;
-                                        // false 
-                                        console.
-                                        log
-                                        (
-                                        'str'
-                                        instanceof
-                                        String
-                                        )
-                                        ;
-                                        // false  
-                                        console.
-                                        log
-                                        (
-                                        [
-                                        ]
-                                        instanceof
-                                        Array
-                                        )
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        function
-                                        (
-                                        )
-                                        {
-                                        }
-                                        instanceof
-                                        Function
-                                        )
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        {
-                                        }
-                                        instanceof
-                                        Object
-                                        )
-                                        ;
-                                        // true    
-                                        // console.log(undefined instanceof Undefined);
-                                        // console.log(null instanceof Null);
-                                    
-                                
-```
-
-</div>
-
-- `instanceof`
-  可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型；
-- 而 `typeof` 也存在弊端，它虽然可以判断基础数据类型（`null`
-  除外），但是引用数据类型中，除了 `function` 类型以外，其他的也无法判断
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        // 我们也可以试着实现一下 instanceof
-                                        function
-                                        _instanceof
-                                        (
-                                        
-                                            left,
-                                            right
-                                        
-                                        )
-                                        {
-                                        // 由于instance要检测的是某对象，需要有一个前置判断条件
-                                        //基本数据类型直接返回false
-                                        if
-                                        (
-                                        typeof
-                                        left !==
-                                        'object'
-                                        ||
-                                        left ===
-                                        null
-                                        )
-                                        return
-                                        false
-                                        ;
-                                        // 获得类型的原型
-                                        let
-                                        prototype =
-                                        right.
-                                        prototype
-    // 获得对象的原型
-                                        left =
-                                        left.
-                                        __proto__
-    // 判断对象的类型是否等于类型的原型
-                                        while
-                                        (
-                                        true
-                                        )
-                                        {
-                                        if
-                                        (
-                                        left ===
-                                        null
-                                        )
-                                        return
-                                        false
-                                        if
-                                        (
-                                        prototype ===
-                                        left)
-                                        return
-                                        true
-                                        left =
-                                        left.
-                                        __proto__
-    }
-                                        }
-                                        console.
-                                        log
-                                        (
-                                        'test'
-                                        ,
-                                        _instanceof
-                                        (
-                                        null
-                                        ,
-                                        Array)
-                                        )
-                                        // false
-                                        console.
-                                        log
-                                        (
-                                        'test'
-                                        ,
-                                        _instanceof
-                                        (
-                                        [
-                                        ]
-                                        ,
-                                        Array)
-                                        )
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        'test'
-                                        ,
-                                        _instanceof
-                                        (
-                                        ''
-                                        ,
-                                        Array)
-                                        )
-                                        // false
-                                        console.
-                                        log
-                                        (
-                                        'test'
-                                        ,
-                                        _instanceof
-                                        (
-                                        {
-                                        }
-                                        ,
-                                        Object)
-                                        )
-                                        // true
-                                    
-                                
-```
-
-</div>
-
-**（3）constructor**
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        2
-                                        )
-                                        .
-                                        constructor ===
-                                        Number)
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        true
-                                        )
-                                        .
-                                        constructor ===
-                                        Boolean)
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        'str'
-                                        )
-                                        .
-                                        constructor ===
-                                        String)
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        [
-                                        ]
-                                        )
-                                        .
-                                        constructor ===
-                                        Array)
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        function
-                                        (
-                                        )
-                                        {
-                                        }
-                                        )
-                                        .
-                                        constructor ===
-                                        Function)
-                                        ;
-                                        // true
-                                        console.
-                                        log
-                                        (
-                                        (
-                                        {
-                                        }
-                                        )
-                                        .
-                                        constructor ===
-                                        Object)
-                                        ;
-                                        // true
-                                    
-                                
-```
-
-</div>
-
-> 这里有一个坑，如果我创建一个对象，更改它的原型，`constructor`
-> 就会变得不可靠了
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        function
-                                        Fn
-                                        (
-                                        )
-                                        {
-                                        }
-                                        ;
-                                        Fn
-                                        .
-                                        prototype=
-                                        new
-                                        Array
-                                        (
-                                        )
-                                        ;
-                                        var
-                                        f=
-                                        new
-                                        Fn
-                                        (
-                                        )
-                                        ;
-                                        console.
-                                        log
-                                        (
-                                        f.
-                                        constructor===
-                                        Fn)
-                                        ;
-                                        // false
-                                        console.
-                                        log
-                                        (
-                                        f.
-                                        constructor===
-                                        Array)
-                                        ;
-                                        // true 
-                                    
-                                
-```
-
-</div>
-
-**（4）Object.prototype.toString.call()**
-
-> `toString()` 是 `Object` 的原型方法，调用该方法，可以统一返回格式为
-> `“[object Xxx]”` 的字符串，其中 `Xxx` 就是对象的类型。对于 `Object`
-> 对象，直接调用 `toString()` 就能返回 `[object Object]`
-> ；而对于其他对象，则需要通过 `call`
-> 来调用，才能返回正确的类型信息。我们来看一下代码。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        (
-                                        {
-                                        }
-                                        )
-                                        // "[object Object]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        {
-                                        }
-                                        )
-                                        // 同上结果，加上call也ok
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        1
-                                        )
-                                        // "[object Number]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        '1'
-                                        )
-                                        // "[object String]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        true
-                                        )
-                                        // "[object Boolean]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        function
-                                        (
-                                        )
-                                        {
-                                        }
-                                        )
-                                        // "[object Function]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        null
-                                        )
-                                        //"[object Null]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        undefined
-                                        )
-                                        //"[object Undefined]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        
-                                            /
-                                            123
-                                            /
-                                            g
-                                        
-                                        )
-                                        //"[object RegExp]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        new
-                                        Date
-                                        (
-                                        )
-                                        )
-                                        //"[object Date]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        [
-                                        ]
-                                        )
-                                        //"[object Array]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        document)
-                                        //"[object HTMLDocument]"
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        window)
-                                        //"[object Window]"
-                                        // 从上面这段代码可以看出，Object.prototype.toString.call() 可以很好地判断引用类型，甚至可以把 document 和 window 都区分开来。
-                                    
-                                
-```
-
-</div>
-
-> 实现一个全局通用的数据类型判断方法，来加深你的理解，代码如下
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        function
-                                        getType
-                                        (
-                                        obj
-                                        )
-                                        {
-                                        let
-                                        type  =
-                                        typeof
-                                        obj;
-                                        if
-                                        (
-                                        type !==
-                                        "object "
-                                        )
-                                        {
-                                        // 先进行typeof判断，如果是基础数据类型，直接返回
-                                        return
-                                        type;
-                                        }
-                                        // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
-                                        return
-                                        Object
-                                        .
-                                        prototype.
-                                        toString
-                                        .
-                                        call
-                                        (
-                                        obj)
-                                        .
-                                        replace
-                                        (
-                                        
-                                            /
-                                            ^\[object (\S+)\]$
-                                            /
-                                        
-                                        ,
-                                        '$1'
-                                        )
-                                        ;
-                                        // 注意正则中间有个空格
-                                        }
-                                        /* 代码验证，需要注意大小写，哪些是typeof判断，哪些是toString判断？思考下 */
-                                        getType
-                                        (
-                                        [
-                                        ]
-                                        )
-                                        // "Array "typeof []是object，因此toString返回
-                                        getType
-                                        (
-                                        '123'
-                                        )
-                                        // "string "typeof 直接返回
-                                        getType
-                                        (
-                                        window)
-                                        // "Window "toString返回
-                                        getType
-                                        (
-                                        null
-                                        )
-                                        // "Null "首字母大写，typeof null是object，需toString来判断
-                                        getType
-                                        (
-                                        undefined
-                                        )
-                                        // "undefined "typeof 直接返回
-                                        getType
-                                        (
-                                        )
-                                        // "undefined "typeof 直接返回
-                                        getType
-                                        (
-                                        function
-                                        (
-                                        )
-                                        {
-                                        }
-                                        )
-                                        // "function "typeof能判断，因此首字母小写
-                                        getType
-                                        (
-                                        
-                                            /
-                                            123
-                                            /
-                                            g
-                                        
-                                        )
-                                        //"RegExp "toString返回
-                                    
-                                
-```
-
-</div>
-
-**小结**
-
-- `typeof`
-  - 直接在计算机底层基于数据类型的值（二进制）进行检测
-  - `typeof null` 为`object` 原因是对象存在在计算机中，都是以`000`
-    开始的二进制存储，所以检测出来的结果是对象
-  - `typeof` 普通对象/数组对象/正则对象/日期对象 都是`object`
-  - `typeof NaN === 'number'`
-- `instanceof`
-  - 检测当前实例是否属于这个类的
-  - 底层机制：只要当前类出现在实例的原型上，结果都是true
-  - 不能检测基本数据类型
-- `constructor`
-  - 支持基本类型
-  - constructor可以随便改，也不准
-- `Object.prototype.toString.call([val])`
-  - 返回当前实例所属类信息
-
-> 判断 `Target` 的类型，单单用 `typeof` 并无法完全满足，这其实并不是
-> `bug` ，本质原因是 `JS`
-> 的万物皆对象的理论。因此要真正完美判断时，我们需要区分对待:
-
-- 基本类型(`null` ): 使用 `String(null)`
-- 基本类型(`string / number / boolean / undefined` ) + `function` : -
-  直接使用 `typeof` 即可
-- 其余引用类型(`Array / Date / RegExp Error` ): 调用`toString`
-  后根据`[object XXX]` 进行判断
-
-**3. 数据类型转换**
-
-我们先看一段代码，了解下大致的情况。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        '123'
-                                        ==
-                                        123
-                                        // false or true?
-                                        ''
-                                        ==
-                                        null
-                                        // false or true?
-                                        ''
-                                        ==
-                                        0
-                                        // false or true?
-                                        [
-                                        ]
-                                        ==
-                                        0
-                                        // false or true?
-                                        [
-                                        ]
-                                        ==
-                                        ''
-                                        // false or true?
-                                        [
-                                        ]
-                                        ==
-                                        !
-                                        [
-                                        ]
-                                        // false or true?
-                                        null
-                                        ==
-                                        undefined
-                                        //  false or true?
-                                        Number
-                                        (
-                                        null
-                                        )
-                                        // 返回什么？
-                                        Number
-                                        (
-                                        ''
-                                        )
-                                        // 返回什么？
-                                        parseInt
-                                        (
-                                        ''
-                                        )
-                                        ;
-                                        // 返回什么？
-                                        {
-                                        }
-                                        +
-                                        10
-                                        // 返回什么？
-                                        let
-                                        obj =
-                                        {
-                                        [
-                                        Symbol.
-                                        toPrimitive]
-                                        (
-                                        )
-                                        {
-                                        return
-                                        200
-                                        ;
-                                        }
-                                        ,
-                                        valueOf
-                                        (
-                                        )
-                                        {
-                                        return
-                                        300
-                                        ;
-                                        }
-                                        ,
-                                        toString
-                                        (
-                                        )
-                                        {
-                                        return
-                                        'Hello'
-                                        ;
-                                        }
-                                        }
-                                        console.
-                                        log
-                                        (
-                                        obj +
-                                        200
-                                        )
-                                        ;
-                                        // 这里打印出来是多少？
-                                    
-                                
-```
-
-</div>
-
-> 首先我们要知道，在 `JS` 中类型转换只有三种情况，分别是：
-
-- 转换为布尔值
-- 转换为数字
-- 转换为字符串
-
-**转Boolean**
-
-> 在条件判断时，除了 `undefined` ，`null` ， `false` ， `NaN` ， `''` ，
-> `0` ， `-0` ，其他所有值都转为 `true` ，包括所有对象
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        Boolean
-                                        (
-                                        0
-                                        )
-                                        //false
-                                        Boolean
-                                        (
-                                        null
-                                        )
-                                        //false
-                                        Boolean
-                                        (
-                                        undefined
-                                        )
-                                        //false
-                                        Boolean
-                                        (
-                                        NaN
-                                        )
-                                        //false
-                                        Boolean
-                                        (
-                                        1
-                                        )
-                                        //true
-                                        Boolean
-                                        (
-                                        13
-                                        )
-                                        //true
-                                        Boolean
-                                        (
-                                        '12'
-                                        )
-                                        //true
-                                    
-                                
-```
-
-</div>
-
-**对象转原始类型**
-
-> 对象在转换类型的时候，会调用内置的 `[[ToPrimitive]]`
-> 函数，对于该函数来说，算法逻辑一般来说如下
-
-- 如果已经是原始类型了，那就不需要转换了
-- 调用 `x.valueOf()` ，如果转换为基础类型，就返回转换的值
-- 调用 `x.toString()` ，如果转换为基础类型，就返回转换的值
-- 如果都没有返回原始类型，就会报错
-
-> 当然你也可以重写 `Symbol.toPrimitive`
-> ，该方法在转原始类型时调用优先级最高。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        let
-                                        a =
-                                        {
-                                        valueOf
-                                        (
-                                        )
-                                        {
-                                        return
-                                        0
-                                        }
-                                        ,
-                                        toString
-                                        (
-                                        )
-                                        {
-                                        return
-                                        '1'
-                                        }
-                                        ,
-                                        [
-                                        Symbol.
-                                        toPrimitive]
-                                        (
-                                        )
-                                        {
-                                        return
-                                        2
-                                        }
-                                        }
-                                        1
-                                        +
-                                        a // =>3
-                                    
-                                
-```
-
-</div>
-
-**四则运算符**
-
-> 它有以下几个特点：
-
-- 运算中其中一方为字符串，那么就会把另一方也转换为字符串
-- 如果一方不是字符串或者数字，那么会将它转换为数字或者字符串
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        1
-                                        +
-                                        '1'
-                                        // '11'
-                                        true
-                                        +
-                                        true
-                                        // 2
-                                        4
-                                        +
-                                        [
-                                        1
-                                        ,
-                                        2
-                                        ,
-                                        3
-                                        ]
-                                        // "41,2,3 "
-                                    
-                                
-```
-
-</div>
-
-- 对于第一行代码来说，触发特点一，所以将数字 `1` 转换为字符串，得到结果
-  `'11'`
-- 对于第二行代码来说，触发特点二，所以将 `true` 转为数字 `1`
-- 对于第三行代码来说，触发特点二，所以将数组通过 `toString` 转为字符串
-  `1,2,3` ，得到结果 `41,2,3`
-
-> 另外对于加法还需要注意这个表达式 `'a' + + 'b'`
-
-<div class="language- extra-class">
-
-``` language-text
-                                    'a' + + 'b' // ->"aNaN "
-                                
-```
-
-</div>
-
-- 因为 `+ 'b'` 等于 `NaN` ，所以结果为 `"aNaN "`
-  ，你可能也会在一些代码中看到过 `+ '1'` 的形式来快速获取 `number`
-  类型。
-- 那么对于除了加法的运算符来说，只要其中一方是数字，那么另一方就会被转为数字
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        4
-                                        *
-                                        '3'
-                                        // 12
-                                        4
-                                        *
-                                        [
-                                        ]
-                                        // 0
-                                        4
-                                        *
-                                        [
-                                        1
-                                        ,
-                                        2
-                                        ]
-                                        // NaN
-                                    
-                                
-```
-
-</div>
-
-**比较运算符**
-
-- 如果是对象，就通过 `toPrimitive` 转换对象
-- 如果是字符串，就通过 `unicode` 字符索引来比较
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        let
-                                        a =
-                                        {
-                                        valueOf
-                                        (
-                                        )
-                                        {
-                                        return
-                                        0
-                                        }
-                                        ,
-                                        toString
-                                        (
-                                        )
-                                        {
-                                        return
-                                        '1'
-                                        }
-                                        }
-                                        a >
-                                        -
-                                        1
-                                        // true
-                                    
-                                
-```
-
-</div>
-
-> 在以上代码中，因为 `a` 是对象，所以会通过 `valueOf`
-> 转换为原始类型再比较值。
-
-**强制类型转换**
-
-> 强制类型转换方式包括 `Number()` 、`parseInt()` 、`parseFloat()`
-> 、`toString()` 、`String()` 、`Boolean()` ，这几种方法都比较类似
-
-- `Number()` 方法的强制转换规则
-- 如果是布尔值，`true` 和 `false` 分别被转换为 `1` 和 `0` ；
-- 如果是数字，返回自身；
-- 如果是 `null` ，返回 `0` ；
-- 如果是 `undefined` ，返回 `NaN` ；
-- 如果是字符串，遵循以下规则：如果字符串中只包含数字（或者是 `0X / 0x`
-  开头的十六进制数字字符串，允许包含正负号），则将其转换为十进制；如果字符串中包含有效的浮点格式，将其转换为浮点数值；如果是空字符串，将其转换为
-  `0` ；如果不是以上格式的字符串，均返回 NaN；
-- 如果是 `Symbol` ，抛出错误；
-- 如果是对象，并且部署了 `[Symbol.toPrimitive]`
-  ，那么调用此方法，否则调用对象的 `valueOf()`
-  方法，然后依据前面的规则转换返回的值；如果转换的结果是 `NaN`
-  ，则调用对象的 `toString()` 方法，再次依照前面的顺序转换返回对应的值。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        Number
-                                        (
-                                        true
-                                        )
-                                        ;
-                                        // 1
-                                        Number
-                                        (
-                                        false
-                                        )
-                                        ;
-                                        // 0
-                                        Number
-                                        (
-                                        '0111'
-                                        )
-                                        ;
-                                        //111
-                                        Number
-                                        (
-                                        null
-                                        )
-                                        ;
-                                        //0
-                                        Number
-                                        (
-                                        ''
-                                        )
-                                        ;
-                                        //0
-                                        Number
-                                        (
-                                        '1a'
-                                        )
-                                        ;
-                                        //NaN
-                                        Number
-                                        (
-                                        -
-                                        0X11
-                                        )
-                                        ;
-                                        //-17
-                                        Number
-                                        (
-                                        '0X11'
-                                        )
-                                        //17
-                                    
-                                
-```
-
-</div>
-
-**Object 的转换规则**
-
-> 对象转换的规则，会先调用内置的 `[ToPrimitive]` 函数，其规则逻辑如下：
-
-- 如果部署了 `Symbol.toPrimitive` 方法，优先调用再返回；
-- 调用 `valueOf()` ，如果转换为基础类型，则返回；
-- 调用 `toString()` ，如果转换为基础类型，则返回；
-- 如果都没有返回基础类型，会报错。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        var
-                                        obj =
-                                        {
-                                        value
-                                        :
-                                        1
-                                        ,
-                                        valueOf
-                                        (
-                                        )
-                                        {
-                                        return
-                                        2
-                                        ;
-                                        }
-                                        ,
-                                        toString
-                                        (
-                                        )
-                                        {
-                                        return
-                                        '3'
-                                        }
-                                        ,
-                                        [
-                                        Symbol.
-                                        toPrimitive]
-                                        (
-                                        )
-                                        {
-                                        return
-                                        4
-                                        }
-                                        }
-                                        console.
-                                        log
-                                        (
-                                        obj +
-                                        1
-                                        )
-                                        ;
-                                        // 输出5
-                                        // 因为有Symbol.toPrimitive，就优先执行这个；如果Symbol.toPrimitive这段代码删掉，则执行valueOf打印结果为3；如果valueOf也去掉，则调用toString返回'31'(字符串拼接)
-                                        // 再看两个特殊的case：
-                                        10
-                                        +
-                                        {
-                                        }
-                                        // "10[object Object]"，注意：{}会默认调用valueOf是{}，不是基础类型继续转换，调用toString，返回结果 "[object Object]"，于是和10进行'+'运算，按照字符串拼接规则来，参考'+'的规则C
-                                        [
-                                        1
-                                        ,
-                                        2
-                                        ,
-                                        undefined
-                                        ,
-                                        4
-                                        ,
-                                        5
-                                        ]
-                                        +
-                                        10
-                                        // "1,2,,4,510 "，注意[1,2,undefined,4,5]会默认先调用valueOf结果还是这个数组，不是基础数据类型继续转换，也还是调用toString，返回 "1,2,,4,5 "，然后再和10进行运算，还是按照字符串拼接规则，参考'+'的第3条规则
-                                    
-                                
-```
-
-</div>
-
-**'==' 的隐式类型转换规则**
-
-- 如果类型相同，无须进行类型转换；
-- 如果其中一个操作值是 `null` 或者 `undefined` ，那么另一个操作符必须为
-  `null` 或者 `undefined` ，才会返回 `true` ，否则都返回 `false` ；
-- 如果其中一个是 `Symbol` 类型，那么返回 `false` ；
-- 两个操作值如果为 `string` 和 number 类型，那么就会将字符串转换为
-  `number` ；
-- 如果一个操作值是 `boolean` ，那么转换成 `number` ；
-- 如果一个操作值为 `object` 且另一方为 `string` 、`number` 或者 `symbol`
-  ，就会把 `object` 转为原始类型再进行判断（调用 `object` 的
-  `valueOf/toString` 方法进行转换）。
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        null
-                                        ==
-                                        undefined
-                                        // true  规则2
-                                        null
-                                        ==
-                                        0
-                                        // false 规则2
-                                        ''
-                                        ==
-                                        null
-                                        // false 规则2
-                                        ''
-                                        ==
-                                        0
-                                        // true  规则4 字符串转隐式转换成Number之后再对比
-                                        '123'
-                                        ==
-                                        123
-                                        // true  规则4 字符串转隐式转换成Number之后再对比
-                                        0
-                                        ==
-                                        false
-                                        // true  e规则 布尔型隐式转换成Number之后再对比
-                                        1
-                                        ==
-                                        true
-                                        // true  e规则 布尔型隐式转换成Number之后再对比
-                                        var
-                                        a =
-                                        {
-                                        value
-                                        :
-                                        0
-                                        ,
-                                        valueOf
-                                        :
-                                        function
-                                        (
-                                        )
-                                        {
-                                        this
-                                        .
-                                        value++
-                                        ;
-                                        return
-                                        this
-                                        .
-                                        value;
-                                        }
-                                        }
-                                        ;
-                                        // 注意这里a又可以等于1、2、3
-                                        console.
-                                        log
-                                        (
-                                        a ==
-                                        1
-                                        &&
-                                        a ==
-                                        2
-                                        &&
-                                        a ==
-                                        3
-                                        )
-                                        ;
-                                        //true f规则 Object隐式转换
-                                        // 注：但是执行过3遍之后，再重新执行a==3或之前的数字就是false，因为value已经加上去了，这里需要注意一下
-                                    
-                                
-```
-
-</div>
-
-**'+' 的隐式类型转换规则**
-
-> '+' 号操作符，不仅可以用作数字相加，还可以用作字符串拼接。仅当 '+'
-> 号两边都是数字时，进行的是加法运算；如果两边都是字符串，则直接拼接，无须进行隐式类型转换。
-
-- 如果其中有一个是字符串，另外一个是 `undefined` 、`null`
-  或布尔型，则调用 `toString()`
-  方法进行字符串拼接；如果是纯对象、数组、正则等，则默认调用对象的转换方法会存在优先级，然后再进行拼接。
-- 如果其中有一个是数字，另外一个是 `undefined` 、`null`
-  、布尔型或数字，则会将其转换成数字进行加法运算，对象的情况还是参考上一条规则。
-- 如果其中一个是字符串、一个是数字，则按照字符串规则进行拼接
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
-                                        1
-                                        +
-                                        2
-                                        // 3  常规情况
-                                        '1'
-                                        +
-                                        '2'
-                                        // '12' 常规情况
-                                        // 下面看一下特殊情况
-                                        '1'
-                                        +
-                                        undefined
-                                        // "1undefined "规则1，undefined转换字符串
-                                        '1'
-                                        +
-                                        null
-                                        // "1null "规则1，null转换字符串
-                                        '1'
-                                        +
-                                        true
-                                        // "1true "规则1，true转换字符串
-                                        '1'
-                                        +
-                                        1n
-                                        // '11' 比较特殊字符串和BigInt相加，BigInt转换为字符串
-                                        1
-                                        +
-                                        undefined
-                                        // NaN  规则2，undefined转换数字相加NaN
-                                        1
-                                        +
-                                        null
-                                        // 1    规则2，null转换为0
-                                        1
-                                        +
-                                        true
-                                        // 2    规则2，true转换为1，二者相加为2
-                                        1
-                                        +
-                                        1n
-                                        // 错误  不能把BigInt和Number类型直接混合相加
-                                        '1'
-                                        +
-                                        3
-                                        // '13' 规则3，字符串拼接
-                                    
-                                
-```
-
-</div>
-
-> 整体来看，如果数据中有字符串，JavaScript
-> 类型转换还是更倾向于转换成字符串，因为第三条规则中可以看到，在字符串和数字相加的过程中最后返回的还是字符串，这里需要关注一下
-
-**null 和 undefined 的区别？**
-
-- 首先 `Undefined` 和 `Null`
-  都是基本数据类型，这两个基本数据类型分别都只有一个值，就是 `undefined`
-  和 `null` 。
-- `undefined` 代表的含义是未定义， `null`
-  代表的含义是空对象（其实不是真的对象，请看下面的注意！）。一般变量声明了但还没有定义的时候会返回
-  `undefined` ，`null`
-  主要用于赋值给一些可能会返回对象的变量，作为初始化。
-
-> 其实 null 不是对象，虽然 typeof null 会输出 object，但是这只是 JS
-> 存在的一个悠久 Bug。在 JS 的最初版本中使用的是 32
-> 位系统，为了性能考虑使用低位存储变量的类型信息，000
-> 开头代表是对象，然而 null 表示为全零，所以将它错误的判断为 object
-> 。虽然现在的内部类型判断代码已经改变了，但是对于这个 Bug
-> 却是一直流传下来。
-
-- undefined 在 js 中不是一个保留字，这意味着我们可以使用 `undefined`
-  来作为一个变量名，这样的做法是非常危险的，它会影响我们对 undefined
-  值的判断。但是我们可以通过一些方法获得安全的 `undefined` 值，比如说
-  `void 0` 。
-- 当我们对两种类型使用 typeof 进行判断的时候，Null 类型化会返回
-  “object”，这是一个历史遗留的问题。当我们使用双等号对两种类型的值进行比较时会返回
-  true，使用三个等号时会返回 false。
-
-### <a href="#_2-this" class="header-anchor">#</a> 2 This
-
-> 不同情况的调用，`this` 指向分别如何。顺带可以提一下 `es6`
-> 中箭头函数没有 `this` , `arguments` , `super`
-> 等，这些只依赖包含箭头函数最接近的函数
-
-> 我们先来看几个函数调用的场景
-
-<div class="language-js extra-class">
-
-``` language-js
-                                    
                                         function
                                         foo
                                         (
@@ -2100,8 +43,8 @@ JavaScript
                                         foo
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2119,7 +62,7 @@ JavaScript
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         a
                                         (
@@ -2154,8 +97,8 @@ JavaScript
                                         (
                                         )
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2173,7 +116,7 @@ JavaScript
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         {
@@ -2203,8 +146,8 @@ JavaScript
                                         (
                                         )
                                         // =>?
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2215,7 +158,7 @@ JavaScript
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // fn.bind().bind(a) 等于
                                         let
                                         fn2
@@ -2245,8 +188,8 @@ JavaScript
                                         fn2
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2257,7 +200,7 @@ JavaScript
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         {
@@ -2285,8 +228,8 @@ JavaScript
                                         (
                                         )
                                         // =>'poetries'
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2330,7 +273,7 @@ JavaScript
 func.apply(thisArg, [param1,param2,...])
 func.bind(thisArg, param1, param2, ...)
 
-                                
+
 ```
 
 </div>
@@ -2346,7 +289,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         {
@@ -2357,10 +300,10 @@ func.bind(thisArg, param1, param2, ...)
                                         function
                                         getValue
                                         (
-                                        
+
                                             name,
                                             age
-                                        
+
                                         )
                                         {
                                         console.
@@ -2398,8 +341,8 @@ func.bind(thisArg, param1, param2, ...)
                                         '24'
                                         ]
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2420,7 +363,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         getType
                                         (
@@ -2452,18 +395,18 @@ func.bind(thisArg, param1, param2, ...)
                                         .
                                         replace
                                         (
-                                        
+
                                             /
                                             ^$
                                             /
-                                        
+
                                         ,
                                         '$1'
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2476,7 +419,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         arrayLike =
                                         {
@@ -2518,8 +461,8 @@ func.bind(thisArg, param1, param2, ...)
                                         arrayLike)
                                         ;
                                         // {0: "java ", 1: "script ", 2: "jack ", 3: "lily ", length: 4}
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2536,7 +479,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         arr =
                                         [
@@ -2583,8 +526,8 @@ func.bind(thisArg, param1, param2, ...)
                                         min)
                                         ;
                                         // 6
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2600,7 +543,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         Function
                                         .
                                         prototype.
@@ -2677,8 +620,8 @@ func.bind(thisArg, param1, param2, ...)
                                         )
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2688,7 +631,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         Function
                                         .
                                         prototype.
@@ -2734,8 +677,8 @@ func.bind(thisArg, param1, param2, ...)
   return
                                         result
 }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2745,7 +688,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         Function
                                         .
                                         prototype.
@@ -2753,12 +696,12 @@ func.bind(thisArg, param1, param2, ...)
                                         =
                                         function
                                         (
-                                        
+
                                             context =
                                             window,
                                             ...
                                             args
-                                        
+
                                         )
                                         {
                                         // this-->func  context-->obj  args-->传递过来的参数
@@ -2792,8 +735,8 @@ func.bind(thisArg, param1, param2, ...)
                                         return
                                         result;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2801,15 +744,15 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 使用
                                         function
                                         f
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         console.
@@ -2842,8 +785,8 @@ func.bind(thisArg, param1, param2, ...)
                                         ]
                                         )
                                         //arguments[1]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2856,7 +799,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         b
                                         (
                                         )
@@ -2880,8 +823,8 @@ func.bind(thisArg, param1, param2, ...)
                                         'call b'
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2896,7 +839,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         b
                                         (
                                         )
@@ -2926,8 +869,8 @@ func.bind(thisArg, param1, param2, ...)
                                         var
                                         b =
                                         'Hello world'
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2955,7 +898,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         10
@@ -2972,8 +915,8 @@ func.bind(thisArg, param1, param2, ...)
                                         foo
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -2983,14 +926,14 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         stack =
                                         [
                                         globalContext,
                                         fooContext
 ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3000,7 +943,7 @@ func.bind(thisArg, param1, param2, ...)
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         globalContext.
                                         VO
                                         ===
@@ -3019,8 +962,8 @@ globalContext.
                                         Function>
                                         ,
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3030,7 +973,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         fooContext.
                                         VO
                                         ===
@@ -3056,8 +999,8 @@ globalContext.
                                         // 该对象是一个伪数组，有 `length` 属性且可以通过下标访问元素
                                         // 该对象中的 `callee` 属性代表函数本身
                                         // `caller` 属性代表函数的调用者
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3068,7 +1011,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         fooContext.
                                         [
                                         [
@@ -3098,8 +1041,8 @@ globalContext.
                                         globalContext.
                                         VO
                                         ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3109,7 +1052,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         b
                                         (
                                         )
@@ -3133,8 +1076,8 @@ globalContext.
                                         'call b'
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3150,7 +1093,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         b
                                         (
                                         )
@@ -3180,8 +1123,8 @@ globalContext.
                                         var
                                         b =
                                         'Hello world'
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3195,7 +1138,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         foo =
                                         1
@@ -3216,8 +1159,8 @@ globalContext.
                                         )
                                         )
                                         // ->ƒ foo() { foo = 10 ; console.log(foo) }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3230,7 +1173,7 @@ globalContext.
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         specialObject =
                                         {
                                         }
@@ -3259,8 +1202,8 @@ globalContext.
                                         ]
                                         ;
                                         // remove specialObject from the front of scope chain
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3332,7 +1275,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         globalName =
                                         'global'
@@ -3365,7 +1308,7 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         name)
                                         ;
-                                        // 
+                                        //
                                         console.
                                         log
                                         (
@@ -3391,8 +1334,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         vName)
                                         ;
                                         // setName
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3409,7 +1352,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         getName
                                         (
@@ -3435,8 +1378,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         name)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3455,7 +1398,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         console.
                                         log
                                         (
@@ -3481,8 +1424,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         a)
                                         //a is not defined
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3503,7 +1446,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         fun1
                                         (
@@ -3542,8 +1485,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         ;
                                         // 1
                                         // 结合闭包的概念，我们把这段代码放到控制台执行一下，就可以发现最后输出的结果是 1（即 a 变量的值）。那么可以很清楚地发现，a 变量作为一个 fun1 函数的内部变量，正常情况下作为函数内的局部变量，是无法被外部访问到的。但是通过闭包，我们最后还是可以拿到 a 变量的值
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3558,7 +1501,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         1
@@ -3603,8 +1546,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         fn2
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3626,7 +1569,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         1
@@ -3646,8 +1589,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         b)
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3678,7 +1621,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         1
@@ -3708,8 +1651,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         //3
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3726,7 +1669,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         fun1
                                         (
@@ -3760,8 +1703,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3775,7 +1718,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         fun3;
                                         function
@@ -3807,8 +1750,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3830,7 +1773,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 定时器
                                         setTimeout
                                         (
@@ -3870,8 +1813,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3881,7 +1824,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         1
@@ -3928,8 +1871,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         // 输出2，而不是1
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3940,7 +1883,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         2
@@ -3962,8 +1905,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -3980,7 +1923,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         var
@@ -4008,8 +1951,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         0
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4037,7 +1980,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         var
@@ -4076,8 +2019,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         i)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4091,7 +2034,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         let
@@ -4120,8 +2063,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         0
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4134,7 +2077,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         var
@@ -4164,8 +2107,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         ,
                                         i)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4182,7 +2125,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         var
@@ -4208,8 +2151,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         }
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4231,7 +2174,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -4256,8 +2199,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         p.
                                         name)
                                         // Jack
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4281,7 +2224,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -4315,8 +2258,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         p.
                                         name)
                                         // 'name' of undefined
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4331,7 +2274,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -4373,8 +2316,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         p.
                                         age)
                                         // 18
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4389,7 +2332,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -4422,8 +2365,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         p.
                                         name)
                                         // Jack
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4438,15 +2381,15 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         create
                                         (
-                                        
+
                                             fn,
                                             ...
                                             args
-                                        
+
                                         )
                                         {
                                         if
@@ -4494,8 +2437,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         obj;
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4511,7 +2454,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -4542,8 +2485,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         (
                                         person)
                                         // {1: 1}
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4553,7 +2496,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         //使用create代替new
                                         function
                                         Person
@@ -4582,8 +2525,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         ,
                                         2
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4633,7 +2576,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 实例
                                         const
                                         instance =
@@ -4641,8 +2584,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         Object
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4653,7 +2596,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 原型
                                         const
                                         prototype =
@@ -4661,8 +2604,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         .
                                         prototype
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4676,9 +2619,9 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 这条线其实是是基于原型进行获取的，可以理解成一条基于原型的映射线
-                                        // 例如: 
+                                        // 例如:
                                         // const o = new Object()
                                         // o.constructor === Object   -->true
                                         // o.__proto__ = null;
@@ -4688,8 +2631,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         constructor ===
                                         构造函数
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4736,7 +2679,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Person
                                         {
@@ -4744,8 +2687,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         Person instanceof
                                         Function
                                         // true
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4757,7 +2700,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent
                                         (
@@ -4821,8 +2764,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         child instanceof
                                         Parent
                                         // true
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4838,7 +2781,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent
                                         (
@@ -4925,8 +2868,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         child instanceof
                                         Parent
                                         // true
-                                    
-                                
+
+
 ```
 
 </div>
@@ -4941,7 +2884,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Parent
                                         {
@@ -5001,8 +2944,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         child instanceof
                                         Parent
                                         // true
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5020,7 +2963,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Super
                                         (
@@ -5085,8 +3028,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         getNumber
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5098,7 +3041,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent1
                                         (
@@ -5134,8 +3077,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         Child1
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5147,7 +3090,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent2
                                         (
@@ -5197,8 +3140,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5208,7 +3151,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         s1 =
                                         new
@@ -5238,8 +3181,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         s2.
                                         play)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5255,7 +3198,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent3
                                         (
@@ -5333,8 +3276,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         s4.
                                         play)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5350,7 +3293,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent4
                                         (
@@ -5397,8 +3340,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         Parent4
                                         .
                                         prototype;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5408,7 +3351,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         s3 =
                                         new
@@ -5427,8 +3370,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         log
                                         (
                                         s3)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5440,7 +3383,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent5
                                         (
@@ -5496,8 +3439,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         prototype.
                                         constructor =
                                         Child5;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5513,14 +3456,14 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         _possibleConstructorReturn
                                         (
-                                        
+
                                             self,
                                             call
-                                        
+
                                         )
                                         {
                                         // ...
@@ -5542,10 +3485,10 @@ JS 到底是如何访问需要的变量或者函数的。
                                         function
                                         _inherits
                                         (
-                                        
+
                                             subClass,
                                             superClass
-                                        
+
                                         )
                                         {
                                         // ...
@@ -5665,8 +3608,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         Parent)
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5702,7 +3645,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         Person =
                                         {
@@ -5748,10 +3691,10 @@ JS 到底是如何访问需要的变量或者函数的。
                                         function
                                         extend
                                         (
-                                        
+
                                             p,
                                             c
-                                        
+
                                         )
                                         {
                                         var
@@ -5796,8 +3739,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         address.
                                         home;
                                         // house
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5809,14 +3752,14 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         extendDeeply
                                         (
-                                        
+
                                             p,
                                             c
-                                        
+
                                         )
                                         {
                                         var
@@ -5877,8 +3820,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         }
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5888,7 +3831,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         extendDeeply
                                         (
                                         Person,
@@ -5903,8 +3846,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         address.
                                         home;
                                         // home
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5914,7 +3857,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Parent
                                         (
@@ -5953,8 +3896,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         "js "
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5964,7 +3907,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         p =
                                         {
@@ -5983,8 +3926,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         obj.
                                         name;
                                         // poetry
-                                    
-                                
+
+
 ```
 
 </div>
@@ -5995,7 +3938,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         //模拟Object.create()方法
                                         function
                                         myCreate
@@ -6040,8 +3983,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         obj.
                                         name;
                                         // poetry
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6051,7 +3994,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         if
                                         (
                                         !
@@ -6085,8 +4028,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         }
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6098,14 +4041,14 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
-                                        
+
                                             name,
                                             age
-                                        
+
                                         )
                                         {
                                         }
@@ -6134,11 +4077,11 @@ JS 到底是如何访问需要的变量或者函数的。
                                         function
                                         Programmer
                                         (
-                                        
+
                                             name,
                                             age,
                                             title
-                                        
+
                                         )
                                         {
                                         }
@@ -6159,8 +4102,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         constructor =
                                         Programmer;
                                         // 修改constructor的指向
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6170,14 +4113,14 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
-                                        
+
                                             name,
                                             age
-                                        
+
                                         )
                                         {
                                         this
@@ -6214,11 +4157,11 @@ JS 到底是如何访问需要的变量或者函数的。
                                         function
                                         Programmer
                                         (
-                                        
+
                                             name,
                                             age,
                                             title
-                                        
+
                                         )
                                         {
                                         Person
@@ -6283,8 +4226,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         ;
                                         // 调用父类上的方法
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6297,7 +4240,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         app =
                                         {
@@ -6338,8 +4281,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         // hi robot
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6355,14 +4298,14 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Girl
                                         (
-                                        
+
                                             name,
                                             age
-                                        
+
                                         )
                                         {
                                         var
@@ -6480,8 +4423,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         //undefined
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6493,7 +4436,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -6531,8 +4474,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         // static
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6542,7 +4485,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Person
                                         (
@@ -6620,8 +4563,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         // say hello 123
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6631,7 +4574,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         moduleA;
                                         moduleA
@@ -6665,8 +4608,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         // 立即执行匿名函数
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6678,7 +4621,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Cat
                                         (
@@ -6804,8 +4747,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         .
                                         eat)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6817,7 +4760,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         DetectorBase
                                         (
@@ -6931,8 +4874,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         ;
                                         //Uncaught Error: Error
-                                    
-                                
+
+
 ```
 
 </div>
@@ -6970,56 +4913,56 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             id
-                                            
+
                                                 =
                                                 "
                                                 div1"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             id
-                                            
+
                                                 =
                                                 "
                                                 div2"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 let
                                                 div1 =
                                                 document.
@@ -7061,17 +5004,17 @@ JS 到底是如何访问需要的变量或者函数的。
                                                 )
                                                 ;
                                                 }
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -7122,7 +5065,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         node.
                                         addEventListener
                                         (
@@ -7166,8 +5109,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         ,
                                         false
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7191,81 +5134,81 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 ul
-                                            
+
                                             id
-                                            
+
                                                 =
                                                 "
                                                 ul"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 li
-                                            
+
                                             >
-                                        
+
                                         1
-                                        
-                                            
+
+
                                                 </
                                                 li
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 li
-                                            
+
                                             >
-                                        
+
                                         2
-                                        
-                                            
+
+
                                                 </
                                                 li
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 li
-                                            
+
                                             >
-                                        
+
                                         3
-                                        
-                                            
+
+
                                                 </
                                                 li
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 ul
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 window.
                                                 onload
                                                 =
@@ -7319,17 +5262,17 @@ JS 到底是如何访问需要的变量或者函数的。
                                                 }
                                                 }
                                                 }
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -7354,7 +5297,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // file a.js
                                         export
                                         function
@@ -7388,8 +5331,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         XXX
                                         from
                                         './b.js'
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7402,7 +5345,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // a.js
                                         module.
                                         exports =
@@ -7424,8 +5367,8 @@ JS 到底是如何访问需要的变量或者函数的。
                                         )
                                         module.
                                         a // ->log 1
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7436,7 +5379,7 @@ JS 到底是如何访问需要的变量或者函数的。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         module =
                                         require
@@ -7489,8 +5432,8 @@ var
                                         exports
 }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7525,17 +5468,17 @@ var
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // CMD
                                         define
                                         (
                                         function
                                         (
-                                        
+
                                             require,
                                             exports,
                                             module
-                                        
+
                                         )
                                         {
                                         var
@@ -7579,10 +5522,10 @@ var
                                         ,
                                         function
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         // 依赖必须一开始就写好
@@ -7600,8 +5543,8 @@ var
                                         // ...
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7635,7 +5578,7 @@ Iterator语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         obj =
                                         {
@@ -7649,8 +5592,8 @@ Iterator语法：
                                         {
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7676,7 +5619,7 @@ Iterator语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         arr =
                                         [
@@ -7734,8 +5677,8 @@ Iterator语法：
                                         )
                                         )
                                         // { value: undefined, done: true }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7755,7 +5698,7 @@ Iterator语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         obj =
                                         {
@@ -7844,8 +5787,8 @@ Iterator语法：
                                         (
                                         key)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -7912,7 +5855,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 在一个页面中需要加载获取轮播列表、获取店铺列表、获取分类列表这三个操作，页面需要同时发出请求进行页面渲染，这样用 `Promise.all` 来实现，看起来更清晰、一目了然。
                                         //1.获取轮播数据列表
                                         function
@@ -7925,10 +5868,10 @@ Promise 内部状态流转的情况
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -7960,10 +5903,10 @@ Promise 内部状态流转的情况
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -7995,10 +5938,10 @@ Promise 内部状态流转的情况
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -8069,8 +6012,8 @@ Promise 内部状态流转的情况
                                         initLoad
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8086,7 +6029,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         resolved =
                                         Promise.
@@ -8135,8 +6078,8 @@ Promise 内部状态流转的情况
                                         //    { status: 'fulfilled', value: 2 },
                                         //    { status: 'rejected', reason: -1 }
                                         // ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8156,7 +6099,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         resolved =
                                         Promise.
@@ -8202,8 +6145,8 @@ Promise 内部状态流转的情况
                                         ;
                                         // 返回结果：
                                         // 2
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8226,7 +6169,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         //请求某个图片资源
                                         function
                                         requestImg
@@ -8240,10 +6183,10 @@ Promise 内部状态流转的情况
                                         (
                                         function
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         {
                                         var
@@ -8288,10 +6231,10 @@ Promise 内部状态流转的情况
                                         (
                                         function
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         {
                                         setTimeout
@@ -8361,8 +6304,8 @@ Promise 内部状态流转的情况
                                         )
                                         ;
                                         // 从上面的代码中可以看出，采用 Promise 的方式来判断图片是否加载成功，也是针对 Promise.race 方法的一个比较好的业务场景
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8372,7 +6315,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         myPromise
                                         (
@@ -8469,10 +6412,10 @@ Promise 内部状态流转的情况
                                         =
                                         function
                                         (
-                                        
+
                                             onFullfilled,
                                             onRejected
-                                        
+
                                         )
                                         {
                                         let
@@ -8508,8 +6451,8 @@ Promise 内部状态流转的情况
                                         :
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8532,7 +6475,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         *
                                         foo
@@ -8599,8 +6542,8 @@ Promise 内部状态流转的情况
                                         )
                                         )
                                         // =>{value: 42, done: true}
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8641,7 +6584,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 使用 * 表示这是一个 Generator 函数
                                         // 内部可以通过 yield 暂停代码
                                         // 通过调用 next 恢复执行
@@ -8700,8 +6643,8 @@ Promise 内部状态流转的情况
                                         )
                                         ;
                                         // >{ value: undefined, done: true }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8713,7 +6656,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // cb 也就是编译过的 test 函数
                                         function
                                         generator
@@ -8869,8 +6812,8 @@ Promise 内部状态流转的情况
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8895,7 +6838,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 基本用法
                                         async
                                         function
@@ -8924,10 +6867,10 @@ Promise 内部状态流转的情况
                                         function
                                         asyncConsole
                                         (
-                                        
+
                                             value,
                                             ms
-                                        
+
                                         )
                                         {
                                         await
@@ -8945,8 +6888,8 @@ Promise 内部状态流转的情况
                                         ,
                                         1000
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -8956,7 +6899,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         0
@@ -9005,8 +6948,8 @@ Promise 内部状态流转的情况
                                         ,
                                         a)
                                         // ->'1' 1
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9036,7 +6979,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 定义了一个promise，用来模拟异步请求，作用是传入参数++
                                         function
                                         getNum
@@ -9049,10 +6992,10 @@ Promise 内部状态流转的情况
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -9164,8 +7107,8 @@ Promise 内部状态流转的情况
                                         (
                                         func)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9198,7 +7141,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         console.
                                         log
                                         (
@@ -9252,10 +7195,10 @@ Promise 内部状态流转的情况
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -9291,8 +7234,8 @@ Promise 内部状态流转的情况
                                         8
                                         )
                                         // 输出 1 6 2 3 8 7 4 5
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9339,7 +7282,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         function
@@ -9361,10 +7304,10 @@ Promise 内部状态流转的情况
                                         (
                                         function
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         {
                                         console.
@@ -9412,8 +7355,8 @@ Promise 内部状态流转的情况
                                         (
                                         5
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9436,7 +7379,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         console.
                                         log
                                         (
@@ -9466,8 +7409,8 @@ Promise 内部状态流转的情况
                                         'script end'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9479,7 +7422,7 @@ Promise 内部状态流转的情况
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         console.
                                         log
                                         (
@@ -9559,8 +7502,8 @@ Promise 内部状态流转的情况
                                         )
                                         ;
                                         // script start =>Promise =>script end =>promise1 =>promise2 =>setTimeout
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9574,7 +7517,7 @@ Promise 内部状态流转的情况
 - `promise`
 - `Object.observe`
 - `MutationObserver`
-  - 
+  -
 
 **宏任务**
 
@@ -9651,7 +7594,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         fs =
                                         require
@@ -9705,10 +7648,10 @@ Promise 内部状态流转的情况
                                         }
                                         ,
                                         (
-                                        
+
                                             err,
                                             data
-                                        
+
                                         )
                                         =>
                                         {
@@ -9754,8 +7697,8 @@ Promise 内部状态流转的情况
                                         '2'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9801,7 +7744,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         fs =
                                         require
@@ -9829,10 +7772,10 @@ Promise 内部状态流转的情况
                                         }
                                         ,
                                         (
-                                        
+
                                             err,
                                             data
-                                        
+
                                         )
                                         =>
                                         {
@@ -9913,8 +7856,8 @@ Promise 内部状态流转的情况
                                         'end'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9940,7 +7883,7 @@ Promise 内部状态流转的情况
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 输出结果
                                         start
 end
@@ -9949,8 +7892,8 @@ Promise callback
 setTimeout
 read file success
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -9960,7 +7903,7 @@ read file success
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         fs =
                                         require
@@ -9993,10 +7936,10 @@ read file success
                                         }
                                         ,
                                         (
-                                        
+
                                             err,
                                             data
-                                        
+
                                         )
                                         =>
                                         {
@@ -10032,10 +7975,10 @@ read file success
                                         }
                                         ,
                                         (
-                                        
+
                                             err,
                                             data
-                                        
+
                                         )
                                         =>
                                         {
@@ -10081,8 +8024,8 @@ read file success
                                         '2'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10105,7 +8048,7 @@ read file success
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 结果
                                         2
                                         poll callback
@@ -10113,8 +8056,8 @@ read file success
                                         read file success
 read file sync success
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10129,7 +8072,7 @@ read file sync success
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         (
@@ -10165,8 +8108,8 @@ read file sync success
                                         // 可能也会相反的输出，这取决于性能
                                         // 因为可能进入 event loop 用了不到 1 毫秒，这时候会执行 setImmediate
                                         // 否则会执行 setTimeout
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10177,7 +8120,7 @@ read file sync success
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         (
@@ -10248,8 +8191,8 @@ read file sync success
                                         // 浏览器中一定打印 timer1, promise1, timer2, promise2
                                         // node 中可能打印 timer1, timer2, promise1, promise2
                                         // 也可能打印 timer1, promise1, timer2, promise2
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10259,7 +8202,7 @@ read file sync success
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         (
@@ -10353,8 +8296,8 @@ read file sync success
                                         )
                                         ;
                                         // nextTick, timer1, promise1,setImmediate,setTimeout
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10513,7 +8456,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 ``` language-text
                                     object.assign 的语法为：Object.assign(target, ...sources)
 
-                                
+
 ```
 
 </div>
@@ -10523,7 +8466,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         target =
                                         {
@@ -10553,8 +8496,8 @@ object.assign 的示例代码如下：
                                         target)
                                         ;
                                         // { a: { b: 1 } };
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10568,7 +8511,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         obj1 =
                                         {
@@ -10634,8 +8577,8 @@ object.assign 的示例代码如下：
                                         ,
                                         obj2)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10653,7 +8596,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         /* 对象的拷贝 */
                                         let
                                         obj =
@@ -10710,8 +8653,8 @@ object.assign 的示例代码如下：
                                         arr]
                                         ;
                                         //跟arr.slice()是一样的效果
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10729,7 +8672,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         arr =
                                         [
@@ -10765,8 +8708,8 @@ object.assign 的示例代码如下：
                                         newArr)
                                         ;
                                         // [ 1, 100, 3 ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10782,7 +8725,7 @@ object.assign 的示例代码如下：
 ``` language-text
                                     slice 的语法为：arr.slice(begin, end);
 
-                                
+
 ```
 
 </div>
@@ -10790,7 +8733,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         arr =
                                         [
@@ -10825,8 +8768,8 @@ object.assign 的示例代码如下：
                                         arr)
                                         ;
                                         //[ 1, 2, { val: 1000 } ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10845,7 +8788,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         shallowClone
                                         =
@@ -10908,8 +8851,8 @@ object.assign 的示例代码如下：
                                         target;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10937,7 +8880,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         a =
                                         {
@@ -10976,8 +8919,8 @@ object.assign 的示例代码如下：
                                         jobs.
                                         first)
                                         // FE
-                                    
-                                
+
+
 ```
 
 </div>
@@ -10998,7 +8941,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         Obj
                                         (
@@ -11046,11 +8989,11 @@ object.assign 的示例代码如下：
                                         this
                                         .
                                         reg =
-                                        
+
                                             /
                                             123
                                             /
-                                        
+
                                         ;
                                         this
                                         .
@@ -11135,8 +9078,8 @@ object.assign 的示例代码如下：
                                         ,
                                         obj2)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11153,7 +9096,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         obj1 =
                                         {
@@ -11231,8 +9174,8 @@ object.assign 的示例代码如下：
                                         obj2)
                                         ;
                                         //  {a:{b:1}}
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11274,7 +9217,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         isComplexDataType
                                         =
@@ -11412,8 +9355,8 @@ object.assign 的示例代码如下：
                                         return
                                         cloneObj
 }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11421,7 +9364,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 下面是验证代码
                                         let
                                         obj =
@@ -11561,8 +9504,8 @@ object.assign 的示例代码如下：
                                         'cloneObj'
                                         ,
                                         cloneObj)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11581,15 +9524,15 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 函数防抖的实现
                                         function
                                         debounce
                                         (
-                                        
+
                                             fn,
                                             wait
-                                        
+
                                         )
                                         {
                                         var
@@ -11646,10 +9589,10 @@ object.assign 的示例代码如下：
                                         function
                                         throttle
                                         (
-                                        
+
                                             fn,
                                             delay
-                                        
+
                                         )
                                         {
                                         var
@@ -11701,8 +9644,8 @@ object.assign 的示例代码如下：
                                         }
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11714,7 +9657,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         proxy =
                                         new
@@ -11723,8 +9666,8 @@ object.assign 的示例代码如下：
                                         target,
                                         handler)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11736,7 +9679,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         target =
                                         {
@@ -11752,24 +9695,24 @@ object.assign 的示例代码如下：
                                         :
                                         function
                                         (
-                                        
+
                                             target,
                                             key
-                                        
+
                                         )
                                         {
                                         console.
                                         log
                                         (
-                                        
+
                                             `
-                                            
+
                                                 ${
                                                 key}
-                                            
+
                                             被读取
                                             `
-                                        
+
                                         )
                                         ;
                                         return
@@ -11782,29 +9725,29 @@ object.assign 的示例代码如下：
                                         :
                                         function
                                         (
-                                        
+
                                             target,
                                             key,
                                             value
-                                        
+
                                         )
                                         {
                                         console.
                                         log
                                         (
-                                        
+
                                             `
-                                            
+
                                                 ${
                                                 key}
-                                            
-                                            被设置为 
-                                            
+
+                                            被设置为
+
                                                 ${
                                                 value}
-                                            
+
                                             `
-                                        
+
                                         )
                                         ;
                                         target[
@@ -11836,8 +9779,8 @@ object.assign 的示例代码如下：
                                         name)
                                         ;
                                         // 控制台输出: others
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11850,7 +9793,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 由于拦截函数总是返回35，所以访问任何属性都得到35
                                         var
                                         proxy =
@@ -11865,10 +9808,10 @@ object.assign 的示例代码如下：
                                         :
                                         function
                                         (
-                                        
+
                                             target,
                                             property
-                                        
+
                                         )
                                         {
                                         return
@@ -11884,8 +9827,8 @@ object.assign 的示例代码如下：
                                         name // 35
                                         proxy.
                                         title // 35
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11895,7 +9838,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         proxy =
                                         new
@@ -11909,10 +9852,10 @@ object.assign 的示例代码如下：
                                         :
                                         function
                                         (
-                                        
+
                                             target,
                                             property
-                                        
+
                                         )
                                         {
                                         return
@@ -11931,8 +9874,8 @@ object.assign 的示例代码如下：
                                         ;
                                         obj.
                                         time // 35
-                                    
-                                
+
+
 ```
 
 </div>
@@ -11957,7 +9900,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 在读取代理对象的原型时触发该操作，比如在执行 Object.getPrototypeOf(proxy) 时。
                                         handler.
                                         getPrototypeOf
@@ -12024,8 +9967,8 @@ object.assign 的示例代码如下：
                                         construct
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12041,7 +9984,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // commonJS require
                                         const
                                         proxyPolyfill =
@@ -12072,8 +10015,8 @@ object.assign 的示例代码如下：
                                         ...
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12088,7 +10031,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         //1：创建Ajax对象
                                         var
                                         xhr =
@@ -12153,8 +10096,8 @@ object.assign 的示例代码如下：
                                         xhr.
                                         responsetXML)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12178,7 +10121,7 @@ object.assign 的示例代码如下：
   }
 })
 
-                                
+
 ```
 
 </div>
@@ -12188,7 +10131,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // promise 封装实现：
                                         function
                                         getJSON
@@ -12204,10 +10147,10 @@ object.assign 的示例代码如下：
                                         (
                                         function
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         {
                                         let
@@ -12322,8 +10265,8 @@ object.assign 的示例代码如下：
                                         return
                                         promise;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12341,7 +10284,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         Array.
                                         of
                                         (
@@ -12385,8 +10328,8 @@ object.assign 的示例代码如下：
                                         )
                                         ;
                                         // ["8 "]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12404,7 +10347,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         obj =
                                         {
@@ -12431,10 +10374,10 @@ object.assign 的示例代码如下：
                                         obj,
                                         function
                                         (
-                                        
+
                                             value,
                                             index
-                                        
+
                                         )
                                         {
                                         console.
@@ -12477,8 +10420,8 @@ object.assign 的示例代码如下：
                                         )
                                         ;
                                         //  控制台返回 (3) ["aaa ", "bbb ", "ccc "]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12489,7 +10432,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // String
                                         Array.
                                         from
@@ -12538,8 +10481,8 @@ object.assign 的示例代码如下：
                                         )
                                         ;
                                         // [[1, 'ab'], [2, 'de']]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12552,7 +10495,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -12595,8 +10538,8 @@ object.assign 的示例代码如下：
                                         ===
                                         '[object Array]'
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12608,7 +10551,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         if
                                         (
                                         !
@@ -12638,8 +10581,8 @@ object.assign 的示例代码如下：
                                         }
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12652,7 +10595,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // pop方法
                                         var
                                         array =
@@ -12950,8 +10893,8 @@ object.assign 的示例代码如下：
                                         array2)
                                         ;
                                         // true [10, 10, 10, 4, 5], 可见数组区间[0,3]的元素全部替换为10
-                                    
-                                
+
+
 ```
 
 </div>
@@ -12965,7 +10908,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // concat方法
                                         var
                                         array =
@@ -13216,8 +11159,8 @@ object.assign 的示例代码如下：
                                         )
                                         ;
                                         // true
-                                    
-                                
+
+
 ```
 
 </div>
@@ -13233,7 +11176,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // forEach方法
                                         var
                                         array =
@@ -13260,11 +11203,11 @@ object.assign 的示例代码如下：
                                         (
                                         function
                                         (
-                                        
+
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         array[
@@ -13328,11 +11271,11 @@ object.assign 的示例代码如下：
                                         o,
                                         function
                                         (
-                                        
+
                                             value,
                                             index,
                                             obj
-                                        
+
                                         )
                                         {
                                         return
@@ -13371,11 +11314,11 @@ object.assign 的示例代码如下：
                                         (
                                         function
                                         (
-                                        
+
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         return
@@ -13390,7 +11333,7 @@ object.assign 的示例代码如下：
                                         (
                                         isExist)
                                         ;
-                                        // true 
+                                        // true
                                         // map 方法
                                         var
                                         array =
@@ -13443,11 +11386,11 @@ object.assign 的示例代码如下：
                                         (
                                         function
                                         (
-                                        
+
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         return
@@ -13483,12 +11426,12 @@ object.assign 的示例代码如下：
                                         (
                                         function
                                         (
-                                        
+
                                             previousValue,
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         return
@@ -13510,10 +11453,10 @@ object.assign 的示例代码如下：
                                         reduce
                                         (
                                         (
-                                        
+
                                             p,
                                             v
-                                        
+
                                         )
                                         =>
                                         p *
@@ -13537,10 +11480,10 @@ object.assign 的示例代码如下：
                                         reduceRight
                                         (
                                         (
-                                        
+
                                             p,
                                             v
-                                        
+
                                         )
                                         =>
                                         p *
@@ -13631,11 +11574,11 @@ object.assign 的示例代码如下：
                                         function
                                         f
                                         (
-                                        
+
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         return
@@ -13649,11 +11592,11 @@ object.assign 的示例代码如下：
                                         function
                                         f2
                                         (
-                                        
+
                                             value,
                                             index,
                                             array
-                                        
+
                                         )
                                         {
                                         return
@@ -13768,8 +11711,8 @@ object.assign 的示例代码如下：
                                         value)
                                         ;
                                         //xyz
-                                    
-                                
+
+
 ```
 
 </div>
@@ -13804,15 +11747,15 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         foo
                                         (
-                                        
+
                                             name,
                                             age,
                                             sex
-                                        
+
                                         )
                                         {
                                         console.
@@ -13849,8 +11792,8 @@ object.assign 的示例代码如下：
                                         'male'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -13869,7 +11812,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         one
                                         (
@@ -13886,8 +11829,8 @@ object.assign 的示例代码如下：
                                         arguments)
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -13897,7 +11840,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         one
                                         (
@@ -13939,8 +11882,8 @@ object.assign 的示例代码如下：
                                         )
                                         ;
                                         // Throws an error  - arguments is not defined
-                                    
-                                
+
+
 ```
 
 </div>
@@ -13953,7 +11896,7 @@ object.assign 的示例代码如下：
 ``` language-text
                                     const four = (...args) =>args;
 
-                                
+
 ```
 
 </div>
@@ -13966,15 +11909,15 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         foo
                                         (
-                                        
+
                                             name,
                                             age,
                                             sex
-                                        
+
                                         )
                                         {
                                         console.
@@ -13993,8 +11936,8 @@ object.assign 的示例代码如下：
                                         'male'
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14016,7 +11959,7 @@ object.assign 的示例代码如下：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         elem1,
                                         elem2;
@@ -14064,8 +12007,8 @@ object.assign 的示例代码如下：
                                         elem1)
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14091,7 +12034,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         list =
                                         document.
@@ -14135,8 +12078,8 @@ NodeList 类数组。
                                         list)
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14156,7 +12099,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         add
                                         (
@@ -14215,8 +12158,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         // 10
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14229,7 +12172,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 这段代码说明了，你可以传递任意数量的参数到该函数，并使用每个参数作为列表中的项创建列表进行拼接。从这个例子中也可以看出，我们可以在日常编码中采用这样的代码抽象方式，把需要解决的这一类问题，都抽象成通用的方法，来提升代码的可复用性
                                         function
                                         myConcat
@@ -14297,8 +12240,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         // "one. two. three. four. five "
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14308,7 +12251,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 使用 apply 将 foo 的参数传递给 bar
                                         function
                                         foo
@@ -14327,11 +12270,11 @@ NodeList 类数组。
                                         function
                                         bar
                                         (
-                                        
+
                                             a,
                                             b,
                                             c
-                                        
+
                                         )
                                         {
                                         console.
@@ -14351,8 +12294,8 @@ NodeList 类数组。
                                         3
                                         )
                                         //1 2 3
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14364,14 +12307,14 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         sum
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         let
@@ -14393,10 +12336,10 @@ NodeList 类数组。
                                         reduce
                                         (
                                         (
-                                        
+
                                             sum,
                                             cur
-                                        
+
                                         )
                                         =>
                                         sum +
@@ -14415,10 +12358,10 @@ NodeList 类数组。
                                         function
                                         sum
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         let
@@ -14442,10 +12385,10 @@ NodeList 类数组。
                                         reduce
                                         (
                                         (
-                                        
+
                                             sum,
                                             cur
-                                        
+
                                         )
                                         =>
                                         sum +
@@ -14461,8 +12404,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         // 3
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14472,14 +12415,14 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         sum
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         let
@@ -14496,10 +12439,10 @@ NodeList 类数组。
                                         reduce
                                         (
                                         (
-                                        
+
                                             sum,
                                             cur
-                                        
+
                                         )
                                         =>
                                         sum +
@@ -14518,10 +12461,10 @@ NodeList 类数组。
                                         function
                                         sum
                                         (
-                                        
+
                                             a,
                                             b
-                                        
+
                                         )
                                         {
                                         let
@@ -14537,10 +12480,10 @@ NodeList 类数组。
                                         reduce
                                         (
                                         (
-                                        
+
                                             sum,
                                             cur
-                                        
+
                                         )
                                         =>
                                         sum +
@@ -14559,10 +12502,10 @@ NodeList 类数组。
                                         function
                                         sum
                                         (
-                                        
+
                                             ...
                                             args
-                                        
+
                                         )
                                         {
                                         console.
@@ -14572,10 +12515,10 @@ NodeList 类数组。
                                         reduce
                                         (
                                         (
-                                        
+
                                             sum,
                                             cur
-                                        
+
                                         )
                                         =>
                                         sum +
@@ -14591,8 +12534,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         // 3
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14615,7 +12558,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法1
                                         var
                                         a =
@@ -14699,8 +12642,8 @@ NodeList 类数组。
                                         a)
                                         ;
                                         //  [1, 2, 3, 4，5]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14718,7 +12661,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法2
                                         var
                                         arr =
@@ -14748,10 +12691,10 @@ NodeList 类数组。
                                         (
                                         function
                                         (
-                                        
+
                                             prev,
                                             next
-                                        
+
                                         )
                                         {
                                         return
@@ -14783,8 +12726,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         //  [1, 2, 3, 4，5]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14797,7 +12740,7 @@ NodeList 类数组。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法3
                                         var
                                         arr =
@@ -14857,8 +12800,8 @@ NodeList 类数组。
                                         )
                                         ;
                                         //  [1, 2, 3, 4，5]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14881,7 +12824,7 @@ reduce 方法，它可以在很多应用场景中实现，由于 reduce
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法4
                                         var
                                         arr =
@@ -14926,8 +12869,8 @@ reduce 方法，它可以在很多应用场景中实现，由于 reduce
                                         )
                                         ;
                                         //  [1, 2, 3, 4]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -14944,7 +12887,7 @@ flat 方法的语法：
 ``` language-text
                                     arr.flat([depth])
 
-                                
+
 ```
 
 </div>
@@ -14958,7 +12901,7 @@ flat 方法的语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法5
                                         var
                                         arr =
@@ -14999,8 +12942,8 @@ flat 方法的语法：
                                         )
                                         ;
                                         //  [1, 2, 3, 4，5]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15021,7 +12964,7 @@ flat 方法的语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 方法 6
                                         let
                                         arr =
@@ -15063,12 +13006,12 @@ flat 方法的语法：
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             (\[|\])
                                             /
                                             g
-                                        
+
                                         ,
                                         ''
                                         )
@@ -15096,8 +13039,8 @@ flat 方法的语法：
                                         )
                                         ;
                                         //  [1, 2, 3, 4，5]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15128,7 +13071,7 @@ flat 方法的语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15229,8 +13172,8 @@ flat 方法的语法：
                                         a)
                                         ;
                                         // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15244,7 +13187,7 @@ flat 方法的语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15395,8 +13338,8 @@ flat 方法的语法：
                                         a)
                                         ;
                                         //  [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15413,7 +13356,7 @@ flat 方法的语法：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15507,8 +13450,8 @@ flat 方法的语法：
                                         a)
                                         ;
                                         // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15525,7 +13468,7 @@ i 等于 1 开始，拿到当前的 current
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15629,8 +13572,8 @@ i 等于 1 开始，拿到当前的 current
                                         a)
                                         ;
                                         // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15647,7 +13590,7 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15692,10 +13635,10 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
                                         function
                                         swap
                                         (
-                                        
+
                                             i,
                                             j
-                                        
+
                                         )
                                         {
                                         var
@@ -15715,10 +13658,10 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
                                         function
                                         max_heapify
                                         (
-                                        
+
                                             start,
                                             end
-                                        
+
                                         )
                                         {
                                         var
@@ -15826,8 +13769,8 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
                                         a)
                                         ;
                                         // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -15847,7 +13790,7 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         a =
                                         [
@@ -15886,10 +13829,10 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
                                         merge
                                         =
                                         (
-                                        
+
                                             right,
                                             left
-                                        
+
                                         )
                                         =>
                                         {
@@ -16033,8 +13976,8 @@ O(n 平方) 的时间复杂度，所以用到它的时候，数据规模越小�
                                         a)
                                         ;
                                         // [1, 1, 3, 3, 6, 6, 23, 34, 76, 221, 222, 456]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -16059,28 +14002,28 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 "
                                                 Refresh"
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 "
                                                 5; URL=page2.html"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -16095,28 +14038,28 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 "
                                                 Refresh"
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 "
                                                 60"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -16126,424 +14069,424 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
+
+
                                             <!
                                             DOCTYPE
                                             html
                                             >
-                                        
+
                                         <!--H5标准声明，使用 HTML5 doctype，不区分大小写-->
-                                        
-                                            
+
+
                                                 <
                                                 head
-                                            
+
                                             lang
-                                            
+
                                                 =
                                                 ”en”
-                                            
+
                                             >
-                                        
+
                                         <!--标准的 lang 属性写法-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             charset
-                                            
+
                                                 =
                                                 ’utf-8′
-                                            
+
                                             >
-                                        
+
                                         <!--声明文档使用的字符编码-->
                                         <meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″/><!--优先使用 IE 最新版本和 Chrome-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”description”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”不超过150个字符”/
-                                            
+
                                             >
-                                        
+
                                         <!--页面描述-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”keywords”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ””/
-                                            
+
                                             >
-                                        
+
                                         <!-- 页面关键词-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”author”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”name,
-                                            
+
                                             email@gmail.com”
                                             />
-                                        
+
                                         <!--网页作者-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”robots”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”index,follow”/
-                                            
+
                                             >
-                                        
+
                                         <!--搜索引擎抓取-->
                                         <meta name=”viewport” content=”initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no”><!--为移动设备添加 viewport-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”apple-mobile-web-app-title”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”标题”
-                                            
+
                                             >
-                                        
+
                                         <!--iOS 设备 begin-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”apple-mobile-web-app-capable”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”yes”/
-                                            
+
                                             >
-                                        
+
                                         <!--添加到主屏后的标题（iOS 6 新增）
 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏-->
                                         <meta name=”apple-itunes-app” content=”app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL”><!--添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”apple-mobile-web-app-status-bar-style”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”black”/
-                                            
+
                                             >
-                                        
+
                                         <meta name=”format-detection” content=”telphone=no, email=no”/><!--设置苹果工具栏颜色-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”renderer”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”webkit”
-                                            
+
                                             >
-                                        
+
                                         <!-- 启用360浏览器的极速模式(webkit)-->
                                         <meta http-equiv=”X-UA-Compatible” content=”IE=edge”><!--避免IE使用兼容模式-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 ”Cache-Control”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”no-siteapp”
-                                            
+
                                             />
-                                        
+
                                         <!--不让百度转码-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”HandheldFriendly”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”true”
-                                            
+
                                             >
-                                        
+
                                         <!--针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”MobileOptimized”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”320″
-                                            
+
                                             >
-                                        
+
                                         <!--微软的老式浏览器-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”screen-orientation”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”portrait”
-                                            
+
                                             >
-                                        
+
                                         <!--uc强制竖屏-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”x5-orientation”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”portrait”
-                                            
+
                                             >
-                                        
+
                                         <!--QQ强制竖屏-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”full-screen”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”yes”
-                                            
+
                                             >
-                                        
+
                                         <!--UC强制全屏-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”x5-fullscreen”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”true”
-                                            
+
                                             >
-                                        
+
                                         <!--QQ强制全屏-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”browsermode”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”application”
-                                            
+
                                             >
-                                        
+
                                         <!--UC应用模式-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”x5-page-mode”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”app”
-                                            
+
                                             >
-                                        
+
                                         <!-- QQ应用模式-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             name
-                                            
+
                                                 =
                                                 ”msapplication-tap-highlight”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”no”
-                                            
+
                                             >
-                                        
+
                                         <!--windows phone 点击无高亮
 设置页面不缓存-->
-                                        
-                                            
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 ”pragma”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”no-cache”
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 ”cache-control”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”no-cache”
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 ”expires”
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 ”0″
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -16553,7 +14496,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         <
                                         meta name=
                                         "viewport "
@@ -16568,8 +14511,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         // minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数
                                         // maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数
                                         // user-scalable    是否允许手动缩放
-                                    
-                                
+
+
 ```
 
 </div>
@@ -16665,7 +14608,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 测试次数：一百万次
                                         const
                                         times =
@@ -16730,8 +14673,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         'dom'
                                         )
                                         // dom: 18.302001953125ms
-                                    
-                                
+
+
 ```
 
 </div>
@@ -16775,7 +14718,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         times =
                                         10000
@@ -16859,8 +14802,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         'batch'
                                         )
                                         // 0.846923828125ms
-                                    
-                                
+
+
 ```
 
 </div>
@@ -16875,7 +14818,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         times =
                                         10000
@@ -16946,8 +14889,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         (
                                         'innerHTML'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17030,7 +14973,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         /* 方案1 */
                                         .wrap
                                         {
@@ -17078,8 +15021,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         -50%)
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17093,7 +15036,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         /* 定高方案1 */
                                         .center
                                         {
@@ -17185,8 +15128,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         :
                                         middle;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17216,96 +15159,96 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 container"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 left"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 right"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
-                                            
+
+
                                                 style
-                                                
+
                                                     =
                                                     "
-                                                    
+
                                                         clear
                                                         :
                                                         both
-                                                    
+
                                                     "
-                                                
-                                            
+
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -17315,69 +15258,69 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 container"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 left"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 right"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -17385,7 +15328,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         .container
                                         {
                                         width
@@ -17402,8 +15345,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         1;
                                         /*IE6*/
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17414,69 +15357,69 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 container clearfix"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 left"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             class
-                                            
+
                                                 =
                                                 "
                                                 right"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -17484,7 +15427,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         .clearfix
                                         {
                                         zoom
@@ -17511,8 +15454,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         :
                                         hidden;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17526,7 +15469,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         /* 方案1 */
                                         .left
                                         {
@@ -17565,8 +15508,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         :
                                         left;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17578,7 +15521,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         .wrap
                                         {
                                         width
@@ -17675,8 +15618,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         :
                                         1;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17749,13 +15692,13 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         eg
                                         :
-                                        
+
                                             @keyframes
                                             mymove
-                                        
+
                                         {
                                         from
                                         {
@@ -17771,10 +15714,10 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         }
                                         }
                                         /* 等同于： */
-                                        
+
                                             @keyframes
                                             mymove
-                                        
+
                                         {
                                         0%
                                         {
@@ -17807,8 +15750,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         0px;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -17818,7 +15761,7 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
 <div class="language-css extra-class">
 
 ``` language-css
-                                    
+
                                         #loader
                                         {
                                         display
@@ -17834,10 +15777,10 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         :
                                         spin 2s linear infinite;
                                         }
-                                        
+
                                             @-webkit-keyframes
                                             spin
-                                        
+
                                         {
                                         0%
                                         {
@@ -17882,10 +15825,10 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         ;
                                         }
                                         }
-                                        
+
                                             @keyframes
                                             spin
-                                        
+
                                         {
                                         0%
                                         {
@@ -17930,8 +15873,8 @@ O(nlogn) 的时间复杂度。而代价是需要额外的内存空间。
                                         ;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18270,7 +16213,7 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
 
 ``` language-text
                                     <body ><div class="hello "><h4 >hello </h4 ><p ><strong >Name:</strong >BDing </p ><h5 >male </h5 ><ol ><li >coding </li ><li >loving </li ></ol ></div ></body >
-                                
+
 ```
 
 </div>
@@ -18303,7 +16246,7 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
         document.querySelector('.test').style.top = '100px'
     }, 1000)
 </script >
-                                
+
 ```
 
 </div>
@@ -18317,7 +16260,7 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         for
                                         (
                                         let
@@ -18343,8 +16286,8 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
                                         style.
                                         offsetTop)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18405,13 +16348,13 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
 <div class="language-bash extra-class">
 
 ``` language-bash
-                                    
+
                                         # 例如：
                                         Cache-Control: public, max-age=
                                         1000
                                         # 表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18423,7 +16366,7 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
 
 ``` language-text
                                     <meta http-equiv="expires "content="Wed, 20 Jun 2021 22:33:00 GMT "
-                                
+
 ```
 
 </div>
@@ -18445,7 +16388,7 @@ class="header-anchor">#</a> 3 Chrome 打开一个页面需要启动多少进程�
                                     Cache-Control: public
 Expires: Wed, Jan 10 2018 00:27:04 GMT
 
-                                
+
 ```
 
 </div>
@@ -18491,7 +16434,7 @@ Expires: Wed, Jan 10 2018 00:27:04 GMT
 <div class="language-bash extra-class">
 
 ``` language-bash
-                                    
+
                                         # 第一次请求返回的响应头
                                         Cache-Control:max-age=
                                         3600
@@ -18502,8 +16445,8 @@ Last-Modified: Wed, Jan 10
                                         2018
                                         00:27:04 GMT
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18511,14 +16454,14 @@ Last-Modified: Wed, Jan 10
 <div class="language-bash extra-class">
 
 ``` language-bash
-                                    
+
                                         # 第二次请求的请求头信息
                                         If-Modified-Since: Wed, Jan 10
                                         2018
                                         00:27:04 GMT
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18569,13 +16512,13 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-bash extra-class">
 
 ``` language-bash
-                                    
+
                                         # 第一次请求返回的响应头：
                                         Cache-Control: public, max-age=
                                         31536000
                                         ETag: "15f0fff99ed5aae4edffdd6496d7131f "
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18583,11 +16526,11 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-bash extra-class">
 
 ``` language-bash
-                                    
+
                                         # 第二次请求的请求头信息：
                                         If-None-Match: "15f0fff99ed5aae4edffdd6496d7131f "
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18751,7 +16694,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         '/api'
                                         :
                                         {
@@ -18775,8 +16718,8 @@ ETag 和请求头部字段 If-None-Match。
                                         }
                                         }
                                         ,
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18786,7 +16729,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         express =
                                         require
@@ -18829,8 +16772,8 @@ ETag 和请求头部字段 If-None-Match。
                                         3000
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18842,7 +16785,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         location /
                                         {
                                         if
@@ -18877,8 +16820,8 @@ ETag 和请求头部字段 If-None-Match。
                                         ;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -18906,25 +16849,25 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
+
                                         <!-- http://www.domain.com?name=<script >alert(1)</script >-->
-                                        
-                                            
+
+
                                                 <
                                                 div
-                                            
+
                                             >
-                                        
+
                                         {{name}}
-                                        
-                                            
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -18941,7 +16884,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         escape
                                         (
@@ -18952,12 +16895,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             &
                                             /
                                             g
-                                        
+
                                         ,
                                         '&amp;'
                                         )
@@ -18965,12 +16908,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             <
                                             /
                                             g
-                                        
+
                                         ,
                                         '&lt;'
                                         )
@@ -18978,12 +16921,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             >
                                             /
                                             g
-                                        
+
                                         ,
                                         '&gt;'
                                         )
@@ -18991,12 +16934,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             "
                                             /
                                             g
-                                        
+
                                         ,
                                         '&quto;'
                                         )
@@ -19004,12 +16947,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             '
                                             /
                                             g
-                                        
+
                                         ,
                                         '&#39;'
                                         )
@@ -19017,12 +16960,12 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             `
                                             /
                                             g
-                                        
+
                                         ,
                                         '&#96;'
                                         )
@@ -19030,20 +16973,20 @@ ETag 和请求头部字段 If-None-Match。
                                         str.
                                         replace
                                         (
-                                        
+
                                             /
                                             \/
                                             /
                                             g
-                                        
+
                                         ,
                                         '&#x2F;'
                                         )
                                         return
                                         str
 }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19053,14 +16996,14 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // ->&lt;script &gt;alert(1)&lt;&#x2F;script &gt;
                                         escape
                                         (
                                         '<script >alert(1)</script >'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19070,7 +17013,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         xss =
                                         require
@@ -19088,8 +17031,8 @@ ETag 和请求头部字段 If-None-Match。
                                         log
                                         (
                                         html)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19117,7 +17060,7 @@ ETag 和请求头部字段 If-None-Match。
 ``` language-text
                                     Content-Security-Policy: default-src ‘self’
 
-                                
+
 ```
 
 </div>
@@ -19129,7 +17072,7 @@ ETag 和请求头部字段 If-None-Match。
 ``` language-text
                                     Content-Security-Policy: img-src https://*
 
-                                
+
 ```
 
 </div>
@@ -19141,7 +17084,7 @@ ETag 和请求头部字段 If-None-Match。
 ``` language-text
                                     Content-Security-Policy: child-src 'none'
 
-                                
+
 ```
 
 </div>
@@ -19174,7 +17117,7 @@ ETag 和请求头部字段 If-None-Match。
 
 ``` language-text
                                     <img src="http://www.domain.com/xxx?comment='attack'"/>
-                                
+
 ```
 
 </div>
@@ -19182,27 +17125,27 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         res.
                                         setHeader
                                         (
                                         'Set-Cookie'
                                         ,
-                                        
+
                                             `
                                             username=poetry2;sameSite = strict;path=/;httpOnly;expires=
-                                            
+
                                                 ${
                                                 getCookirExpires
                                                 (
                                                 )
                                                 }
-                                            
+
                                             `
-                                        
+
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19212,57 +17155,57 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
+
+
                                             <!
                                             DOCTYPE
                                             html
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 html
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 body
-                                            
+
                                             >
-                                        
+
                                         <!-- 利用img自动发送请求 -->
-                                        
-                                            
+
+
                                                 <
                                                 img
-                                            
+
                                             src
-                                            
+
                                                 =
                                                 "
                                                 http://localhost:8000/api/user/login"
-                                            
+
                                             />
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 body
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 html
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -19272,7 +17215,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 在A网站下发cookie的时候，加上sameSite=strict，这样B网站在发送A网站请求，不会自动带上A网站的cookie，保证了安全
                                         // NAME=VALUE    赋予Cookie的名称及对应值
                                         // expires=DATE  Cookie 的有效期
@@ -19286,21 +17229,21 @@ ETag 和请求头部字段 If-None-Match。
                                         (
                                         'Set-Cookie'
                                         ,
-                                        
+
                                             `
                                             username=poetry;sameSite=strict;path=/;httpOnly;expires=
-                                            
+
                                                 ${
                                                 getCookirExpires
                                                 (
                                                 )
                                                 }
-                                            
+
                                             `
-                                        
+
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19333,7 +17276,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 加盐也就是给原密码添加字符串，增加原密码长度
                                         sha256
                                         (
@@ -19346,8 +17289,8 @@ ETag 和请求头部字段 If-None-Match。
                                         salt)
                                         )
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19390,7 +17333,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         // index.js
                                         if
                                         (
@@ -19528,8 +17471,8 @@ ETag 和请求头部字段 If-None-Match。
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19549,7 +17492,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         createDocumentFragment
                                         (
                                         )
@@ -19562,8 +17505,8 @@ ETag 和请求头部字段 If-None-Match。
                                         (
                                         )
                                         //创建一个文本节点
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19573,7 +17516,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         appendChild
                                         (
                                         node)
@@ -19590,8 +17533,8 @@ ETag 和请求头部字段 If-None-Match。
                                         new
                                         ,
                                         old)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19601,7 +17544,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         getElementById
                                         (
                                         )
@@ -19626,8 +17569,8 @@ ETag 和请求头部字段 If-None-Match。
                                         (
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19637,7 +17580,7 @@ ETag 和请求头部字段 If-None-Match。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         getAttribute
                                         (
                                         key)
@@ -19655,8 +17598,8 @@ ETag 和请求头部字段 If-None-Match。
                                         (
                                         key)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19884,7 +17827,7 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         (
@@ -19907,8 +17850,8 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
                                         2
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19931,7 +17874,7 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         (
@@ -19949,8 +17892,8 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
                                         100
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -19972,7 +17915,7 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         btn.
                                         onclick
                                         =
@@ -19998,8 +17941,8 @@ class="header-anchor">#</a> 14 定时器与requestAnimationFrame、requestIdleCa
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20039,7 +17982,7 @@ JavaScript中使用 `setInterval`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         function
@@ -20064,8 +18007,8 @@ JavaScript中使用 `setInterval`
                                         100
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20079,7 +18022,7 @@ JavaScript中使用 `setInterval`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         setTimeout
                                         (
                                         function
@@ -20104,8 +18047,8 @@ JavaScript中使用 `setInterval`
                                         100
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20153,7 +18096,7 @@ JavaScript中使用 `setInterval`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         requestID =
                                         window.
                                         requestAnimationFrame
@@ -20199,8 +18142,8 @@ JavaScript中使用 `setInterval`
                                         (
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20300,8 +18243,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        // 模拟 Vue 中的 data 选项 
+
+                                        // 模拟 Vue 中的 data 选项
                                         let
                                         data =
                                         {
@@ -20309,7 +18252,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         :
                                         'hello'
                                         }
-                                        // 模拟 Vue 的实例 
+                                        // 模拟 Vue 的实例
                                         let
                                         vm =
                                         {
@@ -20327,12 +18270,12 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         :
                                         true
                                         ,
-                                        // 可配置(可以使用 delete 删除，可以通过 defineProperty 重新定义) 
+                                        // 可配置(可以使用 delete 删除，可以通过 defineProperty 重新定义)
                                         configurable
                                         :
                                         true
                                         ,
-                                        // 当获取值的时候执行 
+                                        // 当获取值的时候执行
                                         get
                                         (
                                         )
@@ -20349,7 +18292,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         msg
   }
                                         ,
-                                        // 当设置值的时候执行 
+                                        // 当设置值的时候执行
                                         set
                                         (
                                         newValue)
@@ -20371,7 +18314,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         data.
                                         msg =
                                         newValue
-    // 数据更改，更新 DOM 的值 
+    // 数据更改，更新 DOM 的值
                                         document.
                                         querySelector
                                         (
@@ -20393,8 +18336,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         (
                                         vm.
                                         msg)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20418,8 +18361,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        // 模拟 Vue 中的 data 选项 
+
+                                        // 模拟 Vue 中的 data 选项
                                         let
                                         data =
                                         {
@@ -20507,8 +18450,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         (
                                         vm.
                                         msg)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20523,7 +18466,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         p =
                                         new
@@ -20539,11 +18482,11 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         onWatch
                                         =
                                         (
-                                        
+
                                             obj,
                                             setBind,
                                             getLogger
-                                        
+
                                         )
                                         =>
                                         {
@@ -20625,32 +18568,32 @@ let
 }
                                         ,
                                         (
-                                        
+
                                             target,
                                             property
-                                        
+
                                         )
                                         =>
                                         {
                                         console.
                                         log
                                         (
-                                        
+
                                             `
                                             Get '
-                                            
+
                                                 ${
                                                 property}
-                                            
-                                            ' = 
-                                            
+
+                                            ' =
+
                                                 ${
                                                 target[
                                                 property]
                                                 }
-                                            
+
                                             `
-                                        
+
                                         )
                                         ;
                                         }
@@ -20661,8 +18604,8 @@ let
                                         // bind `value` to `2`
                                         p.
                                         a // ->Get 'a' = 2
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20711,7 +18654,7 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         vm =
                                         new
@@ -20755,8 +18698,8 @@ let
                                         (
                                         'dataChange'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20766,7 +18709,7 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // eventBus.js
                                         // 事件中心
                                         let
@@ -20819,8 +18762,8 @@ let
                                         .
                                         addTodo)
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20830,7 +18773,7 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         EventEmitter
                                         {
@@ -20848,10 +18791,10 @@ let
                                         // 订阅通知
                                         $on
                                         (
-                                        
+
                                             eventType,
                                             fn
-                                        
+
                                         )
                                         {
                                         this
@@ -20945,14 +18888,14 @@ let
                                         )
                                         }
                                         )
-                                        // 触发事件 
+                                        // 触发事件
                                         bus.
                                         $emit
                                         (
                                         'click'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -20970,8 +18913,8 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        // 目标(发布者) 
+
+                                        // 目标(发布者)
                                         // Dependency
                                         class
                                         Dep
@@ -21062,8 +19005,8 @@ let
                                         notify
                                         (
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21217,7 +19160,7 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         new
                                         Vue
                                         (
@@ -21318,18 +19261,18 @@ let
                                         'beforeMounte'
                                         )
                                         // 初始化观察者
-                                        // render 渲染 vdom， 
+                                        // render 渲染 vdom，
                                         vdom =
                                         vm.
                                         render
                                         (
                                         )
-                                        // update: 根据 diff 出的 patchs 挂载成真实的 dom 
+                                        // update: 根据 diff 出的 patchs 挂载成真实的 dom
                                         vm.
                                         _update
                                         (
                                         vdom)
-                                        // 触发钩子  
+                                        // 触发钩子
                                         callHook
                                         (
                                         vm,
@@ -21410,8 +19353,8 @@ let
                                         'destoryed'
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21434,7 +19377,7 @@ let
 
 ``` language-text
                                     <router-view ></router-view >
-                                
+
 ```
 
 </div>
@@ -21451,7 +19394,7 @@ let
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 我们的插件：
                                         // 1.实现一个Router类并挂载期实例
                                         // 2.实现两个全局组件router-link和router-view
@@ -21710,8 +19653,8 @@ let
                                         default
                                         VueRouter
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21736,14 +19679,14 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         export
                                         default
                                         new
-                                        
+
                                             Vuex.
                                             Store
-                                        
+
                                         (
                                         {
                                         state
@@ -21756,8 +19699,8 @@ state保存应用状态
                                         ,
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21769,14 +19712,14 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         export
                                         default
                                         new
-                                        
+
                                             Vuex.
                                             Store
-                                        
+
                                         (
                                         {
                                         mutations
@@ -21793,8 +19736,8 @@ state保存应用状态
                                         }
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21806,14 +19749,14 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         export
                                         default
                                         new
-                                        
+
                                             Vuex.
                                             Store
-                                        
+
                                         (
                                         {
                                         getters
@@ -21829,8 +19772,8 @@ state保存应用状态
                                         }
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21842,14 +19785,14 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         export
                                         default
                                         new
-                                        
+
                                             Vuex.
                                             Store
-                                        
+
                                         (
                                         {
                                         actions
@@ -21857,11 +19800,11 @@ state保存应用状态
                                         {
                                         add
                                         (
-                                        
+
                                             {
                                             commit
       }
-                                        
+
                                         )
                                         {
                                         setTimeout
@@ -21875,8 +19818,8 @@ state保存应用状态
                                         }
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -21886,70 +19829,70 @@ state保存应用状态
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 p
-                                            
+
                                             @click
-                                            
+
                                                 =
                                                 "
                                                 $store.commit('
                                                 add'
                                                 )"
-                                            
+
                                             >
-                                        
+
                                         counter: {{$store.state.counter}}
-                                        
-                                            
+
+
                                                 </
                                                 p
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 p
-                                            
+
                                             @click
-                                            
+
                                                 =
                                                 "
                                                 $store.dispatch('
                                                 add'
                                                 )"
-                                            
+
                                             >
-                                        
+
                                         async counter: {{$store.state.counter}}
-                                        
-                                            
+
+
                                                 </
                                                 p
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 p
-                                            
+
                                             >
-                                        
+
                                         double:{{$store.getters.doubleCounter}}
-                                        
-                                            
+
+
                                                 </
                                                 p
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -21966,7 +19909,7 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 目标1：实现Store类，管理state（响应式的），commit方法和dispatch方法
                                         // 目标2：封装一个插件，使用更容易使用
                                         let
@@ -22063,10 +20006,10 @@ state保存应用状态
                                         // 实现commit方法，可以修改state
                                         commit
                                         (
-                                        
+
                                             type,
                                             payload
-                                        
+
                                         )
                                         {
                                         // 拿出mutations中的处理函数执行它
@@ -22098,10 +20041,10 @@ state保存应用状态
                                         }
                                         dispatch
                                         (
-                                        
+
                                             type,
                                             payload
-                                        
+
                                         )
                                         {
                                         const
@@ -22176,8 +20119,8 @@ state保存应用状态
                                         {
                                         Store,
                                         install }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -22266,60 +20209,60 @@ state保存应用状态
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             >
-                                        
+
                                         X: {{ x }}
-                                        
-                                            
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             >
-                                        
+
                                         Y: {{ y }}
-                                        
-                                            
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 import
                                                 {
                                                 defineComponent,
@@ -22431,17 +20374,17 @@ state保存应用状态
                                                 }
                                                 )
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -22457,99 +20400,99 @@ state保存应用状态
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
+
                                         /* App.vue */
 
-                                        
-                                            
+
+
                                                 <
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 header
-                                            
+
                                             >
-                                        
+
                                         ...
-                                        
-                                            
+
+
                                                 </
                                                 header
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 main
-                                            
+
                                             v-bind
-                                            
+
                                                 =
                                                 "
                                                 $attrs"
-                                            
+
                                             >
-                                        
+
                                         ...
-                                        
-                                            
+
+
                                                 </
                                                 main
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 footer
-                                            
+
                                             >
-                                        
+
                                         ...
-                                        
-                                            
+
+
                                                 </
                                                 footer
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 export
                                                 default
                                                 {
                                                 }
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -22559,7 +20502,7 @@ state保存应用状态
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // app.js
                                         import
                                         {
@@ -22629,8 +20572,8 @@ state保存应用状态
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -22646,69 +20589,69 @@ state保存应用状态
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
+
                                         /* App.vue */
 
-                                        
-                                            
+
+
                                                 <
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             >
-                                        
+
                                         123
-                                        
-                                            
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 Teleport
-                                            
+
                                             to
-                                            
+
                                                 =
                                                 "
                                                 #container"
-                                            
+
                                             >
-                                        
+
                                         Teleport
 
-                                        
-                                            
+
+
                                                 </
                                                 Teleport
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 import
                                                 {
                                                 defineComponent }
@@ -22728,59 +20671,59 @@ state保存应用状态
                                                 }
                                                 )
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
+
                                         /* index.html */
 
-                                        
-                                            
+
+
                                                 <
                                                 div
-                                            
+
                                             id
-                                            
+
                                                 =
                                                 "
                                                 app"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             id
-                                            
+
                                                 =
                                                 "
                                                 container"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -22795,91 +20738,91 @@ state保存应用状态
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
+
                                         // App.vue
 
-                                        
-                                            
+
+
                                                 <
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 Suspense
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 template
-                                            
+
                                             #default
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 AsyncComponent
-                                            
+
                                             />
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 template
-                                            
+
                                             #fallback
                                             >
-                                        
+
                                         Loading...
 
-                                        
-                                            
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 Suspense
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             lang
-                                            
+
                                                 =
                                                 "
                                                 ts"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 import
                                                 {
                                                 defineComponent }
@@ -22907,61 +20850,61 @@ state保存应用状态
                                                 }
                                                 )
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
+
                                         // AsyncComponent.vue
 
-                                        
-                                            
+
+
                                                 <
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 div
-                                            
+
                                             >
-                                        
+
                                         Async Component
-                                        
-                                            
+
+
                                                 </
                                                 div
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 template
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             lang
-                                            
+
                                                 =
                                                 "
                                                 ts"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 import
                                                 {
                                                 defineComponent }
@@ -23009,17 +20952,17 @@ state保存应用状态
                                                 }
                                                 )
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -23154,16 +21097,16 @@ class="header-anchor">#</a> 16 为什么访问data属性不需要带data
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         /** 将 某一个对象的属性 访问 映射到 对象的某一个属性成员上 */
                                         function
                                         proxy
                                         (
-                                        
+
                                             target,
                                             prop,
                                             key
-                                        
+
                                         )
                                         {
                                         Object.
@@ -23207,8 +21150,8 @@ class="header-anchor">#</a> 16 为什么访问data属性不需要带data
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23480,7 +21423,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         requestIdleCallback
                                         (
                                         (
@@ -23514,8 +21457,8 @@ Fiber
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23523,7 +21466,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 用法示例
                                         var
                                         tasksNum =
@@ -23551,20 +21494,20 @@ Fiber
                                         console.
                                         log
                                         (
-                                        
+
                                             `
                                             执行了
-                                            
+
                                                 ${
                                                 10000
                                                 -
                                                 tasksNum +
                                                 1
                                                 }
-                                            
+
                                             个任务
                                             `
-                                        
+
                                         )
                                         tasksNum--
                                         }
@@ -23580,8 +21523,8 @@ Fiber
                                         unImportWork)
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23760,7 +21703,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Fiber
                                         {
@@ -23790,8 +21733,8 @@ Fiber
                                         previous
     }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23819,7 +21762,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 类似于这样的方式
                                         requestIdleCallback
                                         (
@@ -23854,8 +21797,8 @@ Fiber
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23877,7 +21820,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         React.
                                         createElement
                                         (
@@ -23889,8 +21832,8 @@ Fiber
                                         ...
                                         children]
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -23902,7 +21845,7 @@ Fiber
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         //写法一：
                                         var
                                         child1 =
@@ -24010,8 +21953,8 @@ Fiber
                                         )
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -24126,14 +22069,14 @@ setState并不是单纯的异步或同步，这其实与调用时的环境相关
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Test
                                         extends
-                                        
+
                                             React.
                                             Component
-                                        
+
                                         {
                                         state  =
                                         {
@@ -24260,8 +22203,8 @@ setState并不是单纯的异步或同步，这其实与调用时的环境相关
                                         }
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -24288,7 +22231,7 @@ setTimeout 事件中，那情况就完全不同了。
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Test
                                         extends
@@ -24371,8 +22314,8 @@ setTimeout 事件中，那情况就完全不同了。
                                         ...
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -24389,7 +22332,7 @@ true 则执行异步操作，false 则直接同步更新
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Test
                                         extends
@@ -24467,8 +22410,8 @@ true 则执行异步操作，false 则直接同步更新
                                         ...
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -24484,7 +22427,7 @@ true 则执行异步操作，false 则直接同步更新
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Test
                                         extends
@@ -24566,8 +22509,8 @@ true 则执行异步操作，false 则直接同步更新
                                         ...
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -24671,7 +22614,7 @@ DOM，触发渲染。所以`回调时，state 已经合并计算完成了` ，�
     console.log(this.state.index);
 })
 
-                                
+
 ```
 
 </div>
@@ -24685,7 +22628,7 @@ DOM，触发渲染。所以`回调时，state 已经合并计算完成了` ，�
     console.log(this.state.index);
 }
 
-                                
+
 ```
 
 </div>
@@ -25041,7 +22984,7 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // react/packages/react-dom/src/__tests__/__snapshots__/ReactTestUtils-test.js.snap
                                         Array [
                                         "abort "
@@ -25213,8 +23156,8 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         "wheel "
                                         ,
                                         ]
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25249,16 +23192,16 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 script
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 const
                                                 ele =
                                                 React.
@@ -25282,17 +23225,17 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                                 )
                                                 )
                                                 ;
-                                            
-                                        
-                                        
-                                            
+
+
+
+
                                                 </
                                                 script
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -25306,14 +23249,14 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         App
                                         extends
-                                        
+
                                             React.
                                             Component
-                                        
+
                                         {
                                         constructor
                                         (
@@ -25464,8 +23407,8 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         )
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25478,7 +23421,7 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         render
                                         (
                                         )
@@ -25557,8 +23500,8 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         return
                                         ele;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25592,7 +23535,7 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         module.
                                         exports
                                         =
@@ -25710,8 +23653,8 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         ;
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25721,7 +23664,7 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         /**
  101. React的创建元素方法
  */
@@ -25729,11 +23672,11 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         function
                                         createElement
                                         (
-                                        
+
                                             type,
                                             config,
                                             children
-                                        
+
                                         )
                                         {
                                         // propName 变量用于储存后面需要用到的元素属性
@@ -25954,8 +23897,8 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25965,19 +23908,19 @@ DOM中真正变化的部分，并只针对该部分进行原生DOM操作，而�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         export
                                         function
                                         createElement
                                         (
-                                        
+
                                             type,
                                             config,
                                             children
-                                        
+
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -25995,7 +23938,7 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         React.
                                         createElement
                                         (
@@ -26038,8 +23981,8 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
                                         )
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26049,71 +23992,71 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 ul
-                                            
+
                                             className
-                                            
+
                                                 =
                                                 "
                                                 list"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 li
-                                            
+
                                             key
-                                            
+
                                                 =
                                                 "
                                                 1"
-                                            
+
                                             >
-                                        
+
                                         1
-                                        
-                                            
+
+
                                                 </
                                                 li
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 li
-                                            
+
                                             key
-                                            
+
                                                 =
                                                 "
                                                 2"
-                                            
+
                                             >
-                                        
+
                                         2
-                                        
-                                            
+
+
                                                 </
                                                 li
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 </
                                                 ul
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -26135,13 +24078,13 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         ReactElement
                                         =
                                         function
                                         (
-                                        
+
                                             type,
                                             key,
                                             ref,
@@ -26149,7 +24092,7 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
                                             source,
                                             owner,
                                             props
-                                        
+
                                         )
                                         {
                                         const
@@ -26179,7 +24122,7 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
                                         owner,
                                         }
                                         ;
-                                        // 
+                                        //
                                         if
                                         (
                                         __DEV__)
@@ -26190,8 +24133,8 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
                                         element;
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26205,7 +24148,7 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         AppJSX =
                                         (
@@ -26237,8 +24180,8 @@ createElement 有 3 个入参，这 3 个入参囊括了 React
                                         log
                                         (
                                         AppJSX)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26277,7 +24220,7 @@ let message = { text: expectedTextButGotJSON };
 // React 0.13 中有风险
 <p >{message.text}
 </p >
-                                
+
 ```
 
 </div>
@@ -26339,7 +24282,7 @@ let message = { text: expectedTextButGotJSON };
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         import
                                         React,
                                         {
@@ -26353,10 +24296,10 @@ let message = { text: expectedTextButGotJSON };
                                         class
                                         CallingLazyComponents
                                         extends
-                                        
+
                                             React.
                                             Component
-                                        
+
                                         {
                                         render
                                         (
@@ -26449,8 +24392,8 @@ let message = { text: expectedTextButGotJSON };
                                         )
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26503,7 +24446,7 @@ let message = { text: expectedTextButGotJSON };
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 引入 redux
                                         import
                                         {
@@ -26525,8 +24468,8 @@ let message = { text: expectedTextButGotJSON };
                                         )
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26546,15 +24489,15 @@ state：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         reducer
                                         =
                                         (
-                                        
+
                                             state,
                                             action
-                                        
+
                                         )
                                         =>
                                         {
@@ -26562,8 +24505,8 @@ state：
                                         return
                                         new_state
 }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26574,15 +24517,15 @@ state：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        // 更新规则全都写在 reducer 里 
+
+                                        // 更新规则全都写在 reducer 里
                                         const
                                         store =
                                         createStore
                                         (
                                         reducer)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26594,7 +24537,7 @@ state：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         action =
                                         {
@@ -26606,8 +24549,8 @@ state：
                                         :
                                         '<li >text </li >'
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26625,7 +24568,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         import
                                         {
                                         createStore }
@@ -26636,10 +24579,10 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         reducer
                                         =
                                         (
-                                        
+
                                             state,
                                             action
-                                        
+
                                         )
                                         =>
                                         {
@@ -26653,7 +24596,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         createStore
                                         (
                                         reducer)
-                                        // 创建一个 action，这个 action 用 “ADD_ITEM” 来标识 
+                                        // 创建一个 action，这个 action 用 “ADD_ITEM” 来标识
                                         const
                                         action =
                                         {
@@ -26670,8 +24613,8 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         dispatch
                                         (
                                         action)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26684,7 +24627,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         createStore
                                         =
@@ -26776,7 +24719,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         return
                                         function
                                         (
-                                        
+
                                             state=
                                             {
                                             }
@@ -26784,7 +24727,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                             action=
                                             {
                                             }
-                                        
+
                                         )
                                         {
                                         let
@@ -26818,8 +24761,8 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         createStore,
                                         combineReducers}
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26864,7 +24807,7 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         applyMiddleware
                                         (
@@ -26908,8 +24851,8 @@ action”这个动作，`这个动作是由 store.dispatch 完成的`
                                         dispatch }
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26939,7 +24882,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         store.
                                         dispatch
                                         (
@@ -26954,8 +24897,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         >
                                         final state
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -26963,7 +24906,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         // reducer方法, 传入的参数有两个
                                         // state: 当前的state
                                         // action: 当前触发的行为, {type: 'xx'}
@@ -26973,10 +24916,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         =
                                         function
                                         (
-                                        
+
                                             state,
                                             action
-                                        
+
                                         )
                                         {
                                         switch
@@ -27083,8 +25026,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         ;
                                         // state is: 读书,写作
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27100,7 +25043,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         // 创建store, 传入两个参数
                                         // 参数1: reducer 用来修改state
                                         // 参数2(可选): [], 默认的state值,如果不传, 则为undefined
@@ -27144,8 +25087,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         }
                                         )
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27158,7 +25101,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         {
                                         type
                                         :
@@ -27190,8 +25133,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         :
                                         '晚上'
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27208,7 +25151,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         // reducer方法, 传入的参数有两个
                                         // state: 当前的state
                                         // action: 当前触发的行为, {type: 'xx'}
@@ -27218,10 +25161,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         =
                                         function
                                         (
-                                        
+
                                             state,
                                             action
-                                        
+
                                         )
                                         {
                                         switch
@@ -27246,8 +25189,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         }
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27257,7 +25200,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         actionCreator
                                         (
                                         args
@@ -27265,8 +25208,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         =>
                                         action
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27274,7 +25217,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         addTodo
                                         =
@@ -27302,8 +25245,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         ;
                                         // 返回：{type: 'add_todo', text: '睡觉'}
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27320,7 +25263,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         const
                                         action =
                                         {
@@ -27335,8 +25278,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         dispatch
                                         (
                                         action)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27346,7 +25289,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         function
                                         actionCreator
                                         (
@@ -27371,8 +25314,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         'poetries'
                                         )
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27382,14 +25325,14 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         function
                                         a
                                         (
-                                        
+
                                             name,
                                             id
-                                        
+
                                         )
                                         {
                                         reurn {
@@ -27404,10 +25347,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         function
                                         b
                                         (
-                                        
+
                                             name,
                                             id
-                                        
+
                                         )
                                         {
                                         reurn {
@@ -27445,8 +25388,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         ,
                                         'id002'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27470,7 +25413,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         {
                                         type
                                         :
@@ -27484,8 +25427,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         'Do something.'
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27495,7 +25438,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         {
                                         type
                                         :
@@ -27512,8 +25455,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         :
                                         true
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27525,7 +25468,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         // every有一个匹配不到返回false
                                         let
                                         isFSA =
@@ -27560,8 +25503,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         1
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27580,7 +25523,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         function
                                         thunkAction
                                         (
@@ -27615,8 +25558,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27628,7 +25571,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         function
                                         promiseAction
                                         (
@@ -27640,10 +25583,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         Promise
                                         (
                                         (
-                                        
+
                                             resolve,
                                             reject
-                                        
+
                                         )
                                         =>
                                         {
@@ -27707,8 +25650,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         }
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27746,7 +25689,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         function
                                         createThunkMiddleware
                                         (
@@ -27755,11 +25698,11 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         {
                                         return
                                         (
-                                        
+
                                             {
                                             dispatch,
                                             getState }
-                                        
+
                                         )
                                         =>
                                         next
@@ -27802,8 +25745,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         export
                                         default
                                         thunk;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27814,7 +25757,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         export
                                         let
                                         addTodoWithThunk
@@ -27825,10 +25768,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         =>
                                         async
                                         (
-                                        
+
                                             dispatch,
                                             getState
-                                        
+
                                         )
                                         =>
                                         {
@@ -27862,8 +25805,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         ;
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -27873,7 +25816,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         //action types
                                         const
                                         GET_DATA
@@ -27897,10 +25840,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         =>
                                         (
-                                        
+
                                             dispatch,
                                             getState
-                                        
+
                                         )
                                         =>
                                         {
@@ -27968,10 +25911,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         reducer
                                         =
                                         (
-                                        
+
                                             oldState,
                                             action
-                                        
+
                                         )
                                         =>
                                         {
@@ -27997,8 +25940,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         errorState;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28025,7 +25968,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         //action types
                                         const
                                         GET_DATA
@@ -28060,10 +26003,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         function
                                         reducer
                                         (
-                                        
+
                                             oldState,
                                             action
-                                        
+
                                         )
                                         {
                                         switch
@@ -28091,8 +26034,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
             }
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28123,7 +26066,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         //action types
                                         const
                                         GET_DATA
@@ -28179,10 +26122,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         =
                                         function
                                         (
-                                        
+
                                             oldState,
                                             action
-                                        
+
                                         )
                                         {
                                         switch
@@ -28208,8 +26151,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         errorState;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28224,7 +26167,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         import
                                         fetch from
                                         'isomorphic-fetch'
@@ -28237,10 +26180,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         function
                                         receivePosts
                                         (
-                                        
+
                                             reddit,
                                             json
-                                        
+
                                         )
                                         {
                                         return
@@ -28280,16 +26223,16 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         return
                                         fetch
                                         (
-                                        
+
                                             `
                                             http://www.subreddit.com/r/
-                                            
+
                                                 ${
                                                 subreddit}
-                                            
+
                                             .json
                                             `
-                                        
+
                                         )
                                         .
                                         then
@@ -28326,10 +26269,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         {
                                         return
                                         (
-                                        
+
                                             dispatch,
                                             getState
-                                        
+
                                         )
                                         =>
                                         {
@@ -28342,8 +26285,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28358,7 +26301,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         import
                                         {
                                         combineReducers }
@@ -28373,7 +26316,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         function
                                         posts
                                         (
-                                        
+
                                             state =
                                             {
                                             items
@@ -28383,7 +26326,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                             }
                                             ,
                                             action
-                                        
+
                                         )
                                         {
                                         switch
@@ -28430,8 +26373,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         default
                                         rootReducer
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28445,7 +26388,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         import
                                         {
                                         createStore,
@@ -28518,8 +26461,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         return
                                         store
 }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28535,7 +26478,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         //初始化渲染后触发
                                         componentDidMount
                                         (
@@ -28557,8 +26500,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         )
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28571,7 +26514,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-javascript extra-class">
 
 ``` language-javascript
-                                    
+
                                         import
                                         'babel-core/polyfill'
                                         import
@@ -28618,8 +26561,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         'root'
                                         )
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28687,7 +26630,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         connect
                                         (
                                         [
@@ -28719,8 +26662,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         count
   }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28737,7 +26680,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         mapDispatchToProps
                                         (
                                         dispatch,
@@ -28745,8 +26688,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         :
                                         dispatchProps
 
-                                    
-                                
+
+
 ```
 
 </div>
@@ -28789,21 +26732,21 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 主要逻辑
                                         export
                                         default
                                         function
                                         connect
                                         (
-                                        
+
                                             mapStateToProps,
                                             mapDispatchToProps,
                                             mergeProps,
                                             options =
                                             {
                                             }
-                                        
+
                                         )
                                         {
                                         return
@@ -28820,10 +26763,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         {
                                         constructor
                                         (
-                                        
+
                                             props,
                                             context
-                                        
+
                                         )
                                         {
                                         // 从祖先Component处获得store
@@ -28869,10 +26812,10 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         }
                                         shouldComponentUpdate
                                         (
-                                        
+
                                             nextProps,
                                             nextState
-                                        
+
                                         )
                                         {
                                         // 进行判断，当数据发生改变时，Component重新渲染
@@ -28952,8 +26895,8 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                         Connect;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29012,7 +26955,7 @@ Hooks)，通过它，可以更好的在函数定义组件中使用 React 特性�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // useState 只接受一个参数: 初始状态
                                         // 返回的是组件名和更改该组件对应的函数
                                         const
@@ -29064,8 +27007,8 @@ const
                                         }
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29085,7 +27028,7 @@ const
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         useEffect
                                         (
                                         (
@@ -29131,10 +27074,10 @@ const
                                         // --- DidUpdate ---
                                         // 'off'
                                         // 'on'
-                                        // --- WillUnmount --- 
+                                        // --- WillUnmount ---
                                         // 'off'
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29148,7 +27091,7 @@ const
 ``` language-text
                                     const useMount = (fn) =>useEffect(fn, [])
 
-                                
+
 ```
 
 </div>
@@ -29158,7 +27101,7 @@ const
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         useUnmount
                                         =
@@ -29175,8 +27118,8 @@ const
                                         [
                                         ]
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29186,7 +27129,7 @@ const
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         useMounted
                                         =
@@ -29235,8 +27178,8 @@ const
                                         return
                                         mounted;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29247,7 +27190,7 @@ const
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         mounted =
                                         useMounted
@@ -29265,8 +27208,8 @@ const
                                         )
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29295,7 +27238,7 @@ const
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         useTitle
                                         (
@@ -29338,8 +27281,8 @@ const
                                         div>
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29393,7 +27336,7 @@ ESLint 的 Hooks 检查插件进行预防。
 ``` language-text
                                     <FInput value = {x} onChange = {fn} />// 上面的是受控组件 下面的是非受控组件
 <FInput defaultValue = {x} />
-                                
+
 ```
 
 </div>
@@ -29598,7 +27541,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                     function MyComponent() {
   return <p >这是我的组件 </p >}
 
-                                
+
 ```
 
 </div>
@@ -29610,7 +27553,7 @@ JSX，那么就必须在文件中引入 React，像下面这样：
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         import
                                         React from
                                         'react'
@@ -29627,8 +27570,8 @@ JSX，那么就必须在文件中引入 React，像下面这样：
                                         /
                                         p>
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29640,7 +27583,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         MyComponent
                                         (
@@ -29653,8 +27596,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         /
                                         p>
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29664,7 +27607,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         import
                                         {
                                         jsx as
@@ -29690,8 +27633,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29730,7 +27673,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         rootElement =
                                         document.
@@ -29748,8 +27691,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         ,
                                         rootElement)
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29766,7 +27709,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         handleChange
                                         (
@@ -29794,8 +27737,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29809,7 +27752,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         function
                                         handleChange
                                         (
@@ -29842,8 +27785,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -29877,28 +27820,28 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 dns-prefetch"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 //blog.poetries.top"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -29918,7 +27861,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 ``` language-text
                                     Expires: Wed, 22 Oct 2018 08:41:00 GMT
 
-                                
+
 ```
 
 </div>
@@ -29932,7 +27875,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 ``` language-text
                                     Cache-control: max-age=30
 
-                                
+
 ```
 
 </div>
@@ -29990,28 +27933,28 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 preload"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 http://example.com"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -30025,28 +27968,28 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 prerender"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 http://poetries.com"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -30173,7 +28116,7 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         window.
                                         onload
                                         =
@@ -30333,8 +28276,8 @@ React 17 中，编译器会自动帮我们引入 JSX
                                         }
                                         )
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -30349,85 +28292,85 @@ React 17 中，编译器会自动帮我们引入 JSX
 <div class="language-html extra-class">
 
 ``` language-html
-                                    
-                                        
-                                            
+
+
+
                                                 <
                                                 meta
-                                            
+
                                             http-equiv
-                                            
+
                                                 =
                                                 "
                                                 x-dns-prefetch-control"
-                                            
+
                                             content
-                                            
+
                                                 =
                                                 "
                                                 on"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 dns-prefetch"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 //www.zhix.net"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 dns-prefetch"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 //api.share.zhix.net"
-                                            
+
                                             >
-                                        
-                                        
-                                            
+
+
+
                                                 <
                                                 link
-                                            
+
                                             rel
-                                            
+
                                                 =
                                                 "
                                                 dns-prefetch"
-                                            
+
                                             href
-                                            
+
                                                 =
                                                 "
                                                 //bdimg.share.zhix.net"
-                                            
+
                                             >
-                                        
-                                    
-                                
+
+
+
 ```
 
 </div>
@@ -30572,7 +28515,7 @@ React 17 中，编译器会自动帮我们引入 JSX
    transform: translate3d(0, 0, 0);
  }
 
-                                
+
 ```
 
 </div>
@@ -30613,7 +28556,7 @@ Float在渲染时计算量比较大，尽量减少使用
 
 ``` language-text
                                     <meta name=”viewport” content=”width=device-width, initial-scale=1″>
-                                
+
 ```
 
 </div>
@@ -30728,7 +28671,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // webpack 5 打包的bundle文件内容
                                         (
                                         (
@@ -30753,11 +28696,11 @@ Float在渲染时计算量比较大，尽量减少使用
                                         :
                                         (
                                         (
-                                        
+
                                             __unused_webpack_module,
                                             __unused_webpack_exports,
                                             __webpack_require__
-                                        
+
                                         )
                                         =>
                                         {
@@ -30834,8 +28777,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         ;
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -30879,7 +28822,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         class
                                         Plugin
                                         {
@@ -30907,8 +28850,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         )
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -30918,7 +28861,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // webpack.config.js
                                         module.
                                         export =
@@ -30933,8 +28876,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         ,
                                         ]
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -30953,7 +28896,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         {
                                         SyncHook }
@@ -30996,8 +28939,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         (
                                         'event-hook'
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31086,7 +29029,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         fn
                                         =
@@ -31106,8 +29049,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         return
                                         a;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31246,7 +29189,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         import
                                         foo from
                                         "foo "
@@ -31265,8 +29208,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         {
                                         // bar.xxx
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31280,7 +29223,7 @@ Float在渲染时计算量比较大，尽量减少使用
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // 不可行，ES6 的import是完全静态的
                                         if
                                         (
@@ -31302,8 +29245,8 @@ Float在渲染时计算量比较大，尽量减少使用
                                         )
                                         ;
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31338,7 +29281,7 @@ class="header-anchor">#</a> 8 Webpack Proxy工作原理？为什么能解决跨�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         // ./webpack.config.js
                                         const
                                         path =
@@ -31384,8 +29327,8 @@ class="header-anchor">#</a> 8 Webpack Proxy工作原理？为什么能解决跨�
                                         // ...
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31417,7 +29360,7 @@ class="header-anchor">#</a> 8 Webpack Proxy工作原理？为什么能解决跨�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         express =
                                         require
@@ -31464,8 +29407,8 @@ class="header-anchor">#</a> 8 Webpack Proxy工作原理？为什么能解决跨�
                                         )
                                         ;
                                         // http://localhost:3000/api/foo/bar ->http://www.example.org/api/foo/bar
-                                    
-                                
+
+
 ```
 
 </div>
@@ -31682,7 +29625,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
 ``` language-text
                                     Accept: text/html,application/xml,image/webp,image/png
 
-                                
+
 ```
 
 </div>
@@ -31699,7 +29642,7 @@ class="icon outbound" /> <span class="sr-only">(opens new window)</span>
                                     Content-Type: text/html
 Content-Type: image/png
 
-                                
+
 ```
 
 </div>
@@ -31719,7 +29662,7 @@ gzip、deflate
                                     Accept-Encoding: gzip, deflate, br
 Content-Encoding: gzip
 
-                                
+
 ```
 
 </div>
@@ -31741,7 +29684,7 @@ Content-Encoding: gzip
 ``` language-text
                                     Accept-Language: zh-CN, zh, en
 
-                                
+
 ```
 
 </div>
@@ -31757,7 +29700,7 @@ Content-Encoding: gzip
 ``` language-text
                                     Content-Language: zh-CN
 
-                                
+
 ```
 
 </div>
@@ -31774,7 +29717,7 @@ Content-Encoding: gzip
                                     Accept-Charset: gbk, utf-8
 Content-Type: text/html; charset=utf-8
 
-                                
+
 ```
 
 </div>
@@ -31803,7 +29746,7 @@ HTTP 的内容协商里却恰好反了过来，“;”的意义是小于“,”�
 ``` language-text
                                     Accept: text/html,application/xml;q=0.9,*/*;q=0.8
 
-                                
+
 ```
 
 </div>
@@ -31822,7 +29765,7 @@ HTML 或者 XML
 ``` language-text
                                     Vary: Accept-Encoding,User-Agent,Accept
 
-                                
+
 ```
 
 </div>
@@ -31979,7 +29922,7 @@ HTML 或者 XML
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         server =
                                         require
@@ -31997,10 +29940,10 @@ HTML 或者 XML
                                         'request'
                                         ,
                                         (
-                                        
+
                                             req,
                                             res
-                                        
+
                                         )
                                         =>
                                         {
@@ -32054,8 +29997,8 @@ HTML 或者 XML
                                         ;
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -32069,7 +30012,7 @@ HTML 或者 XML
 ``` language-text
                                     Transfer-Encoding: chunked
 
-                                
+
 ```
 
 </div>
@@ -32086,7 +30029,7 @@ HTML 或者 XML
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         server =
                                         require
@@ -32104,10 +30047,10 @@ HTML 或者 XML
                                         'request'
                                         ,
                                         (
-                                        
+
                                             req,
                                             res
-                                        
+
                                         )
                                         =>
                                         {
@@ -32213,8 +30156,8 @@ HTML 或者 XML
                                         ;
                                         }
                                         )
-                                    
-                                
+
+
 ```
 
 </div>
@@ -32721,7 +30664,7 @@ TCP 连接的开销（包括响应时间、CPU 资源、减少拥堵等），参
 ``` language-text
                                     Connection: keep-alive
 
-                                
+
 ```
 
 </div>
@@ -32733,7 +30676,7 @@ TCP 连接的开销（包括响应时间、CPU 资源、减少拥堵等），参
 ``` language-text
                                     Connection: close
 
-                                
+
 ```
 
 </div>
@@ -32912,7 +30855,7 @@ Alive连接就看服务器设置情况。
 ws://www.chrono.com:8080/srv
 wss://www.chrono.com:445/im?user_id=xxx
 
-                                
+
 ```
 
 </div>
@@ -32988,17 +30931,17 @@ HTTP 复杂的多，所以是否要在项目中引入 WebSocket 必须慎重考�
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         let
                                         addMyEvent
                                         =
                                         function
                                         (
-                                        
+
                                             el,
                                             ev,
                                             fn
-                                        
+
                                         )
                                         {
                                         if
@@ -33039,8 +30982,8 @@ HTTP 复杂的多，所以是否要在项目中引入 WebSocket 必须慎重考�
     }
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -33058,7 +31001,7 @@ HTTP 复杂的多，所以是否要在项目中引入 WebSocket 必须慎重考�
     }
 };
 
-                                
+
 ```
 
 </div>
@@ -33119,7 +31062,7 @@ let A = {
 }
 xiaoming.sendFlower(B)
 
-                                
+
 ```
 
 </div>
@@ -33136,7 +31079,7 @@ HTML元 素事件代理
     console.log(event.target);
   });
 </script >
-                                
+
 ```
 
 </div>
@@ -33181,7 +31124,7 @@ let p = factory.create('p1')
 p.init()
 p.fun()
 
-                                
+
 ```
 
 </div>
@@ -33250,7 +31193,7 @@ const FooServiceSingleton = (function () {
   }
 })();
 
-                                
+
 ```
 
 </div>
@@ -33270,7 +31213,7 @@ const fooService2 = FooServiceSingleton.getInstance();
 
 console.log(fooService1 === fooService2); // true
 
-                                
+
 ```
 
 </div>
@@ -33390,7 +31333,7 @@ console.log(fooService1 === fooService2); // true
           }
         }
     </script ></body ></html >
-                                
+
 ```
 
 </div>
@@ -33432,7 +31375,7 @@ console.log(fooService1 === fooService2); // true
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         item =
                                         [
@@ -33498,8 +31441,8 @@ console.log(fooService1 === fooService2); // true
                                         ;
                                         }
                                         }
-                                    
-                                
+
+
 ```
 
 </div>
@@ -33516,7 +31459,7 @@ while(iterator.hasNext()){
 }
 //输出：1, red, false, 3.14
 
-                                
+
 ```
 
 </div>
@@ -33546,7 +31489,7 @@ while(iterator.hasNext()){
   }
 }
 
-                                
+
 ```
 
 </div>
@@ -33561,7 +31504,7 @@ while(iterator.hasNext()){
 }
 // 输出：1, 2, 3, 4
 
-                                
+
 ```
 
 </div>
@@ -33606,7 +31549,7 @@ Subject.prototype = {
   }
 }
 
-                                
+
 ```
 
 </div>
@@ -33635,7 +31578,7 @@ subject.fire();
 Observer 1 Firing!
 Observer 2 Firing!
 
-                                
+
 ```
 
 </div>
@@ -33651,7 +31594,7 @@ subject.fire();
 //输出：
 Observer 1 Firing!
 
-                                
+
 ```
 
 </div>
@@ -33668,7 +31611,7 @@ Observer 1 Firing!
 });
 document.body.click()
 
-                                
+
 ```
 
 </div>
@@ -33698,7 +31641,7 @@ document.body.click()
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         var
                                         goods =
                                         {
@@ -33837,8 +31780,8 @@ document.body.click()
                                         ;
                                         }
                                         ;
-                                    
-                                
+
+
 ```
 
 </div>
@@ -33866,7 +31809,7 @@ Member.prototype = {
   }
 }
 
-                                
+
 ```
 
 </div>
@@ -33892,7 +31835,7 @@ Chatroom.prototype = {
   }
 }
 
-                                
+
 ```
 
 </div>
@@ -33902,7 +31845,7 @@ Chatroom.prototype = {
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
+
                                         const
                                         chatroom =
                                         new
@@ -33944,8 +31887,8 @@ Chatroom.prototype = {
                                         frank)
                                         ;
                                         //输出：bruce to frank: hello frank
-                                    
-                                
+
+
 ```
 
 </div>
@@ -33969,8 +31912,8 @@ Chatroom.prototype = {
 <div class="language-js extra-class">
 
 ``` language-js
-                                    
-                                        // 访问者  
+
+                                        // 访问者
                                         class
                                         Visitor
                                         {
@@ -33990,7 +31933,7 @@ Chatroom.prototype = {
                                         )
                                         }
                                         }
-                                        // 元素类  
+                                        // 元素类
                                         class
                                         ConcreteElement
                                         {
@@ -34039,8 +31982,8 @@ Chatroom.prototype = {
                                         accept
                                         (
                                         visitor)
-                                    
-                                
+
+
 ```
 
 </div>
@@ -34087,7 +32030,7 @@ Visitor.prototype = {
   }
 }
 
-                                
+
 ```
 
 </div>
@@ -34103,7 +32046,7 @@ employee.accept(visitor);
 
 console.log(employee.getSalary());//输出：2000
 
-                                
+
 ```
 
 </div>
@@ -34699,7 +32642,7 @@ leader
 
 ### <a href="#第二个要点-你是怎样的人" class="header-anchor">#</a> 第二个要点：你是怎样的人？
 
-**28. 开场白。**  
+**28. 开场白。**
 当你和面试官打完招呼后，有可能会出现短暂的沉默，面试官以此测试你的反应和主动性。你可以用以下方式开场：
 
 - 请问我能坐这吗？
