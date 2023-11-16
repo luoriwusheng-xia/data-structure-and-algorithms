@@ -2,6 +2,9 @@ import DefaultTheme from 'vitepress/theme';
 // 自定义主题样式
 // import './index.less';
 
+// 面试题的样式
+import "./interview.less"
+
 import { Sandbox } from 'vitepress-plugin-sandpack';
 
 import ElementPlus from 'element-plus'

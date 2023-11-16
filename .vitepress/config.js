@@ -35,6 +35,27 @@ export default defineConfig({
         link: '/docs/frontend/'
       },
       {
+        text: '面试题',
+        items: [
+          {
+            text: '基础篇',
+            link: '/docs/interview/base/'
+          },
+          {
+            text: '进阶篇',
+            link: '/docs/interview/improve/'
+          },
+          {
+            text: '手写篇',
+            link: '/docs/interview/handwritten/'
+          },
+          {
+            text: '原理篇',
+            link: '/docs/interview/principle/'
+          }
+        ]
+      },
+      {
         text: '后端',
         items: [
           {

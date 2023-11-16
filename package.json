@@ -15,12 +15,13 @@
     "less": "^4.2.0",
     "markdown-it-container": "^3.0.0",
     "markdown-it-mathjax3": "^4.3.2",
+    "postcss": "^8.4.31",
     "vite-plugin-svg-icons": "^2.0.1",
     "vitepress": "^1.0.0-rc.24",
     "vitepress-plugin-sandpack": "^1.1.4"
   },
   "dependencies": {
-    "element-plus": "^2.4.1"
+    "element-plus": "^2.4.2"
   },
   "engines": {
     "node": ">19"
