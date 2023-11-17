@@ -14,15 +14,15 @@
 
 <script setup>
 import { ref } from 'vue'
-import {useRouter} from 'vitepress'
+import { useRouter } from 'vitepress'
 
-const router =  useRouter()
+const router = useRouter()
 
 const cardList = ref([
 	{
 		title: '使用rollup打包',
 		desc: '如何创建一个可以在浏览器运行的script文件',
-    link: '/docs/frontend/translation/codemirror/components/base/rollup-bundling'
+		link: '/docs/frontend/translation/codemirror/components/base/rollup-bundling',
 	},
 	{
 		title: '配置',
@@ -37,8 +37,9 @@ const cardList = ref([
 		desc: '如果您对编辑器默认不处理 Tab 感到困惑或恼火，请阅读本文。',
 	},
 	{
-		title: '文档',
+		title: '大文档',
 		desc: '这里演示加载一个几百万行的文档',
+		link: '/docs/frontend/translation/codemirror/components/base/huge-document',
 	},
 	{
 		title: 'IE11浏览器',
@@ -46,8 +47,8 @@ const cardList = ref([
 	},
 ])
 const onClick = (item) => {
-  if(!item.link) return
-  router.go( item.link)
+	if (!item.link) return
+	router.go(item.link)
 }
 </script>
 
