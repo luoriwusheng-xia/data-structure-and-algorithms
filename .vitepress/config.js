@@ -36,11 +36,11 @@ export default defineConfig({
         items: [
           {
             text: '杂文',
-            link: '/docs/frontend/',
+            link: '/docs/frontend/essay/index',
           },
           {
             text: '文档翻译',
-            link: '/docs/frontend/codemirror/index',
+            link: '/docs/frontend/translation/index',
           }
         ]
       },
@@ -123,19 +123,21 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/docs/frontend/': [
+      // '/docs/frontend/': [
+      //   {
+      //     text: '前端',
+      //     items: [
+      //       {
+      //         text: '杂文',
+      //         link: '/docs/frontend/index'
+      //       }
+      //     ]
+      //   }
+      // ],
+      "/docs/frontend/translation/index": [
         {
-          text: '前端',
-          items: [
-            {
-              text: '杂文',
-              link: '/docs/frontend/index'
-            },
-            {
-              text: 'codemirror-中文文档',
-              link: '/docs/frontend/index'
-            }
-          ]
+          text: 'codemirror-中文文档',
+          link: '/docs/frontend/translation/codemirror/index'
         }
       ],
       '/docs/list/': [
@@ -208,6 +210,10 @@ export default defineConfig({
               link: '/docs/vitepress-config/07/index',
             },
             {
+              text: '编程式使用 Router 和 Route',
+              link: '/docs/vitepress-config/08/index',
+            },
+            {
               text: '插件开发',
               link: '/docs/vitepress-config/01/index',
             },
@@ -258,26 +264,26 @@ export default defineConfig({
         }
       ],
 
-      '/docs/frontend/': [
+      '/docs/frontend/essay/': [
         {
           text: '渡一前端',
-          link: '/docs/frontend/01/',
+          link: '/docs/frontend/essay/01/',
           items: [
             {
               text: '判断函数是否标记了async',
-              link: '/docs/frontend/01/'
+              link: '/docs/frontend/essay/01/'
             },
             {
               text: '消除异步的传染性',
-              link: '/docs/frontend/02/'
+              link: '/docs/frontend/essay/02/'
             },
             {
               text: '自动检测更新',
-              link: '/docs/frontend/03/'
+              link: '/docs/frontend/essay/03/'
             },
             {
               text: '妙用位运算-算法-找唯一数字',
-              link: '/docs/frontend/04/'
+              link: '/docs/frontend/essay/04/'
             }
           ]
         }
