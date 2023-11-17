@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 
+import UnoCSS from 'unocss/vite'
 import container from 'markdown-it-container'
 import { renderSandbox } from 'vitepress-plugin-sandpack'
 
@@ -32,7 +33,16 @@ export default defineConfig({
       },
       {
         text: '前端',
-        link: '/docs/frontend/'
+        items: [
+          {
+            text: '杂文',
+            link: '/docs/frontend/',
+          },
+          {
+            text: '文档翻译',
+            link: '/docs/frontend/codemirror/index',
+          }
+        ]
       },
       {
         text: '面试题',
@@ -107,12 +117,27 @@ export default defineConfig({
           {
             text: '收藏夹',
             link: '/docs/favorites/',
-          },
+          }
         ],
       },
     ],
 
     sidebar: {
+      '/docs/frontend/': [
+        {
+          text: '前端',
+          items: [
+            {
+              text: '杂文',
+              link: '/docs/frontend/index'
+            },
+            {
+              text: 'codemirror-中文文档',
+              link: '/docs/frontend/index'
+            }
+          ]
+        }
+      ],
       '/docs/list/': [
         {
           text: 'leetcode',
@@ -174,7 +199,14 @@ export default defineConfig({
               text: 'sandpack接入',
               link: '/docs/vitepress-config/05/index',
             },
-
+            {
+              text: '使用unocss',
+              link: '/docs/vitepress-config/06/index',
+            },
+            {
+              text: '使用vue',
+              link: '/docs/vitepress-config/07/index',
+            },
             {
               text: '插件开发',
               link: '/docs/vitepress-config/01/index',
@@ -317,6 +349,8 @@ export default defineConfig({
   // vite.config.js 相关的配置
   vite: {
     plugins: [
+      UnoCSS()
+
       //引入SVG图标素材文件
       // createSvgIconsPlugin({
       //   iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
