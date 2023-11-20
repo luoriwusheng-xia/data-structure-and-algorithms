@@ -31,6 +31,7 @@ const cardList = ref([
 	{
 		title: '样式',
 		desc: '如何设置编辑器或扩展的样式，以及如何创建新的编辑器主题。',
+    link: '/docs/frontend/translation/codemirror/components/base/styling'
 	},
 	{
 		title: '处理选项卡',
