@@ -447,4 +447,386 @@ Boolean('12')       //true
 
 > 我们先来看几个函数调用的场景
 
+```js
+function foo() {
+  console.log(this.a)
+}
+var a = 1
+foo()
+
+const obj = {
+  a: 2,
+  foo: foo
+}
+obj.foo()
+
+const c = new foo()
+```
+
+
+- 对于直接调用 `foo` 来说，不管 `foo` 函数被放在了什么地方，`this`
+  一定是`window`
+- 对于 `obj.foo()` 来说，我们只需要记住，谁调用了函数，谁就是 `this`
+  ，所以在这个场景下 `foo` 函数中的 `this` 就是 `obj` 对象
+- 对于 `new` 的方式来说，`this` 被永远绑定在了 `c`
+  上面，不会被任何方式改变 `this`
+
+> 说完了以上几种情况，其实很多代码中的 `this`
+> 应该就没什么问题了，下面让我们看看箭头函数中的 `this`
+
+
+```js
+function a() {
+  return () => {
+    return () => {
+      console.log(this)
+    }
+  }
+}
+console.log(a()()())
+
+```
+
+- 首先箭头函数其实是没有 `this` 的，箭头函数中的 `this`
+  只取决包裹箭头函数的第一个普通函数的 `this`
+  。在这个例子中，因为包裹箭头函数的第一个普通函数是 `a` ，所以此时的
+  `this` 是 `window` 。另外对箭头函数使用 `bind` 这类函数是无效的。
+- 最后种情况也就是 `bind` 这些改变上下文的 `API`
+  了，对于这些函数来说，`this`
+  取决于第一个参数，如果第一个参数为空，那么就是 `window` 。
+- 那么说到 `bind` ，不知道大家是否考虑过，如果对一个函数进行多次 `bind`
+  ，那么上下文会是什么呢？
+
+```js
+let a = {}
+let fn = function () { console.log(this) }
+fn.bind().bind(a)() // => ?
+
+```
+
+> 如果你认为输出结果是 `a`
+> ，那么你就错了，其实我们可以把上述代码转换成另一种形式
+
+```js
+// fn.bind().bind(a) 等于
+let fn2 = function fn1() {
+  return function() {
+    return fn.apply()
+  }.apply(a)
+}
+fn2()
+
+```
+
+> 可以从上述代码中发现，不管我们给函数 `bind` 几次，`fn` 中的 `this`
+> 永远由第一次 `bind` 决定，所以结果永远是 `window`
+
+
+```js
+let a = { name: 'poetries' }
+function foo() {
+  console.log(this.name)
+}
+foo.bind(a)() // => 'poetries'
+
+```
+
+
+> 以上就是 `this`的规则了，但是可能会发生多个规则同时出现的情况，这时候不同的规则之间会根据优先级最高的来决定`this` 最终指向哪里。
+
+> 首先，`new` 的方式优先级最高，接下来是 `bind` 这些函数，然后是
+> `obj.foo()` 这种调用方式，最后是 `foo` 这种调用方式，同时，箭头函数的
+> `this` 一旦被绑定，就不会再被任何方式所改变。
+
+![Alt text](image-2.png)
+
+
+**函数执行改变this**
+
+- 由于 JS 的设计原理:
+  在函数中，可以引用运行环境中的变量。因此就需要一个机制来让我们可以在函数体内部获取当前的运行环境，这便是`this`
+  。
+
+> 因此要明白 `this` 指向，其实就是要搞清楚
+> 函数的运行环境，说人话就是，谁调用了函数。例如
+
+- `obj.fn()` ，便是 `obj` 调用了函数，既函数中的 `this === obj`
+- `fn()` ，这里可以看成 `window.fn()` ，因此 `this === window`
+
+> 但这种机制并不完全能满足我们的业务需求，因此提供了三种方式可以手动修改
+> `this` 的指向:
+
+- `call: fn.call(target, 1, 2)`
+- `apply: fn.apply(target, [1, 2])`
+- `bind: fn.bind(target)(1,2)`
+
+### 3 apply/call/bind 原理
+
+![Alt text](image-3.png)
+
+> `call、apply` 和 `bind` 是挂在 `Function`
+> 对象上的三个方法，调用这三个方法的必须是一个函数。
+
+```js
+func.call(thisArg, param1, param2, ...)
+func.apply(thisArg, [param1,param2,...])
+func.bind(thisArg, param1, param2, ...)
+
+```
+
+
+- 在浏览器里，在全局范围内this 指向window对象；
+- 在函数中，this永远指向最后调用他的那个对象；
+- 构造函数中，this指向new出来的那个新的对象；
+- `call、apply、bind` 中的this被强绑定在指定的那个对象上；
+- 箭头函数中this比较特殊,箭头函数this为父作用域的this，不是调用时的this 。 要知道前四种方式,都是调用时确定,也就是动态的,而箭头函数的this指向是静态的,声明的时候就确定了下来；
+- `apply、call、bind`
+  都是js给函数内置的一些API，调用他们可以为函数指定this的执行,同时也可以传参。
+
+![Alt text](image-4.png)
+
+
+```js
+let a = {
+    value: 1
+}
+function getValue(name, age) {
+    console.log(name)
+    console.log(age)
+    console.log(this.value)
+}
+getValue.call(a, 'poe', '24')
+getValue.apply(a, ['poe', '24'])
+
+```
+
+
+> `bind`和其他两个方法作用也是一致的，只是该方法会返回一个函数。并且我们可以通过
+> `bind` 实现柯里化
+
+
+
+**方法的应用场景**
+
+> 下面几种应用场景，你多加体会就可以发现它们的理念都是“借用”方法的思路。我们来看看都有哪些。
+
+1.  判断数据类型
+
+> 用 `Object.prototype.toString`
+> 来判断类型是最合适的，借用它我们几乎可以判断所有类型的数据
+
+
+```js
+function getType(obj){
+  let type  = typeof obj;
+  if (type !== "object") {
+    return type;
+  }
+  return Object.prototype.toString.call(obj).replace(/^$/, '$1');
+}
+
+```
+
+2.  类数组借用方法
+
+> 类数组因为不是真正的数组，所有没有数组类型上自带的种种方法，所以我们就可以利用一些方法去借用数组的方法，比如借用数组的
+> `push` 方法，看下面的一段代码。
+
+```js
+var arrayLike = {
+  0: 'java',
+  1: 'script',
+  length: 2
+}
+Array.prototype.push.call(arrayLike, 'jack', 'lily');
+console.log(typeof arrayLike); // 'object'
+console.log(arrayLike);
+// {0: "java", 1: "script", 2: "jack", 3: "lily", length: 4}
+
+```
+
+> 用 `call` 的方法来借用 `Array 原型链上的 push`
+> 方法，可以实现一个`类数组的 push` 方法，给 `arrayLike` 添加新的元素
+
+3.  获取数组的最大 / 最小值
+
+> 我们可以用 apply 来实现数组中判断最大 / 最小值，`apply`
+> 直接传递数组作为调用方法的参数，也可以减少一步展开数组，可以直接使用
+> `Math.max、Math.min` 来获取数组的最大值 / 最小值，请看下面这段代码。
+
+```js
+let arr = [13, 6, 10, 11, 16];
+const max = Math.max.apply(Math, arr);
+const min = Math.min.apply(Math, arr);
+
+console.log(max);  // 16
+console.log(min);  // 6
+
+```
+
+#### 实现一个 bind 函数
+
+对于实现以下几个函数，可以从几个方面思考
+
+- 不传入第一个参数，那么默认为 `window`
+- 改变了 `this`
+  指向，让新的对象可以执行该函数。那么思路是否可以变成给新的对象添加一个函数，然后在执行完以后删除？
+
+```js
+Function.prototype.myBind = function (context) {
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  var _this = this
+  var args = [...arguments].slice(1)
+  // 返回一个函数
+  return function F() {
+    // 因为返回了一个函数，我们可以 new F()，所以需要判断
+    if (this instanceof F) {
+      return new _this(...args, ...arguments)
+    }
+    return _this.apply(context, args.concat(...arguments))
+  }
+}
+
+/**
+ * 改变say的上下文
+ */
+function say() {
+  console.log(2222)
+  console.log('参数---',arguments)
+  console.log(this.name)
+}
+
+let t = {
+  name: '张三'
+}
+
+let f = say.myBind(t, 77)
+
+f(1,2,3,4)
+
+// 连着写   say.myBind(t,77)(1,2,3,4)
+```
+
+#### 实现一个 call 函数
+
+```js
+Function.prototype.myCall = function (context) {
+  var context = context || window
+  // 给 context 添加一个属性
+  // getValue.call(a, 'pp', '24') => a.fn = getValue
+  context.fn = this
+  // 将 context 后面的参数取出来
+  var args = [...arguments].slice(1)
+  // getValue.call(a, 'pp', '24') => a.fn('pp', '24')
+  var result = context.fn(...args)
+  // 删除 fn
+  delete context.fn
+  return result
+}
+
+```
+
+#### 实现一个 apply 函数
+
+```js
+Function.prototype.myApply = function(context = window, ...args) {
+  // this-->func  context--> obj  args--> 传递过来的参数
+
+  // 在context上加一个唯一值不影响context上的属性
+  let key = Symbol('key')
+  context[key] = this; // context为调用的上下文,this此处为函数，将这个函数作为context的方法
+  // let args = [...arguments].slice(1)   //第一个参数为obj所以删除,伪数组转为数组
+
+  let result = context[key](...args);
+  delete context[key]; // 不删除会导致context属性越来越多
+  return result;
+}
+```
+
+```js
+// 使用
+function f(a,b){
+ console.log(a,b)
+ console.log(this.name)
+}
+let obj={
+ name:'张三'
+}
+f.myApply(obj,[1,2])  //arguments[1]
+
+```
+
+### 4 变量提升
+
+
+> 当执行 `JS`
+> 代码时，会生成执行环境，只要代码不是写在函数中的，就是在全局执行环境中，函数中的代码会产生函数执行环境，只此两种执行环境。
+
+```js
+b() // call b
+console.log(a) // undefined
+
+var a = 'Hello world'
+
+function b() {
+    console.log('call b')
+}
+
+```
+
+> 想必以上的输出大家肯定都已经明白了，这是因为函数和变量提升的原因。通常提升的解释是说将声明的代码移动到了顶部，这其实没有什么错误，便于大家理解。但是更准确的解释应该是：在生成执行环境时，会有两个阶段。第一个阶段是创建的阶段，`JS`
+> 解释器会找出需要提升的变量和函数，并且给他们提前在内存中开辟好空间，函数的话会将整个函数存入内存中，变量只声明并且赋值为 `undefined`
+> ，所以在第二个阶段，也就是代码执行阶段，我们可以直接提前使用
+
+- 在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升
+
+```js
+b() // call b second
+
+function b() {
+    console.log('call b fist')
+}
+function b() {
+    console.log('call b second')
+}
+var b = 'Hello world'
+
+```
+
+> `var` 会产生很多错误，所以在 ES6中引入了 `let` 。`let`
+> 不能在声明前使用，但是这并不是常说的 `let` 不会提升，`let`
+> 提升了，在第一阶段内存也已经为他开辟好了空间，但是因为这个声明的特性导致了并不能在声明前使用
+
+
+### 5 执行上下文
+
+
+> 当执行 JS 代码时，会产生三种执行上下文
+
+- 全局执行上下文
+- 函数执行上下文
+- `eval` 执行上下文
+
+> 每个执行上下文中都有三个重要的属性
+
+- 变量对象（`VO`
+  ），包含变量、函数声明和函数的形参，该属性只能在全局上下文中访问
+- 作用域链（`JS`
+  采用词法作用域，也就是说变量的作用域是在定义时就决定了）
+- `this`
+
+
+```js
+var a = 10
+function foo(i) {
+  var b = 20
+}
+foo()
+
+```
+
+> 对于上述代码，执行栈中有两个上下文：全局上下文和函数 foo 上下文。
+
 </div>
