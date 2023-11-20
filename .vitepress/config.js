@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 import container from 'markdown-it-container'
 import { renderSandbox } from 'vitepress-plugin-sandpack'
+import mdItCustomAttrs from 'markdown-it-custom-attrs'
 
 import mathjax3 from 'markdown-it-mathjax3'
 import customElements from './md-latex.js'
@@ -11,6 +12,14 @@ import customElements from './md-latex.js'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  head: [
+    [
+      "link",
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" },
+    ],
+    ["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }],
+  ],
+
   lang: 'zh-CN',
 
   title: '前端杂货铺',
@@ -330,6 +339,8 @@ export default defineConfig({
   },
 
   markdown: {
+    // 默认高亮的语言
+    defaultHighlightLang: 'js',
     lineNumbers: true,
     config (md) {
       md
@@ -341,6 +352,11 @@ export default defineConfig({
         })
 
       md.use(mathjax3)
+
+      md.use(mdItCustomAttrs, 'image', {
+        'data-fancybox': "gallery"
+      })
+
     },
   },
 

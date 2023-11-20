@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "less": "^4.2.0",
+    "markdown-it": "^13.0.2",
     "markdown-it-container": "^3.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "postcss": "^8.4.31",
@@ -22,7 +23,9 @@
   },
   "dependencies": {
     "element-plus": "^2.4.2",
-    "unocss": "^0.57.4"
+    "markdown-it-custom-attrs": "^1.0.2",
+    "unocss": "^0.57.4",
+    "viewerjs": "^1.11.6"
   },
   "engines": {
     "node": ">19"
