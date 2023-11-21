@@ -73,12 +73,38 @@ export default defineConfig({
           },
           {
             text: '原理篇',
-            link: '/docs/interview/principle/'
+            items: [
+              {
+                text: 'Vue',
+                link: '/docs/interview/principle/vue/01'
+              },
+              {
+                text: 'React',
+                link: '/docs/interview/principle/react/01'
+              },
+              {
+                text: 'Webpack',
+                link: '/docs/interview/principle/webpack/01'
+              },
+
+              {
+                text: 'Node',
+                link: '/docs/interview/principle/node/01'
+              },
+
+              {
+                text: 'javascript',
+                link: '/docs/interview/principle/javascript/01'
+              },
+
+              {
+                text: '综合题型',
+                link: '/docs/interview/principle/comprehensive/01'
+              }
+
+            ]
           },
-          {
-            text: '综合题型',
-            link: '/docs/interview/comprehensive/'
-          }
+
         ]
       },
       {
