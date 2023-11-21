@@ -340,7 +340,7 @@ export default defineConfig({
 
   markdown: {
     // 默认高亮的语言
-    defaultHighlightLang: 'js',
+    // defaultHighlightLang: 'js',
     lineNumbers: true,
     config (md) {
       md
@@ -370,6 +370,9 @@ export default defineConfig({
 
   // vite.config.js 相关的配置
   vite: {
+    server: {
+      host: true
+    },
     plugins: [
       UnoCSS()
 
@@ -379,5 +382,5 @@ export default defineConfig({
       //   symbolId: '[name]',
       // })
     ],
-  },
+  }
 })

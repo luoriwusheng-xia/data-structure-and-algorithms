@@ -1,5 +1,9 @@
 # 进阶篇
 
+<script setup>
+  import testddCom from './source/testddCom.vue'
+</script>
+
 <div class='interview-page-container'>
 
 ## 一、JS基础
@@ -829,4 +833,50 @@ foo()
 
 > 对于上述代码，执行栈中有两个上下文：全局上下文和函数 foo 上下文。
 
+
+```js
+stack = [
+    globalContext,
+    fooContext
+]
+
+```
+> 对于全局上下文来说，`VO` 大概是这样的
+
+
+```js
+globalContext.VO === globe
+globalContext.VO = {
+    a: undefined,
+	foo: <Function>,
+}
+
+```
+
+> 对于函数 `foo` 来说，`VO` 不能访问，只能访问到活动对象（`AO` ）
+
+
+```js
+fooContext.VO === foo.AO
+fooContext.AO {
+    i: undefined,
+	b: undefined,
+    arguments: <>
+}
+// arguments 是函数独有的对象(箭头函数没有)
+// 该对象是一个伪数组，有 `length` 属性且可以通过下标访问元素
+// 该对象中的 `callee` 属性代表函数本身
+// `caller` 属性代表函数的调用者
+
+```
+
+---
+
+<div class='color-red'>上面为原始markdown语法， 下面直接加载的html</div>
+
+---
+
+
+
+<testddCom />
 </div>
