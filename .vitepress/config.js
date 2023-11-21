@@ -69,7 +69,7 @@ export default defineConfig({
           },
           {
             text: '手写篇',
-            link: '/docs/interview/handwritten/'
+            link: '/docs/interview/handwritten/01'
           },
           {
             text: '原理篇',

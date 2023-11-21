@@ -212,5 +212,27 @@ export default {
       text: '三、css',
       link: '/docs/interview/improve/02'
     }
+  ],
+  '/docs/interview/handwritten/': [
+    {
+      text: '1-27 基础',
+      link: '/docs/interview/handwritten/01'
+    },
+    {
+      text: '28 框架相关',
+      link: '/docs/interview/handwritten/02'
+    },
+    {
+      text: '1-27',
+      link: '/docs/interview/handwritten/03'
+    },
+    {
+      text: '1-27 基础',
+      link: '/docs/interview/handwritten/04'
+    },
+    {
+      text: '1-27 基础',
+      link: '/docs/interview/handwritten/05'
+    },
   ]
 }
