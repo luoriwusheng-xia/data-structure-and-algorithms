@@ -24,7 +24,7 @@
   "dependencies": {
     "element-plus": "^2.4.2",
     "markdown-it-custom-attrs": "^1.0.2",
-    "unocss": "^0.57.4",
+    "unocss": "^0.57.6",
     "viewerjs": "^1.11.6"
   },
   "engines": {
