@@ -74,6 +74,10 @@ export default defineConfig({
           {
             text: '原理篇',
             link: '/docs/interview/principle/'
+          },
+          {
+            text: '综合题型',
+            link: '/docs/interview/comprehensive/'
           }
         ]
       },
