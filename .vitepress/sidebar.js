@@ -235,16 +235,36 @@ export default {
       link: '/docs/interview/handwritten/02'
     },
     {
-      text: '1-27',
+      text: '29 数组相关',
       link: '/docs/interview/handwritten/03'
     },
     {
-      text: '1-27 基础',
+      text: '30 正则相关',
       link: '/docs/interview/handwritten/04'
     },
     {
-      text: '1-27 基础',
+      text: '31 函数柯里化相关',
       link: '/docs/interview/handwritten/05'
+    },
+    {
+      text: '32 字符串相关',
+      link: '/docs/interview/handwritten/06'
+    },
+    {
+      text: '33 实现工具函数',
+      link: '/docs/interview/handwritten/07'
+    },
+    {
+      text: '34 手写常见排序',
+      link: '/docs/interview/handwritten/08'
+    },
+    {
+      text: '35 算法与数据结构',
+      link: '/docs/interview/handwritten/09'
+    },
+    {
+      text: '36 综合',
+      link: '/docs/interview/handwritten/10'
     },
   ],
   '/docs/interview/principle/vue': [

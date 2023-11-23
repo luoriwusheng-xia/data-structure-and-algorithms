@@ -109,6 +109,11 @@ export default defineConfig({
             ]
           },
 
+          {
+            text: '设计模式',
+            link: '/docs/interview/design-pattern/01'
+          }
+
         ]
       },
       {
