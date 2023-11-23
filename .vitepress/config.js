@@ -53,6 +53,10 @@ export default defineConfig({
           {
             text: '文档翻译',
             link: '/docs/frontend/translation/index',
+          },
+          {
+            text: '前端工程化',
+            link: '/docs/frontend/engineering/index'
           }
         ]
       },
