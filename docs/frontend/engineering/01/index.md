@@ -495,3 +495,112 @@ node inspect bundl.js
 已经可以打断点调试了
 
 ## rollup
+
+rollup 生成代码比较简洁， 直接把内容合并到一个bundle.js 里面
+
+### 环境安装
+```bash
+pnpm init
+pnpm i rollup
+```
+
+```json
+"devDependencies": {
+  "rollup": "^4.5.1"
+}
+```
+
+### rollup.config.js 配置
+
+rollup.config.js
+
+```js
+export default {
+  input: "./app.js",
+  output: [
+    {
+      file: 'dist/bundle.es.js',
+      format: 'es'
+    },
+    {
+      file: 'dist/bundle.cjs.js',
+      format: 'cjs'
+    }
+  ]
+}
+```
+
+打包
+
+```bash
+npx rollup -c
+```
+
+### 测试代码
+
+app.js
+```js
+import { sum } from './sum.js'
+
+const a = 1
+
+const c = sum(1, 2)
+
+console.log(c);
+export default {
+  say () {
+    console.log(a);
+  }
+}
+```
+
+sum.js
+```js
+export const sum = (a, b) => a + b
+```
+
+
+### 打包后的产物
+
+dist/bundle.cjs.js
+
+```js
+'use strict';
+
+const sum = (a, b) => a + b;
+
+const a = 1;
+
+const c = sum(1, 2);
+
+console.log(c);
+var app = {
+  say () {
+    console.log(a);
+  }
+};
+
+module.exports = app;
+
+```
+
+dist/bundle.es.js
+```js
+const sum = (a, b) => a + b;
+
+const a = 1;
+
+const c = sum(1, 2);
+
+console.log(c);
+var app = {
+  say () {
+    console.log(a);
+  }
+};
+
+export { app as default };
+
+```
+
+整体跟原代码是几乎一样的，没有多余的运行时函数参数
