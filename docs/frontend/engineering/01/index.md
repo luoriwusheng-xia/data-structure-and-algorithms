@@ -539,14 +539,18 @@ npx rollup -c
 ### 测试代码
 
 app.js
+
 ```js
 import { sum } from './sum.js'
+import testRepeatName from './repeat-name.js'
 
 const a = 1
 
 const c = sum(1, 2)
 
 console.log(c);
+
+console.log(testRepeatName);
 export default {
   say () {
     console.log(a);
@@ -559,6 +563,13 @@ sum.js
 export const sum = (a, b) => a + b
 ```
 
+```js
+// 导出一个和sum.js重名的
+
+let sum = 2
+export default sum
+```
+
 
 ### 打包后的产物
 
@@ -567,13 +578,19 @@ dist/bundle.cjs.js
 ```js
 'use strict';
 
-const sum = (a, b) => a + b;
+const sum$1 = (a, b) => a + b;
+
+// 导出一个和sum.js重名的
+
+let sum = 2;
 
 const a = 1;
 
-const c = sum(1, 2);
+const c = sum$1(1, 2);
 
 console.log(c);
+
+console.log(sum);
 var app = {
   say () {
     console.log(a);
@@ -582,17 +599,24 @@ var app = {
 
 module.exports = app;
 
+
 ```
 
 dist/bundle.es.js
 ```js
-const sum = (a, b) => a + b;
+const sum$1 = (a, b) => a + b;
+
+// 导出一个和sum.js重名的
+
+let sum = 2;
 
 const a = 1;
 
-const c = sum(1, 2);
+const c = sum$1(1, 2);
 
 console.log(c);
+
+console.log(sum);
 var app = {
   say () {
     console.log(a);
@@ -601,6 +625,7 @@ var app = {
 
 export { app as default };
 
+
 ```
 
-整体跟原代码是几乎一样的，没有多余的运行时函数参数
+整体跟原代码是几乎一样的，没有多余的运行时函数参数, 如果bundle里面重名，则对变量进行重命名
