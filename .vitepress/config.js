@@ -217,8 +217,12 @@ export default defineConfig({
       },
     },
   },
+  // 排除不打包的目录
+  srcExclude: ["./source-doc/**"],
+
   // 打包输出目录， 默认是 .vitepress/dist
   outDir: fileURLToPath(new URL('../dist', import.meta.url)),
+
   // vite.config.js 相关的配置
   vite: {
     server: {
