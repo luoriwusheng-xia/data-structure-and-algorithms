@@ -11,10 +11,14 @@ import customElements from './md-latex.js'
 // 文档配置
 import sidebar from './sidebar.js'
 
+import { fileURLToPath } from 'node:url'
+
 // import viteSvgIcons, {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // 配置发布路径
+  // base: '/blog/',
   head: [
     [
       "link",
@@ -213,12 +217,14 @@ export default defineConfig({
       },
     },
   },
-
+  // 打包输出目录， 默认是 .vitepress/dist
+  outDir: fileURLToPath(new URL('../dist', import.meta.url)),
   // vite.config.js 相关的配置
   vite: {
     server: {
       host: true
     },
+
     plugins: [
       UnoCSS()
 
