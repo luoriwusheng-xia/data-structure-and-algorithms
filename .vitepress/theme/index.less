@@ -1,16 +1,59 @@
-.container {
-	.content {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
+// 调整页面宽度
+.VPSidebar {
+	width: auto !important;
+	padding-left: 60px !important;
+}
 
-  .aside {
-    .content {
-      padding-left: 16px !important;
-    }
+// 标题
+.VPNav {
+	.title {
+		width: 200px !important;
+		padding-left: 20px !important;
+	}
+  .content {
+    padding-left: 300px !important;
   }
 
-  .content-container {
-    max-width: none !important;
+	// .curtain {
+	// 	width: calc(100vw - 310px) !important;
+	// }
+}
+
+// 内容
+.VPContent {
+	padding-left: 280px !important;
+	padding-right: 60px !important;
+
+	.container {
+		width: 100% !important;
+
+		// 将正文部分的宽度调整大一些
+		.content-container {
+			max-width: 1280px !important;
+		}
+	}
+}
+
+.aside {
+	.aside-content {
+		.outline-link.active {
+			color: #00c172;
+		}
+	}
+
+	.root > li > a.outline-link {
+		// 单篇文档的导航 - 一级导航
+		font-weight: 700;
+	}
+}
+
+// 单篇文章没有左侧导航的时候，扩大可视版面
+.VPDoc.has-aside {
+  .container {
+    max-width: 100% !important;
+
+    .content {
+      max-width: unset;
+    }
   }
 }

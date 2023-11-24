@@ -28,6 +28,10 @@ export default defineConfig({
   title: '前端杂货铺',
   description: 'A VitePress Site',
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+
     outline: 'deep',
     lastUpdated: true,
     // https://vitepress.dev/reference/default-theme-config
