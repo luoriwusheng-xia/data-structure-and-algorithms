@@ -22,6 +22,7 @@
     "vitepress-plugin-sandpack": "^1.1.4"
   },
   "dependencies": {
+    "@vue/theme": "^2.2.5",
     "element-plus": "^2.4.2",
     "markdown-it-custom-attrs": "^1.0.2",
     "unocss": "^0.57.7",
