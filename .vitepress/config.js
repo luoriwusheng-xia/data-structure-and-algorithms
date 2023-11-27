@@ -218,7 +218,7 @@ export default defineConfig({
     },
   },
   // 排除不打包的目录
-  srcExclude: ["./source-doc/**"],
+  srcExclude: ["./source-doc/**", 'README.md', 'Dockerfile', 'nginx.conf', '.dockerignore'],
 
   // 打包输出目录， 默认是 .vitepress/dist
   outDir: fileURLToPath(new URL('../dist', import.meta.url)),
