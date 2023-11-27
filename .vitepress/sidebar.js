@@ -160,6 +160,10 @@ export default {
         {
           text: '妙用位运算-算法-找唯一数字',
           link: '/docs/frontend/essay/04/'
+        },
+        {
+          text: '跳出指定for循环',
+          link: '/docs/frontend/essay/05/'
         }
       ]
     }
