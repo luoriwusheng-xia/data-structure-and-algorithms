@@ -17,11 +17,14 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "postcss": "^8.4.31",
+    "sass": "^1.69.5",
     "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-svg4vue": "^3.0.0",
     "vitepress": "^1.0.0-rc.24",
     "vitepress-plugin-sandpack": "^1.1.4"
   },
   "dependencies": {
+    "@vue/theme": "^2.2.5",
     "element-plus": "^2.4.2",
     "markdown-it-custom-attrs": "^1.0.2",
     "unocss": "^0.57.7",
