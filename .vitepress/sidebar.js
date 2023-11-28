@@ -143,7 +143,6 @@ export default {
   '/docs/frontend/essay/': [
     {
       text: '渡一前端',
-      link: '/docs/frontend/essay/01/',
       items: [
         {
           text: '判断函数是否标记了async',
@@ -168,6 +167,23 @@ export default {
         {
           text: '网格布局中的动画',
           link: '/docs/frontend/essay/06/'
+        },
+        {
+          text: '瀑布流布局',
+          link: '/docs/frontend/essay/07/'
+        },
+        {
+          text: '统计字符串中字符频率',
+          link: '/docs/frontend/essay/08/'
+        },
+      ]
+    },
+    {
+      text: '动画特效',
+      items: [
+        {
+          text: 'svg动画',
+          link: '/docs/frontend/essay/animation/01/',
         }
       ]
     }

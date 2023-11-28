@@ -8,6 +8,9 @@ import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import mathjax3 from 'markdown-it-mathjax3'
 import customElements from './md-latex.js'
 
+// 将svg转成组件
+import { svg4VuePlugin } from 'vite-plugin-svg4vue'
+
 // 文档配置
 import sidebar from './sidebar.js'
 
@@ -230,7 +233,9 @@ export default defineConfig({
     },
 
     plugins: [
-      UnoCSS()
+      UnoCSS(),
+
+      svg4VuePlugin()
 
       //引入SVG图标素材文件
       // createSvgIconsPlugin({
