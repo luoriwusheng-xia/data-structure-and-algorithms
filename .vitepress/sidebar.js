@@ -532,80 +532,44 @@ export default {
   ],
   '/docs/interview/principle/comprehensive': [
     {
-      "text": "虚拟DOM原理分析",
+      "text": "一、创建对象和原型链",
       "link": "/docs/interview/principle/comprehensive/01"
     },
     {
-      "text": "setTimeout实现原理和使用注意",
+      "text": "二、面向对象",
       "link": "/docs/interview/principle/comprehensive/02"
     },
     {
-      "text": "浅析Promise原理",
+      "text": "三、DOM事件总结",
       "link": "/docs/interview/principle/comprehensive/03"
     },
     {
-      "text": "浏览器渲染原理",
+      "text": "四、Event Loop详细版",
       "link": "/docs/interview/principle/comprehensive/04"
     },
     {
-      "text": "前端面试之MVVM浅析",
+      "text": "五、CSS盒模型及BFC",
       "link": "/docs/interview/principle/comprehensive/05"
     },
     {
-      "text": "前端面试之组件化",
+      "text": "六、页面布局",
       "link": "/docs/interview/principle/comprehensive/06"
     },
     {
-      "text": "虚拟DOM（一）",
+      "text": "七、安全问题：CSRF和XSS",
       "link": "/docs/interview/principle/comprehensive/07"
     },
     {
-      "text": "虚拟DOM（二）",
+      "text": "八、跨域通信类",
       "link": "/docs/interview/principle/comprehensive/08"
     },
     {
-      "text": "前端性能之Performance",
+      "text": "九、前端错误监控",
       "link": "/docs/interview/principle/comprehensive/09"
     },
     {
-      "text": "小程序开发实践",
+      "text": "十、HTTP协议",
       "link": "/docs/interview/principle/comprehensive/10"
-    },
-    {
-      "text": "对比 Koa 和 Redux",
-      "link": "/docs/interview/principle/comprehensive/11"
-    },
-    {
-      "text": "正则完整篇",
-      "link": "/docs/interview/principle/comprehensive/12"
-    },
-    {
-      "text": "打造前端监控系统",
-      "link": "/docs/interview/principle/comprehensive/13"
-    },
-    {
-      "text": "浏览器渲染机制",
-      "link": "/docs/interview/principle/comprehensive/14"
-    },
-    {
-      "text": "前端缓存方案解析",
-      "link": "/docs/interview/principle/comprehensive/15"
-    },
-    {
-      "text": "小程序原理",
-      "link": "/docs/interview/principle/comprehensive/16"
-    },
-    {
-      "text": "深入剖析浏览器中页面的渲染过程",
-      "link": "/docs/interview/principle/comprehensive/17"
-    },
-    {
-      "text": "一个网络请求是怎么进行的",
-      "link": "/docs/interview/principle/comprehensive/18"
-    },
-    {
-      "text": "前端性能定位",
-      "link": "/docs/interview/principle/comprehensive/19"
     }
   ]
 }
