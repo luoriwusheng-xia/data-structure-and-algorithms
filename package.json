@@ -17,6 +17,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "postcss": "^8.4.31",
+    "sass": "^1.69.5",
     "vite-plugin-svg-icons": "^2.0.1",
     "vitepress": "^1.0.0-rc.24",
     "vitepress-plugin-sandpack": "^1.1.4"

@@ -164,6 +164,10 @@ export default {
         {
           text: '跳出指定for循环',
           link: '/docs/frontend/essay/05/'
+        },
+        {
+          text: '网格布局中的动画',
+          link: '/docs/frontend/essay/06/'
         }
       ]
     }
