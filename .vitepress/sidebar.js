@@ -186,6 +186,15 @@ export default {
           link: '/docs/frontend/essay/animation/01/',
         }
       ]
+    },
+    {
+      text: '工具',
+      items: [
+        {
+          text: '将html转成md',
+          link: '/docs/frontend/tools/01/'
+        }
+      ]
     }
   ],
 
