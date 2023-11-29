@@ -193,6 +193,10 @@ export default {
         {
           text: '将html转成md',
           link: '/docs/frontend/tools/01/'
+        },
+        {
+          text: 'markdown-it',
+          link: '/docs/frontend/tools/02/'
         }
       ]
     }
