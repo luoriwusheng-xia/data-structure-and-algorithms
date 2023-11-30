@@ -76,7 +76,7 @@ export default defineConfig({
         items: [
           {
             text: '基础篇',
-            link: '/docs/interview/base/'
+            link: '/docs/interview/base/01'
           },
           {
             text: '进阶篇',
