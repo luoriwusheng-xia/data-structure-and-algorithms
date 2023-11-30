@@ -1,8 +1,8 @@
-# (#进阶篇) 进阶篇
+# 进阶篇
 
-## (#一、js基础) 一、JS基础 {#一、js基础}
+## 一、JS基础
 
-### (#_1-类型及检测方式) 1 类型及检测方式 {#_1-类型及检测方式}
+### 1 类型及检测方式
 
 **1. JS内置类型**
 
@@ -662,7 +662,7 @@ null == undefined       // true  规则2
     "object"，这是一个历史遗留的问题。当我们使用双等号对两种类型的值进行比较时会返回
     true，使用三个等号时会返回 false。
 
-### (#_2-this) 2 This {#_2-this}
+### 2 This
 
 > 不同情况的调用，`this`指向分别如何。顺带可以提一下 `es6`
 > 中箭头函数没有 `this`, `arguments`, `super`
@@ -803,7 +803,7 @@ data-src="https://s.poetries.work/gitee/2020/07/2.png" loading="lazy"}
 -   `apply: fn.apply(target, [1, 2])`
 -   `bind: fn.bind(target)(1,2)`
 
-### (#_3-apply-call-bind-原理) 3 apply/call/bind 原理 {#_3-apply-call-bind-原理}
+### 3 apply/call/bind 原理
 
 ![](https://s.poetries.work/images/20210414155100.png){.lazy
 .medium-zoom-image
@@ -1019,7 +1019,7 @@ Function.prototype.myApply = function(context = window, ...args) {
 ```
 
 
-### (#_4-变量提升) 4 变量提升 {#_4-变量提升}
+### 4 变量提升
 
 > 当执行 `JS`
 > 代码时，会生成执行环境，只要代码不是写在函数中的，就是在全局执行环境中，函数中的代码会产生函数执行环境，只此两种执行环境。
@@ -1067,7 +1067,7 @@ b() // call b second
 > `let`。`let`不能在声明前使用，但是这并不是常说的 `let`
 > 不会提升，`let`提升了，在第一阶段内存也已经为他开辟好了空间，但是因为这个声明的特性导致了并不能在声明前使用
 
-### (#_5-执行上下文) 5 执行上下文 {#_5-执行上下文}
+### 5 执行上下文
 
 > 当执行 JS 代码时，会产生三种执行上下文
 
@@ -1271,7 +1271,7 @@ specialObject = {};
 -   函数执行完后，`callee` 被`pop`移除出执行栈，控制权交还全局上下文
     (`caller`)，继续执行
 
-### (#_6-作用域) 6 作用域 {#_6-作用域}
+### 6 作用域
 
 -   作用域：
     作用域是定义变量的区域，它有一套访问变量的规则，这套规则来管理浏览器引擎如何在当前作用域以及嵌套的作用域中根据变量（标识符）进行变量查找
@@ -1390,7 +1390,7 @@ console.log(a) //a is not defined
 > 变量是会报错的，因为这里不是它的作用域。所以在 if 代码块的前后输出 a
 > 这个变量的结果，控制台会显示 a 并没有定义
 
-### (#_7-闭包) 7 闭包 {#_7-闭包}
+### 7 闭包
 
 > 闭包其实就是一个可以访问其他函数内部变量的函数。创建闭包的最常见的方式就是在一个函数内创建另一个函数，创建的函数可以
 > 访问到当前函数的局部变量。
@@ -1763,7 +1763,7 @@ for (var i = 0; i < 6; i++) {
 
 这道题会问输出什么，有哪几种方式可以得到想要的答案？
 
-### (#_8-new的原理) 8 New的原理 {#_8-new的原理}
+### 8 New的原理
 
 **常见考点**
 
@@ -1947,7 +1947,7 @@ function Person(name) {
 -   让实例可以访问构造函数原型（`constructor.prototype`）所在原型链上的属性；
 -   构造函数返回的最后结果是引用数据类型。
 
-### (#_9-原型-原型链) 9 原型/原型链 {#_9-原型-原型链}
+### 9 原型/原型链
 
 **`__proto__`和prototype关系**：`__proto__`和`constructor`是**对象**独有的。2️⃣`prototype`属性是**函数**独有的
 
@@ -2061,7 +2061,7 @@ data-src="https://s.poetries.work/gitee/2020/09/105.png" loading="lazy"}
 -   对象可以通过 `__proto__` 来寻找不属于该对象的属性，`__proto__`
     将对象连接起来组成了原型链。
 
-### (#_10-继承) 10 继承 {#_10-继承}
+### 10 继承
 
 ![](https://s.poetries.work/images/20210414142754.png){.lazy
 .medium-zoom-image
@@ -2435,7 +2435,7 @@ function _possibleConstructorReturn(self, call) {
 
 > 不一定。从继承的角度说，这一设计是存在巨大隐患的。
 
-### (#_11-面向对象) 11 面向对象 {#_11-面向对象}
+### 11 面向对象
 
 **编程思想**
 
@@ -2863,7 +2863,7 @@ function DetectorBase() {
 ```
 
 
-### (#_12-事件机制) 12 事件机制 {#_12-事件机制}
+### 12 事件机制
 
 > 涉及面试题：事件的触发过程是怎么样的？知道什么是事件代理嘛？
 
@@ -3020,7 +3020,7 @@ node.addEventListener('click',(event) =>{
 ```
 
 
-### (#_13-模块化) 13 模块化 {#_13-模块化}
+### 13 模块化
 
 > js 中现在比较成熟的有四种模块加载方案：
 
@@ -3178,7 +3178,7 @@ var module = require('./a.js')
 -   后面提出了对象写法，通过将函数作为一个对象的方法来实现，这样解决了直接使用函数作为模块的一些缺点，但是这种办法会暴露所有的所有的模块成员，外部代码可以修改内部属性的值。
 -   现在最常用的是立即执行函数的写法，通过利用闭包来实现模块私有作用域的建立，同时不会对全局作用域造成污染。
 
-### (#_14-iterator迭代器) 14 Iterator迭代器 {#_14-iterator迭代器}
+### 14 Iterator迭代器
 
 > `Iterator`（迭代器）是一种接口，也可以说是一种规范。为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署`Iterator`接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。
 
@@ -3280,7 +3280,7 @@ let obj = {
 data-src="https://s.poetries.work/images/20210407141323.png"
 loading="lazy"}
 
-### (#_15-promise) 15 Promise {#_15-promise}
+### 15 Promise
 
 > 这里你谈 `promise`的时候，除了将他解决的痛点以及常用的 `API`
 > 之外，最好进行拓展把 `eventloop`
@@ -3546,7 +3546,7 @@ function myPromise(constructor){
 ```
 
 
-### (#_16-generator) 16 Generator {#_16-generator}
+### 16 Generator
 
 > `Generator` 是 `ES6`中新增的语法，和 `Promise`
 > 一样，都可以用来异步编程。Generator函数可以说是Iterator接口的具体实现方式。Generator
@@ -3689,7 +3689,7 @@ loading="lazy"}
 ```
 
 
-### (#_17-async-await) 17 async/await {#_17-async-await}
+### 17 async/await
 
 > `Generator` 函数的语法糖。有更好的语义、更好的适用性、返回值是
 > `Promise`。
@@ -3816,7 +3816,7 @@ var a = 0
 data-src="https://s.poetries.work/images/20210414210917.png"
 loading="lazy"}
 
-### (#_18-事件循环) 18 事件循环 {#_18-事件循环}
+### 18 事件循环
 
 ![](https://s.poetries.work/images/20210516161332.png){.lazy
 .medium-zoom-image
@@ -4499,7 +4499,7 @@ loading="lazy"}
 data-src="https://s.poetries.work/images/20210414212916.png"
 loading="lazy"}
 
-### (#_19-垃圾回收) 19 垃圾回收 {#_19-垃圾回收}
+### 19 垃圾回收
 
 -   对于在JavaScript中的字符串，对象，数组是没有固定大小的，只有当对他们进行动态分配存储时，解释器就会分配内存来存储这些数据，当JavaScript的解释器消耗完系统中所有可用的内存时，就会造成系统崩溃。
 -   内存泄漏，在某些情况下，不再使用到的变量所占用内存没有及时释放，导致程序运行中，内存越占越大，极端情况下可以导致系统崩溃，服务器宕机。
@@ -4539,7 +4539,7 @@ loading="lazy"}
 为了解决这个问题 V8
 引入了增量标记的方法，将一次停顿进行的过程分为了多步，每次执行完一小步就让运行逻辑执行一会，就这样交替运行
 
-### (#_20-内存泄露) 20 内存泄露 {#_20-内存泄露}
+### 20 内存泄露
 
 -   意外的全局变量: 无法被回收
 -   定时器: 未被正确关闭，导致所引用的外部变量无法被释放
@@ -4560,7 +4560,7 @@ loading="lazy"}
 window)]{.sr-only}](https://juejin.cn/post/6947841638118998029?utm_source=gold_browser_extension){target="_blank"
 rel="noopener noreferrer"}
 
-### (#_21-深浅拷贝) 21 深浅拷贝 {#_21-深浅拷贝}
+### 21 深浅拷贝
 
 ![](https://s.poetries.work/images/20210414142630.png){.lazy
 .medium-zoom-image
@@ -4959,7 +4959,7 @@ const isComplexDataType = obj => (typeof obj === 'object' || typeof obj === 'fun
 data-src="https://s.poetries.work/uploads/2022/08/f636f4c6e3cfbd36.png"
 loading="lazy"}
 
-### (#_22-节流与防抖) 22 节流与防抖 {#_22-节流与防抖}
+### 22 节流与防抖
 
 -   函数防抖 是指在事件被触发 n 秒后再执行回调，如果在这 n
     秒内事件又被触发，则重新计时。这可以使用在一些点击请求的事件上，避免因为用户的多次点击向后端发送多次请求。
@@ -5012,7 +5012,7 @@ loading="lazy"}
 ```
 
 
-### (#_23-proxy代理) 23 Proxy代理 {#_23-proxy代理}
+### 23 Proxy代理
 
 > proxy在目标对象的外层搭建了一层拦截，外界对目标对象的某些操作，必须通过这层拦截
 
@@ -5188,7 +5188,7 @@ var proxy = new Proxy({}, {
 ```
 
 
-### (#_24-ajax) 24 Ajax {#_24-ajax}
+### 24 Ajax
 
 > 它是一种异步通信的方法，通过直接由 js 脚本向服务器发起 http
 > 通信，然后根据服务器返回的数据，更新网页的相应部分，而不用刷新整个页面的一种方法。
@@ -5290,7 +5290,7 @@ $.ajax({
 ```
 
 
-### (#_25-深入数组) 25 深入数组 {#_25-深入数组}
+### 25 深入数组
 
 **一、梳理数组 API**
 
