@@ -248,6 +248,53 @@ export default {
     }
   ],
 
+  '/docs/interview/base/': [
+    {
+      "text": "一、html、http、web综合问题",
+      "link": "/docs/interview/base/01"
+    },
+    {
+      "text": "二、css相关",
+      "link": "/docs/interview/base/02"
+    },
+    {
+      "text": "三、javascript相关",
+      "link": "/docs/interview/base/03"
+    },
+    {
+      "text": "四、jquery相关",
+      "link": "/docs/interview/base/04"
+    },
+    {
+      "text": "五、bootstrap相关",
+      "link": "/docs/interview/base/05"
+    },
+    {
+      "text": "六、微信小程序相关",
+      "link": "/docs/interview/base/06"
+    },
+    {
+      "text": "七、webpack相关",
+      "link": "/docs/interview/base/07"
+    },
+    {
+      "text": "八、框架相关",
+      "link": "/docs/interview/base/08"
+    },
+    {
+      "text": "九、编程题相关",
+      "link": "/docs/interview/base/09"
+    },
+    {
+      "text": "十、前端综合问题",
+      "link": "/docs/interview/base/10"
+    },
+    {
+      "text": "十一、hr面相关",
+      "link": "/docs/interview/base/11"
+    }
+  ],
+
   '/docs/interview/improve/': [
     {
       text: '一、js基础',
