@@ -297,16 +297,56 @@ export default {
 
   '/docs/interview/improve/': [
     {
-      text: '一、js基础',
-      link: '/docs/interview/improve/01'
+      "text": "一、JS基础",
+      "link": "/docs/interview/improve/01"
     },
     {
-      text: '二、HTML',
-      link: '/docs/interview/improve/02'
+      "text": "二、HTML",
+      "link": "/docs/interview/improve/02"
     },
     {
-      text: '三、css',
-      link: '/docs/interview/improve/02'
+      "text": "三、CSS基础",
+      "link": "/docs/interview/improve/03"
+    },
+    {
+      "text": "四、浏览器",
+      "link": "/docs/interview/improve/04"
+    },
+    {
+      "text": "五、框架通识",
+      "link": "/docs/interview/improve/05"
+    },
+    {
+      "text": "六、Vue",
+      "link": "/docs/interview/improve/06"
+    },
+    {
+      "text": "七、React",
+      "link": "/docs/interview/improve/07"
+    },
+    {
+      "text": "八、性能",
+      "link": "/docs/interview/improve/08"
+    },
+    {
+      "text": "九、工程化",
+      "link": "/docs/interview/improve/09"
+    },
+    {
+      "text": "十、HTTP",
+      "link": "/docs/interview/improve/10"
+    },
+    {
+      "text": "十一、9种前端常见的设计模式",
+      "link": "/docs/interview/improve/11"
+    },
+    {
+      "text": "十二、综合问题",
+      "link": "/docs/interview/improve/12"
+    },
+    {
+      "text": "十三、人事面",
+      "link": "/docs/interview/improve/13"
     }
   ],
   '/docs/interview/handwritten/': [
