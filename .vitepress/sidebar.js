@@ -196,7 +196,7 @@ export default {
         },
         {
           text: 'markdown-it',
-          link: '/docs/frontend/tools/02/'
+          link: '/docs/frontend/tools/markdown-it/'
         }
       ]
     }
