@@ -83,6 +83,14 @@ export default defineConfig({
             link: '/docs/interview/improve/01'
           },
           {
+            text: '高频篇',
+            link: '/docs/interview/high-frequency/01'
+          },
+          {
+            text: '精选篇',
+            link: '/docs/interview/excellent-docs/01'
+          },
+          {
             text: '手写篇',
             link: '/docs/interview/handwritten/01'
           },
@@ -123,8 +131,15 @@ export default defineConfig({
           {
             text: '设计模式',
             link: '/docs/interview/design-pattern/01'
+          },
+          {
+            text: '面经篇',
+            link: '/docs/interview/interview-exp/01'
+          },
+          {
+            text: '自检篇',
+            link: '/docs/interview/self-checking/01'
           }
-
         ]
       },
       {
