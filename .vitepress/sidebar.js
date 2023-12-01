@@ -647,11 +647,11 @@ export default {
   '/docs/interview/principle/javascript/': [
     {
       text: 'JavaScript 引擎如何执行 JavaScript 代码',
-      link: '/docs/interview/javascript/01'
+      link: '/docs/interview/principle/javascript/01'
     },
     {
       text: '单线程的 JavaScript 如何管理任务',
-      link: '/docs/interview/javascript/02'
+      link: '/docs/interview/principle/javascript/02'
     },
   ],
   '/docs/interview/principle/comprehensive': [
