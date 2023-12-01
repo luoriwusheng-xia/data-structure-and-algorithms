@@ -695,5 +695,19 @@ export default {
       "text": "十、HTTP协议",
       "link": "/docs/interview/principle/comprehensive/10"
     }
+  ],
+  "/docs/interview/self-checking": [
+    {
+      text: '1-前端100题自检',
+      link: "/docs/interview/self-checking/01"
+    },
+    {
+      text: '2-面试综合汇总',
+      link: "/docs/interview/self-checking/02"
+    },
+    {
+      text: '3-Promise面试题',
+      link: "/docs/interview/self-checking/03"
+    }
   ]
 }
