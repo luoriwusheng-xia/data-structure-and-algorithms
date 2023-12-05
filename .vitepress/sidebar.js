@@ -206,6 +206,10 @@ export default {
         {
           text: '轮播',
           link: '/docs/frontend/essay/css/01/'
+        },
+        {
+          text: '你不需要javascript-系列',
+          link: '/docs/frontend/essay/css/02/'
         }
       ]
     }
