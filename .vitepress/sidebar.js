@@ -199,6 +199,15 @@ export default {
           link: '/docs/frontend/tools/markdown-it/'
         }
       ]
+    },
+    {
+      text: 'css',
+      items: [
+        {
+          text: '轮播',
+          link: '/docs/frontend/essay/css/01/'
+        }
+      ]
     }
   ],
 
