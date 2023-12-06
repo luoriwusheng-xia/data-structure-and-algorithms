@@ -48,8 +48,8 @@ export default defineConfig({
         text: '数据结构',
         items: [
           {
-            text: '数据结构',
-            link: '/docs/list/',
+            text: 'leetcode',
+            link: '/docs/leetcode/01/',
           },
           { text: '参考文章', link: '/docs/referenceArticle' },
         ],

@@ -16,10 +16,10 @@
 
 ### 遍历链表
 
-<<<@/docs/list/01/demo/01.js
+<<<./demo/01.js
 
 ### 方法一： 迭代
-<<<@/docs/list/01/demo/02.js
+<<<./demo/02.js
 
 **复杂度分析**
 
@@ -50,6 +50,6 @@ head.next = null 需要指向为null
 ```
 
 
-<<<@/docs/list/01/demo/03.js
+<<<./demo/03.js
 
 ![链表-1](./demo/链表-1.svg)
