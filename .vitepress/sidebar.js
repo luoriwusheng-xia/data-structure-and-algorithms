@@ -212,8 +212,18 @@ export default {
           link: '/docs/frontend/essay/css/02/'
         }
       ]
+    },
+    {
+      text: '计算机基础',
+      items: [
+        {
+          text: '左移, 右移',
+          link: '/docs/frontend/essay/100/'
+        }
+      ]
     }
   ],
+
 
   '/docs/frontend/engineering/index': [
     {
