@@ -1,0 +1,13 @@
+/* 方案2 */
+.left {
+	width: 120px;
+	float: left;
+}
+.right {
+	float: right;
+	width: 120px;
+}
+.center {
+	width: calc(100% - 240px);
+	margin-left: 120px;
+}

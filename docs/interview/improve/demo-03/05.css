@@ -1,0 +1,13 @@
+/* 方案3 */
+.wrap {
+	display: flex;
+}
+.left {
+	width: 120px;
+}
+.right {
+	width: 120px;
+}
+.center {
+	flex: 1;
+}

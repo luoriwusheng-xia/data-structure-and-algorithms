@@ -176,6 +176,10 @@ export default {
           text: '统计字符串中字符频率',
           link: '/docs/frontend/essay/08/'
         },
+        {
+          text: 'HTMLCollection与NodeList区别',
+          link: '/docs/frontend/essay/09/'
+        },
       ]
     },
     {
@@ -740,80 +744,80 @@ export default {
 
   '/docs/interview/excellent-docs': [
     {
-        "text": "1 HTML模块",
-        "link": "/docs/interview/excellent-docs/01"
+      "text": "1 HTML模块",
+      "link": "/docs/interview/excellent-docs/01"
     },
     {
-        "text": "2 CSS模块",
-        "link": "/docs/interview/excellent-docs/02"
+      "text": "2 CSS模块",
+      "link": "/docs/interview/excellent-docs/02"
     },
     {
-        "text": "3 JS模块",
-        "link": "/docs/interview/excellent-docs/03"
+      "text": "3 JS模块",
+      "link": "/docs/interview/excellent-docs/03"
     },
     {
-        "text": "4 ES6模块",
-        "link": "/docs/interview/excellent-docs/04"
+      "text": "4 ES6模块",
+      "link": "/docs/interview/excellent-docs/04"
     },
     {
-        "text": "5 浏览器模块",
-        "link": "/docs/interview/excellent-docs/05"
+      "text": "5 浏览器模块",
+      "link": "/docs/interview/excellent-docs/05"
     },
     {
-        "text": "6 React模块",
-        "link": "/docs/interview/excellent-docs/06"
+      "text": "6 React模块",
+      "link": "/docs/interview/excellent-docs/06"
     },
     {
-        "text": "7 Vue模块",
-        "link": "/docs/interview/excellent-docs/07"
+      "text": "7 Vue模块",
+      "link": "/docs/interview/excellent-docs/07"
     },
     {
-        "text": "8 Node模块",
-        "link": "/docs/interview/excellent-docs/08"
+      "text": "8 Node模块",
+      "link": "/docs/interview/excellent-docs/08"
     },
     {
-        "text": "9 前端工程相关",
-        "link": "/docs/interview/excellent-docs/09"
+      "text": "9 前端工程相关",
+      "link": "/docs/interview/excellent-docs/09"
     },
     {
-        "text": "10 移动多端开发",
-        "link": "/docs/interview/excellent-docs/10"
+      "text": "10 移动多端开发",
+      "link": "/docs/interview/excellent-docs/10"
     },
     {
-        "text": "11 小程序模块",
-        "link": "/docs/interview/excellent-docs/11"
+      "text": "11 小程序模块",
+      "link": "/docs/interview/excellent-docs/11"
     },
     {
-        "text": "12 Uniapp模块",
-        "link": "/docs/interview/excellent-docs/12"
+      "text": "12 Uniapp模块",
+      "link": "/docs/interview/excellent-docs/12"
     },
     {
-        "text": "13 前端安全模块",
-        "link": "/docs/interview/excellent-docs/13"
+      "text": "13 前端安全模块",
+      "link": "/docs/interview/excellent-docs/13"
     },
     {
-        "text": "14 性能优化相关",
-        "link": "/docs/interview/excellent-docs/14"
+      "text": "14 性能优化相关",
+      "link": "/docs/interview/excellent-docs/14"
     },
     {
-        "text": "15 HTTP模块",
-        "link": "/docs/interview/excellent-docs/15"
+      "text": "15 HTTP模块",
+      "link": "/docs/interview/excellent-docs/15"
     },
     {
-        "text": "16 常用设计模式",
-        "link": "/docs/interview/excellent-docs/16"
+      "text": "16 常用设计模式",
+      "link": "/docs/interview/excellent-docs/16"
     },
     {
-        "text": "17 框架通识",
-        "link": "/docs/interview/excellent-docs/17"
+      "text": "17 框架通识",
+      "link": "/docs/interview/excellent-docs/17"
     },
     {
-        "text": "18 排序算法",
-        "link": "/docs/interview/excellent-docs/18"
+      "text": "18 排序算法",
+      "link": "/docs/interview/excellent-docs/18"
     },
     {
-        "text": "19 计算机通识",
-        "link": "/docs/interview/excellent-docs/19"
+      "text": "19 计算机通识",
+      "link": "/docs/interview/excellent-docs/19"
     }
-]
+  ]
 }
