@@ -235,12 +235,12 @@ export default {
 
   '/docs/frontend/engineering/index': [
     {
-      text: '原理与运行时分析',
+      text: 'webpack与rollup原理与运行时分析',
       link: '/docs/frontend/engineering/01/index'
     },
     {
-      text: '原理与运行时分析',
-      link: '/docs/frontend/engineering/01/index'
+      text: 'gulp.js',
+      link: '/docs/frontend/engineering/02/index'
     }
   ],
 
