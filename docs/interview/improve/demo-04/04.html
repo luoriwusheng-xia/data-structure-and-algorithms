@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="controls">
+    <button id="reload" type="button">Reload</button>
+  </div>
+
+  <div class="event-log">
+    <label for="eventLog">Event log:</label>
+    <textarea readonly class="event-log-contents" rows="8" cols="30"
+      id="eventLog"></textarea>
+  </div>
+
+</body>
+
+<script type="module">
+  console.log('开始');
+  // let n = 10000
+  let n = 1_000_000
+  let a = 0
+  for (let i = 0; i < n; i++) {
+    // if(i === n -1) {
+    //   console.log(i);
+    // }
+    // a ++
+    // console.log(i);
+  }
+  console.log('结束');
+</script>
+
+<script>
+  const log = document.querySelector(".event-log-contents");
+  const reload = document.querySelector("#reload");
+
+  reload.addEventListener("click", () => {
+    log.textContent = "";
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 200);
+  });
+
+  window.addEventListener("load", (event) => {
+    console.log('load 事件');
+    log.textContent += "load\n";
+  });
+
+  document.addEventListener("readystatechange", (event) => {
+    console.log('document.readyState', document.readyState);
+    log.textContent += `readystate: ${document.readyState}\n`;
+  });
+
+  document.addEventListener("DOMContentLoaded", (event) => {
+    console.log('DOMContentLoaded--事件');
+    log.textContent += `DOMContentLoaded\n`;
+  });
+
+</script>
+
+</html>
