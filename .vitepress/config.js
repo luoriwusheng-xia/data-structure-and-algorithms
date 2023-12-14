@@ -178,24 +178,7 @@ export default defineConfig({
       },
       {
         text: '源码学习',
-        items: [
-          {
-            text: 'lodash',
-            link: '/docs/lodash/',
-          },
-          {
-            text: 'vue2',
-            link: '/docs/vue2/',
-          },
-          {
-            text: 'vue3',
-            link: '/docs/vue3/',
-          },
-          {
-            text: '收藏夹',
-            link: '/docs/favorites/',
-          }
-        ],
+        link: '/docs/source-code/'
       },
     ],
 
