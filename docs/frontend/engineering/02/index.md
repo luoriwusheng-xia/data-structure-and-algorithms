@@ -1,14 +1,12 @@
 # gulp
 
-- [gulpjs-官网](https://gulpjs.com/)
-
 <script setup>
   import shopRepoInfo from './showRepoInfo.vue'
-
-  // import {getStartCount} from  "./task.js"
 </script>
 
 <shopRepoInfo />
+
+- [gulpjs-官网](https://gulpjs.com/)
 
 - 使用 API创建任务，更加灵活
 - 可任意组合

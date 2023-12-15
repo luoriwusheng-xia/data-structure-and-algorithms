@@ -31,6 +31,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@vue/theme": "^2.2.5",
     "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
     "element-plus": "^2.4.3",
     "markdown-it-custom-attrs": "^1.0.2",
     "unocss": "^0.58.0",
