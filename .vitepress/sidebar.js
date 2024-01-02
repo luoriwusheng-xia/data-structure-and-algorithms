@@ -14,6 +14,10 @@ export default {
     {
       text: 'codemirror-中文文档',
       link: '/docs/frontend/translation/codemirror/index'
+    },
+    {
+      text: 'cac-中文文档',
+      link: '/docs/frontend/translation/cac/index'
     }
   ],
   '/docs/leetcode/': [
