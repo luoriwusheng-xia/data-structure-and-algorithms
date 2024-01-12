@@ -222,6 +222,14 @@ export default {
         {
           text: 'grid',
           link: '/docs/frontend/essay/css/03/'
+        },
+        {
+          text: '四角线框的跟随移动',
+          link: '/docs/frontend/essay/css/04/'
+        },
+        {
+          text: 'css原生变量',
+          link: '/docs/frontend/essay/css/05/'
         }
       ]
     },

@@ -1,0 +1,11 @@
+/* 定义 */
+:root {
+  --color: #000;
+  --font-size: 16px;
+}
+
+/* 使用 */
+.example {
+  color: var(--color);
+  font-size: var(--font-size);
+}

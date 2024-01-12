@@ -1,0 +1,8 @@
+.list-container {
+  --x: 200px;
+  --y: 300px;
+}
+.list-container .item {
+  width: var(--x);
+  height: var(--y);
+}
