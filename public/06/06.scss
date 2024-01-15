@@ -1,0 +1,41 @@
+@use 'sass:math';
+.demo-page-container {
+	overflow: hidden;
+}
+
+.parent-item {
+	// 关键的几个变量尺寸
+
+	// 一行10个元素
+	$n: 9;
+
+	// 单个六边形的尺寸， 假设它是一个正方形
+	$size: math.div(100vw, $n);
+
+	display: flex;
+	// flex-wrap: wrap;
+	// 这里向上偏移的距离，应该根据元素的尺寸进行关联， 应为视口缩小，则margin-top应该缩小
+  // 这里是一个vw单位，视口发生变化，这里的值也在跟随变化
+	margin-top: math.div(-$size, 10);
+
+	.item {
+		width: $size;
+		height: $size;
+
+    flex-shrink: 0;
+
+		// 六边形，对应下面6个坐标点
+		// 下面的顺序是（最上方， 右上角，右下角， 正下方， 左下角， 左上角）
+
+		// 现在是 100% 六边形挨的太紧凑了， 那么就调整 左右的距离即可
+		// clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		// clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 95%, 0% 75%, 0% 25%);
+		clip-path: polygon(50% 0%, 94% 25%, 94% 77%, 50% 100%, 10% 76%, 10% 26%);
+
+		// 让偶数行的元素，向左偏移 1/2 的元素宽度， 形成错位
+	}
+
+	&:nth-child(even) {
+		transform: translateX(math.div(-$size, 2));
+	}
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./06.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="demo-page-container">
+      <div class="container">
+        <div v-for="(item, index) in list" :key="index" class="parent-item">
+          <div class="item" v-for="(son, sIndex) in item" :key="sIndex"
+            :style="{ backgroundColor: son.backgroundColor }"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/vue@3.4.13/dist/vue.global.min.js"></script>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    const app = createApp({
+      setup () {
+        const list = ref([])
+
+        for (let i = 0; i < 12; i++) {
+          let item = new Array(10).fill('').map((p) => {
+            return {
+              backgroundColor: getRandomColor(),
+            }
+          })
+
+          list.value.push(item)
+        }
+
+        return {
+          list
+
+        }
+      }
+    }).mount('#app')
+
+    function getRandomColor () {
+      var letters = '0123456789ABCDEF'
+      var color = '#'
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)]
+      }
+      return color
+    }
+
+
+
+    const containerEl = document.querySelector('.container')
+
+
+  </script>
+</body>
+
+</html>

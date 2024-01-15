@@ -230,6 +230,10 @@ export default {
         {
           text: 'css原生变量',
           link: '/docs/frontend/essay/css/05/'
+        },
+        {
+          text: '六边形布局',
+          link: '/docs/frontend/essay/css/06/'
         }
       ]
     },
