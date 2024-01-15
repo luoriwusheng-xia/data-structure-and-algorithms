@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 function getRandomColor() {
 	var letters = '0123456789ABCDEF'
@@ -35,7 +35,7 @@ function getRandomColor() {
  *
  * 增加一个默认的最小值，避免生成的 div太小了
  */
-const getRandomPx = (max, min=100) => {
+const getRandomPx = (max, min = 100) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min + 'px'
 }
 
@@ -58,19 +58,28 @@ const genList = () => {
 
 list.value = genList()
 
+let moveHandler = null
+let listContainer = null
+
 const init = () => {
 	const itemList = document.querySelectorAll('.list-container .item')
 
 	const pointer = document.querySelector('.list-container .pointer')
 
-	const listContainer = document.querySelector('.list-container')
+	listContainer = document.querySelector('.list-container')
 
 	let left = 0
 	let top = 0
 
 	// 使用事件代理
 
-	const moveHandler = (e) => {
+	moveHandler = (e) => {
+    let display = pointer.style.display
+
+    // 一开始因为页面，布局等因素是不确定的，就先隐藏。 因为这个框子的数据（宽， 高）是计算出来的
+    if (display = 'none') {
+      pointer.style.display = 'block'
+    }
 		if (e.target.classList.contains('item')) {
 			// 拿到当前元素
 			let currentLeft = e.target.offsetLeft
@@ -102,6 +111,13 @@ const init = () => {
 onMounted(() => {
 	init()
 })
+
+onBeforeUnmount(() => {
+	if (moveHandler) {
+		listContainer.removeEventListener('mousemove', moveHandler)
+		moveHandler = null
+	}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -130,7 +146,8 @@ onMounted(() => {
 	// 关键
 	position: relative;
 
-	background-color: rgba(129, 127, 127, 0.6);
+	background-color: #000;
+	padding: 24px;
 
 	display: flex;
 	flex-wrap: wrap;
@@ -150,6 +167,8 @@ onMounted(() => {
 		// --ponter-width: 200px;
 		// --ponter-height: 200px;
 
+    display: none;
+
 		position: absolute;
 
 		// 白色边框的宽度，就是 元素的宽度 + 左右两侧的间隙宽度
@@ -161,18 +180,26 @@ onMounted(() => {
 		// top: 就是我们具体某个元素相对于 父容器的top值 减去 一个间隙
 		top: calc(var(--y) - var(--g));
 
-		border: var(--t) #f90 solid;
+		border: var(--t) #fff solid;
 
 		// 增加过渡
 		transition: 0.3s ease-in-out;
 
-    // 4个角的实现代码，上述代码均与这块无关
+		// 4个角的实现代码，上述代码均与这块无关
 
-    background: conic-gradient(
-      #fff 0deg,
-      #f90 270deg
-    );
+		// background: conic-gradient(
+		//   at 20px 20px,
+		//   transparent 75%,
+		//   red 75%
+		// ) 0 0 / calc(100% - 20px) calc(100% - 20px);
 
+		// 如果上面的图形是固定的尺寸，则这里 calc(100% - 固定的变量 --l)， 现在图片尺寸都是随机的，如果还是用固定尺寸，则右侧会出现偏短的问题，
+		// 解决办法就是要根据图片的尺寸，动态设置 --l 变量的宽度
+
+		// 通过蒙层， 就变成想要的效果
+
+		mask: conic-gradient(at 20px 20px, transparent 75%, red 75%) 0 0 /
+			calc(100% - 20px) calc(100% - 20px);
 	}
 }
 </style>
