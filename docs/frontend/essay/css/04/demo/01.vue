@@ -74,13 +74,14 @@ const init = () => {
 	// 使用事件代理
 
 	moveHandler = (e) => {
-    let display = pointer.style.display
-
-    // 一开始因为页面，布局等因素是不确定的，就先隐藏。 因为这个框子的数据（宽， 高）是计算出来的
-    if (display = 'none') {
-      pointer.style.display = 'block'
-    }
 		if (e.target.classList.contains('item')) {
+			let display = pointer.style.display
+
+			// 一开始因为页面，布局等因素是不确定的，就先隐藏。 因为这个框子的数据（宽， 高）是计算出来的
+			if ((display = 'none')) {
+				pointer.style.display = 'block'
+			}
+
 			// 拿到当前元素
 			let currentLeft = e.target.offsetLeft
 			let currentTop = e.target.offsetTop
@@ -167,7 +168,7 @@ onBeforeUnmount(() => {
 		// --ponter-width: 200px;
 		// --ponter-height: 200px;
 
-    display: none;
+		display: none;
 
 		position: absolute;
 
