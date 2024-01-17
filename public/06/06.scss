@@ -19,6 +19,10 @@
 	margin-top: math.div(-$size, 10);
 
 	.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 		width: $size;
 		height: $size;
 
