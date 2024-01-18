@@ -192,6 +192,10 @@ export default {
         {
           text: 'svg动画',
           link: '/docs/frontend/essay/animation/01/',
+        },
+        {
+          text: 'gsap',
+          link: '/docs/frontend/essay/animation/02/index'
         }
       ]
     },
