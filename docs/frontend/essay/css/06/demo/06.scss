@@ -19,10 +19,16 @@
 	margin-top: math.div(-$size, 10);
 
 	.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 		width: $size;
 		height: $size;
 
     flex-shrink: 0;
+
+    transition: 0.8s all;
 
 		// 六边形，对应下面6个坐标点
 		// 下面的顺序是（最上方， 右上角，右下角， 正下方， 左下角， 左上角）

@@ -13,6 +13,7 @@
   width: 11.1111111111vw;
   height: 11.1111111111vw;
   flex-shrink: 0;
+  transition: 0.8s all;
   clip-path: polygon(50% 0%, 94% 25%, 94% 77%, 50% 100%, 10% 76%, 10% 26%);
 }
 .parent-item:nth-child(even) {

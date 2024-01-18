@@ -16,18 +16,115 @@
           <div :data-row="index" :data-col="sIndex" class="item"
             v-for="(son, sIndex) in item" :key="sIndex"
             :style="{ backgroundColor: son.backgroundColor }"
-            @mousemove="onHandleMouseMove(index, sIndex, $event)">
+            @mouseenter="onHandleMouseMove(index, sIndex, $event, 1)"
+            @mouseleave="onHandleMouseMove(index, sIndex, $event, 2)"
+            >
             ({{index}}, {{sIndex}})
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script
-    src="https://cdn.jsdelivr.net/npm/vue@3.4.13/dist/vue.global.min.js"></script>
+  <script src="/js/vue-3.4.13.min.js"></script>
 
   <script>
     const { createApp, ref } = Vue
+
+    /**
+     * 获取鼠标当前所在元素的周围元素
+     * @param {Number} row 行 下标从0开始
+     * @param {Number} col 列 下标从0开始
+     * @param {HTMLElement} el 当前元素
+     * @returns {Array<HTMLElement>}
+     * */
+    function getAroundItems (row, col, el) {
+      let arr = []
+
+      // 1. 先拿左右节点
+      let prevNode = el.previousSibling
+      let nextNode = el.nextSibling
+
+      // console.log('前一个节点', prevNode);
+      // console.log('后一个节点', nextNode);
+      // 前一个节点可能是文本，比如最左侧; 一行的最后一个节点也有可能是文本,比如最右侧
+      if (prevNode && prevNode.nodeType === 1) {
+        arr.push(prevNode)
+      }
+
+      if (nextNode && nextNode.nodeType === 1) {
+        arr.push(nextNode)
+      }
+
+      // console.log(row, col);
+
+      //  拿到其他4个相邻元素
+      if ((row + 1) % 2 === 0) {
+        // 偶数
+
+        // 上面2个
+        let topLeftNode = el.parentNode?.previousSibling?.children[col - 1]
+        let topRightNode = el.parentNode?.previousSibling?.children[col]
+
+        arr.push(topLeftNode)
+        arr.push(topRightNode)
+
+        if (el.parentNode?.nextSibling && el.parentNode?.nextSibling.nodeType === 1) {
+          // 下面2个
+          let bottomLeftNode = el.parentNode?.nextSibling?.children[col - 1]
+          let bottomRightNode = el.parentNode?.nextSibling?.children[col]
+
+          arr.push(bottomLeftNode)
+          arr.push(bottomRightNode)
+        }
+      } else {
+        // 奇数
+
+        // 如果是边缘，parentNode 会是 Text 文本类型， 只有div 才可以去找 children
+        if (el.parentNode?.previousSibling && el.parentNode?.previousSibling.nodeType === 1) {
+          // 上面2个
+          let topLeftNode = el.parentNode?.previousSibling?.children[col]
+          let topRightNode = el.parentNode?.previousSibling?.children[col + 1]
+
+          arr.push(topLeftNode)
+          arr.push(topRightNode)
+        }
+
+        // 下面2个
+        let bottomLeftNode = el.parentNode?.nextSibling?.children[col]
+        let bottomRightNode = el.parentNode?.nextSibling?.children[col + 1]
+
+        arr.push(bottomLeftNode)
+        arr.push(bottomRightNode)
+      }
+
+      // 存在获取的元素为undefined情况
+
+      arr = arr.filter(Boolean)
+
+      return arr
+    }
+
+    /**
+     * @param {HTMLElement} el 当前元素
+     * @param {Array<HTMLElement>} nodes 周围的元素
+     * @param {Number} type 1: 进入 2: 离开
+     *  */
+    function setAnimation(el, nodes, type) {
+      console.log(1);
+      if (type === 1) {
+        el.style.transform = `scale(1.5)`
+
+        nodes.forEach(p => {
+          p.style.transform = `scale(0.75)`
+        })
+      } else {
+        el.style.transform = `scale(1)`
+
+        nodes.forEach(p => {
+          p.style.transform = `scale(1)`
+        })
+      }
+    }
 
     const app = createApp({
       setup () {
@@ -43,65 +140,15 @@
           list.value.push(item)
         }
 
-        /**
-        * 获取鼠标当前所在元素的周围元素
-        */
-        function getAroundItems (row, col, el) {
-          const arr = []
-
-          // 1. 先拿左右节点
-          let prevNode = el.previousSibling
-          let nextNode = el.nextSibling
-
-          console.log('前一个节点', prevNode);
-          console.log('后一个节点', nextNode);
-
-          arr.push(prevNode)
-          arr.push(nextNode)
-
-          //  拿到其他4个相邻元素
-          if (row % 2 === 0) {
-            // 偶数
-
-            // 上面2个
-            let topLeftNode = el.parentNode?.children[col - 1]
-            let topRightNode = el.parentNode?.children[col]
-
-            arr.push(topLeftNode)
-            arr.push(topRightNode)
-
-            // 下面2个
-            let bottomLeftNode = el.parentNode?.nextSibling?.children[col - 1]
-            let bottomRightNode = el.parentNode?.nextSibling?.children[col]
-
-            arr.push(bottomLeftNode)
-            arr.push(bottomRightNode)
-          } else {
-            // 奇数
-
-            // 上面2个
-            let topLeftNode = el.parentNode?.children[col]
-            let topRightNode = el.parentNode?.children[col + 1]
-
-            arr.push(topLeftNode)
-            arr.push(topRightNode)
-
-            // 下面2个
-            let bottomRightNode = el.parentNode?.nextSibling?.children[col]
-            let bottomLeftNode = el.parentNode?.nextSibling?.children[col + 1]
-
-            arr.push(bottomRightNode)
-          }
 
 
-          return arr
-        }
-
-
-
-        const onHandleMouseMove = (row, col, event) => {
+        const onHandleMouseMove = (row, col, event, type) => {
           // 周围节点
           let nodes = getAroundItems(row, col, event.target)
+
+          console.log(nodes);
+
+          setAnimation(event.target,nodes, type)
         }
 
         return {
