@@ -2,6 +2,14 @@
 
 <script setup>
   import demo01 from './demo/01.vue'
+  import demo02 from './demo/02.vue'
+  import demo03 from './demo/03.vue'
+  import demo04 from './demo/04.vue'
+  import demo05 from './demo/05.vue'
+  import demo06 from './demo/06.vue'
+  import demo07 from './demo/07.vue'
+  import demo08 from './demo/08.vue'
+  import demo09 from './demo/09.vue'
 
 </script>
 
@@ -41,19 +49,100 @@ gsap.to('.box', {
 
 ### 哪些可以支持
 
+gsap 中 所有东西都可以成为动画
+
+
 #### css属性
 
 变换，颜色，填充，边界半径，GSAP可以将其全部动画化！只需记住camelCase属性-例如背景颜色变为backgroundColor。
 
+::: danger
+虽然GSAP可以制作几乎所有CSS属性的动画，但我们建议尽可能使用转换(transform)和不透明度(opacity)。
+
+对于浏览器渲染来说，滤镜(filter)和阴影(box-shadow)等属性是CPU密集型的。小心制作动画，并确保在低端设备上进行测试。
+:::
 
 #### SVG 属性
 
-#### Canvas
+就像HTML元素一样，SVG元素可以通过变换简写来设置动画。此外，您还可以使用attr对象设置SVG属性的动画，如width、height、fill、stroke、cx、opacity甚至SVG本身。
+
 
 #### 任何数值、颜色或包含数字的复杂字符串
+当我们说任何东西时，我们意味着任何东西。GSAP甚至不需要DOM元素来设置动画属性。你可以从字面上针对任何对象的任何属性，甚至是任意创建的属性，就像这样
+
+```js
+//create an object
+let obj = { myNum: 10, myColor: "red" };
+
+gsap.to(obj, {
+  myNum: 200,
+  myColor: "blue",
+  onUpdate: () => console.log(obj.myNum, obj.myColor)
+});
+```
+
+使用 `onUpdate` 一样能跟踪到一个普通对象的变化过程， 我们前面操作的都是 DOM， SVG， canvas等， 这里是一个原生的js对象
+
+<<<./demo/updatelog.txt
+
+
+#### Canvas
+
+在下面的演示中，我们使用HTML画布绘制了一个方框。我们为存储在位置对象中的x和y值设置动画，然后在动画的每个刻度上更新画布。
+
+GSAP经常以这种方式用于在Three.js、HTML画布和Pixi.js中制作动画
+
+
+这就是为啥，上面要去改对象的值，而不是直接去改 canvas 的值， 具体看下面的案例demo
+
+## 注意事项
+
+1. gsap是通过 `document.querySelectorAll()` 获取DOM元素的， 所以，我们如果在vue中使用，哪怕是写了 `scoped` 是不顶用的， 最好是通过 `ref` 去获取DOM 对象，这样可以将查询范围限定在单个组件范围内，避免 class 或者 id 在跨组件重名，导致非期望的元素在动
+2. gsap 是可以传入 选择器，查询DOM元素的 `.box > .test` 这样的
 
 ## 案例
 
 ### 1. 基础移动
 
 <demo01></demo01>
+
+<<<./demo/01.vue
+
+
+### 2. 溜溜球效果
+
+溜溜球效果，就是一个动画过去，还会回弹回来， 动画怎么过去的， yoyo: true， 就怎么回来
+
+`yoyo` 和 `repeat` 一般是搭配使用
+<demo02></demo02>
+
+
+### 3. 无限重复的动画
+
+只要设置 repeat: -1 就可以无限重复
+
+<demo03></demo03>
+
+### 4. delay 延迟
+
+延迟，可以让 A, B， C 目标对象之间保持一定的顺序， 但是有点繁琐， 以为，只要一个delay时间改变，为了让动画的连贯性，后续的目标对象的 delay时间都需要进行调整，比较繁琐； 这种情况，使用 `Timeline` 会方便很多
+
+<demo04/>
+
+<demo05/>
+
+### 5. 时间线 Timeline
+
+<demo06></demo06>
+
+### 6. 缓动函数
+
+有各种各样的 内置 缓动函数， 通过 `ease` 配置告知 `gsap` 我们要使用什么缓动函数
+
+<demo07 />
+
+### 7. stagger 交错
+
+<demo08 />
+
+<demo09 />
