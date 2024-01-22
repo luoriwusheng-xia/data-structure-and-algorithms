@@ -6,7 +6,7 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup></script>
 
 <style lang="less" scoped>
 .container {
@@ -67,10 +67,12 @@
 </style>
 
 <style lang="scss" scoped>
+@use "sass:math";
+
 @for $i from 0 to 9 {
 	// $i从0开始
 	.box:has(.item:nth-child(#{$i + 1}):hover) {
-		$r: floor($i / 3 +1); // 取值1-3
+		$r: math.floor(calc(math.div($i, 3) + 1)); // 取值1-3
 		$c: $i % 3 + 1; // 取值1-3
 
     // 初始化状态， 下面只需要根据当前鼠标 hover到哪一行，哪一列， 将对应的 行的占比 改为 2fr， 列改为2fr
