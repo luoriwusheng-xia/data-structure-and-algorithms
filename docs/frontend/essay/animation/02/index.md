@@ -1,18 +1,5 @@
 # gsap
 
-<script setup>
-  import demo01 from './demo/01.vue'
-  import demo02 from './demo/02.vue'
-  import demo03 from './demo/03.vue'
-  import demo04 from './demo/04.vue'
-  import demo05 from './demo/05.vue'
-  import demo06 from './demo/06.vue'
-  import demo07 from './demo/07.vue'
-  import demo08 from './demo/08.vue'
-  import demo09 from './demo/09.vue'
-
-</script>
-
 ## 术语
 
 ### 补间动画/过渡动画 （tweens）
@@ -102,47 +89,4 @@ GSAP经常以这种方式用于在Three.js、HTML画布和Pixi.js中制作动画
 
 ## 案例
 
-### 1. 基础移动
-
-<demo01></demo01>
-
-<<<./demo/01.vue
-
-
-### 2. 溜溜球效果
-
-溜溜球效果，就是一个动画过去，还会回弹回来， 动画怎么过去的， yoyo: true， 就怎么回来
-
-`yoyo` 和 `repeat` 一般是搭配使用
-<demo02></demo02>
-
-
-### 3. 无限重复的动画
-
-只要设置 repeat: -1 就可以无限重复
-
-<demo03></demo03>
-
-### 4. delay 延迟
-
-延迟，可以让 A, B， C 目标对象之间保持一定的顺序， 但是有点繁琐， 以为，只要一个delay时间改变，为了让动画的连贯性，后续的目标对象的 delay时间都需要进行调整，比较繁琐； 这种情况，使用 `Timeline` 会方便很多
-
-<demo04/>
-
-<demo05/>
-
-### 5. 时间线 Timeline
-
-<demo06></demo06>
-
-### 6. 缓动函数
-
-有各种各样的 内置 缓动函数， 通过 `ease` 配置告知 `gsap` 我们要使用什么缓动函数
-
-<demo07 />
-
-### 7. stagger 交错
-
-<demo08 />
-
-<demo09 />
+- [案例](/docs/frontend/essay/animation/02/case)

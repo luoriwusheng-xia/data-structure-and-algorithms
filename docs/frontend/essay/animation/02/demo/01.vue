@@ -43,20 +43,6 @@
 		</div>
 	</div>
 
-	<hr />
-	<div>
-		<div>操作任意内容，比如我们将一个对象做一个动画更新</div>
-
-		<el-button @click="run5" class="m-y-2" type="danger">运行 </el-button>
-	</div>
-
-	<hr />
-	<div>
-    <div class="outer-box-canvas">
-		<canvas class="canvas-box" width="300" height="300"></canvas>
-	</div>
-  <el-button @click="run6" class="m-y-2" type="danger">运行 </el-button>
-  </div>
 </template>
 
 <script setup>
@@ -106,50 +92,9 @@ const run4 = () => {
 	})
 }
 
-const run5 = () => {
-	const obj = {
-		age: 1,
-		color: 'red',
-	}
 
-	gsap.to(obj, {
-		duration: 3,
-		age: 100,
-		color: 'blue',
 
-		onUpdate: () => {
-			console.log(obj)
-		},
-	})
-}
 
-const run6 = () => {
-  const canvas = document.querySelector('.canvas-box')
-  const ctx = canvas.getContext('2d')
-
-  ctx.fillStyle='#28a92d'
-
-  let position = {
-    x: 0,
-    y: 0
-  }
-
-  function draw() {
-    ctx.clearRect(0,0,300,300)
-    ctx.fillRect(position.x, position.y, 100, 100)
-  }
-
-  // 这里修改的只是一个对象，并没有直接去改 canvas
-  gsap.to(position, {
-    x: 200,
-    y: 200,
-    duration: 4,
-    // 在更新函数中，重新绘制canvas
-
-    // 这里不像 DOM一样， canvas需要重新绘制并且清除之前的画布
-    onUpdate: draw
-  })
-}
 </script>
 
 <style lang="scss" scoped>
@@ -189,12 +134,4 @@ const run6 = () => {
 	border: solid 2px pink;
 }
 
-.outer-box-canvas {
-	.canvas-box {
-		height: 300px;
-		max-height: 300px;
-		overflow: visible;
-		border: solid 2px red;
-	}
-}
 </style>
