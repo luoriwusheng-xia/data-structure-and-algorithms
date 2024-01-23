@@ -90,3 +90,8 @@ GSAP经常以这种方式用于在Three.js、HTML画布和Pixi.js中制作动画
 ## 案例
 
 - [案例](/docs/frontend/essay/animation/02/case)
+
+
+## 参考案例
+
+- [十分钟教你用svg做出精美的动画！](https://juejin.cn/post/6930412294149472269)
