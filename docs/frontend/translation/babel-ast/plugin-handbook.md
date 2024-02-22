@@ -1,14 +1,7 @@
 # Babel Plugin Handbook
 
-Written by [Jamie Kyle](https://jamie.build/)
-
-This document covers how to create [Babel](https://babeljs.io)
-[plugins](https://babeljs.io/docs/advanced/plugins/).
-
-[![cc-by-4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
-
-This handbook is available in other languages, see the [README](/README.md) for
-a complete list.
+- [中文版](./zh/plugin-handbook)
+- [user-handbook](./user-handbook)
 
 # Table of Contents
 
@@ -1298,7 +1291,7 @@ If you need to access the `path` of that property instead, use the `get` method 
 
 ```js
 BinaryExpression(path) {
-  path.get('left'); 
+  path.get('left');
 }
 Program(path) {
   path.get('body.0');

@@ -1,14 +1,8 @@
 # Babel User Handbook
 
-Written by [Jamie Kyle](https://jamie.build/)
+- [中文版](./zh/user-handbook)
+- [插件开发](./plugin-handbook)
 
-This document covers everything you ever wanted to know about using
-[Babel](https://babeljs.io) and related tooling.
-
-[![cc-by-4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
-
-This handbook is available in other languages, see the [README](/README.md) for
-a complete list.
 
 # Table of Contents
 
