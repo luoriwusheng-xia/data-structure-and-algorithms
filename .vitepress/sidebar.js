@@ -18,6 +18,20 @@ export default {
     {
       text: 'cac-中文文档',
       link: '/docs/frontend/translation/cac/index'
+    },
+    {
+      text: 'babel-ast',
+      link: '/docs/frontend/translation/babel-ast/index'
+    }
+  ],
+  "/docs/frontend/translation/babel-ast/index": [
+    {
+      text: 'user handbook 设置/配置 Babel',
+      link: '/docs/frontend/translation/babel-ast/user-handbook'
+    },
+    {
+      text: 'plugin 开发',
+      link: '/docs/frontend/translation/babel-ast/plugin-handbook'
     }
   ],
   '/docs/leetcode/': [
