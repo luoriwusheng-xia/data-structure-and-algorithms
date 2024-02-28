@@ -64,6 +64,10 @@ export default {
             {
               text: '寻找两个正序数组的中位数',
               link: '/docs/leetcode/12/index'
+            },
+            {
+              text: '5-最长回文子串',
+              link: '/docs/leetcode/medium/01/index'
             }
           ]
         }
