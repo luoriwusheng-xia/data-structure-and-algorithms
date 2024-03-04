@@ -227,6 +227,7 @@ export default defineConfig({
   // vite.config.js 相关的配置
   vite: {
     server: {
+      port: 8080,
       host: true
     },
 
