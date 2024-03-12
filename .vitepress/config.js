@@ -8,6 +8,11 @@ import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import mathjax3 from 'markdown-it-mathjax3'
 import customElements from './md-latex.js'
 
+// 代码语法高亮
+import Shiki from '@shikijs/markdown-it'
+
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+
 // 将svg转成组件
 import { svg4VuePlugin } from 'vite-plugin-svg4vue'
 
@@ -190,10 +195,25 @@ export default defineConfig({
   },
 
   markdown: {
+    theme: 'dark-plus',
+
+    codeTransformers: [
+      // link https://shiki.style/packages/vitepress
+      transformerTwoslash()
+    ],
+
     // 默认高亮的语言
     // defaultHighlightLang: 'js',
     lineNumbers: true,
-    config (md) {
+    async config (md) {
+
+      // md.use(await Shiki({
+      //   themes: {
+      //     light: 'dark-plus',
+      //     dark: 'dark-plus'
+      //   }
+      // }))
+
       md
         // the second parameter is html tag name
         .use(container, 'sandbox', {

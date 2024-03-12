@@ -88,6 +88,10 @@ export default {
           link: '/docs/vitepress-config/02/index',
         },
         {
+          text: 'shiki-更改代码主题',
+          link: '/docs/vitepress-config/09/index'
+        },
+        {
           text: '主题开发',
           link: '/docs/vitepress-config/03/index',
         },
