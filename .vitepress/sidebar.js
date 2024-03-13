@@ -222,6 +222,10 @@ export default {
         {
           text: '原生拖动',
           link: '/docs/frontend/essay/animation/03/index'
+        },
+        {
+          text: '任意两个点的曲线连接JS算法',
+          linl: '/docs/frontend/essay/animation/04/index'
         }
       ]
     },
