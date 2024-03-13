@@ -332,7 +332,7 @@ export default {
     },
     {
       "text": "三、javascript相关",
-      "link": "/docs/interview/base/03"
+      "link": "/docs/interview/base/03/"
     },
     {
       "text": "四、jquery相关",
