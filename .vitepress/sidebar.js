@@ -218,6 +218,10 @@ export default {
         {
           text: 'gsap',
           link: '/docs/frontend/essay/animation/02/index'
+        },
+        {
+          text: '原生拖动',
+          link: '/docs/frontend/essay/animation/03/index'
         }
       ]
     },
