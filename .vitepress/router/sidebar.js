@@ -1,4 +1,4 @@
-import sourceCode from './source-code.js'
+import sourceCode from './source-code/index.js'
 import lettcode from './leetcode.js'
 import vitepress from './vitepress.js'
 import interview from './interview.js'
