@@ -9,6 +9,7 @@
   import demo5 from './demo/05.vue'
   import demo6 from './demo/06.vue'
   import demo7 from './demo/07.vue'
+  import demo8 from './demo/08.vue'
 </script>
 
 ## 案例
@@ -64,7 +65,13 @@
 <demo7/>
 <<<./demo/07.vue
 
-### 参考资料
+
+### 跨列
+
+<demo8/>
+<<<./demo/08.vue
+
+## 参考资料
 
 - [交互式-grid教程](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
 - [CSS Grid 网格布局教程- 阮一峰](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
