@@ -10,6 +10,7 @@
   import demo6 from './demo/06.vue'
   import demo7 from './demo/07.vue'
   import demo8 from './demo/08.vue'
+  import demo9 from './demo/09.vue'
 </script>
 
 ## 案例
@@ -70,6 +71,11 @@
 
 <demo8/>
 <<<./demo/08.vue
+
+### 魔方布局
+
+<demo9/>
+<<<./demo/09.vue
 
 ## 参考资料
 
