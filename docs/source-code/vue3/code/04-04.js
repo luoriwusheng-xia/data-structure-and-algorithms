@@ -69,6 +69,7 @@ const effect = (fn) => {
 let c = 0;
 
 effect(() => {
+  // 存在分支切换的问题
   c = obj.ok ? obj.text : '没变';
 
   console.log('执行了', c);
@@ -77,3 +78,8 @@ effect(() => {
 obj.ok = false;
 
 // 上面在切换了分支以后， 副作用函数还是执行了， 我这里改变的其实是 obj.ok
+
+// 上面已经将 ok设置未 false 无论 obj.text 如何变动，都不应该再执行副作用函数，但是目前去改 obj.text 会重新执行，需要解决这个问题
+
+// 会再次触发副作用函数的执行， 其实 c 没变， 但是还是执行了副作用函数
+obj.text = 'text-3';

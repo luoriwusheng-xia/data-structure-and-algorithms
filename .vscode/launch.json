@@ -13,7 +13,7 @@
         "ts-node/register"
       ],
       "args": [
-        "${workspaceFolder}/docs/leetcode/medium/01/demo-2.js"
+        "${workspaceFolder}/docs/source-code/vue3/code/04-05.js"
       ]
     }
   ]
