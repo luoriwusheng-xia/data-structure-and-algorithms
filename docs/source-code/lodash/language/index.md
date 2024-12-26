@@ -633,6 +633,14 @@ console.log(clonedRegex.lastIndex);
 
 <<<./code/01.js
 
+### 获取 正则表达式的 flags
+
+<<<./code/02.js
+
+### 简易版深拷贝
+
+<<<./code/03.js
+
 ## isObject
 
 判断目标值，是否为一个对象
