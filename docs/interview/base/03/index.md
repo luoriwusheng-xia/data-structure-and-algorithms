@@ -2797,10 +2797,12 @@ JavaScript 有以下几种类型的值：
 **区别如下：**
 
 1.  `undefined`表示变量声明了但没有被赋值，或者访问对象属性不存在时的默认返回值。
+
 - 当变量被声明但未被赋值时，默认值为 `undefined`。
 - 当访问对象的不存在属性时，返回值为 `undefined`。
 
 2.  `null` 表示变量被赋予了一个空值，表示有一个对象，但该对象为空。
+
 - 当想要明确表示一个变量为空对象时，可以将其赋值为 `null`。
 - `null` 是一个特殊的对象值，表示对象为空，即不指向任何内存地址。
 
@@ -4858,13 +4860,13 @@ var elementById = document.getElementById('id');
 
 正则表达式构造函数 `RegExp()` 和正则表达字面量的主要区别在于语法和使用方式。
 
-**正则表达式构造函数 `RegExp()` **
+**正则表达式构造函数 RegExp()**
 
 - 使用字符串作为参数，需要进行双重转义，即需要使用双反斜杠来表示特殊字符，如`\d`表示数字，`\w`表示字母数字下划线等。
 - 构造函数的参数可以是一个字符串，也可以是两个字符串，第一个字符串是正则表达式模式，第二个字符串是修饰符。
 - 如果正则表达式模式是一个变量，只能使用构造函数的方式创建正则表达式。
 
-**正则表达字面量 `//` **
+**正则表达字面量 `//`**
 
 - 使用两个斜杠`//`将正则表达式包围起来。
 - 字面量的方式更简洁，不需要进行双重转义，直接使用特殊字符即可。
@@ -6483,7 +6485,7 @@ console.log(obj2.b.c); // 3
 - 不能序列化函数
 - 不能解决循环引用的对象
 
-** `JSON.stringify()` 方法在实现深拷贝时有一些局限性，包括：**
+**`JSON.stringify()`方法在实现深拷贝时有一些局限性，包括：**
 
 1.  无法处理函数：`JSON.stringify()`
     方法在序列化对象时会忽略函数属性，因为函数不符合 JSON
@@ -6518,9 +6520,7 @@ console.log(serializedObj); // {"name":"poetry","self":null}
 ```
 
 3.  无法处理特殊对象：`JSON.stringify()` 方法无法序列化某些特殊对象，如
-    `Date` 对象、正则表达式、 `Map` 、 `Set`
-
-    等，它们在序列化过程中会转换成空对象。
+    `Date` 对象、正则表达式、 `Map` 、 `Set`等，它们在序列化过程中会转换成空对象。
 
 ```js
 let obj = {
@@ -6538,9 +6538,7 @@ console.log(serializedObj); // {"now":{},"regex":{},"set":{},"map":{}}
 ```
 
 4.  无法处理 `undefined` 属性：`JSON.stringify()`
-    方法在序列化对象时会忽略 `undefined`
-
-    属性，序列化后的结果不包含该属性。
+    方法在序列化对象时会忽略 `undefined`属性，序列化后的结果不包含该属性。
 
 ```js
 let obj = {
@@ -6556,6 +6554,23 @@ console.log(serializedObj); // {"name":"poetry"}
 
 > 进行深拷贝时，需要注意上述局限性，并确保对象不包含函数、循环引用或特殊对象，并且不需要保留
 > `undefined` 属性。对于包含上述情况的对象，应使用其他方法实现深拷贝。
+
+**window.structuredClone 结构化克隆**
+
+> window 对象上，原生的 API, 属于深拷贝， [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/structuredClone), lodash 的 clone 参考的标准进行实现 [lodash-clone 实现](https://www.lodashjs.com/docs/lodash.clone)
+
+```js
+// 创建一个具有值和对自身的循环引用的对象。
+const original = { name: 'MDN' };
+original.itself = original;
+
+// 对它进行克隆
+const clone = structuredClone(original);
+
+console.log(clone !== original); // 对象并不相同（标识不同）  true
+console.log(clone.name === 'MDN'); // 它们具有相同的值  true
+console.log(clone.itself === clone); // 且保留了循环引用  true
+```
 
 ### 82 防抖/节流
 
