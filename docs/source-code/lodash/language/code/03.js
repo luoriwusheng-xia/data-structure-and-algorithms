@@ -1,3 +1,9 @@
+/**
+ * 现代化语法写的深拷贝
+ * @param {*} obj
+ * @param {*} visited
+ * @returns
+ */
 function deepClone(obj, visited = new Map()) {
   // 基础类型或者null
   if (typeof obj !== 'object' || obj === null) {
@@ -42,24 +48,30 @@ function deepClone(obj, visited = new Map()) {
 
   // for... in 拷贝对象自身的可枚举属性
 
-  // 上面虽然有 Set Map,但是 下面的 for... in 是不会遍历Set, Map, 所以上面对于Set,Map的拷贝已经完成； 下面只是拷贝普通对象
+  // 上面虽然有 Set Map,但是 下面的 for... in 是不会遍历Set, Map, 所以上面对于Set,Map的拷贝已经完成； 下面只是拷贝普通对象/数组
   // 由于for in 会遍历原型链上的属性或者方法， 所以下面要结合 hasOwnProperty 判断
 
   // 函数其实是没有拷贝的，只是把引用赋值给 clone， 函数本身是可复用的，不需要深拷贝
-  // 数组的拷贝也是这里的
-  for (let key in obj) {
-    // 这里只拿 对象上的属性
-    if (obj.hasOwnProperty(key)) {
-      clone[key] = deepClone(obj[key], visited);
-    }
-  }
+  // 数组，普通对象的拷贝也是这里的
+  // for (let key in obj) {
+  //   // 这里只拿 对象上的属性
+  //   if (obj.hasOwnProperty(key)) {
+  //     clone[key] = deepClone(obj[key], visited);
+  //   }
+  // }
+
+  // 优化上面 for...in + hasOwnProperty
+  Object.getOwnPropertyNames(obj).forEach((key) => {
+    clone[key] = deepClone(obj[key], visited);
+  });
 
   // 拷贝对象的 Symbol 属性
   let symbolKeys = Object.getOwnPropertySymbols(obj); // 返回Symbol key组成的 数组
 
   for (let symbolKey of symbolKeys) {
+    let newKey = Symbol(symbolKey.description);
     // 有可能有 Symbol 这个key对用的value 是对象等情况，所以需要再递归拷贝
-    clone[Symbol(symbolKey.description)] = deepClone(obj[symbolKey], visited);
+    clone[newKey] = deepClone(obj[symbolKey], visited);
   }
 
   return clone;
@@ -121,8 +133,25 @@ obj[symbolKey] = 'value';
 obj.b = obj; // 形成循环引用
 
 let clonedObj = deepClone(obj);
-// console.log(clonedObj);
+console.log(clonedObj);
 
-// console.log(clonedObj.fn === cFn); // true
+console.log(clonedObj.fn === cFn); // true
 
-// console.log(cFn === copyFn(cFn)); // false
+console.log(cFn === copyFn(cFn)); // false
+
+// [ 'a', 'fn', 'list', 'set', 'map', 'b' ] 拿到的都是对象身上自身的属性，不包含原型链上的
+console.log('对象上所有属性的key： ', Object.getOwnPropertyNames(obj));
+/**
+ * for(let key in  obj) {
+ *    if (obj.hasOwnProperty(key)) {
+ *      ... 这里也是拿到对象自身的属性，不包含原型链上的
+ *    }
+ * }
+ *
+ * 跟 Object.getOwnPropertyNames 是一样的， 并且都不包含 symbole属性。
+ *
+ * 区别： Object.getOwnPropertyNames 【会】拿到对象上不可枚举的属性
+ * for...in + hasOwnProperty ， 是 【不会】访问不可枚举属性
+ */
+// 这也表示上面的写法，是可以支持数组，普通对象的
+console.log(Object.getOwnPropertyNames([1, 2, 3, 4])); // [ '0', '1', '2', '3', 'length' ]
