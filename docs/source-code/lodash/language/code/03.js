@@ -68,6 +68,7 @@ function deepClone(obj, visited = new Map()) {
   // 拷贝对象的 Symbol 属性
   let symbolKeys = Object.getOwnPropertySymbols(obj); // 返回Symbol key组成的 数组
 
+  // [Symbol(youo), Symbol(key)]
   for (let symbolKey of symbolKeys) {
     let newKey = Symbol(symbolKey.description);
     // 有可能有 Symbol 这个key对用的value 是对象等情况，所以需要再递归拷贝
@@ -125,6 +126,8 @@ let obj = {
       },
     ],
   ]),
+
+  [Symbol('youo')]: '你好',
 };
 
 let symbolKey = Symbol('key');

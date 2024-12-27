@@ -8909,46 +8909,7 @@ EventBus.unsubscribe('userLoggedIn', handleUserLoggedIn);
   - 优点：解耦了对象之间的关系，被观察者和观察者之间松耦合，可以动态添加和移除观察者。
   - 缺点：增加了对象之间的相互依赖关系，可能导致系统复杂度增加。
 
-```js
-class Observable {
-  constructor() {
-    this.observers = [];
-  }
-
-  addObserver(observer) {
-    this.observers.push(observer);
-  }
-
-  removeObserver(observer) {
-    this.observers = this.observers.filter((obs) => obs !== observer);
-  }
-
-  notify(data) {
-    this.observers.forEach((observer) => observer.update(data));
-  }
-}
-
-class Observer {
-  update(data) {
-    // Perform necessary actions with the data
-  }
-}
-
-const observable = new Observable();
-const observer1 = new Observer();
-const observer2 = new Observer();
-
-observable.addObserver(observer1);
-observable.addObserver(observer2);
-
-// Notify observers
-observable.notify({
-  message: 'Data updated',
-});
-
-// Remove observer
-observable.removeObserver(observer2);
-```
+<<<./case/observeable.js
 
 - **装饰模式**:
   - 使用场景：当需要在不修改原始对象的情况下，动态地给对象添加额外的功能时，可以使用装饰模式。例如，给一个基本的组件添加日志记录或性能监测的功能。
@@ -9077,9 +9038,7 @@ Function instanceof Object; //true
 Function.prototype === Function.__proto__; //true
 ```
 
-> 这道题目深入考察了原型链相关知识点 尤其是 `Function` 和 `Object`
-
-> 的之间的关系
+> 这道题目深入考察了原型链相关知识点 尤其是 `Function` 和 `Object`的之间的关系
 
 ### 123 RAF 和 RIC 是什么
 
@@ -9087,6 +9046,8 @@ Function.prototype === Function.__proto__; //true
   告诉浏览器在下次重绘之前执行传入的回调函数(通常是操纵
   dom，更新动画的函数)；由于是每帧执行一次，那结果就是每秒的执行次数与浏览器屏幕刷新次数一样，通常是每秒
   `60` 次。
+
+  - [GPT 解释]: 是浏览器提供的一个用于执行动画的 API。它告诉浏览器你希望执行一个动画，并请求浏览器在下一次重绘之前调用指定的回调函数。这个回调函数会在浏览器的下一次重绘之前执行，通常用于执行动画逻辑。
 
 - `requestIdleCallback`：:
   会在浏览器空闲时间执行回调，也就是允许开发人员在主事件循环中执行低优先级任务，而不影响一些延迟关键事件。如果有多个回调，会按照先进先出原则执行，但是当传入了
@@ -9101,83 +9062,17 @@ Function.prototype === Function.__proto__; //true
 
 的简单示例代码：
 
-```js
-function animate() {
-  const element = document.getElementById('myElement');
-  const position = parseInt(element.style.left) || 0;
-  const speed = 2;
+<<<./case/requestAnimationFrame.js
 
-  // 更新元素位置
-  element.style.left = position + speed + 'px';
-
-  // 检查是否到达目标位置
-  if (position < 200) {
-    // 请求下一帧动画
-    requestAnimationFrame(animate);
-  }
-}
-
-// 开始执行动画
-requestAnimationFrame(animate);
-```
-
-在上面的代码中， `animate`
-
-函数用于执行动画操作。在每一帧动画中，我们通过获取元素的当前位置，增加一个速度值，然后更新元素的位置。在这个例子中，我们通过改变
-`left` 属性来实现水平移动的动画效果。
-
+在上面的代码中， `animate`函数用于执行动画操作。在每一帧动画中，我们通过获取元素的当前位置，增加一个速度值，然后更新元素的位置。在这个例子中，我们通过改变`left` 属性来实现水平移动的动画效果。
 在每一帧动画结束后，我们检查是否到达了目标位置（这里假设目标位置为左侧
-200px
-的位置），如果没有到达目标位置，我们再次请求下一帧动画，从而创建连续的动画效果。
+200px 的位置），如果没有到达目标位置，我们再次请求下一帧动画，从而创建连续的动画效果。
 
-通过使用
-`requestAnimationFrame` ，可以实现流畅的动画效果，并且能够与浏览器的重绘周期同步，避免了过度绘制的问题。这样可以提供更好的性能和用户体验。
+通过使用`requestAnimationFrame` ，可以实现流畅的动画效果，并且能够与浏览器的重绘周期同步，避免了过度绘制的问题。这样可以提供更好的性能和用户体验。
 
 **requestIdleCallback**
 
-```js
-function processIdleTasks(deadline) {
-  while (
-    (deadline.timeRemaining() > 0 || deadline.didTimeout) &&
-    tasks.length > 0
-  ) {
-    // 执行低优先级任务
-    const task = tasks.shift();
-    task();
-  }
-
-  if (tasks.length > 0) {
-    // 如果还有任务未完成，继续请求下一次 idle callback
-    requestIdleCallback(processIdleTasks);
-  }
-}
-
-// 添加低优先级任务
-function addTask(task) {
-  tasks.push(task);
-
-  // 如果当前没有请求进行中，则请求下一次 idle callback
-  if (tasks.length === 1) {
-    requestIdleCallback(processIdleTasks);
-  }
-}
-
-// 低优先级任务列表
-const tasks = [];
-
-// 添加低优先级任务
-addTask(function () {
-  console.log('Task 1');
-});
-
-addTask(function () {
-  console.log('Task 2');
-});
-
-addTask(function () {
-  console.log('Task 3');
-});
-```
+<<<./case/requestIdleCallback.js
 
 在上面的代码中， `requestIdleCallback`
 
