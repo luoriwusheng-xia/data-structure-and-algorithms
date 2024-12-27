@@ -174,6 +174,14 @@ Object.prototype.toString.call(null); // '[object Null]'
 
 使用 eval 和 new Function 都有风险，他们会执行字符串代码
 
+### 类数组判断/特征
+
+- 有 length 属性， 比如 "abc" 字符串
+- 正常数组 [1,2,3]
+- document.body.children, 或者 arguments 对象
+
+<<<./code/isArrayLike.js
+
 ## isObject
 
 判断目标值，是否为一个对象
@@ -210,6 +218,5 @@ function isObject(value) {
   // 不为null 的 对象或者函数，就返回 true
   return value != null && (type == 'object' || type == 'function');
 }
-
 
 ```

@@ -1,6 +1,7 @@
 function deepClone(obj, visited = new Map()) {
   // 基础类型或者null
   if (typeof obj !== 'object' || obj === null) {
+    // 函数其实走的这里，函数不需要拷贝，直接返回
     return obj;
   }
 
@@ -28,6 +29,7 @@ function deepClone(obj, visited = new Map()) {
   } else if (obj instanceof Map) {
     clone = new Map();
     for (let [key, value] of obj) {
+      // map的key可能是一个深层对象， value也可能是，所以需要继续递归 ； visited 始终是一个有所有对象的引用，目的就防止 循环引用
       clone.set(deepClone(key, visited), deepClone(value, visited));
     }
   } else {
@@ -53,7 +55,8 @@ function deepClone(obj, visited = new Map()) {
   }
 
   // 拷贝对象的 Symbol 属性
-  let symbolKeys = Object.getOwnPropertySymbols(obj);
+  let symbolKeys = Object.getOwnPropertySymbols(obj); // 返回Symbol key组成的 数组
+
   for (let symbolKey of symbolKeys) {
     // 有可能有 Symbol 这个key对用的value 是对象等情况，所以需要再递归拷贝
     clone[Symbol(symbolKey.description)] = deepClone(obj[symbolKey], visited);
@@ -97,6 +100,19 @@ let cFn = () => {
 let obj = {
   a: 1,
   fn: cFn,
+  list: [1, 2, 3],
+  set: new Set([1, 2, 3]),
+  map: new Map([
+    [
+      {
+        fuza: 'map复杂的key',
+      },
+      {
+        age: '12',
+        name: '张三',
+      },
+    ],
+  ]),
 };
 
 let symbolKey = Symbol('key');
@@ -105,8 +121,8 @@ obj[symbolKey] = 'value';
 obj.b = obj; // 形成循环引用
 
 let clonedObj = deepClone(obj);
-console.log(clonedObj);
+// console.log(clonedObj);
 
-console.log(clonedObj.fn === cFn); // true
+// console.log(clonedObj.fn === cFn); // true
 
-console.log(cFn === copyFn(cFn)); // false
+// console.log(cFn === copyFn(cFn)); // false
