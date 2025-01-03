@@ -3,11 +3,11 @@
  * @param tasks 任务数组
  * @param maxCount 最大并发数，默认 4
  */
-export function concurrentTask(tasks = [], maxCount = 4) {
+function concurrentTask (tasks = [], maxCount = 4) {
   let len = tasks.length;
   let finalCount = 0;
   let nextIndex = 0;
-  let resp;
+
   // 所有异步任务的结果，都是按照顺序存储的； resArr里面不仅有成功的结果，也可能有失败的结果
   let resArr = [];
 
@@ -20,25 +20,30 @@ export function concurrentTask(tasks = [], maxCount = 4) {
     }
 
     /** 完成一个任务时，递归执行下一个任务。直到所有任务完成 */
-    function _run() {
-      const task = tasks[nextIndex++];
+    function _run () {
+      const taskIndex = nextIndex++
+      const task = tasks[taskIndex];
 
-      task()
+      Promise.resolve(task())
         .then((res) => {
-          // 这里其实是闭包， 所以 resp 是一个闭包变量
-          resp = res;
+          resArr[taskIndex] = { status: 'fulfilled', value: res };
+          // resArr[taskIndex] = res
         })
         .catch((err) => {
-          resp = err;
+          // 如果希望知道异常 ，可以这样扩展结果
+          resArr[taskIndex] = { status: 'rejected', reason: err };
+          // resArr[taskIndex] = err
         })
         .finally(() => {
-          resArr[finalCount] = resp;
-
           // 这里需要判断是否还有下一个任务，如果有则继续执行，如果没有则结束。
-          nextIndex < len && _run();
+          if (nextIndex < len) {
+            _run()
+          }
 
           // 判断是否是所有任务完成
-          ++finalCount === len && resolve(resArr);
+          if (++finalCount === len) {
+            resolve(resArr);
+          }
         });
     }
   });
@@ -87,7 +92,7 @@ let fn4 = async () => {
   return {
     code: 0,
     data: 444,
-  };
+  }
 };
 
 concurrentTask([fn1, fn2, fn3, fn4], 2).then((res) => {
