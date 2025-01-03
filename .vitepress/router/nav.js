@@ -31,7 +31,11 @@ export default [
       {
         text: 'typescript',
         link: '/docs/frontend/typescript/index'
-      }
+      },
+      {
+        text: 'threejs',
+        link: '/docs/frontend/threejs/index'
+      },
     ]
   },
   {
@@ -142,5 +146,9 @@ export default [
   {
     text: '源码学习',
     link: '/docs/source-code/'
+  },
+  {
+    text: '在线工具',
+    link: '/docs/online-tools/'
   },
 ]

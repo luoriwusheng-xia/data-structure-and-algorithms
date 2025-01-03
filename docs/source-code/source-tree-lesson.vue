@@ -29,6 +29,10 @@ const lessons = ref([
 		text: 'mitt',
 		link: 'mitt/',
 	},
+  {
+		text: 'radash',
+		link: 'radash/',
+	},
 	{
 		text: '收藏夹',
 		link: 'favorites/',
