@@ -33,6 +33,10 @@ const lessons = ref([
 		text: 'radash',
 		link: 'radash/',
 	},
+  {
+		text: 'vite',
+		link: 'vite/',
+	},
 	{
 		text: '收藏夹',
 		link: 'favorites/',
