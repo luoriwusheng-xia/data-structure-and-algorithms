@@ -8,7 +8,7 @@ import { exec } from 'child_process'
 
 let projectBase = './'
 
-let targetPath = 'docs/interview/improve'
+let targetPath = 'temp-image'
 
 let parentPath = path.resolve(projectBase, targetPath)
 
