@@ -204,6 +204,10 @@ export default {
       link: '/docs/source-code/vue3/index',
     },
     {
+      text: '目录结构',
+      link: '/docs/source-code/vue3/01',
+    },
+    {
       text: '响应式',
       link: '/docs/source-code/vue3/04',
     },
