@@ -4,7 +4,7 @@ import prettier from 'prettier';
 import { JSDOM } from 'jsdom';
 
 let url = `
-https://interview.poetries.top/docs/excellent-docs/10-%E7%A7%BB%E5%8A%A8%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91.html`;
+https://interview.poetries.top/docs/excellent-docs/5-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9D%97.html`;
 
 /**
  * 完整的解析流程
@@ -201,6 +201,20 @@ turndownService.addRule('removeAnchorFromHeadings', {
   },
 });
 
+const checkTargetFile = () => {
+  // 检查pre-data/01.md 目录和文件是否存在
+  if (!fs.existsSync('./pre-data')) {
+    // 如果目录不存在，则创建目录
+    fs.mkdirSync('./pre-data');
+  }
+
+  // 检查文件
+  if (!fs.existsSync('./pre-data/01.md')) {
+    // 如果文件不存在，则创建文件
+    fs.writeFileSync('./pre-data/01.md', '');
+  }
+}
+
 async function main() {
   // 处理 HTML 内容，格式化代码块
 
@@ -208,13 +222,16 @@ async function main() {
 
   // 将 HTML 转换为 Markdown
   const mdContent = turndownService.turndown(text);
+
+  await checkTargetFile()
+
   // 写入 MD 文件
   fs.writeFile('./pre-data/01.md', mdContent, 'utf8', (err) => {
     if (err) {
-      // console.error('写入 MD 文件时出错: ', err);
+      console.error('写入 MD 文件时出错: ', err);
       return;
     }
-    // console.log('HTML 已成功转换为 MD 文件。');
+    console.log('HTML 已成功转换为 MD 文件。');
   });
 }
 
