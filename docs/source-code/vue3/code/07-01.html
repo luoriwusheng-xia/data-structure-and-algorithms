@@ -1,0 +1,56 @@
+<div id="app"></div>
+
+<!-- vue打包的 runtime-dom 的产物， esm 格式 ， 可以直接从源码中打包后，copy到当前的同级目录中引入 -->
+<script type="module">
+  import { createRenderer, render, h } from './runtime-dom.esm-browser.js'
+
+  // 1. createRenderer  我们可以自己创建渲染器 让我们自己提供需纳入方式
+  console.log(createRenderer);
+  // 2. render 用内置的渲染器来进行渲染 （渲染DOM的元素）
+  console.log(render);
+  // 3. h 用来创建虚拟DOM
+  console.log(h);
+
+  let ele = h('h1', {
+    style: {
+      color: "red"
+    },
+    onClick: () => {
+      console.log('点击我');
+    }
+  }, '内容')
+
+  console.log(ele);
+  // render(ele, document.querySelector('#app'))
+
+  // -----------------------------
+
+  // 使用自定义渲染器，则需要根据自动以渲染器提供对应的方法接口
+  const renderObject = createRenderer({
+    createElement(type, props, children) {
+      // 自定义渲染器，需要我们自己去根据需要，创建元素
+      // 这里可以创建 canvas 渲染器等， svg渲染器，或者 webgl渲染器
+      return document.createElement(type)
+    },
+
+    setElementText(el, text) {
+      el.textContent = text
+    },
+
+    patchProp() {
+
+    },
+
+    insert(el, container, anchor) {
+      container.appendChild(el)
+    }
+  })
+
+  console.log(renderObject);
+
+  renderObject.render(ele, document.querySelector('#app'))
+
+
+</script>
+
+</body>

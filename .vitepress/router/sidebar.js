@@ -211,5 +211,9 @@ export default {
       text: '响应式',
       link: '/docs/source-code/vue3/04',
     },
+    {
+      text: 'runtime-dom',
+      link: '/docs/source-code/vue3/05'
+    }
   ],
 };
