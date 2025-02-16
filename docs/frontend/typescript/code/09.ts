@@ -1,0 +1,1 @@
+type T4 = NonNullable<string | number | null | undefined>; // string | number
