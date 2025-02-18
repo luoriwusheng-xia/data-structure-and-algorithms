@@ -5,6 +5,9 @@ import 'virtual:uno.css';
 // 面试题的样式
 import "./interview.less"
 
+import BoldText from '../../components/BoldText.vue'
+
+
 // @link https://shiki-zh-docs.vercel.app/packages/vitepress  配置ts悬浮查看类型提示
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import '@shikijs/vitepress-twoslash/style.css'
@@ -21,6 +24,8 @@ export default {
   enhanceApp (ctx) {
     DefaultTheme.enhanceApp(ctx);
     ctx.app.component('Sandbox', Sandbox);
+
+    ctx.app.component('BoldText', BoldText);
 
     ctx.app.use(ElementPlus, {
       // locale
