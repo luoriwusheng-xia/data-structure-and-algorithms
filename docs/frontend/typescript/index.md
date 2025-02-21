@@ -100,3 +100,118 @@ IsEqual 工具类型：
 `type Result2 = IsEqual<string, number>`：这里传入的两个泛型参数分别是 string 和 number，它们不相同，所以 Result2 的类型为 false。
 通过这种方式，我们可以在类型层面判断两个泛型参数是否一致。
 
+
+### type 和 interface 的区别
+
+在 TypeScript 里，type 和 interface 都能用于定义类型
+
+**语法和定义范围**
+
+type：type 能定义更广泛的类型，像基本类型别名、联合类型、交叉类型、元组类型等都可以定义。
+
+```ts
+// 基本类型别名
+type Username = string;
+
+// 联合类型
+type Result = 'success' | 'failure';
+
+// 交叉类型
+type AdminUser = { name: string } & { role: 'admin' };
+
+// 元组类型
+type Coordinate = [number, number];
+```
+
+interface：主要用来定义对象的形状，也就是描述对象包含哪些属性和方法。
+
+**扩展方式**
+
+- type：使用交叉类型（&）来扩展类型。
+- interface：使用 extends 关键字进行继承扩展。
+
+**声明合并**
+
+- type：不支持声明合并。若定义两个同名的 type，会产生编译错误。
+
+```ts
+type Message = { text: string };
+// 下面这行代码会报错，因为重复定义同名的 type
+type Message = { sender: string };
+```
+
+- interface：支持声明合并。当定义多个同名的 interface 时，它们会自动合并成一个。
+
+```ts
+interface Car {
+    brand: string;
+}
+interface Car {
+    model: string;
+}
+// 合并后的 Car 接口同时包含 brand 和 model 属性
+const myCar: Car = { brand: 'Toyota', model: 'Corolla' };
+```
+
+**与类的关系**
+
+- type：可以描述类的实例类型，但不能像 interface 那样被类直接实现。不过可以通过类型断言来实现类似的功能。
+
+```ts
+type UserType = {
+    name: string;
+    sayHello(): void;
+};
+class User implements { sayHello: () => void } & UserType {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+}
+```
+
+- interface：能被类直接实现，用于约束类的结构。
+
+```ts
+interface UserInterface {
+    name: string;
+    sayHello(): void;
+}
+class User implements UserInterface {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+}
+```
+
+
+**对映射类型和条件类型的支持**
+
+- type：可以很好地与映射类型和条件类型配合使用，因为它能够直接定义复杂的类型逻辑。
+
+```ts
+
+// 映射类型
+type ReadonlyProps<T> = {
+    readonly [P in keyof T]: T[P];
+};
+interface Props {
+    name: string;
+    age: number;
+}
+type ReadonlyPropsExample = ReadonlyProps<Props>;
+
+// 场景2
+// 条件类型
+type IsString<T> = T extends string ? true : false;
+type Result = IsString<string>; // true
+```
+
+- interface：一般不用于定义映射类型和条件类型，主要还是侧重于定义对象结构。

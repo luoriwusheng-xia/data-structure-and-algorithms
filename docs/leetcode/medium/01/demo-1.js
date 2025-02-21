@@ -39,6 +39,7 @@ var longestPalindrome = function (s) {
   let maxLen = 1
   let begin = 0
 
+  // 这里其实可以不用split 因为下面的 validPanlindromic 中使用下标访问，字符串也是支持下标访问的 s[i]
   const charArray = s.split('')
 
   for (let i = 0; i < len - 1; i++) {
