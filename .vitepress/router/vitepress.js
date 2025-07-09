@@ -8,7 +8,7 @@ export default {
       items: [
         {
           text: '评论功能',
-          link: '/docs/vitepress-config/01/index',
+          link: '/docs/vitepress-config/13',
         },
         {
           text: '多语言',
@@ -43,12 +43,16 @@ export default {
           link: '/docs/vitepress-config/08/index',
         },
         {
+          text: '图片预览',
+          link: '/docs/vitepress-config/10'
+        },
+        {
           text: '插件开发',
-          link: '/docs/vitepress-config/01/index',
+          link: '/docs/vitepress-config/12',
         },
         {
           text: '全局搜索',
-          link: '/docs/vitepress-config/01/index',
+          link: '/docs/vitepress-config/11',
         },
         {
           text: '部署',
