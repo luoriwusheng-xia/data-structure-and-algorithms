@@ -144,6 +144,10 @@ export default {
           text: '任意两个点的曲线连接JS算法',
           linl: '/docs/frontend/essay/animation/04/index',
         },
+        {
+          text: '3D 旋转动画',
+          link: '/docs/frontend/essay/animation/05/index',
+        },
       ],
     },
     {
