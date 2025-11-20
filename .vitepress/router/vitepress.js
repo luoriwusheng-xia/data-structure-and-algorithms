@@ -39,6 +39,10 @@ export default {
           link: '/docs/vitepress-config/07/index',
         },
         {
+          text: '组件和代码示例预览',
+          link: '/docs/vitepress-config/14/index',
+        },
+        {
           text: '编程式使用 Router 和 Route',
           link: '/docs/vitepress-config/08/index',
         },
