@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import dayjs from 'dayjs'
 
 import { getStartCount } from './task.js'
@@ -48,5 +48,7 @@ const init = async () => {
   }
 }
 
-init()
+onMounted(() => {
+  init()
+})
 </script>

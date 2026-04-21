@@ -1197,7 +1197,7 @@ path.getStatementParent();
   * 使用 `path.container`获取路径的容器（包含所有同级节点的数组）
   * 使用 `path.listKey`获取容器的key
 
-> 这些API用于 babel-minify </>中使用的 transform-merge-sibling-variables </>插件.</p> </blockquote>
+> 这些API用于 babel-minify 中使用的 transform-merge-sibling-variables 插件.
 >
 > ```js
 var a = 1; // pathA, path.key = 0
@@ -1289,7 +1289,7 @@ ReturnStatement(path) {
   }
 ```
 
-> **注意：</>当用多个节点替换一个表达式时，它们必须是   声明。 这是因为Babel在更换节点时广泛使用启发式算法，这意味着您可以做一些非常疯狂的转换，否则将会非常冗长。</p> </blockquote>
+> **注意：当用多个节点替换一个表达式时，它们必须是   声明。 这是因为Babel在更换节点时广泛使用启发式算法，这意味着您可以做一些非常疯狂的转换，否则将会非常冗长。
 >
 > ### 用字符串源码替换节点
 >
@@ -1309,7 +1309,7 @@ FunctionDeclaration(path) {
   }
 ```
 
-> **注意：</>不建议使用这个API，除非您正在处理动态的源码字符串，否则在访问者外部解析代码更有效率。</p> </blockquote>
+> **注意：不建议使用这个API，除非您正在处理动态的源码字符串，否则在访问者外部解析代码更有效率。
 >
 > ### 插入兄弟节点
 >
@@ -1328,7 +1328,7 @@ FunctionDeclaration(path) {
 + "A little high, little low.";
 ```
 
-> 注意：</>这里同样应该使用声明或者一个声明数组。 这个使用了在用多个节点替换一个节点</>中提到的相同的启发式算法。.</p> </blockquote>
+> 注意：这里同样应该使用声明或者一个声明数组。 这个使用了在用多个节点替换一个节点中提到的相同的启发式算法。.
 >
 > ### 插入到容器（container）中
 
@@ -1368,7 +1368,7 @@ FunctionDeclaration(path) {
 
 ### 替换父节点
 
-只需使用parentPath：` path.parentPath </>调用<code> replaceWith </>即可</p>
+只需使用parentPath：` path.parentPath 调用 `replaceWith` 即可
 
 ```js
 BinaryExpression(path) {
@@ -1413,7 +1413,7 @@ FunctionDeclaration(path) {
 
 这将遍历范围树并检查特定的绑定。
 
-您也可以检查一个作用域是否有**自己的</>绑定：</p>
+您也可以检查一个作用域是否有**自己的绑定：
 
 ```js
 FunctionDeclaration(path) {
@@ -1438,7 +1438,7 @@ FunctionDeclaration(path) {
 
 ### 提升变量声明至父级作用域
 
-有时你可能想要推送一个` VariableDeclaration </>，这样你就可以分配给它。</p>
+有时你可能想要推送一个` VariableDeclaration ，这样你就可以分配给它。
 
 ```js
 FunctionDeclaration(path) {
@@ -1505,7 +1505,7 @@ FunctionDeclaration(path) {
 }
 ```
 
-这些选项会通过`状态</>对象传递给插件访问者：</p>
+这些选项会通过`状态对象传递给插件访问者：
 
 ```js
 export default function({ types: t }) {
@@ -1546,7 +1546,7 @@ export default function({ types: t }) {
 
 ##  在插件中启用其他语法
 
-插件可以启用babylon plugins</>，以便用户不需要安装/启用它们。 这可以防止解析错误，而不会继承语法插件。</p>
+插件可以启用babylon plugins，以便用户不需要安装/启用它们。 这可以防止解析错误，而不会继承语法插件。
 
 ```js
 export default function({ types: t }) {
@@ -1625,7 +1625,7 @@ defineType("MemberExpression", {
 生成器: ["object", "property", "computed"],
 ```
 
-> 请注意，有时在节点上可以定制的属性比``构建器</>数组包含的属性更多。 这是为了防止生成器有太多的参数。 在这些情况下，您需要手动设置属性。 一个例子是 `ClassMethod`
+> 请注意，有时在节点上可以定制的属性比``构建器数组包含的属性更多。 这是为了防止生成器有太多的参数。 在这些情况下，您需要手动设置属性。 一个例子是 `ClassMethod`
 
 
 ```js
@@ -1809,7 +1809,7 @@ const MyVisitor = {
 };
 ```
 
-但是，每当调用`FunctionDeclaration()</>时都会创建一个新的访问者对象。 That can be costly, because Babel does some processing each time a new
+但是，每当调用`FunctionDeclaration()时都会创建一个新的访问者对象。 That can be costly, because Babel does some processing each time a new
 visitor object is passed in (such as exploding keys containing multiple types,
 performing validation, and adjusting the object structure). Because Babel stores
 flags on visitor objects indicating that it's already performed that processing,
@@ -1848,7 +1848,7 @@ const MyVisitor = {
 };
 ```
 
-您可以将它作为状态传递给`traverse()</ 0>方法，并有权访问<code>this`在访问者中。
+您可以将它作为状态传递给`traverse()方法，并有权访问<code>this`在访问者中。
 
 ```js
 const nestedVisitor = {

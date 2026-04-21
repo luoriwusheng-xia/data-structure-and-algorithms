@@ -620,7 +620,7 @@ $ [COMMAND]
 {
   "name": "babel-preset-my-awesome-preset",
   "version": "1.0.0",
-  "author": "James Kyle <me@thejameskyle.com>",
+  "author": "James Kyle \<me@thejameskyle.com>",
   "dependencies": {
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -801,7 +801,7 @@ Babel使用[Github](http://github.com)提供的问题跟踪器。.
 如果你想要打开一个新的问题：
 
   * [先搜搜看有没有现存的类似问题](https://github.com/babel/babel/issues)
-  * 创建一个新的错误报告</> 或请求新功能</></li> </ul>
+  * 创建一个新的错误报告或请求新功能
 
     ### <a id="toc-creating-an-awesome-babel-bug-report"></a>创建漂亮的 Babel 错误报告
 
