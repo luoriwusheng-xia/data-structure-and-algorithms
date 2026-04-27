@@ -1,0 +1,70 @@
+name: Deploy VitePress Site
+
+on:
+  push:
+    # 推送到主分支后自动发布，避免每次手动登录 GitHub 操作。
+    branches:
+      - main
+  workflow_dispatch:
+    # 保留手动触发入口，便于首次上线或排查部署问题时重跑。
+
+permissions:
+  # 允许读取仓库代码。
+  contents: read
+  # 允许向 GitHub Pages 上传构建产物。
+  pages: write
+  # 允许本次工作流生成部署所需的临时身份令牌。
+  id-token: write
+
+concurrency:
+  # 同一套 Pages 部署任务只保留最新的一次，避免旧任务覆盖新版本。
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # 这里固定使用 npm 当前可查询到的 Node 24 最新版本，避免 CI 环境漂移。
+          node-version: 24.15.0
+          cache: pnpm
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.2
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build VitePress site
+        # VitePress 当前配置会把产物输出到仓库根目录下的 dist。
+        run: pnpm docs:build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    # 只有 build 成功后才继续部署，减少空部署和失败部署。
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

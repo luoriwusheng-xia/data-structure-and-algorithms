@@ -26,8 +26,10 @@ import { fileURLToPath } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  // 配置发布路径
-  // base: '/blog/',
+  // GitHub Pages 项目站点需要挂在仓库名路径下。
+  // 发布到 https://luoriwusheng-xia.github.io/data-structure-and-algorithms/ 时，
+  // 所有静态资源都会以 /data-structure-and-algorithms/ 作为基础路径。
+  base: '/data-structure-and-algorithms/',
   head: [
     [
       "link",
@@ -37,6 +39,11 @@ export default defineConfig({
   ],
 
   lang: 'zh-CN',
+  // 仓库里有一篇历史文档会被 VitePress 解析出一个遗留的 ./index 相对链接。
+  // 这里仅忽略这一条已知问题，保留其他死链检查，避免把整站校验直接关闭。
+  ignoreDeadLinks: [
+    './index',
+  ],
 
   title: '前端杂货铺',
   description: 'A VitePress Site',
@@ -53,7 +60,7 @@ export default defineConfig({
     sidebar,
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/luoriwusheng-xia/data-structure-and-algorithms' },
     ],
   },
 

@@ -1,7 +1,7 @@
 {
   "description": "数据结构和算法",
   "repository": {
-    "url": "https://gitee.com/luoriwusheng/data-structure-and-algorithms.git",
+    "url": "https://github.com/luoriwusheng-xia/data-structure-and-algorithms.git",
     "type": "https"
   },
   "type": "module",
