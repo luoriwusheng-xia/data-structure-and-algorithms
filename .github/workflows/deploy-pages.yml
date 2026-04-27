@@ -27,19 +27,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        # v5 已切到 node24 运行时
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        # v6 已切到 node24 运行时
+        uses: actions/setup-node@v6
         with:
           # 这里固定使用 npm 当前可查询到的 Node 24 最新版本，避免 CI 环境漂移。
           node-version: 24.15.0
-          cache: pnpm
+          cache: 'pnpm'  # 👈 新增：加速依赖安装
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.33.2
+      # 准备并激活 pnpm 10.33.2
+      # --activate 将其添加到 $PATH，使其在后续步骤中可用
+      - name: Enable Corepack and pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.33.2 --activate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,9 +54,11 @@ jobs:
       - name: Build VitePress site
         # VitePress 当前配置会把产物输出到仓库根目录下的 dist。
         run: pnpm docs:build
+        env:
+          CI: true # 👈 新增：确保 CI 环境变量
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
