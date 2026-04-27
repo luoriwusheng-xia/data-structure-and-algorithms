@@ -10,9 +10,9 @@
 new Token(type, tag, nesting)
 ```
 
-- type: string Token的类型， 有很多内置类型 参照下面的 [type](/docs/frontend/tools/02/#type)
+- type: string Token的类型， 有很多内置类型 参照下面的 [type](./02#type)
 - tag: string  标签类型
-- nesting: [Token.Nesting](/docs/frontend/tools/02/#token-nesting) 标志标签的属于哪种， 闭合/自闭合
+- nesting: [Token.Nesting](./02#token-nesting) 标志标签的属于哪种， 闭合/自闭合
 
 ### 属性
 
