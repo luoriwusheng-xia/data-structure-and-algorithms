@@ -23,10 +23,11 @@
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
 
 .grid-container {
   display: grid;
-  grid-gap: 10px;
+  gap: 10px;
 
   // grid-template-columns: repeat(4, 1fr);
   // 给线条命名
@@ -40,10 +41,9 @@
   @for $i from 1 through 12 {
     div:nth-child(#{$i}) {
       // sass 生成随机颜色
-      background-color: hsla(random(360), 100%, 50%, .7);
+      background-color: hsla(math.random() * 360, 100%, 50%, 0.7);
     }
   }
-
 }
 
 

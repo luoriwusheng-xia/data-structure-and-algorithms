@@ -28,17 +28,22 @@ less 循环的下标索引从1开始， sass从0开始
 ### sass
 
 ```scss
-@for $i from 0 to 9 {
-	// $i从0开始
-	.box:has(.item:nth-child(#{$i + 1}):hover) {
-		$r: floor($i / 3 +1); // 取值1-3
-		$c: $i % 3 + 1; // 取值1-3
+@use "sass:math";
+@use "sass:list";
 
-    // 初始化状态， 下面只需要根据当前鼠标 hover到哪一行，哪一列， 将对应的 行的占比 改为 2fr， 列改为2fr
+@for $i from 0 to 9 {
+	.box:has(.item:nth-child(#{$i + 1}):hover) {
+		$r: math.floor(math.div($i, 3)) + 1; // 取值1-3
+    $c: $i % 3 + 1; // 取值1-3
+
+		// 初始化状态，下面只需要根据当前鼠标 hover 到哪一行，哪一列
+		// 将对应的行的占比改为 2fr，列改为 2fr
 		$arr: 1fr 1fr 1fr;
-    // 动态修改 @arr 的值， 比如 $r = 1, 则@arr: 1fr 2fr 1fr;   将索引下标为1的值，改为2fr
-		$rows: set-nth($arr, $r, 2fr);
-		$columns: set-nth($arr, $c, 2fr);
+
+		// 动态修改 $arr 的值，比如 $r = 1，则 $arr: 1fr 2fr 1fr
+		// 将索引下标为 1 的值改为 2fr
+		$rows: list.set-nth($arr, $r, 2fr);
+		$columns: list.set-nth($arr, $c, 2fr);
 
 		grid-template-rows: $rows;
 		grid-template-columns: $columns;
