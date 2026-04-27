@@ -46,7 +46,7 @@ jobs:
           cache: 'pnpm'  # 👈 新增：加速依赖安装
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
