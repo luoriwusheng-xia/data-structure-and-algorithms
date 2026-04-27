@@ -1,3 +1,5 @@
+import sceneDesignNav from './sceneDesignNav.js';
+
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
@@ -64,5 +66,6 @@ export default {
         },
       ],
     },
-  ]
+  ],
+  ...sceneDesignNav
 }

@@ -106,7 +106,13 @@ export default [
       {
         text: '自检篇',
         link: '/docs/interview/self-checking/01'
+      },
+
+        {
+        text: '场景设计',
+        link: '/docs/interview/scene-design/data-dashboard'
       }
+
     ]
   },
   {
