@@ -40,7 +40,7 @@ jobs:
 
       # 准备并激活 pnpm 10.33.2
       # --activate 将其添加到 $PATH，使其在后续步骤中可用
-      - name: Enable Corepack and pnpm
+      - name: Setup pnpm
         run: |
           corepack enable
           corepack prepare pnpm@10.33.2 --activate
