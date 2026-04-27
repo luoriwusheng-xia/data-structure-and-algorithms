@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue'
+import { withBase } from 'vitepress'
 
 interface LessonEntry {
   title: string
@@ -8,54 +9,61 @@ interface LessonEntry {
   href: string
 }
 
+/**
+ * 根据 VitePress 当前运行时的 base 生成站内链接
+ */
+function createDocLink(path: string) {
+  return withBase(path)
+}
+
 const lessons: LessonEntry[] = [
   {
     title: 'lodash',
     description: '从工具函数组织方式入手，观察通用能力如何被拆分、组合与复用。',
     tag: '工具库',
-    href: '/docs/source-code/lodash/',
+    href: createDocLink('/docs/source-code/lodash/'),
   },
   {
     title: 'vue2',
     description: '回看旧版本响应式与组件通信设计，理解框架演进中的历史取舍。',
     tag: '框架',
-    href: '/docs/source-code/vue2/',
+    href: createDocLink('/docs/source-code/vue2/'),
   },
   {
     title: 'vue3',
     description: '围绕 Composition API、响应式核心和运行时设计做结构化阅读。',
     tag: '框架',
-    href: '/docs/source-code/vue3/',
+    href: createDocLink('/docs/source-code/vue3/'),
   },
   {
     title: 'mitt',
     description: '聚焦轻量事件总线的实现边界，理解小型库如何用极简接口完成职责。',
     tag: '通信',
-    href: '/docs/source-code/mitt/',
+    href: createDocLink('/docs/source-code/mitt/'),
   },
   {
     title: 'radash',
     description: '对比现代工具库的 API 风格与工程组织，补充 lodash 之外的观察样本。',
     tag: '工具库',
-    href: '/docs/source-code/radash/',
+    href: createDocLink('/docs/source-code/radash/'),
   },
   {
     title: 'vite',
     description: '从构建链路、开发体验与插件机制切入，理解现代前端工程底座。',
     tag: '工程化',
-    href: '/docs/source-code/vite/',
+    href: createDocLink('/docs/source-code/vite/'),
   },
   {
     title: 'autofit',
     description: '围绕大屏自适应库的入口、缩放策略与局部修正机制，整理源码分析与架构图。',
     tag: '可视化',
-    href: '/docs/source-code/autofit/',
+    href: createDocLink('/docs/source-code/autofit/'),
   },
   {
     title: '收藏夹',
     description: '汇总临时记录、零散想法和还未发展成完整专题的源码阅读入口。',
     tag: '索引',
-    href: '/docs/source-code/favorites/',
+    href: createDocLink('/docs/source-code/favorites/'),
   },
 ]
 
