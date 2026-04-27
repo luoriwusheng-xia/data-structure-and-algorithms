@@ -4,7 +4,7 @@ on:
   push:
     # 推送到主分支后自动发布，避免每次手动登录 GitHub 操作。
     branches:
-      - main
+      - master
   workflow_dispatch:
     # 保留手动触发入口，便于首次上线或排查部署问题时重跑。
 
