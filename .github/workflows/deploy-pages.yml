@@ -30,6 +30,13 @@ jobs:
         # v5 已切到 node24 运行时
         uses: actions/checkout@v5
 
+      # 准备并激活 pnpm 10.33.2
+      # --activate 将其添加到 $PATH，使其在后续步骤中可用
+      - name: Setup pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.33.2 --activate
+
       - name: Setup Node.js
         # v6 已切到 node24 运行时
         uses: actions/setup-node@v6
@@ -37,13 +44,6 @@ jobs:
           # 这里固定使用 npm 当前可查询到的 Node 24 最新版本，避免 CI 环境漂移。
           node-version: 24.15.0
           cache: 'pnpm'  # 👈 新增：加速依赖安装
-
-      # 准备并激活 pnpm 10.33.2
-      # --activate 将其添加到 $PATH，使其在后续步骤中可用
-      - name: Setup pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@10.33.2 --activate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
