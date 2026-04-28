@@ -141,6 +141,10 @@ export default [
       {
         text: '性能',
         link: '/docs/backend/optimize/01'
+      },
+      {
+        text: '邀请域名',
+        link: '/docs/backend/invite-domain-name/'
       }
     ]
   },
