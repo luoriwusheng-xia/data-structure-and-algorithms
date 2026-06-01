@@ -220,5 +220,20 @@ export default {
       text: 'runtime-dom',
       link: '/docs/source-code/vue3/05'
     }
+  ],
+
+  '/docs/frontend/webrtc/webrtc': [
+    {
+      text: 'webRTC-基础',
+      link: '/docs/frontend/webrtc/webrtc-01'
+    },
+    {
+      text: 'webRTC-实战',
+      link: '/docs/frontend/webrtc/webrtc-02'
+    },
+    {
+      text: 'webRTC-面试',
+      link: '/docs/frontend/webrtc/webrtc-03'
+    }
   ]
 };

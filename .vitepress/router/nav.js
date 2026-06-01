@@ -36,6 +36,10 @@ export default [
         text: 'threejs',
         link: '/docs/frontend/threejs/index'
       },
+      {
+        text: 'webRTC',
+        link: '/docs/frontend/webrtc/webrtc-01'
+      },
     ]
   },
   {

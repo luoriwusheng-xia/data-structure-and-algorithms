@@ -1,0 +1,8 @@
+我是一个 web 高级前端， 但是 webrtc 我不懂。   
+
+你先基于 context 7 mcp 去查询最新的技术文档， 给我做知识科普。产出的就是 
+subagent:webrtc 基础.md
+subagent: 再出一个 webrtc 的实战篇.md （偏应用的）, 前端 vite8 + vue3; 后端可以是  node24 + express@4.x 等技术，去做代码的最小MVP的 demo 
+subagent: 出一个webrtc-面试.md   需要有场景拓展，以及对应问题的解决方案。
+
+subagent: 等前面的 webrtc 基础完成以后， 基于这个 ， 做一个 ppt 。 我需要做技术分享。， ppt 需要有科技感。 内容也要融合一些 场景案例，实战案例介绍。

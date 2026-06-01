@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC 实时通信技术分享</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    :root {
+      --color-bg-1: #0a0e27;
+      --color-bg-2: #1a1f4d;
+      --color-cyan: #00d4ff;
+      --color-purple: #b347ff;
+      --color-pink: #ff47ab;
+      --color-yellow: #ffd700;
+      --color-green: #00ff88;
+      --color-orange: #ff8c42;
+      --color-text: #e0e6f0;
+      --color-text-dim: #8a94b8;
+    }
+
+    .reveal {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 28px;
+      color: var(--color-text);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 40px 60px;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Background */
+    .reveal .backgrounds .slide-background {
+      background: linear-gradient(135deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%);
+    }
+
+    /* Grid pattern overlay */
+    .reveal .backgrounds .slide-background::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }
+
+    /* Typography */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.2em; }
+    .reveal h2 { font-size: 1.6em; }
+    .reveal h3 { font-size: 1.2em; }
+    .reveal h4 { font-size: 1em; }
+
+    .reveal p, .reveal li {
+      font-size: 0.85em;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+
+    .reveal ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .reveal ul li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      background: var(--color-cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--color-cyan);
+    }
+
+    /* Code blocks */
+    .reveal pre {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .reveal pre code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.55em;
+      line-height: 1.6;
+      background: transparent;
+      padding: 0;
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    .reveal pre code::-webkit-scrollbar {
+      width: 6px;
+    }
+    .reveal pre code::-webkit-scrollbar-thumb {
+      background: rgba(0, 212, 255, 0.3);
+      border-radius: 3px;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 212, 255, 0.12);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), 0 0 0 1px rgba(0, 212, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), 0 0 20px rgba(0, 212, 255, 0.1);
+    }
+
+    .card-glow-purple {
+      border-color: rgba(179, 71, 255, 0.15);
+    }
+    .card-glow-purple:hover {
+      border-color: rgba(179, 71, 255, 0.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), 0 0 20px rgba(179, 71, 255, 0.1);
+    }
+
+    .card-glow-pink {
+      border-color: rgba(255, 71, 171, 0.15);
+    }
+    .card-glow-pink:hover {
+      border-color: rgba(255, 71, 171, 0.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), 0 0 20px rgba(255, 71, 171, 0.1);
+    }
+
+    /* Accent colors */
+    .text-cyan { color: var(--color-cyan); }
+    .text-purple { color: var(--color-purple); }
+    .text-pink { color: var(--color-pink); }
+    .text-green { color: var(--color-green); }
+    .text-yellow { color: var(--color-yellow); }
+    .text-orange { color: var(--color-orange); }
+    .text-dim { color: var(--color-text-dim); }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.65em;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge-cyan { background: rgba(0, 212, 255, 0.15); color: var(--color-cyan); border: 1px solid rgba(0, 212, 255, 0.3); }
+    .badge-purple { background: rgba(179, 71, 255, 0.15); color: var(--color-purple); border: 1px solid rgba(179, 71, 255, 0.3); }
+    .badge-pink { background: rgba(255, 71, 171, 0.15); color: var(--color-pink); border: 1px solid rgba(255, 71, 171, 0.3); }
+    .badge-green { background: rgba(0, 255, 136, 0.15); color: var(--color-green); border: 1px solid rgba(0, 255, 136, 0.3); }
+
+    /* Layout helpers */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-2 { gap: 8px; }
+    .gap-4 { gap: 16px; }
+    .gap-6 { gap: 24px; }
+    .text-center { text-align: center; }
+    .w-full { width: 100%; }
+    .mt-2 { margin-top: 8px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+    /* Icon circles */
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    .icon-circle.purple { background: rgba(179, 71, 255, 0.1); border-color: rgba(179, 71, 255, 0.2); }
+    .icon-circle.pink { background: rgba(255, 71, 171, 0.1); border-color: rgba(255, 71, 171, 0.2); }
+    .icon-circle.green { background: rgba(0, 255, 136, 0.1); border-color: rgba(0, 255, 136, 0.2); }
+    .icon-circle.yellow { background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.2); }
+
+    /* Tables */
+    .reveal table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.7em;
+      margin: 20px 0;
+    }
+    .reveal table th {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--color-cyan);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+    }
+    .reveal table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: var(--color-text);
+    }
+    .reveal table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* Progress bar */
+    .reveal .progress {
+      background: rgba(0,0,0,0.3);
+      height: 3px;
+    }
+    .reveal .progress span {
+      background: linear-gradient(90deg, var(--color-cyan), var(--color-purple));
+    }
+
+    /* Slide number */
+    .reveal .slide-number {
+      background: rgba(0,0,0,0.4);
+      color: var(--color-text-dim);
+      font-size: 14px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Navigation hint */
+    .nav-hint {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 12px;
+      color: var(--color-text-dim);
+      background: rgba(0,0,0,0.4);
+      padding: 6px 12px;
+      border-radius: 8px;
+      z-index: 100;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Cover page */
+    .cover-page {
+      text-align: center !important;
+      align-items: center !important;
+    }
+
+    .cover-title {
+      font-size: 3em !important;
+      font-weight: 900 !important;
+      background: linear-gradient(135deg, var(--color-cyan), var(--color-purple), var(--color-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.3em;
+    }
+
+    .cover-subtitle {
+      font-size: 1.1em;
+      color: var(--color-text-dim);
+      margin-bottom: 2em;
+    }
+
+    .cover-meta {
+      font-size: 0.8em;
+      color: var(--color-text-dim);
+    }
+
+    /* Animated particles for cover */
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--color-cyan);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float 15s infinite ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+      25% { transform: translateY(-100px) translateX(50px); opacity: 0.8; }
+      50% { transform: translateY(-50px) translateX(-30px); opacity: 0.3; }
+      75% { transform: translateY(-150px) translateX(20px); opacity: 0.6; }
+    }
+
+    /* Architecture layers */
+    .arch-layer {
+      padding: 16px 24px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .arch-layer::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+    }
+    .arch-layer-1 { background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.15); }
+    .arch-layer-1::before { background: var(--color-cyan); }
+    .arch-layer-2 { background: rgba(179, 71, 255, 0.08); border: 1px solid rgba(179, 71, 255, 0.15); }
+    .arch-layer-2::before { background: var(--color-purple); }
+    .arch-layer-3 { background: rgba(255, 71, 171, 0.08); border: 1px solid rgba(255, 71, 171, 0.15); }
+    .arch-layer-3::before { background: var(--color-pink); }
+
+    /* Signal flow diagram */
+    .signal-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 20px 0;
+    }
+    .signal-node {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.7em;
+      font-weight: 600;
+      text-align: center;
+      min-width: 120px;
+    }
+    .signal-node.client {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--color-cyan);
+    }
+    .signal-node.server {
+      background: rgba(179, 71, 255, 0.1);
+      border: 1px solid rgba(179, 71, 255, 0.3);
+      color: var(--color-purple);
+    }
+    .signal-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 8px;
+      font-size: 0.55em;
+      color: var(--color-text-dim);
+    }
+    .signal-arrow .arrow-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-cyan), var(--color-purple));
+      position: relative;
+    }
+    .signal-arrow .arrow-line::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: -4px;
+      border: 5px solid transparent;
+      border-left: 6px solid var(--color-purple);
+    }
+    .signal-arrow.reverse .arrow-line {
+      background: linear-gradient(90deg, var(--color-purple), var(--color-cyan));
+    }
+    .signal-arrow.reverse .arrow-line::after {
+      right: auto;
+      left: -6px;
+      border-left: none;
+      border-right: 6px solid var(--color-cyan);
+    }
+
+    /* NAT diagram */
+    .nat-box {
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 0.7em;
+    }
+    .nat-stun { background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); color: var(--color-green); }
+    .nat-turn { background: rgba(255, 140, 66, 0.1); border: 1px solid rgba(255, 140, 66, 0.3); color: var(--color-orange); }
+    .nat-ice { background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); color: var(--color-cyan); }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-cyan), var(--color-purple));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 16px;
+      font-size: 0.75em;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-cyan);
+      box-shadow: 0 0 8px var(--color-cyan);
+    }
+    .timeline-item .step-num {
+      color: var(--color-cyan);
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Scene cards */
+    .scene-card {
+      text-align: center;
+      padding: 20px;
+    }
+    .scene-card .emoji {
+      font-size: 2.5em;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .scene-card h4 {
+      font-size: 0.9em;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .scene-card p {
+      font-size: 0.65em;
+      color: var(--color-text-dim);
+      line-height: 1.5;
+    }
+
+    /* Tech stack badges */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .tech-badge {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.7em;
+      font-weight: 600;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--color-text);
+    }
+
+    /* Comparison highlight */
+    .highlight-row td {
+      background: rgba(0, 212, 255, 0.05) !important;
+    }
+
+    /* Section divider */
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-cyan), var(--color-purple));
+      border-radius: 2px;
+      margin: 16px 0;
+    }
+
+    /* Fragments */
+    .reveal .slides section .fragment {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .reveal .slides section .fragment.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Small code */
+    .reveal code.inline {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--color-cyan);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+    }
+
+    /* Q&A page */
+    .qa-page {
+      text-align: center !important;
+      align-items: center !important;
+    }
+
+    /* Reduce font for code-heavy slides */
+    .reveal .small-code pre code {
+      font-size: 0.48em;
+      line-height: 1.5;
+    }
+    .reveal .small-code pre {
+      padding: 16px;
+    }
+
+    /* Arrow connector for flow */
+    .flow-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 0;
+    }
+    .flow-connector .line {
+      width: 2px;
+      height: 20px;
+      background: linear-gradient(180deg, var(--color-cyan), var(--color-purple));
+    }
+    .flow-connector .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid var(--color-purple);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1400px) {
+      .reveal { font-size: 24px; }
+      .reveal h1 { font-size: 1.8em; }
+      .reveal h2 { font-size: 1.4em; }
+      .reveal pre code { font-size: 0.5em; max-height: 320px; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      .reveal { font-size: 22px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-hint">方向键 / 空格切换 | ESC 概览</div>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ==================== 封面页 ==================== -->
+      <section class="cover-page">
+        <div class="particles">
+          <div class="particle" style="left:10%;top:80%;animation-delay:0s;"></div>
+          <div class="particle" style="left:20%;top:60%;animation-delay:2s;"></div>
+          <div class="particle" style="left:30%;top:90%;animation-delay:4s;"></div>
+          <div class="particle" style="left:50%;top:70%;animation-delay:1s;"></div>
+          <div class="particle" style="left:70%;top:85%;animation-delay:3s;"></div>
+          <div class="particle" style="left:80%;top:65%;animation-delay:5s;"></div>
+          <div class="particle" style="left:90%;top:75%;animation-delay:2.5s;"></div>
+        </div>
+        <div class="badge badge-cyan mb-4">前端技术分享</div>
+        <h1 class="cover-title">WebRTC</h1>
+        <p class="cover-subtitle">浏览器原生实时音视频通信 + P2P 数据传输技术</p>
+        <div class="section-divider" style="margin: 0 auto 30px;"></div>
+        <p class="cover-meta">
+          分享人：高级前端工程师<br>
+          <span style="font-size:0.85em;">2026年5月</span>
+        </p>
+      </section>
+
+      <!-- ==================== 目录页 ==================== -->
+      <section>
+        <div class="badge badge-purple mb-4">Contents</div>
+        <h2>本次分享内容</h2>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-6">
+          <div class="fragment">
+            <div class="card">
+              <h4><span class="text-cyan">01</span> 认识 WebRTC</h4>
+              <p class="text-dim" style="font-size:0.75em;">什么是 WebRTC / 为什么需要它</p>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="card card-glow-purple">
+              <h4><span class="text-purple">02</span> 核心架构与 API</h4>
+              <p class="text-dim" style="font-size:0.75em;">三层架构 / 三大核心 API 详解</p>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="card card-glow-pink">
+              <h4><span class="text-pink">03</span> 信令与 NAT 穿透</h4>
+              <p class="text-dim" style="font-size:0.75em;">Offer/Answer 流程 / STUN / TURN / ICE</p>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="card">
+              <h4><span class="text-green">04</span> 实战与展望</h4>
+              <p class="text-dim" style="font-size:0.75em;">1v1 视频通话 / 应用场景 / 调试技巧</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 什么是 WebRTC ==================== -->
+      <section>
+        <div class="badge badge-cyan mb-4">What</div>
+        <h2>什么是 WebRTC？</h2>
+        <div class="section-divider"></div>
+        <div class="card mt-4">
+          <p style="font-size:1em; line-height:1.8;">
+            <span class="text-cyan" style="font-weight:700;">WebRTC</span>（Web Real-Time Communication）是
+            <span class="text-yellow">浏览器内置</span>的一套实时音视频通信 + P2P 数据传输技术栈。
+            <br><br>
+            <span class="text-green">无需安装插件，几行 JavaScript 就能实现浏览器之间的视频通话。</span>
+          </p>
+        </div>
+        <div class="grid-3 mt-6">
+          <div class="fragment card text-center">
+            <div class="icon-circle" style="margin:0 auto 12px;">📹</div>
+            <h4>音视频通话</h4>
+            <p class="text-dim" style="font-size:0.7em;">浏览器自带的"微信视频通话"</p>
+          </div>
+          <div class="fragment card card-glow-purple text-center">
+            <div class="icon-circle purple" style="margin:0 auto 12px;">📡</div>
+            <h4>P2P 数据传输</h4>
+            <p class="text-dim" style="font-size:0.7em;">浏览器之间直接传文件的"快递通道"</p>
+          </div>
+          <div class="fragment card card-glow-pink text-center">
+            <div class="icon-circle pink" style="margin:0 auto 12px;">🖥️</div>
+            <h4>屏幕共享</h4>
+            <p class="text-dim" style="font-size:0.7em;">把浏览器标签页/整个屏幕"直播"给对方</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 为什么需要 WebRTC ==================== -->
+      <section>
+        <div class="badge badge-pink mb-4">Why</div>
+        <h2>为什么需要 WebRTC？</h2>
+        <div class="section-divider"></div>
+        <div class="grid-2 mt-4">
+          <div class="fragment">
+            <h4 class="text-dim mb-4">❌ 传统方案痛点</h4>
+            <div class="card" style="border-color:rgba(255,71,171,0.2);">
+              <p style="font-size:0.75em; margin-bottom:12px;"><span class="text-pink">WebSocket 中转</span></p>
+              <ul style="font-size:0.7em;">
+                <li>所有数据经过服务器，延迟高</li>
+                <li>服务器带宽成本爆炸</li>
+                <li>并发一高就扛不住</li>
+              </ul>
+              <div style="margin-top:12px; padding:8px; background:rgba(255,71,171,0.05); border-radius:6px; font-size:0.65em; font-family:'JetBrains Mono',monospace; color:var(--color-pink);">
+                浏览器 A → WebSocket Server → 浏览器 B
+              </div>
+            </div>
+          </div>
+          <div class="fragment">
+            <h4 class="text-dim mb-4">✅ WebRTC 优势</h4>
+            <div class="card" style="border-color:rgba(0,255,136,0.2);">
+              <p style="font-size:0.75em; margin-bottom:12px;"><span class="text-green">P2P 直连</span></p>
+              <ul style="font-size:0.7em;">
+                <li>延迟 20~80ms（直连）</li>
+                <li>服务器只传信令，零媒体流量</li>
+                <li>去中心化，用户越多越省</li>
+              </ul>
+              <div style="margin-top:12px; padding:8px; background:rgba(0,255,136,0.05); border-radius:6px; font-size:0.65em; font-family:'JetBrains Mono',monospace; color:var(--color-green);">
+                浏览器 A ⟷ 浏览器 B<br>
+                <span style="color:var(--color-text-dim);">（数据不经过服务器）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fragment mt-4">
+          <table>
+            <tr>
+              <th>维度</th>
+              <th>WebSocket 中转</th>
+              <th>WebRTC P2P</th>
+            </tr>
+            <tr>
+              <td>延迟</td>
+              <td>50~200ms</td>
+              <td><span class="text-green">20~80ms</span></td>
+            </tr>
+            <tr>
+              <td>带宽成本</td>
+              <td>服务器承担全部流量</td>
+              <td><span class="text-green">服务器只传信令</span></td>
+            </tr>
+            <tr>
+              <td>扩展性</td>
+              <td>服务器是瓶颈</td>
+              <td><span class="text-green">去中心化</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== 核心架构 ==================== -->
+      <section>
+        <div class="badge badge-purple mb-4">Architecture</div>
+        <h2>WebRTC 核心架构</h2>
+        <div class="section-divider"></div>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:20px;">三层架构，从上到下越来越靠近硬件</p>
+
+        <div class="fragment arch-layer arch-layer-1">
+          <div class="flex items-center gap-4">
+            <span class="text-cyan" style="font-weight:700; font-size:0.9em;">JS API 层</span>
+            <span style="font-size:0.7em; color:var(--color-text-dim);">你写的代码在这里</span>
+          </div>
+          <div class="flex gap-4 mt-2" style="font-size:0.65em; font-family:'JetBrains Mono',monospace;">
+            <span style="padding:4px 10px; background:rgba(0,212,255,0.1); border-radius:4px; color:var(--color-cyan);">getUserMedia()</span>
+            <span style="padding:4px 10px; background:rgba(0,212,255,0.1); border-radius:4px; color:var(--color-cyan);">RTCPeerConnection</span>
+            <span style="padding:4px 10px; background:rgba(0,212,255,0.1); border-radius:4px; color:var(--color-cyan);">RTCDataChannel</span>
+            <span style="padding:4px 10px; background:rgba(0,212,255,0.1); border-radius:4px; color:var(--color-cyan);">getDisplayMedia()</span>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="line"></div><div class="arrow-down"></div></div>
+
+        <div class="fragment arch-layer arch-layer-2">
+          <div class="flex items-center gap-4">
+            <span class="text-purple" style="font-weight:700; font-size:0.9em;">C++ API 层</span>
+            <span style="font-size:0.7em; color:var(--color-text-dim);">浏览器内核实现（Chromium 源码）</span>
+          </div>
+          <div class="flex gap-4 mt-2" style="font-size:0.65em; font-family:'JetBrains Mono',monospace;">
+            <span style="padding:4px 10px; background:rgba(179,71,255,0.1); border-radius:4px; color:var(--color-purple);">PeerConnection</span>
+            <span style="padding:4px 10px; background:rgba(179,71,255,0.1); border-radius:4px; color:var(--color-purple);">DataChannel</span>
+            <span style="padding:4px 10px; background:rgba(179,71,255,0.1); border-radius:4px; color:var(--color-purple);">生命周期管理</span>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="line"></div><div class="arrow-down"></div></div>
+
+        <div class="fragment arch-layer arch-layer-3">
+          <div class="flex items-center gap-4">
+            <span class="text-pink" style="font-weight:700; font-size:0.9em;">C++ 底层引擎</span>
+            <span style="font-size:0.7em; color:var(--color-text-dim);">跨平台高性能实现</span>
+          </div>
+          <div class="grid-3 mt-2" style="font-size:0.65em; font-family:'JetBrains Mono',monospace;">
+            <div>
+              <span style="color:var(--color-pink); font-weight:600;">音频引擎</span>
+              <div class="text-dim" style="margin-top:4px;">回声消除 / 噪声抑制 / 自动增益</div>
+            </div>
+            <div>
+              <span style="color:var(--color-pink); font-weight:600;">视频引擎</span>
+              <div class="text-dim" style="margin-top:4px;">VP8/VP9/H.264 / 自适应码率 / FEC</div>
+            </div>
+            <div>
+              <span style="color:var(--color-pink); font-weight:600;">网络传输层</span>
+              <div class="text-dim" style="margin-top:4px;">ICE/STUN/TURN / DTLS/SRTP / 拥塞控制</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== API 1: getUserMedia ==================== -->
+      <section>
+        <div class="badge badge-cyan mb-4">API 1 / 3</div>
+        <h2>getUserMedia</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">获取摄像头 / 麦克风 / 屏幕共享的媒体流</p>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">// 获取摄像头 + 麦克风
+async function getLocalStream() {
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: {
+      width: { ideal: 1280 },
+      height: { ideal: 720 },
+      facingMode: 'user' // 'user' | 'environment'
+    },
+    audio: {
+      echoCancellation: true,   // 回声消除
+      noiseSuppression: true,   // 噪声抑制
+      autoGainControl: true     // 自动增益
+    }
+  })
+
+  // 绑定到 &lt;video&gt; 元素
+  videoElement.srcObject = stream
+  return stream
+}
+
+// 屏幕共享
+const screenStream = await navigator.mediaDevices.getDisplayMedia({
+  video: { cursor: 'always', displaySurface: 'monitor' },
+  audio: true
+})</code></pre>
+        </div>
+        <div class="fragment grid-3 mt-4">
+          <div class="card text-center" style="padding:16px;">
+            <div class="text-cyan" style="font-size:1.2em; font-weight:700;">🔒</div>
+            <p style="font-size:0.7em; margin-top:8px;">必须 HTTPS 或 localhost</p>
+          </div>
+          <div class="card text-center" style="padding:16px;">
+            <div class="text-purple" style="font-size:1.2em; font-weight:700;">🎛️</div>
+            <p style="font-size:0.7em; margin-top:8px;">返回 MediaStream（多轨道）</p>
+          </div>
+          <div class="card text-center" style="padding:16px;">
+            <div class="text-green" style="font-size:1.2em; font-weight:700;">⚡</div>
+            <p style="font-size:0.7em; margin-top:8px;">音频处理浏览器自动搞定</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== API 2: RTCPeerConnection ==================== -->
+      <section>
+        <div class="badge badge-purple mb-4">API 2 / 3</div>
+        <h2>RTCPeerConnection</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">管理点对点连接的核心 —— "智能路由器"</p>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">// 创建 PeerConnection
+const pc = new RTCPeerConnection({
+  iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' },  // STUN: 发现公网 IP
+    { urls: 'turn:your-turn.com:3478',          // TURN: P2P 失败时中转
+      username: 'user', credential: 'pass' }
+  ]
+})
+
+// 1. 添加本地媒体轨道
+localStream.getTracks().forEach(track => {
+  pc.addTrack(track, localStream)
+})
+
+// 2. 监听远端轨道
+pc.ontrack = (event) => {
+  remoteVideo.srcObject = event.streams[0]
+}
+
+// 3. 收集并发送 ICE 候选
+pc.onicecandidate = (event) => {
+  if (event.candidate) {
+    signalingServer.send({ type: 'ice-candidate', candidate: event.candidate })
+  }
+}
+
+// 4. 监听连接状态
+pc.onconnectionstatechange = () => {
+  console.log('状态:', pc.connectionState)
+  // new → connecting → connected → disconnected → failed → closed
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ==================== API 2: Offer/Answer 代码 ==================== -->
+      <section>
+        <div class="badge badge-purple mb-4">API 2 / 3</div>
+        <h2>Offer / Answer 交换</h2>
+        <div class="section-divider"></div>
+        <div class="grid-2">
+          <div class="fragment small-code">
+            <p style="font-size:0.75em; margin-bottom:8px;"><span class="text-cyan">发起方 (Offerer)</span></p>
+            <pre><code class="language-typescript">// 创建 SDP Offer
+const offer = await pc.createOffer()
+await pc.setLocalDescription(offer)
+
+// 发送给远端
+signaling.send({ type: 'offer', sdp: offer.sdp })
+
+// 收到 Answer 后
+await pc.setRemoteDescription(
+  new RTCSessionDescription({ type: 'answer', sdp: answerSdp })
+)
+
+// 收到 ICE Candidate
+await pc.addIceCandidate(
+  new RTCIceCandidate(candidate)
+)</code></pre>
+          </div>
+          <div class="fragment small-code">
+            <p style="font-size:0.75em; margin-bottom:8px;"><span class="text-purple">接收方 (Answerer)</span></p>
+            <pre><code class="language-typescript">// 收到 Offer 后
+await pc.setRemoteDescription(
+  new RTCSessionDescription({ type: 'offer', sdp: offerSdp })
+)
+
+// 创建 Answer
+const answer = await pc.createAnswer()
+await pc.setLocalDescription(answer)
+
+// 发送给发起方
+signaling.send({ type: 'answer', sdp: answer.sdp })
+
+// 收到 ICE Candidate
+await pc.addIceCandidate(
+  new RTCIceCandidate(candidate)
+)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== API 3: RTCDataChannel ==================== -->
+      <section>
+        <div class="badge badge-pink mb-4">API 3 / 3</div>
+        <h2>RTCDataChannel</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">P2P 版本的 WebSocket —— 在连接上传输任意数据</p>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">// 创建 DataChannel（在已有 PeerConnection 上）
+const dataChannel = pc.createDataChannel('chat', {
+  ordered: true,        // 保证消息按序到达
+  maxRetransmits: 3     // 最大重传次数
+})
+
+dataChannel.onopen = () => {
+  console.log('通道已连接')
+  dataChannel.send('Hello WebRTC!')
+}
+
+dataChannel.onmessage = (event) => {
+  console.log('收到:', event.data)
+}
+
+// 接收方通过事件获取
+pc.ondatachannel = (event) => {
+  const channel = event.channel
+  channel.onmessage = (e) => console.log('收到:', e.data)
+}</code></pre>
+        </div>
+        <div class="fragment grid-2 mt-4">
+          <div class="card" style="padding:16px;">
+            <h4 style="font-size:0.85em;"><span class="text-green">可靠模式</span>（类似 TCP）</h4>
+            <p style="font-size:0.65em; color:var(--color-text-dim); font-family:'JetBrains Mono',monospace;">ordered: true, maxRetransmits: null</p>
+            <p style="font-size:0.7em; margin-top:8px;">适合：文件传输、文字聊天</p>
+          </div>
+          <div class="card" style="padding:16px;">
+            <h4 style="font-size:0.85em;"><span class="text-orange">不可靠模式</span>（类似 UDP）</h4>
+            <p style="font-size:0.65em; color:var(--color-text-dim); font-family:'JetBrains Mono',monospace;">ordered: false, maxRetransmits: 0</p>
+            <p style="font-size:0.7em; margin-top:8px;">适合：实时游戏状态同步</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 信令流程 ==================== -->
+      <section>
+        <div class="badge badge-cyan mb-4">Signaling</div>
+        <h2>信令流程</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">WebRTC 本身不规定信令协议，但必须先交换元数据才能建立连接</p>
+        <div class="section-divider"></div>
+
+        <div class="signal-flow fragment">
+          <div class="signal-node client">浏览器 A<br><span style="font-size:0.8em; opacity:0.7;">发起方</span></div>
+          <div class="signal-arrow">
+            <span>SDP Offer</span>
+            <div class="arrow-line"></div>
+            <span>ICE Candidate</span>
+          </div>
+          <div class="signal-node server">信令服务器<br><span style="font-size:0.8em; opacity:0.7;">Socket.IO</span></div>
+          <div class="signal-arrow reverse">
+            <span>SDP Answer</span>
+            <div class="arrow-line"></div>
+            <span>ICE Candidate</span>
+          </div>
+          <div class="signal-node client">浏览器 B<br><span style="font-size:0.8em; opacity:0.7;">接收方</span></div>
+        </div>
+
+        <div class="fragment mt-4">
+          <div class="timeline">
+            <div class="timeline-item"><span class="step-num">1</span> A 加入房间，获取本地媒体流</div>
+            <div class="timeline-item"><span class="step-num">2</span> B 加入房间，A 收到通知</div>
+            <div class="timeline-item"><span class="step-num">3</span> A 创建 Offer → 设置本地描述 → 发送给 B</div>
+            <div class="timeline-item"><span class="step-num">4</span> B 收到 Offer → 设置远端描述 → 创建 Answer → 发送给 A</div>
+            <div class="timeline-item"><span class="step-num">5</span> 双方交换 ICE Candidate</div>
+            <div class="timeline-item"><span class="step-num">6</span> ICE 连通性检查完成 → <span class="text-green">P2P 连接建立</span></div>
+            <div class="timeline-item"><span class="step-num">7</span> 音视频数据 <span class="text-cyan">直接 P2P 传输</span>，不再经过信令服务器</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 信令服务器代码 ==================== -->
+      <section>
+        <div class="badge badge-cyan mb-4">Signaling</div>
+        <h2>信令服务器实现</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">Node.js + Socket.IO —— 只做转发，不处理媒体数据</p>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">import { Server } from 'socket.io'
+
+const io = new Server(3000, { cors: { origin: '*' } })
+
+io.on('connection', (socket) => {
+  // 加入房间
+  socket.on('join-room', (roomId) => {
+    socket.join(roomId)
+    socket.to(roomId).emit('user-joined', socket.id)
+  })
+
+  // 转发 SDP Offer / Answer
+  socket.on('offer', ({ roomId, offer }) => {
+    socket.to(roomId).emit('offer', { offer, from: socket.id })
+  })
+  socket.on('answer', ({ roomId, answer }) => {
+    socket.to(roomId).emit('answer', { answer, from: socket.id })
+  })
+
+  // 转发 ICE Candidate
+  socket.on('ice-candidate', ({ roomId, candidate }) => {
+    socket.to(roomId).emit('ice-candidate', { candidate, from: socket.id })
+  })
+})</code></pre>
+        </div>
+        <div class="fragment mt-4">
+          <div class="card" style="padding:16px; text-align:center;">
+            <p style="font-size:0.8em;">
+              <span class="text-yellow">信令服务器 = "婚介所"</span>
+              <span class="text-dim"> —— 帮双方交换联系方式，之后它们直接对话</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NAT 穿透原理 ==================== -->
+      <section>
+        <div class="badge badge-green mb-4">NAT Traversal</div>
+        <h2>NAT 穿透原理</h2>
+        <p class="text-dim" style="font-size:0.8em; margin-bottom:16px;">大多数设备在内网，没有独立公网 IP，需要"搭桥"才能找到对方</p>
+        <div class="section-divider"></div>
+
+        <div class="grid-3 mt-4">
+          <div class="fragment">
+            <div class="nat-box nat-stun">
+              <div style="font-size:1.5em; margin-bottom:8px;">📞</div>
+              <h4 style="color:var(--color-green); margin-bottom:8px;">STUN</h4>
+              <p style="font-size:0.7em; color:var(--color-text);">"查号台"</p>
+              <p style="font-size:0.65em; color:var(--color-text-dim); margin-top:8px;">帮助内网设备发现自己的公网 IP 和端口</p>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="nat-box nat-turn">
+              <div style="font-size:1.5em; margin-bottom:8px;">📬</div>
+              <h4 style="color:var(--color-orange); margin-bottom:8px;">TURN</h4>
+              <p style="font-size:0.7em; color:var(--color-text);">"传纸条的中间人"</p>
+              <p style="font-size:0.65em; color:var(--color-text-dim); margin-top:8px;">P2P 失败时作为中继服务器转发数据</p>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="nat-box nat-ice">
+              <div style="font-size:1.5em; margin-bottom:8px;">🧭</div>
+              <h4 style="color:var(--color-cyan); margin-bottom:8px;">ICE</h4>
+              <p style="font-size:0.7em; color:var(--color-text);">"智能导航"</p>
+              <p style="font-size:0.65em; color:var(--color-text-dim); margin-top:8px;">自动尝试所有连接方式，选最优路径</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fragment mt-6">
+          <div class="card">
+            <h4 style="font-size:0.85em; margin-bottom:12px;"><span class="text-cyan">ICE 候选优先级</span></h4>
+            <div class="flex items-center gap-4" style="font-size:0.75em;">
+              <div style="flex:1; text-align:center; padding:12px; background:rgba(0,255,136,0.05); border-radius:8px; border:1px solid rgba(0,255,136,0.15);">
+                <div class="text-green" style="font-weight:700;">1. Host</div>
+                <div class="text-dim" style="font-size:0.85em; margin-top:4px;">内网直连</div>
+                <div class="text-dim" style="font-size:0.8em;">延迟最低</div>
+              </div>
+              <div style="color:var(--color-text-dim);">→</div>
+              <div style="flex:1; text-align:center; padding:12px; background:rgba(0,212,255,0.05); border-radius:8px; border:1px solid rgba(0,212,255,0.15);">
+                <div class="text-cyan" style="font-weight:700;">2. Srflx (STUN)</div>
+                <div class="text-dim" style="font-size:0.85em; margin-top:4px;">公网地址</div>
+                <div class="text-dim" style="font-size:0.8em;">次优选择</div>
+              </div>
+              <div style="color:var(--color-text-dim);">→</div>
+              <div style="flex:1; text-align:center; padding:12px; background:rgba(255,140,66,0.05); border-radius:8px; border:1px solid rgba(255,140,66,0.15);">
+                <div class="text-orange" style="font-weight:700;">3. Relay (TURN)</div>
+                <div class="text-dim" style="font-size:0.85em; margin-top:4px;">服务器中转</div>
+                <div class="text-dim" style="font-size:0.8em;">保底方案</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NAT 穿透流程图 ==================== -->
+      <section>
+        <div class="badge badge-green mb-4">NAT Traversal</div>
+        <h2>ICE 工作流程</h2>
+        <div class="section-divider"></div>
+
+        <div class="fragment">
+          <div class="card" style="padding:24px;">
+            <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;">
+              <div style="text-align:center;">
+                <div style="width:80px; height:80px; border-radius:50%; background:rgba(0,212,255,0.1); border:2px solid var(--color-cyan); display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                  <span style="font-size:1.5em;">🏠</span>
+                </div>
+                <div style="font-size:0.7em; font-weight:600;">收集本地候选</div>
+                <div style="font-size:0.6em; color:var(--color-text-dim);">内网 IP + 端口</div>
+              </div>
+              <div style="color:var(--color-cyan); font-size:1.2em;">→</div>
+              <div style="text-align:center;">
+                <div style="width:80px; height:80px; border-radius:50%; background:rgba(179,71,255,0.1); border:2px solid var(--color-purple); display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                  <span style="font-size:1.5em;">🌐</span>
+                </div>
+                <div style="font-size:0.7em; font-weight:600;">STUN 查询</div>
+                <div style="font-size:0.6em; color:var(--color-text-dim);">获取公网地址</div>
+              </div>
+              <div style="color:var(--color-purple); font-size:1.2em;">→</div>
+              <div style="text-align:center;">
+                <div style="width:80px; height:80px; border-radius:50%; background:rgba(255,71,171,0.1); border:2px solid var(--color-pink); display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                  <span style="font-size:1.5em;">📡</span>
+                </div>
+                <div style="font-size:0.7em; font-weight:600;">TURN 备选</div>
+                <div style="font-size:0.6em; color:var(--color-text-dim);">中继地址</div>
+              </div>
+              <div style="color:var(--color-pink); font-size:1.2em;">→</div>
+              <div style="text-align:center;">
+                <div style="width:80px; height:80px; border-radius:50%; background:rgba(0,255,136,0.1); border:2px solid var(--color-green); display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                  <span style="font-size:1.5em;">✅</span>
+                </div>
+                <div style="font-size:0.7em; font-weight:600;">连通性检查</div>
+                <div style="font-size:0.6em; color:var(--color-text-dim);">选择最优路径</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fragment mt-4">
+          <div class="card" style="padding:16px; text-align:center;">
+            <p style="font-size:0.8em;">
+              <span class="text-dim">你不需要手动选择，</span>
+              <span class="text-cyan" style="font-weight:700;">ICE 全自动搞定</span>
+              <span class="text-dim"> —— 就像导航自动选最快路线</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 实战案例：技术栈 ==================== -->
+      <section>
+        <div class="badge badge-yellow mb-4">Practice</div>
+        <h2>实战案例：1v1 视频通话</h2>
+        <div class="section-divider"></div>
+
+        <div class="fragment mt-4">
+          <h4 style="font-size:0.9em; margin-bottom:16px;">技术栈</h4>
+          <div class="tech-stack">
+            <div class="tech-badge"><span class="text-green">Vite 8</span></div>
+            <div class="tech-badge"><span class="text-green">Vue 3</span></div>
+            <div class="tech-badge"><span class="text-cyan">TypeScript</span></div>
+            <div class="tech-badge"><span class="text-yellow">Node.js 24</span></div>
+            <div class="tech-badge"><span class="text-purple">Express 4</span></div>
+            <div class="tech-badge"><span class="text-pink">Socket.IO</span></div>
+          </div>
+        </div>
+
+        <div class="fragment mt-6">
+          <h4 style="font-size:0.9em; margin-bottom:16px;">项目结构</h4>
+          <div class="card" style="padding:20px; font-family:'JetBrains Mono',monospace; font-size:0.6em; line-height:1.8;">
+            <div style="color:var(--color-cyan);">webrtc-mvp/</div>
+            <div style="padding-left:20px; color:var(--color-text-dim);">├── <span style="color:var(--color-purple);">server/</span>          <span style="color:var(--color-text-dim);"># 信令服务器</span></div>
+            <div style="padding-left:40px; color:var(--color-text-dim);">│   ├── server.ts    <span style="color:var(--color-text-dim);"># Socket.IO 信令转发</span></div>
+            <div style="padding-left:40px; color:var(--color-text-dim);">│   └── package.json</div>
+            <div style="padding-left:20px; color:var(--color-text-dim);">└── <span style="color:var(--color-cyan);">client/</span>          <span style="color:var(--color-text-dim);"># 前端 Vue3 应用</span></div>
+            <div style="padding-left:40px; color:var(--color-text-dim);">├── src/</div>
+            <div style="padding-left:60px; color:var(--color-text-dim);">│   ├── components/</div>
+            <div style="padding-left:80px; color:var(--color-text-dim);">│   │   └── <span style="color:var(--color-yellow);">VideoCall.vue</span>   <span style="color:var(--color-text-dim);"># 核心视频通话组件</span></div>
+            <div style="padding-left:60px; color:var(--color-text-dim);">│   ├── types/</div>
+            <div style="padding-left:60px; color:var(--color-text-dim);">│   └── App.vue</div>
+            <div style="padding-left:40px; color:var(--color-text-dim);">├── index.html</div>
+            <div style="padding-left:40px; color:var(--color-text-dim);">└── vite.config.ts</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 实战案例：核心代码 ==================== -->
+      <section>
+        <div class="badge badge-yellow mb-4">Practice</div>
+        <h2>核心代码：VideoCall.vue</h2>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">// ==================== 加入房间 & 初始化 ====================
+async function joinRoom() {
+  // 1. 获取本地媒体流
+  localStream = await navigator.mediaDevices.getUserMedia({
+    video: { width: 1280, height: 720 },
+    audio: true
+  })
+  localVideoRef.value!.srcObject = localStream
+
+  // 2. 连接信令服务器
+  socket = io('http://localhost:3000')
+  socket.on('connect', () => {
+    socket!.emit('join-room', { roomId: roomId.value }, (result) => {
+      if (result.success) callState.value.isInRoom = true
+    })
+  })
+  setupSocketListeners()
+}
+
+// ==================== Socket 事件监听 ====================
+function setupSocketListeners() {
+  // 新用户加入 → 创建 Offer
+  socket!.on('user-joined', async (data) => {
+    callState.value.remotePeerId = data.socketId
+    await createPeerConnection()
+    await createAndSendOffer(data.socketId)
+  })
+
+  // 收到 Offer → 创建 Answer
+  socket!.on('offer', async (data) => {
+    await createPeerConnection()
+    await handleOffer(data)
+  })
+
+  // 收到 Answer
+  socket!.on('answer', async (data) => {
+    await handleAnswer(data)
+  })
+
+  // 收到 ICE Candidate
+  socket!.on('ice-candidate', async (data) => {
+    await handleIceCandidate(data)
+  })
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ==================== 实战案例：PeerConnection 管理 ==================== -->
+      <section>
+        <div class="badge badge-yellow mb-4">Practice</div>
+        <h2>核心代码：PeerConnection 管理</h2>
+        <div class="section-divider"></div>
+        <div class="fragment small-code">
+          <pre><code class="language-typescript">async function createPeerConnection() {
+  pc = new RTCPeerConnection({ iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' }
+  ]})
+
+  // 添加本地轨道
+  localStream?.getTracks().forEach(track => {
+    pc!.addTrack(track, localStream!)
+  })
+
+  // 监听远端轨道
+  pc.ontrack = (event) => {
+    remoteVideoRef.value!.srcObject = event.streams[0]
+  }
+
+  // 收集 ICE Candidate 并发送
+  pc.onicecandidate = (event) => {
+    if (event.candidate && callState.value.remotePeerId) {
+      socket?.emit('ice-candidate', {
+        targetId: callState.value.remotePeerId,
+        candidate: event.candidate.toJSON()
+      })
+    }
+  }
+
+  // 连接状态变化
+  pc.onconnectionstatechange = () => {
+    callState.value.isConnected = (pc?.connectionState === 'connected')
+  }
+}
+
+// 创建并发送 Offer（呼叫方）
+async function createAndSendOffer(targetId: string) {
+  dataChannel = pc!.createDataChannel('chat', { ordered: true })
+  const offer = await pc!.createOffer()
+  await pc!.setLocalDescription(offer)
+  socket?.emit('offer', { targetId, sdp: offer })
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ==================== 应用场景 ==================== -->
+      <section>
+        <div class="badge badge-cyan mb-4">Scenarios</div>
+        <h2>WebRTC 应用场景</h2>
+        <div class="section-divider"></div>
+        <div class="grid-4 mt-6">
+          <div class="fragment card scene-card">
+            <span class="emoji">💼</span>
+            <h4>视频会议</h4>
+            <p>Zoom / Google Meet / 腾讯会议</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">🎓</span>
+            <h4>在线教育</h4>
+            <p>1v1 辅导 / 互动课堂 / 白板协作</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">🏥</span>
+            <h4>远程医疗</h4>
+            <p>远程问诊 / 手术示教 / 健康监测</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">🎮</span>
+            <h4>云游戏</h4>
+            <p>低延迟串流 / 实时操控</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">📺</span>
+            <h4>直播连麦</h4>
+            <p>主播与观众实时互动</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">🔧</span>
+            <h4>远程协助</h4>
+            <p>屏幕共享 + 语音指导排障</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">📁</span>
+            <h4>P2P 文件传输</h4>
+            <p>大文件直连传输，不经过服务器</p>
+          </div>
+          <div class="fragment card scene-card">
+            <span class="emoji">🤖</span>
+            <h4>IoT 设备</h4>
+            <p>浏览器直接控制智能硬件</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== WebRTC vs WebSocket vs WebTransport ==================== -->
+      <section>
+        <div class="badge badge-purple mb-4">Comparison</div>
+        <h2>WebRTC vs WebSocket vs WebTransport</h2>
+        <div class="section-divider"></div>
+        <div class="fragment">
+          <table>
+            <tr>
+              <th>维度</th>
+              <th>WebRTC</th>
+              <th>WebSocket</th>
+              <th>WebTransport</th>
+            </tr>
+            <tr>
+              <td>传输层</td>
+              <td>UDP（可靠/不可靠可选）</td>
+              <td>TCP</td>
+              <td>QUIC (基于 UDP)</td>
+            </tr>
+            <tr>
+              <td>连接方式</td>
+              <td><span class="text-green">P2P</span></td>
+              <td>C/S</td>
+              <td>C/S</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>延迟</td>
+              <td><span class="text-green">极低 (20~80ms)</span></td>
+              <td>中等 (50~200ms)</td>
+              <td>低 (30~100ms)</td>
+            </tr>
+            <tr>
+              <td>带宽成本</td>
+              <td><span class="text-green">低（P2P）</span></td>
+              <td>高（服务器中转）</td>
+              <td>高（服务器中转）</td>
+            </tr>
+            <tr>
+              <td>适用场景</td>
+              <td>音视频、实时游戏、文件传输</td>
+              <td>文字聊天、信令、通知</td>
+              <td>游戏、实时流</td>
+            </tr>
+            <tr>
+              <td>连接复杂度</td>
+              <td>高（SDP + ICE + 信令）</td>
+              <td>低（一次握手）</td>
+              <td>中（QUIC 握手）</td>
+            </tr>
+            <tr>
+              <td>加密</td>
+              <td><span class="text-green">强制 DTLS/SRTP</span></td>
+              <td>可选 TLS (wss://)</td>
+              <td>强制 TLS 1.3</td>
+            </tr>
+          </table>
+        </div>
+        <div class="fragment mt-4">
+          <div class="card" style="padding:16px; text-align:center;">
+            <p style="font-size:0.8em;">
+              <span class="text-dim">选择建议：</span>
+              <span class="text-cyan" style="font-weight:700;">需要音视频 → WebRTC</span>
+              <span class="text-dim"> | </span>
+              <span class="text-purple" style="font-weight:700;">文字/信令 → WebSocket</span>
+              <span class="text-dim"> | </span>
+              <span class="text-pink" style="font-weight:700;">新一代低延迟 → WebTransport</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 常见问题 & 调试技巧 ==================== -->
+      <section>
+        <div class="badge badge-pink mb-4">Debug</div>
+        <h2>常见问题 & 调试技巧</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid-2 mt-4">
+          <div class="fragment">
+            <div class="card">
+              <h4 style="font-size:0.85em; margin-bottom:12px;"><span class="text-cyan">🔍 chrome://webrtc-internals</span></h4>
+              <ul style="font-size:0.7em;">
+                <li>查看所有活跃 RTCPeerConnection</li>
+                <li>检查 signalingState / connectionState</li>
+                <li>查看 ICE 候选类型（host/srflx/relay）</li>
+                <li>分析带宽、帧率、丢包率统计</li>
+                <li>查看完整 SDP Offer/Answer 内容</li>
+              </ul>
+            </div>
+          </div>
+          <div class="fragment">
+            <div class="card">
+              <h4 style="font-size:0.85em; margin-bottom:12px;"><span class="text-purple">🐛 常见问题</span></h4>
+              <ul style="font-size:0.7em;">
+                <li><span class="text-pink">ICE failed</span> → 添加 TURN 服务器</li>
+                <li><span class="text-pink">Permission denied</span> → 检查 HTTPS / 权限</li>
+                <li><span class="text-pink">一方看不到对方</span> → 确认 addTrack 在 createOffer 之前</li>
+                <li><span class="text-pink">Safari 兼容</span> → 用户交互后调用 getUserMedia</li>
+                <li><span class="text-pink">移动端断开</span> → 处理前后台切换</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="fragment mt-4">
+          <div class="card small-code">
+            <p style="font-size:0.75em; margin-bottom:8px;"><span class="text-green">调试代码：打印所有状态变化</span></p>
+            <pre><code class="language-typescript">pc.onconnectionstatechange = () => console.log('conn:', pc.connectionState)
+pc.onsignalingstatechange = () => console.log('sig:', pc.signalingState)
+pc.oniceconnectionstatechange = () => console.log('ice:', pc.iceConnectionState)
+pc.onicegatheringstatechange = () => console.log('gather:', pc.iceGatheringState)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 学习路径 & 资源 ==================== -->
+      <section>
+        <div class="badge badge-green mb-4">Resources</div>
+        <h2>学习路径 & 推荐资源</h2>
+        <div class="section-divider"></div>
+
+        <div class="fragment mt-4">
+          <h4 style="font-size:0.9em; margin-bottom:16px;"><span class="text-cyan">学习路径</span></h4>
+          <div class="timeline">
+            <div class="timeline-item"><span class="step-num">Step 1</span> 本地跑通 <code class="inline">getUserMedia</code>，摄像头画面显示到页面</div>
+            <div class="timeline-item"><span class="step-num">Step 2</span> 同一台机器两个标签页，手动复制粘贴 SDP 实现通话</div>
+            <div class="timeline-item"><span class="step-num">Step 3</span> 加入 Socket.IO 信令服务器，实现跨设备通话</div>
+            <div class="timeline-item"><span class="step-num">Step 4</span> 尝试 <code class="inline">RTCDataChannel</code> 传文件</div>
+            <div class="timeline-item"><span class="step-num">Step 5</span> 部署 STUN/TURN 服务器（coturn），解决 NAT 穿透</div>
+          </div>
+        </div>
+
+        <div class="fragment mt-6">
+          <h4 style="font-size:0.9em; margin-bottom:16px;"><span class="text-purple">推荐资源</span></h4>
+          <div class="grid-3">
+            <div class="card" style="padding:16px; text-align:center;">
+              <div style="font-size:1.5em; margin-bottom:8px;">📚</div>
+              <h4 style="font-size:0.8em;">WebRTC for the Curious</h4>
+              <p style="font-size:0.65em;">开源电子书，深度解析原理</p>
+              <p style="font-size:0.6em; color:var(--color-text-dim); margin-top:4px;">webrtcforthecurious.com</p>
+            </div>
+            <div class="card" style="padding:16px; text-align:center;">
+              <div style="font-size:1.5em; margin-bottom:8px;">🧪</div>
+              <h4 style="font-size:0.8em;">WebRTC 官方示例</h4>
+              <p style="font-size:0.65em;">Google 维护的示例代码库</p>
+              <p style="font-size:0.6em; color:var(--color-text-dim); margin-top:4px;">webrtc.github.io/samples</p>
+            </div>
+            <div class="card" style="padding:16px; text-align:center;">
+              <div style="font-size:1.5em; margin-bottom:8px;">📖</div>
+              <h4 style="font-size:0.8em;">MDN 文档</h4>
+              <p style="font-size:0.65em;">RTCPeerConnection / getUserMedia</p>
+              <p style="font-size:0.6em; color:var(--color-text-dim); margin-top:4px;">developer.mozilla.org</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 结尾页 ==================== -->
+      <section class="qa-page">
+        <div class="particles">
+          <div class="particle" style="left:15%;top:70%;animation-delay:0s;"></div>
+          <div class="particle" style="left:35%;top:85%;animation-delay:2s;"></div>
+          <div class="particle" style="left:55%;top:75%;animation-delay:4s;"></div>
+          <div class="particle" style="left:75%;top:80%;animation-delay:1s;"></div>
+          <div class="particle" style="left:85%;top:65%;animation-delay:3s;"></div>
+        </div>
+        <h1 style="font-size:3em; font-weight:900; margin-bottom:0.3em;">
+          <span style="background: linear-gradient(135deg, var(--color-cyan), var(--color-purple), var(--color-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Q & A</span>
+        </h1>
+        <div class="section-divider" style="margin: 0 auto 30px;"></div>
+        <p style="font-size:1em; color:var(--color-text-dim);">感谢聆听</p>
+        <p style="font-size:0.8em; color:var(--color-text-dim); margin-top:20px;">
+          WebRTC —— 让浏览器成为实时通信的超级节点
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      width: 1280,
+      height: 720,
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: false,
+      plugins: [ RevealHighlight ]
+    });
+  </script>
+</body>
+</html>
