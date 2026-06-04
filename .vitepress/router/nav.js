@@ -26,7 +26,7 @@ export default [
       },
       {
         text: '前端工程化',
-        link: '/docs/frontend/engineering/index'
+        link: '/docs/frontend/engineering'
       },
       {
         text: 'typescript',

@@ -6,6 +6,12 @@ import interview from './interview.js';
 
 import backend from './backend.js';
 
+// 翻译
+import translation from './translation';
+
+// 前端工程化
+import engineering from './engineering.js';
+
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
@@ -17,31 +23,11 @@ export default {
   ...interview,
 
   ...backend,
-  // '/docs/frontend/': [
-  //   {
-  //     text: '前端',
-  //     items: [
-  //       {
-  //         text: '杂文',
-  //         link: '/docs/frontend/index'
-  //       }
-  //     ]
-  //   }
-  // ],
-  '/docs/frontend/translation/index': [
-    {
-      text: 'codemirror-中文文档',
-      link: '/docs/frontend/translation/codemirror/index',
-    },
-    {
-      text: 'cac-中文文档',
-      link: '/docs/frontend/translation/cac/index',
-    },
-    {
-      text: 'babel-ast',
-      link: '/docs/frontend/translation/babel-ast/index',
-    },
-  ],
+
+  ...translation,
+
+  ...engineering,
+
   '/docs/frontend/translation/babel-ast/index': [
     {
       text: 'user handbook 设置/配置 Babel',
