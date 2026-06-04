@@ -4,6 +4,8 @@ import vitepress from './vitepress.js';
 // 面试
 import interview from './interview.js';
 
+import backend from './backend.js';
+
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
@@ -13,6 +15,8 @@ export default {
 
   ...vitepress,
   ...interview,
+
+  ...backend,
   // '/docs/frontend/': [
   //   {
   //     text: '前端',
