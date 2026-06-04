@@ -73,14 +73,14 @@ js里面表示 **次方** 使用 `Math.pow(2,6)`
 
 ### js 二进制和十进制互转
 
-```js
+```javascript
 // 十进制 27转成二进制  '11011'
 Number(27).toString(2)
 
 Number(23).toString(2) // '10111'
 ```
 
-```js
+```javascript
 // 二进制转十进制
 
 parseInt("11011", 2) // 27

@@ -4,7 +4,7 @@
 
 普通函数的  `constructor` 是  Function , 被 `async` 包裹的函数是  `AsyncFunction`
 
-```js
+```javascript
 fn.constructor --> Function
 asyncFn.constructor ---> AsyncFunction
 ```

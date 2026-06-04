@@ -6,7 +6,7 @@ vitepress中是可以直接使用vue组件的
 
 如下
 
-```js
+```javascript
 <script setup>
 import testCom from './testCom.vue'
 import {ref} from 'vue'

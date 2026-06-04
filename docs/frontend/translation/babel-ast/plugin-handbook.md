@@ -101,7 +101,7 @@ AST.
 
 > Babel uses an AST modified from [ESTree](https://github.com/estree/estree), with the core spec located [here](https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md).
 
-```js
+```javascript
 function square(n) {
   return n * n;
 }
@@ -136,7 +136,7 @@ This same program can be represented as a tree like this:
 
 Or as a JavaScript Object like this:
 
-```js
+```javascript
 {
   type: "FunctionDeclaration",
   id: {
@@ -170,7 +170,7 @@ Or as a JavaScript Object like this:
 
 You'll notice that each level of the AST has a similar structure:
 
-```js
+```javascript
 {
   type: "FunctionDeclaration",
   id: {...},
@@ -179,14 +179,14 @@ You'll notice that each level of the AST has a similar structure:
 }
 ```
 
-```js
+```javascript
 {
   type: "Identifier",
   name: ...
 }
 ```
 
-```js
+```javascript
 {
   type: "BinaryExpression",
   operator: ...,
@@ -217,7 +217,7 @@ type.
 There are additional properties on every Node that Babel generates which
 describe the position of the Node in the original source code.
 
-```js
+```javascript
 {
   type: ...,
   start: 0,
@@ -256,11 +256,11 @@ Lexical Analysis will take a string of code and turn it into a stream of
 
 You can think of tokens as a flat array of language syntax pieces.
 
-```js
+```javascript
 n * n;
 ```
 
-```js
+```javascript
 [
   { type: { ... }, value: "n", start: 0, end: 1, loc: { ... } },
   { type: { ... }, value: "*", start: 2, end: 3, loc: { ... } },
@@ -271,7 +271,7 @@ n * n;
 
 Each of the `type`s here have a set of properties describing the token:
 
-```js
+```javascript
 {
   type: {
     label: 'name',
@@ -324,7 +324,7 @@ When you want to transform an AST you have to
 Say we have the type `FunctionDeclaration`. It has a few properties: `id`,
 `params`, and `body`. Each of them have nested nodes.
 
-```js
+```javascript
 {
   type: "FunctionDeclaration",
   id: {
@@ -387,7 +387,7 @@ Visitors are a pattern used in AST traversal across languages. Simply put they
 are an object with methods defined for accepting particular node types in a
 tree. That's a bit abstract so let's look at an example.
 
-```js
+```javascript
 const MyVisitor = {
   Identifier() {
     console.log("Called!");
@@ -409,12 +409,12 @@ This is a basic visitor that when used during a traversal will call the
 So with this code the `Identifier()` method will be called four times with each
 `Identifier` (including `square`).
 
-```js
+```javascript
 function square(n) {
   return n * n;
 }
 ```
-```js
+```javascript
 path.traverse(MyVisitor);
 Called!
 Called!
@@ -427,7 +427,7 @@ calling a visitor method when on **exit**.
 
 Imagine we have this tree structure:
 
-```js
+```javascript
 - FunctionDeclaration
   - Identifier (id)
   - Identifier (params[0])
@@ -467,7 +467,7 @@ Let's _walk_ through what this process looks like for the above tree.
 
 So when creating a visitor you have two opportunities to visit a node.
 
-```js
+```javascript
 const MyVisitor = {
   Identifier: {
     enter() {
@@ -484,7 +484,7 @@ If necessary, you can also apply the same function for multiple visitor nodes by
 
 Example usage in the [flow-comments](https://github.com/babel/babel/blob/2b6ff53459d97218b0cf16f8a51c14a165db1fd2/packages/babel-plugin-transform-flow-comments/src/index.js#L47) plugin
 
-```js
+```javascript
 const MyVisitor = {
   "ExportNamedDeclaration|Flow"(path) {}
 };
@@ -496,7 +496,7 @@ For example,
 
 `Function` is an alias for `FunctionDeclaration`, `FunctionExpression`, `ArrowFunctionExpression`, `ObjectMethod` and `ClassMethod`.
 
-```js
+```javascript
 const MyVisitor = {
   Function(path) {}
 };
@@ -512,7 +512,7 @@ A **Path** is an object representation of the link between two nodes.
 
 For example if we take the following node and its child:
 
-```js
+```javascript
 {
   type: "FunctionDeclaration",
   id: {
@@ -525,7 +525,7 @@ For example if we take the following node and its child:
 
 And represent the child `Identifier` as a path, it looks something like this:
 
-```js
+```javascript
 {
   "parent": {
     "type": "FunctionDeclaration",
@@ -541,7 +541,7 @@ And represent the child `Identifier` as a path, it looks something like this:
 
 It also has additional metadata about the path:
 
-```js
+```javascript
 {
   "parent": {...},
   "node": {...},
@@ -581,7 +581,7 @@ When you have a visitor that has a `Identifier()` method, you're actually
 visiting the path instead of the node. This way you are mostly working with the
 reactive representation of a node instead of the node itself.
 
-```js
+```javascript
 const MyVisitor = {
   Identifier(path) {
     console.log("Visiting: " + path.node.name);
@@ -589,11 +589,11 @@ const MyVisitor = {
 };
 ```
 
-```js
+```javascript
 a + b + c;
 ```
 
-```js
+```javascript
 path.traverse(MyVisitor);
 Visiting: a
 Visiting: b
@@ -608,7 +608,7 @@ some syntax that you didn't consider.
 
 Take the following code:
 
-```js
+```javascript
 function square(n) {
   return n * n;
 }
@@ -616,7 +616,7 @@ function square(n) {
 
 Let's write a quick hacky visitor that will rename `n` to `x`.
 
-```js
+```javascript
 let paramName;
 
 const MyVisitor = {
@@ -636,7 +636,7 @@ const MyVisitor = {
 
 This might work for the above code, but we can easily break that by doing this:
 
-```js
+```javascript
 function square(n) {
   return n * n;
 }
@@ -646,7 +646,7 @@ n;
 The better way to deal with this is recursion. So let's make like a Christopher
 Nolan film and put a visitor inside of a visitor.
 
-```js
+```javascript
 const updateParamNameVisitor = {
   Identifier(path) {
     if (path.node.name === this.paramName) {
@@ -678,7 +678,7 @@ Next let's introduce the concept of a
 has [lexical scoping](https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping_vs._dynamic_scoping),
 which is a tree structure where blocks create new scope.
 
-```js
+```javascript
 // global scope
 
 function scopeOne() {
@@ -693,7 +693,7 @@ function scopeOne() {
 Whenever you create a reference in JavaScript, whether that be by a variable,
 function, class, param, import, label, etc., it belongs to the current scope.
 
-```js
+```javascript
 var global = "I am in the global scope";
 
 function scopeOne() {
@@ -707,7 +707,7 @@ function scopeOne() {
 
 Code within a deeper scope may use a reference from a higher scope.
 
-```js
+```javascript
 function scopeOne() {
   var one = "I am in the scope created by `scopeOne()`";
 
@@ -720,7 +720,7 @@ function scopeOne() {
 A lower scope might also create a reference of the same name without modifying
 it.
 
-```js
+```javascript
 function scopeOne() {
   var one = "I am in the scope created by `scopeOne()`";
 
@@ -739,7 +739,7 @@ be able to track these references within a given scope.
 
 A scope can be represented as:
 
-```js
+```javascript
 {
   path: path,
   block: path.node,
@@ -761,7 +761,7 @@ into those later though.
 References all belong to a particular scope; this relationship is known as a
 **binding**.
 
-```js
+```javascript
 function scopeOnce() {
   var ref = "This is a binding";
 
@@ -775,7 +775,7 @@ function scopeOnce() {
 
 A single binding looks like this:
 
-```js
+```javascript
 {
   identifier: node,
   scope: scope,
@@ -799,7 +799,7 @@ constant and if not, see what paths are causing it to be non-constant.
 Being able to tell if a binding is constant is useful for many purposes, the
 largest of which is minification.
 
-```js
+```javascript
 function scopeOne() {
   var ref1 = "This is a constant binding";
 
@@ -835,7 +835,7 @@ $ npm install --save @babel/parser
 
 Let's start by simply parsing a string of code:
 
-```js
+```javascript
 import parser from "@babel/parser";
 
 const code = `function square(n) {
@@ -856,7 +856,7 @@ parser.parse(code);
 
 We can also pass options to `parse()` like so:
 
-```js
+```javascript
 parser.parse(code, {
   sourceType: "module", // default: "script"
   plugins: ["jsx"] // default: []
@@ -889,7 +889,7 @@ $ npm install --save @babel/traverse
 
 We can use it alongside to traverse and update nodes:
 
-```js
+```javascript
 import parser from "@babel/parser";
 import traverse from "@babel/traverse";
 
@@ -925,7 +925,7 @@ $ npm install --save @babel/types
 
 Then start using it:
 
-```js
+```javascript
 import traverse from "@babel/traverse";
 import * as t from "@babel/types";
 
@@ -946,7 +946,7 @@ the node should be traversed, and aliases of the Node.
 
 A single node type definition looks like this:
 
-```js
+```javascript
 defineType("BinaryExpression", {
   builder: ["operator", "left", "right"],
   fields: {
@@ -970,20 +970,20 @@ defineType("BinaryExpression", {
 You'll notice the above definition for `BinaryExpression` has a field for a
 `builder`.
 
-```js
+```javascript
 builder: ["operator", "left", "right"]
 ```
 
 This is because each node type gets a builder method, which when used looks like
 this:
 
-```js
+```javascript
 t.binaryExpression("*", t.identifier("a"), t.identifier("b"));
 ```
 
 Which creates an AST like this:
 
-```js
+```javascript
 {
   type: "BinaryExpression",
   operator: "*",
@@ -1000,7 +1000,7 @@ Which creates an AST like this:
 
 Which when printed looks like this:
 
-```js
+```javascript
 a * b
 ```
 
@@ -1012,7 +1012,7 @@ errors if used improperly. Which leads into the next type of method.
 The definition for `BinaryExpression` also includes information on the `fields`
 of a node and how to validate them.
 
-```js
+```javascript
 fields: {
   operator: {
     validate: assertValueType("string")
@@ -1029,7 +1029,7 @@ fields: {
 This is used to create two types of validating methods. The first of which is
 `isX`.
 
-```js
+```javascript
 t.isBinaryExpression(maybeBinaryExpressionNode);
 ```
 
@@ -1037,14 +1037,14 @@ This tests to make sure that the node is a binary expression, but you can also
 pass a second parameter to ensure that the node contains certain properties and
 values.
 
-```js
+```javascript
 t.isBinaryExpression(maybeBinaryExpressionNode, { operator: "*" });
 ```
 
 There is also the more, _ehem_, assertive version of these methods, which will
 throw errors instead of returning `true` or `false`.
 
-```js
+```javascript
 t.assertBinaryExpression(maybeBinaryExpressionNode);
 t.assertBinaryExpression(maybeBinaryExpressionNode, { operator: "*" });
 // Error: Expected type "BinaryExpression" with option { "operator": "*" }
@@ -1067,7 +1067,7 @@ $ npm install --save @babel/generator
 
 Then use it
 
-```js
+```javascript
 import parser from "@babel/parser";
 import generate from "@babel/generator";
 
@@ -1086,7 +1086,7 @@ generate(ast, {}, code);
 
 You can also pass options to `generate()`.
 
-```js
+```javascript
 generate(ast, {
   retainLines: false,
   compact: "auto",
@@ -1107,7 +1107,7 @@ quasiquotes.
 $ npm install --save @babel/template
 ```
 
-```js
+```javascript
 import template from "@babel/template";
 import generate from "@babel/generator";
 import * as t from "@babel/types";
@@ -1124,7 +1124,7 @@ const ast = buildRequire({
 console.log(generate(ast).code);
 ```
 
-```js
+```javascript
 var myModule = require("my-module");
 ```
 
@@ -1135,7 +1135,7 @@ with the plugin API.
 
 Start off with a `function` that gets passed the current [`babel`](https://github.com/babel/babel/tree/master/packages/babel-core) object.
 
-```js
+```javascript
 export default function(babel) {
   // plugin contents
 }
@@ -1144,7 +1144,7 @@ export default function(babel) {
 Since you'll be using it so often, you'll likely want to grab just `babel.types`
 like so:
 
-```js
+```javascript
 export default function({ types: t }) {
   // plugin contents
 }
@@ -1153,7 +1153,7 @@ export default function({ types: t }) {
 Then you return an object with a property `visitor` which is the primary visitor
 for the plugin.
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1165,7 +1165,7 @@ export default function({ types: t }) {
 
 Each function in the visitor receives 2 arguments: `path` and `state`
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1178,13 +1178,13 @@ export default function({ types: t }) {
 
 Let's write a quick plugin to show off how it works. Here's our source code:
 
-```js
+```javascript
 foo === bar;
 ```
 
 Or in AST form:
 
-```js
+```javascript
 {
   type: "BinaryExpression",
   operator: "===",
@@ -1201,7 +1201,7 @@ Or in AST form:
 
 We'll start off by adding a `BinaryExpression` visitor method.
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1216,7 +1216,7 @@ export default function({ types: t }) {
 Then let's narrow it down to just `BinaryExpression`s that are using the `===`
 operator.
 
-```js
+```javascript
 visitor: {
   BinaryExpression(path) {
     if (path.node.operator !== "===") {
@@ -1230,7 +1230,7 @@ visitor: {
 
 Now let's replace the `left` property with a new identifier:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (path.node.operator !== "===") {
     return;
@@ -1243,13 +1243,13 @@ BinaryExpression(path) {
 
 Already if we run this plugin we would get:
 
-```js
+```javascript
 sebmck === bar;
 ```
 
 Now let's just replace the `right` property.
 
-```js
+```javascript
 BinaryExpression(path) {
   if (path.node.operator !== "===") {
     return;
@@ -1262,7 +1262,7 @@ BinaryExpression(path) {
 
 And now for our final result:
 
-```js
+```javascript
 sebmck === dork;
 ```
 
@@ -1278,7 +1278,7 @@ Awesome! Our very first Babel plugin.
 
 To access an AST node's property you normally access the node and then the property. `path.node.property`
 
-```js
+```javascript
 // the BinaryExpression AST node has properties: `left`, `right`, `operator`
 BinaryExpression(path) {
   path.node.left;
@@ -1289,7 +1289,7 @@ BinaryExpression(path) {
 
 If you need to access the `path` of that property instead, use the `get` method of a path, passing in the string to the property.
 
-```js
+```javascript
 BinaryExpression(path) {
   path.get('left');
 }
@@ -1300,7 +1300,7 @@ Program(path) {
 
 You can't current use `get` on a Container (the `body` array of a `BlockStatement`), but you chain the dot syntax instead.
 
-```js
+```javascript
 export default function f() {
   return bar;
 }
@@ -1308,7 +1308,7 @@ export default function f() {
 
 For the example above, if you wanted to get the path corresponding to the `return`, you could chain the various properties, using a number as the index when traversing the array.
 
-```js
+```javascript
 ExportDefaultDeclaration(path) {
   path.get("declaration.body.body.0");
 }
@@ -1318,7 +1318,7 @@ ExportDefaultDeclaration(path) {
 
 If you want to check what the type of a node is, the preferred way to do so is:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (t.isIdentifier(path.node.left)) {
     // ...
@@ -1328,7 +1328,7 @@ BinaryExpression(path) {
 
 You can also do a shallow check for properties on that node:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (t.isIdentifier(path.node.left, { name: "n" })) {
     // ...
@@ -1338,7 +1338,7 @@ BinaryExpression(path) {
 
 This is functionally equivalent to:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (
     path.node.left != null &&
@@ -1354,7 +1354,7 @@ BinaryExpression(path) {
 
 A path has the same methods for checking the type of a node:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (path.get('left').isIdentifier({ name: "n" })) {
     // ...
@@ -1364,7 +1364,7 @@ BinaryExpression(path) {
 
 is equivalent to doing:
 
-```js
+```javascript
 BinaryExpression(path) {
   if (t.isIdentifier(path.node.left, { name: "n" })) {
     // ...
@@ -1374,7 +1374,7 @@ BinaryExpression(path) {
 
 ### <a id="toc-check-if-an-identifier-is-referenced"></a>Check if an identifier is referenced
 
-```js
+```javascript
 Identifier(path) {
   if (path.isReferencedIdentifier()) {
     // ...
@@ -1384,7 +1384,7 @@ Identifier(path) {
 
 Alternatively:
 
-```js
+```javascript
 Identifier(path) {
   if (t.isReferenced(path.node, path.parent)) {
     // ...
@@ -1399,25 +1399,25 @@ Sometimes you will need to traverse the tree upwards from a path until a conditi
 Call the provided `callback` with the `NodePath`s of all the parents.
 When the `callback` returns a truthy value, we return that `NodePath`.
 
-```js
+```javascript
 path.findParent((path) => path.isObjectExpression());
 ```
 
 If the current path should be included as well:
 
-```js
+```javascript
 path.find((path) => path.isObjectExpression());
 ```
 
 Find the closest parent function or program:
 
-```js
+```javascript
 path.getFunctionParent();
 ```
 
 Walk up the tree until we hit a parent node path in a list
 
-```js
+```javascript
 path.getStatementParent();
 ```
 
@@ -1433,13 +1433,13 @@ If a path is in a list like in the body of a `Function`/`Program`, it will have 
 
 > These APIs are used in the [transform-merge-sibling-variables](https://github.com/babel/babili/blob/master/packages/babel-plugin-transform-merge-sibling-variables/src/index.js) plugin used in [babel-minify](https://github.com/babel/babili).
 
-```js
+```javascript
 var a = 1; // pathA, path.key = 0
 var b = 2; // pathB, path.key = 1
 var c = 3; // pathC, path.key = 2
 ```
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1467,7 +1467,7 @@ export default function({ types: t }) {
 
 If your plugin needs to not run in a certain situation, the simpliest thing to do is to write an early return.
 
-```js
+```javascript
 BinaryExpression(path) {
   if (path.node.operator !== '**') return;
 }
@@ -1478,7 +1478,7 @@ If you are doing a sub-traversal in a top level path, you can use 2 provided API
 `path.skip()` skips traversing the children of the current path.
 `path.stop()` stops traversal entirely.
 
-```js
+```javascript
 outerPath.traverse({
   Function(innerPath) {
     innerPath.skip(); // if checking the children is irrelevant
@@ -1494,7 +1494,7 @@ outerPath.traverse({
 
 ### <a id="toc-replacing-a-node"></a>Replacing a node
 
-```js
+```javascript
 BinaryExpression(path) {
   path.replaceWith(
     t.binaryExpression("**", path.node.left, t.numberLiteral(2))
@@ -1511,7 +1511,7 @@ BinaryExpression(path) {
 
 ### <a id="toc-replacing-a-node-with-multiple-nodes"></a>Replacing a node with multiple nodes
 
-```js
+```javascript
 ReturnStatement(path) {
   path.replaceWithMultiple([
     t.expressionStatement(t.stringLiteral("Is this the real life?")),
@@ -1537,7 +1537,7 @@ ReturnStatement(path) {
 
 ### <a id="toc-replacing-a-node-with-a-source-string"></a>Replacing a node with a source string
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.replaceWithSourceString(`function add(a, b) {
     return a + b;
@@ -1559,7 +1559,7 @@ FunctionDeclaration(path) {
 
 ### <a id="toc-inserting-a-sibling-node"></a>Inserting a sibling node
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.insertBefore(t.expressionStatement(t.stringLiteral("Because I'm easy come, easy go.")));
   path.insertAfter(t.expressionStatement(t.stringLiteral("A little high, little low.")));
@@ -1583,7 +1583,7 @@ FunctionDeclaration(path) {
 If you want to insert into an AST node that is an array like `body`.
 Similar to `insertBefore`/`insertAfter`, except that you have to specify the `listKey`, which is usually `body`.
 
-```js
+```javascript
 ClassMethod(path) {
   path.get('body').unshiftContainer('body', t.expressionStatement(t.stringLiteral('before')));
   path.get('body').pushContainer('body', t.expressionStatement(t.stringLiteral('after')));
@@ -1602,7 +1602,7 @@ ClassMethod(path) {
 
 ### <a id="toc-removing-a-node"></a>Removing a node
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.remove();
 }
@@ -1618,7 +1618,7 @@ FunctionDeclaration(path) {
 
 Just call `replaceWith` with the parentPath: `path.parentPath`
 
-```js
+```javascript
 BinaryExpression(path) {
   path.parentPath.replaceWith(
     t.expressionStatement(t.stringLiteral("Anyway the wind blows, doesn't really matter to me, to me."))
@@ -1635,7 +1635,7 @@ BinaryExpression(path) {
 
 ### <a id="toc-removing-a-parent"></a>Removing a parent
 
-```js
+```javascript
 BinaryExpression(path) {
   path.parentPath.remove();
 }
@@ -1651,7 +1651,7 @@ BinaryExpression(path) {
 
 ### <a id="toc-checking-if-a-local-variable-is-bound"></a>Checking if a local variable is bound
 
-```js
+```javascript
 FunctionDeclaration(path) {
   if (path.scope.hasBinding("n")) {
     // ...
@@ -1663,7 +1663,7 @@ This will walk up the scope tree and check for that particular binding.
 
 You can also check if a scope has its **own** binding:
 
-```js
+```javascript
 FunctionDeclaration(path) {
   if (path.scope.hasOwnBinding("n")) {
     // ...
@@ -1676,7 +1676,7 @@ FunctionDeclaration(path) {
 This will generate an identifier that doesn't collide with any locally defined
 variables.
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.scope.generateUidIdentifier("uid");
   // Node { type: "Identifier", name: "_uid" }
@@ -1689,7 +1689,7 @@ FunctionDeclaration(path) {
 
 Sometimes you may want to push a `VariableDeclaration` so you can assign to it.
 
-```js
+```javascript
 FunctionDeclaration(path) {
   const id = path.scope.generateUidIdentifierBasedOnNode(path.node.id);
   path.remove();
@@ -1707,7 +1707,7 @@ FunctionDeclaration(path) {
 
 ### <a id="toc-rename-a-binding-and-its-references"></a>Rename a binding and its references
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.scope.rename("n", "x");
 }
@@ -1723,7 +1723,7 @@ FunctionDeclaration(path) {
 
 Alternatively, you can rename a binding to a generated unique identifier:
 
-```js
+```javascript
 FunctionDeclaration(path) {
   path.scope.rename("n");
 }
@@ -1744,7 +1744,7 @@ FunctionDeclaration(path) {
 If you would like to let your users customize the behavior of your Babel plugin
 you can accept plugin specific options which users can specify like this:
 
-```js
+```javascript
 {
   plugins: [
     ["my-plugin", {
@@ -1757,7 +1757,7 @@ you can accept plugin specific options which users can specify like this:
 
 These options then get passed into plugin visitors through the `state` object:
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1778,7 +1778,7 @@ plugins.
 Plugins can have functions that are run before or after plugins.
 They can be used for setup or cleanup/analysis purposes.
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     pre(state) {
@@ -1801,7 +1801,7 @@ export default function({ types: t }) {
 Babel plugins themselves can enable [parser plugins](https://babeljs.io/docs/en/babel-parser#plugins) so that users don't need to
 install/enable them. This prevents a parsing error without inheriting the syntax plugin.
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     inherits: require("babel-plugin-syntax-jsx")
@@ -1813,7 +1813,7 @@ export default function({ types: t }) {
 
 If you want to throw an error with babel-code-frame and a message:
 
-```js
+```javascript
 export default function({ types: t }) {
   return {
     visitor: {
@@ -1857,7 +1857,7 @@ definitions, but for now they can all be found
 
 A node definition looks like the following:
 
-```js
+```javascript
 defineType("MemberExpression", {
   builder: ["object", "property", "computed"],
   visitor: ["object", "property"],
@@ -1885,7 +1885,7 @@ how to build it, traverse it, and validate it.
 By looking at the `builder` property, you can see the 3 arguments that will be
 needed to call the builder method (`t.memberExpression`).
 
-```js
+```javascript
 builder: ["object", "property", "computed"],
 ```
 
@@ -1895,7 +1895,7 @@ builder: ["object", "property", "computed"],
 > manually. An example of this is
 > [`ClassMethod`](https://github.com/babel/babel/blob/bbd14f88c4eea88fa584dd877759dd6b900bf35e/packages/babel-types/src/definitions/es2015.js#L238-L276).
 
-```js
+```javascript
 // Example
 // because the builder doesn't contain `async` as a property
 var node = t.classMethod(
@@ -1910,7 +1910,7 @@ node.async = true;
 
 You can see the validation for the builder arguments with the `fields` object.
 
-```js
+```javascript
 fields: {
   object: {
     validate: assertNodeType("Expression")
@@ -1934,7 +1934,7 @@ is `computed` or not and `computed` is simply a boolean that defaults to
 
 So we can construct a `MemberExpression` by doing the following:
 
-```js
+```javascript
 t.memberExpression(
   t.identifier('object'),
   t.identifier('property')
@@ -1944,7 +1944,7 @@ t.memberExpression(
 
 Which will result in:
 
-```js
+```javascript
 object.property
 ```
 
@@ -1954,14 +1954,14 @@ However, we said that `object` needed to be an `Expression` so why is
 Well if we look at the definition of `Identifier` we can see that it has an
 `aliases` property which states that it is also an expression.
 
-```js
+```javascript
 aliases: ["Expression", "LVal"],
 ```
 
 So since `MemberExpression` is a type of `Expression`, we could set it as the
 `object` of another `MemberExpression`:
 
-```js
+```javascript
 t.memberExpression(
   t.memberExpression(
     t.identifier('member'),
@@ -1973,7 +1973,7 @@ t.memberExpression(
 
 Which will result in:
 
-```js
+```javascript
 member.expression.property
 ```
 
@@ -1995,7 +1995,7 @@ and you can see them
 It's pretty simple to extract certain checks (if a node is a certain type) into their own helper functions
 as well as extracting out helpers for specific node types.
 
-```js
+```javascript
 function isAssignment(node) {
   return node && node.operator === opts.operator + "=";
 }
@@ -2019,7 +2019,7 @@ order to do everything in a single traversal.
 When writing visitors, it may be tempting to call `path.traverse` in multiple
 places where they are logically necessary.
 
-```js
+```javascript
 path.traverse({
   Identifier(path) {
     // ...
@@ -2036,7 +2036,7 @@ path.traverse({
 However, it is far better to write these as a single visitor that only gets run
 once. Otherwise you are traversing the same tree multiple times for no reason.
 
-```js
+```javascript
 path.traverse({
   Identifier(path) {
     // ...
@@ -2052,7 +2052,7 @@ path.traverse({
 It may also be tempting to call `path.traverse` when looking for a particular
 node type.
 
-```js
+```javascript
 const nestedVisitor = {
   Identifier(path) {
     // ...
@@ -2070,7 +2070,7 @@ However, if you are looking for something specific and shallow, there is a good
 chance you can manually lookup the nodes you need without performing a costly
 traversal.
 
-```js
+```javascript
 const MyVisitor = {
   FunctionDeclaration(path) {
     path.node.params.forEach(function() {
@@ -2085,7 +2085,7 @@ const MyVisitor = {
 When you are nesting visitors, it might make sense to write them nested in your
 code.
 
-```js
+```javascript
 const MyVisitor = {
   FunctionDeclaration(path) {
     path.traverse({
@@ -2105,7 +2105,7 @@ flags on visitor objects indicating that it's already performed that processing,
 it's better to store the visitor in a variable and pass the same object each
 time.
 
-```js
+```javascript
 const nestedVisitor = {
   Identifier(path) {
     // ...
@@ -2121,7 +2121,7 @@ const MyVisitor = {
 
 If you need some state within the nested visitor, like so:
 
-```js
+```javascript
 const MyVisitor = {
   FunctionDeclaration(path) {
     var exampleState = path.node.params[0].name;
@@ -2140,7 +2140,7 @@ const MyVisitor = {
 You can pass it in as state to the `traverse()` method and have access to it on
 `this` in the visitor.
 
-```js
+```javascript
 const nestedVisitor = {
   Identifier(path) {
     if (path.node.name === this.exampleState) {
@@ -2165,7 +2165,7 @@ structure can be nested.
 For example, imagine we want to lookup the `constructor` `ClassMethod` from the
 `Foo` `ClassDeclaration`.
 
-```js
+```javascript
 class Foo {
   constructor() {
     // ...
@@ -2173,7 +2173,7 @@ class Foo {
 }
 ```
 
-```js
+```javascript
 const constructorVisitor = {
   ClassMethod(path) {
     if (path.node.name === 'constructor') {
@@ -2194,7 +2194,7 @@ const MyVisitor = {
 We are ignoring the fact that classes can be nested and using the traversal
 above we will hit a nested `constructor` as well:
 
-```js
+```javascript
 class Foo {
   constructor() {
     class Bar {
@@ -2215,7 +2215,7 @@ snapshot testing out of the box. The example we're creating here is hosted in
 
 First we need a babel plugin, we'll put this in src/index.js.
 
-```js
+```javascript
 
 module.exports = function testPlugin(babel) {
   return {
@@ -2240,7 +2240,7 @@ us to see when we've affected the output of any of our test cases. It also gives
 in pull requests. Of course you could do this with any test framework, but with jest updating
 the snapshots is as easy as `jest -u`.
 
-```js
+```javascript
 // src/__tests__/index-test.js
 const babel = require('babel-core');
 const plugin = require('../');
@@ -2258,7 +2258,7 @@ it('works', () => {
 
 This gives us a snapshot file in `src/__tests__/__snapshots__/index-test.js.snap`.
 
-```js
+```javascript
 exports[`test works 1`] = `
 "
 var bar = 1;
@@ -2292,7 +2292,7 @@ brittle example. For more involved situations you may wish to leverage
 babel-traverse. It allows you to specify an object with a `visitor` key, exactly like
 you use for the plugin itself.
 
-```js
+```javascript
 it('contains baz', () => {
   const {ast} = babel.transform(example, {plugins: [plugin]});
   const program = ast.program;
@@ -2309,7 +2309,7 @@ Note that we're not using `assert` in the test. This ensures that if our plugin 
 weird stuff like removing the assert line by accident, the test will still fail.
 
 
-```js
+```javascript
 it('foo is an alias to baz', () => {
   var input = `
     var foo = 1;
@@ -2336,7 +2336,7 @@ this should be familiar. You can look at
 [the docs](https://github.com/kentcdodds/babel-plugin-tester/blob/master/README.md)
 to get a full sense of what's possible, but here's a simple example:
 
-```js
+```javascript
 import pluginTester from 'babel-plugin-tester';
 import identifierReversePlugin from '../identifier-reverse-plugin';
 

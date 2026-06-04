@@ -4,7 +4,7 @@
 
 > 如果 value 不是数组, 那么强制转为数组。
 
-```js
+```javascript
 _.castArray(1);
 // => [1]
 
@@ -34,7 +34,7 @@ console.log(_.castArray(array) === array);
 - 因为只针对一个参数，如果传递多个，忽略
 - 判断是否是数组，是数组，则直接返回本身， 不是，则包一层
 
-```js
+```javascript
 function castArray() {
   if (!arguments.length) {
     return [];
@@ -50,27 +50,27 @@ function castArray() {
 
 ::: code-group
 
-```js [数组]
+```javascript [数组]
 let arr = [1, 2, 3];
 let b = _.clone(arr);
 b === arr; // false
 ```
 
-```js [基础类型]
+```javascript [基础类型]
 let c1 = 12;
 let c2 = _.clone(c1);
 
 console.log(c1 === c2); // true
 ```
 
-```js [正则]
+```javascript [正则]
 // 这个场景比较少
 let array = /c/.exec('abcde');
 let array2 = _.clone(array);
 console.log(array === array2); // false
 ```
 
-```js [拷贝对象]
+```javascript [拷贝对象]
 var objects = [{ a: 1 }, { b: 2 }];
 
 var shallow = _.clone(objects);
@@ -83,7 +83,7 @@ console.log(shallow[0] === objects[0]); // => true , 说明是浅拷贝
 
 lodash 通过 二进制 & 判断是否深拷贝
 
-```js
+```javascript
 var CLONE_DEEP_FLAG = 1,
   CLONE_FLAT_FLAG = 2,
   CLONE_SYMBOLS_FLAG = 4; // 浅拷贝
@@ -117,7 +117,7 @@ function clone(value) {
 
 > 拿到的其实是 字符串
 
-```js
+```javascript
 Object.prototype.toString.call(); // '[object Undefined]'
 Object.prototype.toString.call(new Array(1)); // '[object Array]'
 Object.prototype.toString.call(null); // '[object Null]'

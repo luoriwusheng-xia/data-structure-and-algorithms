@@ -57,7 +57,7 @@ Options:
 
 ### 显示帮助信息和版本号
 
-```js
+```javascript
 // examples/help.js
 const cli = require('cac')()
 
@@ -85,7 +85,7 @@ cli.parse()
 
 可以将选项附加到命令上
 
-```js
+```javascript
 const cli = require('cac')()
 
 cli
@@ -113,7 +113,7 @@ cli.parse()
 
 例如： --clear-screen , 在代码中为 clearScreen
 
-```js
+```javascript
 cli
   .command('dev', 'Start dev server')
   .option('--clear-screen', 'Clear screen')
@@ -138,7 +138,7 @@ cli
 - `[]方括号` 表示该值也可以是 true
 
 
-```js
+```javascript
 const cli = require('cac')()
 
 cli
@@ -162,7 +162,7 @@ cli.parse()
 
 > 要允许值为 false 的选项，您需要手动指定否定选项
 
-```js
+```javascript
 cli
   .command('build [project]', 'Build a project')
   .option('--no-config', 'Disable config file')
@@ -179,7 +179,7 @@ cli
 下面是一个示例：
 
 
-```js
+```javascript
 const cli = require('cac')()
 
 cli
@@ -202,7 +202,7 @@ cli.parse()
 
 点嵌套 选项`option`将合并为一个选项 `option`
 
-```js
+```javascript
 const cli = require('cac')()
 
 cli
@@ -224,7 +224,7 @@ cli.parse()
 
 注册一个命令，当没有其他命令匹配时将使用该命令。
 
-```js
+```javascript
 const cli = require('cac')()
 
 cli
@@ -254,7 +254,7 @@ node cli.js --include project-a --include project-b
 ### 错误处理
 要全局处理命令错误，请执行以下操作：
 
-```js
+```javascript
 try {
   // Parse CLI args without running the command
   cli.parse(process.argv, { run: false })
@@ -285,7 +285,7 @@ import { cac } from 'cac'
 
 ### 在deno中使用
 
-```js
+```javascript
 import { cac } from 'https://unpkg.com/cac/mod.ts'
 
 const cli = cac('my-program')
@@ -314,7 +314,7 @@ const cli = cac('my-program')
 
 CLI 实例是通过调用以下 cac 函数创建的：
 
-```js
+```javascript
 const cac = require('cac')
 const cli = cac()
 ```
@@ -397,7 +397,7 @@ Type: (text: string) => CLI
 ### Command 实例
 Command 实例是通过调用以下 cli.command 方法创建的：
 
-```js
+```javascript
 const command = cli.command('build [...files]', 'Build given files')
 ```
 
@@ -450,7 +450,7 @@ Type: (text: string) => Command
 
 监听事件
 
-```js
+```javascript
 // Listen to the `foo` command
 cli.on('command:foo', () => {
   // Do something

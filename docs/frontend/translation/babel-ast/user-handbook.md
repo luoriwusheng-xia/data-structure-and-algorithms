@@ -57,13 +57,13 @@ as source-to-source compiling, also known as transpiling.
 For example, Babel could transform the new ES2015 arrow function
 syntax from this:
 
-```js
+```javascript
 const square = n => n * n;
 ```
 
 Into the following:
 
-```js
+```javascript
 const square = function square(n) {
   return n * n;
 };
@@ -193,7 +193,7 @@ inside there as `build`.
 
 Now from our terminal we can run:
 
-```js
+```javascript
 npm run build
 ```
 
@@ -212,7 +212,7 @@ things that you run locally.
 
 First let's create an `index.js` file in our project.
 
-```js
+```javascript
 console.log("Hello world!");
 ```
 
@@ -227,7 +227,7 @@ $ npm install --save-dev babel-register
 
 Next, create a `register.js` file in the project and write the following code:
 
-```js
+```javascript
 require("babel-register");
 require("./index.js");
 ```
@@ -244,7 +244,7 @@ $ node register.js
 > **Note:** You can't register Babel in the same file that you want to compile.
 > As node is executing the file before Babel has a chance to compile it.
 >
-> ```js
+> ```javascript
 > require("babel-register");
 > // not compiled:
 > console.log("Hello world!");
@@ -304,21 +304,21 @@ First install `babel-core`.
 $ npm install babel-core
 ```
 
-```js
+```javascript
 var babel = require("babel-core");
 ```
 
 If you have a string of JavaScript you can compile it directly using
 `babel.transform`.
 
-```js
+```javascript
 babel.transform("code();", options);
 // => { code, map, ast }
 ```
 
 If you are working with files you can use either the asynchronous api:
 
-```js
+```javascript
 babel.transformFile("filename.js", options, function(err, result) {
   result; // => { code, map, ast }
 });
@@ -326,7 +326,7 @@ babel.transformFile("filename.js", options, function(err, result) {
 
 Or the synchronous api:
 
-```js
+```javascript
 babel.transformFileSync("filename.js", options);
 // => { code, map, ast }
 ```
@@ -334,7 +334,7 @@ babel.transformFileSync("filename.js", options);
 If you already have a Babel AST for whatever reason you may transform from the
 AST directly.
 
-```js
+```javascript
 babel.transformFromAst(ast, code, options);
 // => { code, map, ast }
 ```
@@ -364,7 +364,7 @@ Before we start telling Babel what to do. We need to create a configuration
 file. All you need to do is create a `.babelrc` file at the root of your
 project. Start off with it like this:
 
-```js
+```javascript
 {
   "presets": [],
   "plugins": []
@@ -475,7 +475,7 @@ is not true for APIs.
 
 For example, the following code has an arrow function that needs to be compiled:
 
-```js
+```javascript
 function addAll() {
   return Array.from(arguments).reduce((a, b) => a + b);
 }
@@ -483,7 +483,7 @@ function addAll() {
 
 Which turns into this:
 
-```js
+```javascript
 function addAll() {
   return Array.from(arguments).reduce(function(a, b) {
     return a + b;
@@ -517,7 +517,7 @@ $ npm install --save babel-polyfill
 
 Then simply include the polyfill at the top of any file that requires it:
 
-```js
+```javascript
 import "babel-polyfill";
 ```
 
@@ -549,7 +549,7 @@ Then update your `.babelrc`:
 
 Now Babel will compile code like the following:
 
-```js
+```javascript
 class Foo {
   method() {}
 }
@@ -557,7 +557,7 @@ class Foo {
 
 Into this:
 
-```js
+```javascript
 import _classCallCheck from "babel-runtime/helpers/classCallCheck";
 import _createClass from "babel-runtime/helpers/createClass";
 
@@ -704,7 +704,7 @@ or maybe a preset for your
 
 It's easy to create a preset. Say you have this `.babelrc` file:
 
-```js
+```javascript
 {
   "presets": [
     "es2015",
@@ -723,7 +723,7 @@ files.
 First, create a new `package.json` file with the necessary `dependencies` for
 your preset.
 
-```js
+```javascript
 {
   "name": "babel-preset-my-awesome-preset",
   "version": "1.0.0",
@@ -739,7 +739,7 @@ your preset.
 Then create an `index.js` file that exports the contents of your `.babelrc`
 file, replacing plugin/preset strings with `require` calls.
 
-```js
+```javascript
 module.exports = function () {
   presets: [
     require("babel-preset-es2015"),

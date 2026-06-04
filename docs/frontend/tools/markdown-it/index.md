@@ -6,7 +6,7 @@
 
 ## Token
 
-```js
+```javascript
 new Token(type, tag, nesting)
 ```
 

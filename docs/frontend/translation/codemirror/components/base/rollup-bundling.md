@@ -10,7 +10,7 @@ CodeMirror 作为模块集合分发。这些模块不能由浏览器直接加载
 
 要使用 Rollup 创建加载 CodeMirror 的捆绑包，您必须首先编写一个主脚本（例如， editor.mjs ），用于导入库并创建编辑器视图。
 
-```js
+```javascript
 import {EditorView, basicSetup} from "codemirror"
 import {javascript} from "@codemirror/lang-javascript"
 
@@ -41,7 +41,7 @@ node_modules/.bin/rollup editor.mjs -f iife -o editor.bundle.js \
 该选项指示要写入的输出文件，该 -o -p 选项加载分辨率插件。您还可以创建一个配置文件（称为 rollup.config.mjs ），然后运行 rollup -c 以从该文件中获取配置。
 
 
-```js
+```javascript
 import {nodeResolve} from "@rollup/plugin-node-resolve"
 export default {
   input: "./editor.mjs",
@@ -69,7 +69,7 @@ export default {
 
 该库的构建方式是，像 Rollup 这样的智能打包器可以消除未使用的代码（一种称为“摇树”的功能）。最小的编辑器（见下文）避免加载一堆扩展，将完整的捆绑包大小减少到 700 KB，并将剥离的代码减少到 250 KB（75 KB gzip 压缩）。
 
-```js
+```javascript
 import {EditorView, minimalSetup} from "codemirror"
 
 let editor = new EditorView({

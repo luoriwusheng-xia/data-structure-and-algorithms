@@ -19,6 +19,6 @@
 
 终端就显示这个
 
-```js
+```javascript
 Ref<"footest">
 ```

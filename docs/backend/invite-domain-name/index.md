@@ -118,7 +118,7 @@ beidao.gettoken.dev
 
 ## 4. 架构设计
 
-在进入服务设计前，必须先满足域名、证书和接入层前置条件。  
+在进入服务设计前，必须先满足域名、证书和接入层前置条件。
 否则即使 Express、MySQL、Redis、RabbitMQ 都准备好了，`{slug}.gettoken.dev` 也无法真正被用户访问到。
 
 ### 4.1 前置条件
@@ -630,8 +630,8 @@ RabbitMQ 主要解决两个问题：
 - 削峰填谷
 - 同步链路解耦
 
-不建议把核心一致性依赖在消息队列上。  
-核心一致性仍然由 MySQL 事务保证。  
+不建议把核心一致性依赖在消息队列上。
+核心一致性仍然由 MySQL 事务保证。
 RabbitMQ 负责处理“最终一致即可”的附加任务。
 
 ### 7.2 推荐交换机与队列
@@ -748,7 +748,7 @@ npm install amqplib
 
 #### 1）RabbitMQ 连接与 Exchange 初始化
 
-```js
+```javascript
 // rabbitmq.js
 import amqp from 'amqplib';
 
@@ -786,7 +786,7 @@ export {
 
 #### 2）消息生产者
 
-```js
+```javascript
 // invite-event-producer.js
 import crypto from 'node:crypto';
 import { getChannel, EXCHANGE_NAME } from './rabbitmq.js';
@@ -825,7 +825,7 @@ export {
 
 #### 3）在域名点击或注册成功后发送消息
 
-```js
+```javascript
 import { publishInviteEvent } from './invite-event-producer.js';
 
 async function emitInviteDomainClicked({ slug, inviterUserId, host, ip, ua, traceId }) {
@@ -851,7 +851,7 @@ async function emitInviteUserRegistered({ inviteeUserId, inviterUserId, inviteSl
 
 #### 4）消费者示例
 
-```js
+```javascript
 // invite-stats-consumer.js
 import { getChannel, EXCHANGE_NAME } from './rabbitmq.js';
 
@@ -889,7 +889,7 @@ export {
 
 #### 5）消费者中的幂等处理示例
 
-```js
+```javascript
 async function handleInviteStatsEvent(event) {
   const { eventId, eventType, payload } = event;
 
@@ -933,7 +933,7 @@ async function handleInviteStatsEvent(event) {
 
 伪代码：
 
-```js
+```javascript
 async function initInviteDomain(userId) {
   // 最多重试 5 次，避免随机短码碰撞时直接失败
   for (let i = 0; i < 5; i++) {
@@ -1008,7 +1008,7 @@ npm install express ioredis mysql2 dayjs
 - Redis 使用 `ioredis`
 - RabbitMQ 复用上一节的 `publishInviteEvent`
 
-```js
+```javascript
 // invite-domain-service.js
 import dayjs from 'dayjs';
 
@@ -1364,7 +1364,7 @@ GET /api/invite-domain/resolve/:slug
 
 ### 9.5 修改 slug 的 Express 接口示例
 
-```js
+```javascript
 // invite-domain-route.js
 import express from 'express';
 import Redis from 'ioredis';
@@ -1442,7 +1442,7 @@ export default router;
 
 ### 9.6 解析 slug 的 Redis 查询示例
 
-```js
+```javascript
 async function resolveInviteSlug({ db, redis, slug }) {
   const normalizedSlug = String(slug || '').trim().toLowerCase();
 

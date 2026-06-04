@@ -8,7 +8,7 @@
 
 ### 提示
 
-```js
+```javascript
 nums1.length == m
 
 nums2.length == n

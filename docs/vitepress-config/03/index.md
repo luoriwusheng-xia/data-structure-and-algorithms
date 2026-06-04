@@ -3,7 +3,7 @@
 自定义主题，可以修改 `.vitepress/theme/index.js`;  新建项目没有 **theme** 目录的，自己创建一个，并创建 `index.js` 文件
 
 **.vitepress/theme/index.js**
-```js
+```javascript
 // 需要引入默认的主题， 基于这个上面做改造
 import DefaultTheme from 'vitepress/theme';
 // 自定义主题样式

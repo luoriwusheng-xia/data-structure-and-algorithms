@@ -33,7 +33,7 @@ COPY --from=0 /app/nginx.conf /etc/nginx/conf.d/default.conf
 
 .vitepress/config.js
 
-```js
+```javascript
 import { defineConfig } from 'vitepress'
 import { fileURLToPath } from 'node:url'
 

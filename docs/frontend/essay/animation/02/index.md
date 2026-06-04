@@ -28,7 +28,7 @@
 transform: rotate(360deg) translateX(10px) translateY(50%);
 ```
 
-```js
+```javascript
 gsap.to('.box', {
   { rotation: 360, x: 10, yPercent: 50 }
 })
@@ -57,7 +57,7 @@ gsap 中 所有东西都可以成为动画
 #### 任何数值、颜色或包含数字的复杂字符串
 当我们说任何东西时，我们意味着任何东西。GSAP甚至不需要DOM元素来设置动画属性。你可以从字面上针对任何对象的任何属性，甚至是任意创建的属性，就像这样
 
-```js
+```javascript
 //create an object
 let obj = { myNum: 10, myColor: "red" };
 

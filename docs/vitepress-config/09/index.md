@@ -8,7 +8,7 @@ vitepress 代码主题 底层依赖 `shiki`
 
 .vitepress/config.js
 
-```js
+```javascript
 export default defineConfig({
    markdown: {
     theme: {
@@ -31,7 +31,7 @@ export default defineConfig({
 
 .vitepress/config.js
 
-```js
+```javascript
  async config (md) {
     md.use(await Shiki({
       // 2024-03-12 配置2个主题，目前看是有问题， 代码的行号无法正常显示，只显示了1行

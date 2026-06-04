@@ -4,7 +4,7 @@
 
 ### 匿名函数
 
-```js
+```javascript
 ;
 (function() {
     ...其他代码
@@ -16,7 +16,7 @@
 
 确定 当前环境， node 环境还是 window环境
 
-```js
+```javascript
 ...
 /** Detect free variable `global` from Node.js. */
 // node环境全局变量就是 global, 且 global.Object === Object
@@ -34,7 +34,7 @@ var root = freeGlobal || freeSelf || Function('return this')()
 
 定义全局变量 `_`
 
-```js
+```javascript
 // 检测node环境
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -78,7 +78,7 @@ else if (freeModule) {
 
 node 环境下， 存在 `exports` 和 `module` 这2个全局对象
 
-```js
+```javascript
 exports.xxx = function() {
 
 }
@@ -94,7 +94,7 @@ typeof module === 'object'
 
 ### runInContext 函数
 
-```js
+```javascript
  var runInContext = (function runInContext(context) {
 
      context = context == null ? root : _.defaults(root.Object(), context, _.pick(root, contextProps));
@@ -131,7 +131,7 @@ typeof module === 'object'
 
 ### LodashWrapper
 
-```js
+```javascript
 function LodashWrapper(value, chainAll) {
     // 这样写，一定是一个  构造函数，而不是普通函数可以直接调用，需要new
     this.__wrapped__ = value;
@@ -148,7 +148,7 @@ LodashWrapper.prototype = baseCreate(baseLodash.prototype);
 LodashWrapper.prototype.constructor = LodashWrapper;
 ```
 
-```js
+```javascript
 // 立即执行匿名函数
 // 返回一个函数，用于设置原型 可以理解为是 __proto__
 
@@ -186,7 +186,7 @@ var baseCreate = (function() {
 
 原型继承 - 基础示例
 
-```js
+```javascript
 function Animal() {
     this.name = '张飒'
 }
@@ -211,7 +211,7 @@ d.say()
 
 #### Object.create 替代实现
 
-```js
+```javascript
 function create(proto) {
     function object() {}
 
@@ -225,7 +225,7 @@ function create(proto) {
 
 ### baseLodash
 
-```js
+```javascript
 function baseLodash() {
     // No operation performed.
 }

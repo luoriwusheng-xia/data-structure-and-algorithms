@@ -143,7 +143,7 @@ import case2 from './demo/case-2.vue'
   - 前端节流：使用 `requestAnimationFrame` 或 1-2s 的定时器合并数据更新，而非每收到一条消息就重绘
   - 后端聚合：将秒级数据在服务端聚合成 5s/10s 批次推送，减少推送频率
   - **渲染帧去重（Last Write Wins）**：当 WebSocket 推送频率高于渲染帧率时，中间帧会堆积，导致 `setOption` 排队、动画反复打断、CPU 飙高。前端只保留最新一帧，丢弃中间过程：
-    ```js
+    ```javascript
     let latestData = null;
     let rafId = null;
 
@@ -160,7 +160,7 @@ import case2 from './demo/case-2.vue'
     };
     ```
     或采用**固定频率渲染**，与 WS 推送彻底解耦：
-    ```js
+    ```javascript
     let bufferData = null;
     ws.onmessage = (e) => { bufferData = JSON.parse(e.data); };
 
@@ -314,7 +314,7 @@ import case2 from './demo/case-2.vue'
 
 
 采集代码（最简可用版）
-```js
+```javascript
   const chart = echarts.init(dom)
 
   // 记录 setOption 调用时刻
@@ -433,7 +433,7 @@ import case2 from './demo/case-2.vue'
 
 #### 1. 注册（主应用入口）
 
-```js
+```javascript
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
@@ -445,7 +445,7 @@ if ('serviceWorker' in navigator) {
 
 #### 2. `public/sw.js` —— 按接口分策略
 
-```js
+```javascript
 /**
  * Service Worker 缓存策略 —— 数据大屏专用
  * 目标：首屏秒开 + 弱网兜底 + 不同接口走不同缓存策略
@@ -586,7 +586,7 @@ function jsonError(reason) {
 
 #### 3. 主线程主动失效（点"刷新"按钮时）
 
-```js
+```javascript
 // 业务侧
 navigator.serviceWorker.controller?.postMessage({
   type: 'INVALIDATE',
@@ -646,7 +646,7 @@ self.addEventListener('message', async (e) => {
 
 ### 一、正确用法（v5）
 
-```js
+```javascript
 const chartA = echarts.init(domA);
 const chartB = echarts.init(domB);
 const chartC = echarts.init(domC);
@@ -725,7 +725,7 @@ echarts.disconnect('dashboard-group');
 
 **手动监听的典型写法（防循环）：**
 
-```js
+```javascript
 let inSync = false;
 
 chartA.on('dataZoom', () => syncFrom(chartA));

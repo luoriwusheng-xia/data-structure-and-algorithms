@@ -17,7 +17,7 @@ import layout from './layout.vue'
 
 随机颜色生成函数
 
-```js
+```javascript
 
 const generateRandomColor = () => {
   return `#` + Math.floor(Math.random() * 16777215).toString(16)

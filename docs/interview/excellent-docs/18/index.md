@@ -12,7 +12,7 @@
 
 ### 实现
 
-```js
+```javascript
 function bubbleSort(list) {
   var n = list.length;
   if (!n) return [];
@@ -36,7 +36,7 @@ function bubbleSort(list) {
 
 > 标记在一轮比较汇总中，如果没有需要交换的数据，说明数组已经是有序的，可以减少排序循环的次数。
 
-```js
+```javascript
 function bubbleSort(list) {
   var n = list.length;
   if (!n) return [];
@@ -62,7 +62,7 @@ function bubbleSort(list) {
 
 > 普通冒泡排序一轮只找到最大值或最小值其中之一，双向冒泡则多一轮筛选，既可以找到最大值，也可以找到最小值。
 
-```js
+```javascript
 function bubbleSort(list) {
   var low = 0;
   var high = list.length - 1;
@@ -102,7 +102,7 @@ function bubbleSort(list) {
 
 ### 实现
 
-```js
+```javascript
 function selectSort(list) {
   var n = list.length;
   var minIndex;
@@ -130,7 +130,7 @@ function selectSort(list) {
 
 ### 实现
 
-```js
+```javascript
 function insertSort(list) {
   var n = list.length;
   var preIndex;
@@ -154,7 +154,7 @@ function insertSort(list) {
 
 #### 拆半插入
 
-```js
+```javascript
 function insertSort(list) {
   var low;
   var high;
@@ -189,7 +189,7 @@ function insertSort(list) {
 
 > 通过某个增量 gap，将整个序列分给若干组，从后往前进行组内成员的比较和交换，随后逐步缩小增量至 1。希尔排序类似于插入排序，只是一开始向前移动的步数从 1 变成了 gap。
 
-```js
+```javascript
 function shellSort(list) {
   var n = list.length;
   var gap = parseInt(n / 2); // 初始化步数
@@ -221,7 +221,7 @@ function shellSort(list) {
 > - 自上而下的递归
 > - 自下而上的迭代
 
-```js
+```javascript
 function mergeSort(list) {
   var n = list.length;
   if (n < 2) return list;
@@ -260,7 +260,7 @@ function merge(left, right) {
 
 ### 实现一
 
-```js
+```javascript
 function quickSort(arr) {
   if (arr.length<=1){
     return arr;
@@ -287,7 +287,7 @@ function quickSort(arr) {
 
 ### 实现二
 
-```js
+```javascript
 function quickSort(list, left = 0, right = list.length - 1) {
   var n = list.length;
   if (left < right) {
@@ -324,7 +324,7 @@ function quickSort(list, left = 0, right = list.length - 1) {
 
 ### 实现
 
-```js
+```javascript
 function heapSort(list) {
   buildHeap(list);
   // 循环 n-1 次，每次循环后交换堆顶元素和堆底元素并重新调整堆结构
@@ -372,7 +372,7 @@ function adjustHeap(nums, index, size) {
 
 ### 实现
 
-```js
+```javascript
 function countingSort(nums) {
   var list = [];
   var max = Math.max(...nums);
@@ -406,7 +406,7 @@ function countingSort(nums) {
 > - 在额外空间充足的情况下，尽量增大桶的数量。
 > - 使用的映射函数能够将输入的N个数据均匀的分配到K个桶中。
 
-```js
+```javascript
 function bucketSort(nums) {
   // 桶的个数，只要是正数都行
   var num = 5;
@@ -458,7 +458,7 @@ function bucketSort(nums) {
 > - 计数排序：每个桶只存储单一键值
 > - 桶排序：每个桶存储一定范围的数值
 
-```js
+```javascript
 function radixSort(nums) {
   // 计算位数
   function getDigits(n) {

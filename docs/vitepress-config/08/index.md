@@ -2,7 +2,7 @@
 
 [vitepress-useRouter 文档地址](https://vitepress.dev/reference/runtime-api#useroute)
 
-```js
+```javascript
 <script setup>
 import {useRouter, useRoute} from 'vitepress'
 

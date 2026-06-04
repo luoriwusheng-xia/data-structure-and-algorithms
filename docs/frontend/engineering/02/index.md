@@ -25,7 +25,7 @@
 
 gulpfile.js
 
-```js
+```javascript
 const defaultTask = (cb) => {
   console.log('默认会执行的任务');
 
@@ -55,7 +55,7 @@ PS D:\owner\gulp-lesson\01> npx gulp default
 
 ### 查看当前 gulpfile 里面导出的任务
 
-```js
+```javascript
 npx gulp --tasks
 ```
 
@@ -68,7 +68,7 @@ PS D:\owner\gulp-lesson\01> npx gulp --tasks
 ### 自定义任务
 
 
-```js
+```javascript
 import gulp from 'gulp'
 
 const {series} = gulp
@@ -145,7 +145,7 @@ PS D:\owner\gulp-lesson\02> npx gulp test111
 
 错误示范
 
-```js
+```javascript
 import gulp from 'gulp'
 
 const { series, parallel } = gulp
@@ -208,7 +208,7 @@ js编译
 
 解决：
 
-```js
+```javascript
 import gulp from 'gulp'
 
 const { series, parallel } = gulp
@@ -273,7 +273,7 @@ const { series, parallel } = pkg;
 
 改为：
 
-```js
+```javascript
 import gulp from 'gulp'
 
 const { series, parallel } = gulp

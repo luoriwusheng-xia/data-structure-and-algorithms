@@ -5,7 +5,7 @@ pnpm add element-plus -S
 ```
 
 **.vitepress/theme/index.js**
-```js
+```javascript
 import DefaultTheme from 'vitepress/theme';
 
 import ElementPlus from 'element-plus'

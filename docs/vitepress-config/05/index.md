@@ -24,7 +24,7 @@ package.json
 
 **.vitepress/theme/index.js**
 
-```js
+```javascript
 import DefaultTheme from 'vitepress/theme'
 
 import { Sandbox } from 'vitepress-plugin-sandpack' // [!code ++]
@@ -42,7 +42,7 @@ export default {
 
 **.vitepress/config.js**
 
-```js
+```javascript
 import { defineConfig } from 'vitepress'
 import { renderSandbox } from 'vitepress-plugin-sandpack'
 
@@ -78,7 +78,7 @@ const hello = ref('Hello World!')
 </script>
 ```
 
-```js /src/main.js
+```javascript /src/main.js
 import App from './App.vue'
 import { createApp } from 'vue'
 

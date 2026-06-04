@@ -10,7 +10,7 @@ pnpm i unocss -D
 
 `.vitepress/config.js`
 
-```js{8,2}
+```javascript{8,2}
 import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
 
@@ -28,7 +28,7 @@ export default defineConfig({
 
 `.vitepress/theme/index.js`
 
-```js{3}
+```javascript{3}
 import DefaultTheme from 'vitepress/theme';
 
 import 'virtual:uno.css';

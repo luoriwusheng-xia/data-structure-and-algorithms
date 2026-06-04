@@ -22,7 +22,7 @@ pnpm install webpack webpack-cli -D
 ```
 
 webpack.config.js
-```js
+```javascript
 const path = require('path')
 
 module.exports = {
@@ -37,7 +37,7 @@ module.exports = {
 
 ### 测试代码
 
-```js
+```javascript
 import { sum } from "./sum.js"
 const a = 1
 
@@ -53,7 +53,7 @@ export default {
 ```
 
 sum.js
-```js
+```javascript
 export const sum = (a, b) => {
   return a + b
 }
@@ -86,7 +86,7 @@ npx webpack
 
 #### ES Module 的bundle
 当我们 app.js 和 sum.js 使用 ESModule 的方式定义导入导出，源码如下
-```js
+```javascript
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -189,7 +189,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 #### CommonJs 的bundle.js
 使用 requqire 和 module.exports 生成bundle.js
 
-```js
+```javascript
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -260,7 +260,7 @@ eval("module.exports = {\r\n  sum(a, b) {\r\n    return a + b\r\n  }\r\n}\n\n//#
 
 ### 简化，去掉注释后的代码
 
-```js
+```javascript
 var  __webpack_modules__ = {
   "./app.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {},
   "./sum.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {}
@@ -290,7 +290,7 @@ __webpack_require__("./app.js")
 
 1、最外层就是一个 IIFE 立即执行函数
 
-```js
+```javascript
 (() => {})();
 ```
 
@@ -298,7 +298,7 @@ __webpack_require__("./app.js")
 
 模块的key，是我们的资源文件名，值是一个函数
 
-```js
+```javascript
   var __webpack_modules__ = ({
     './app.js': ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
       ... 我们的业务代码， 使用 eval函数包裹
@@ -317,7 +317,7 @@ __webpack_require__("./app.js")
 
 这里收集所需要的依赖, 初始化是一个空对象，后续在各种 ()()  自执行函数里面将依赖分别添加到 `__webpack_require__` 上
 
-```js
+```javascript
 var __webpack_require__ = {};
 ```
 
@@ -325,7 +325,7 @@ var __webpack_require__ = {};
 
 定义一个缓存对象， 在测试过程中，如果webpack 只对一个文件（没有导入任何模块内容）进行打包， 则不会在 bundle.js 中产生这个缓存对象
 
-```js
+```javascript
 var __webpack_module_cache__ = {};
 ```
 
@@ -333,12 +333,12 @@ var __webpack_module_cache__ = {};
 
 我们使用的时候，也是传入一个要导入的目标地址， 返回一个对象
 
-```js
+```javascript
 const a = require('./sum.js')
 ```
 
 ES Module 规范 和 CommonJs 的 `__webpack_require__`  是一样的
-```js
+```javascript
 function __webpack_require__(moduleId) {
   // 先从缓存对象里面根据缓存id去找
   var cachedModule = __webpack_module_cache__[moduleId];
@@ -390,7 +390,7 @@ CommonJs 拿到源文件的内容，比较简洁
 
 判断一个对象上是否有某个属性, webpack 自己实现了一个工具方法，挂载到了 `__webpack_require__` 对象上
 
-```js
+```javascript
 (() => {
   __webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 })();
@@ -404,7 +404,7 @@ CommonJs 拿到源文件的内容，比较简洁
 
 使用 __esModule 标记我们的代码为  ESModule规范的内容
 
-```js
+```javascript
 (() => {
   __webpack_require__.r = (exports) => {
     if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
@@ -423,7 +423,7 @@ CommonJs 拿到源文件的内容，比较简洁
 ### export.defalt 或者具名导出
 > ES Module 规范会生成的代码片段， Commonjs 不会生成这段代码
 
-```js
+```javascript
 (() => {
   __webpack_require__.d = (exports, definition) => {
     for (var key in definition) {
@@ -461,13 +461,13 @@ CommonJs 拿到源文件的内容，比较简洁
 
 Commonjs规范是是支持模块的导入导出。 所以比较简洁
 
-```js
+```javascript
 eval("module.exports = {\r\n  sum(a, b) {\r\n    return a + b\r\n  }\r\n}\n\n//# sourceURL=webpack://webpack/./sum.js?");
 ```
 
 ES Module 在node端， webpack需要模拟出这种行为
 
-```js
+```javascript
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   sum: () => (/* binding */ sum)\n/* harmony export */ });\nconst sum = (a, b) => {\r\n  return a + b\r\n}\n\n//# sourceURL=webpack://webpack/./sum.js?");
 ```
 
@@ -480,7 +480,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 这里可以使用 chrome浏览器调试
 
-```js
+```javascript
 cd dist
 
 node inspect bundl.js
@@ -514,7 +514,7 @@ pnpm i rollup
 
 rollup.config.js
 
-```js
+```javascript
 export default {
   input: "./app.js",
   output: [
@@ -540,7 +540,7 @@ npx rollup -c
 
 app.js
 
-```js
+```javascript
 import { sum } from './sum.js'
 import testRepeatName from './repeat-name.js'
 
@@ -559,11 +559,11 @@ export default {
 ```
 
 sum.js
-```js
+```javascript
 export const sum = (a, b) => a + b
 ```
 
-```js
+```javascript
 // 导出一个和sum.js重名的
 
 let sum = 2
@@ -575,7 +575,7 @@ export default sum
 
 dist/bundle.cjs.js
 
-```js
+```javascript
 'use strict';
 
 const sum$1 = (a, b) => a + b;
@@ -603,7 +603,7 @@ module.exports = app;
 ```
 
 dist/bundle.es.js
-```js
+```javascript
 const sum$1 = (a, b) => a + b;
 
 // 导出一个和sum.js重名的

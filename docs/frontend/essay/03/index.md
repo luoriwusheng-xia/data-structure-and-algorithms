@@ -7,7 +7,7 @@
 
 ### 拿到网站的HTML内容体
 
-```js
+```javascript
 fetch('https://vitepress.dev')
     .then(res => res.text())
     .then(res => console.log(res))
@@ -47,7 +47,7 @@ fetch('https://vitepress.dev')
 
 测试正则匹配src内容
 
-```js
+```javascript
 let t = `<!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
@@ -80,7 +80,7 @@ let result = scriptReg.exec(t)
 
 结果：
 
-```js
+```javascript
 [
     "<script type=\"module\" src=\"/assets/app.d1b609e5.js",
     "/assets/app.d1b609e5.js"
