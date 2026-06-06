@@ -36,7 +36,7 @@ export function reactive (target) {
   )
 }
 
-export const mutableHandlers = /*@__PURE__*/ new MutableReactiveHandler()
+export const mutableHandlers = new MutableReactiveHandler()
 
 class MutableReactiveHandler extends BaseReactiveHandler {
   // ...
