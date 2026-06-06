@@ -212,6 +212,21 @@ export default {
     }
   ],
 
+  '/docs/frontend/threejs/': [
+    {
+      text: 'threejs-入门',
+      link: '/docs/frontend/threejs/01'
+    },
+    {
+      text: 'threejs-实战',
+      link: '/docs/frontend/threejs/02'
+    },
+    {
+      text: 'Three.js vs WebGL vs WebGIS 深度剖析',
+      link: '/docs/frontend/threejs/03'
+    },
+  ],
+
   '/docs/frontend/webrtc/webrtc': [
     {
       text: 'webRTC-基础',

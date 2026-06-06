@@ -35,6 +35,27 @@ export default {
     {
       text: 'stream-流',
       link: '/docs/backend/stream/index'
+    },
+    {
+      text: 'SQLite',
+      items: [
+        {
+          text: '入门',
+          link: '/docs/backend/sqlite/01'
+        },
+        {
+          text: '进阶',
+          link: '/docs/backend/sqlite/02'
+        },
+        {
+          text: '实战',
+          link: '/docs/backend/sqlite/03'
+        },
+        {
+          text: '面试',
+          link: '/docs/backend/sqlite/04'
+        }
+      ]
     }
   ]
 }
