@@ -212,7 +212,7 @@ export default {
     }
   ],
 
-  '/docs/frontend/threejs/': [
+  '/docs/frontend/threejs': [
     {
       text: 'threejs-入门',
       link: '/docs/frontend/threejs/01'
