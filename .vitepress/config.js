@@ -36,6 +36,18 @@ export default defineConfig({
       { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" },
     ],
     ["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }],
+    [
+      "link",
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    ],
+    [
+      "link",
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+    ],
+    [
+      "link",
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;900&family=Roboto+Mono:wght@400;500;600;700&display=swap" },
+    ],
   ],
 
   lang: 'zh-CN',
