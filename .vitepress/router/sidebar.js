@@ -5,6 +5,8 @@ import vitepress from './vitepress.js';
 import interview from './interview.js';
 
 import backend from './backend.js';
+import web3 from './web3.js';
+import devops from './devops.js';
 
 // 翻译
 import translation from './translation';
@@ -23,6 +25,10 @@ export default {
   ...interview,
 
   ...backend,
+
+  ...web3,
+
+  ...devops,
 
   ...translation,
 

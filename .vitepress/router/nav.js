@@ -121,7 +121,20 @@ export default [
   },
   {
     text: '后端',
-    link: '/docs/backend/'
+    items: [
+      {
+        text: '后端总览',
+        link: '/docs/backend/'
+      },
+      {
+        text: 'Web3',
+        link: '/docs/web3/01'
+      }
+    ]
+  },
+  {
+    text: 'DevOps',
+    link: '/docs/DevOps/'
   },
 
   {
