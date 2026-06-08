@@ -40,6 +40,10 @@ export default [
         text: 'webRTC',
         link: '/docs/frontend/webrtc/webrtc-01'
       },
+      {
+        text: 'chrome-plugin',
+        link: '/docs/frontend/chrome-plugin/01'
+      },
     ]
   },
   {

@@ -246,5 +246,21 @@ export default {
       text: 'webRTC-面试',
       link: '/docs/frontend/webrtc/webrtc-03'
     }
+  ],
+
+  '/docs/frontend/chrome-plugin/': [
+    {
+      text: 'Chrome 插件开发',
+      items: [
+        {
+          text: '入门指南',
+          link: '/docs/frontend/chrome-plugin/01'
+        },
+        {
+          text: '实战案例',
+          link: '/docs/frontend/chrome-plugin/02'
+        }
+      ]
+    }
   ]
 };

@@ -100,6 +100,10 @@ export default {
         {
           text: '05 - Node 24+ 新特性',
           link: '/docs/backend/05-node-modern'
+        },
+        {
+          text: '06 - 多线程实战',
+          link: '/docs/backend/06-node-worker-threads'
         }
       ]
     },
