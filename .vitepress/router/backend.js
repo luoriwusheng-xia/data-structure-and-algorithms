@@ -10,7 +10,32 @@ export default {
     },
     {
       text: 'websocket',
-      link: '/docs/backend/websocket/01'
+      items: [
+        {
+          text: '基础与场景',
+          link: '/docs/backend/websocket/01'
+        },
+        {
+          text: '前端实战',
+          link: '/docs/backend/websocket/02-frontend'
+        },
+        {
+          text: '后端实战 (Node.js)',
+          link: '/docs/backend/websocket/03-backend-nodejs'
+        },
+        {
+          text: '弱网优化',
+          link: '/docs/backend/websocket/04-weak-network'
+        },
+        {
+          text: '瀑布式数据流',
+          link: '/docs/backend/websocket/05-waterfall-data'
+        },
+        {
+          text: '完整实战案例',
+          link: '/docs/backend/websocket/06-cases'
+        }
+      ]
     },
     {
       text: 'api服务',

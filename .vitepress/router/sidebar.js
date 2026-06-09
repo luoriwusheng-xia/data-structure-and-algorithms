@@ -73,12 +73,6 @@ export default {
       link: '/docs/backend/optimize/01',
     },
   ],
-  '/docs/backend/websocket/01': [
-    {
-      text: 'websocket',
-      link: '/docs/backend/websocket/01',
-    },
-  ],
 
   '/docs/frontend/essay/': [
     {
