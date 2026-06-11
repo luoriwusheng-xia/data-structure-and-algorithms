@@ -44,6 +44,10 @@ export default [
         text: 'chrome-plugin',
         link: '/docs/frontend/chrome-plugin/01'
       },
+      {
+        text: 'indexDB',
+        link: '/docs/frontend/indexDB/01'
+      },
     ]
   },
   {

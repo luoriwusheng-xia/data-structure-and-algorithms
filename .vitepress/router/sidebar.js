@@ -14,6 +14,9 @@ import translation from './translation';
 // 前端工程化
 import engineering from './engineering.js';
 
+// IndexedDB
+import indexDB from './indexDB.js';
+
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
@@ -33,6 +36,8 @@ export default {
   ...translation,
 
   ...engineering,
+
+  ...indexDB,
 
   '/docs/frontend/translation/babel-ast/index': [
     {
