@@ -232,6 +232,21 @@ export default {
     },
   ],
 
+  '/docs/frontend/threejs/webGL': [
+    {
+      text: 'WebGL-技术',
+      link: '/docs/frontend/threejs/webGL/01'
+    },
+    {
+      text: 'WebGL-实战',
+      link: '/docs/frontend/threejs/webGL/02'
+    },
+    {
+      text: 'WebGL-面试',
+      link: '/docs/frontend/threejs/webGL/03'
+    }
+  ],
+
   '/docs/frontend/webrtc/webrtc': [
     {
       text: 'webRTC-基础',
@@ -244,6 +259,22 @@ export default {
     {
       text: 'webRTC-面试',
       link: '/docs/frontend/webrtc/webrtc-03'
+    }
+  ],
+
+  '/docs/frontend/typescript/': [
+    {
+      text: 'TypeScript',
+      items: [
+        {
+          text: '进阶',
+          link: '/docs/frontend/typescript/01'
+        },
+        {
+          text: '面试',
+          link: '/docs/frontend/typescript/02'
+        }
+      ]
     }
   ],
 

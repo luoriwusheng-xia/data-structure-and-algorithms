@@ -42,6 +42,10 @@ export default {
       link: '/docs/backend/api-server'
     },
     {
+      text: 'Stripe 支付',
+      link: '/docs/backend/stripe/index'
+    },
+    {
       text: '邮件',
       link: '/docs/backend/email'
     },
