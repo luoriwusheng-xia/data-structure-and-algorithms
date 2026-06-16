@@ -17,6 +17,9 @@ import engineering from './engineering.js';
 // IndexedDB
 import indexDB from './indexDB.js';
 
+// 前端总览
+import frontend from './frontend.js';
+
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
  */
@@ -38,6 +41,8 @@ export default {
   ...engineering,
 
   ...indexDB,
+
+  '/docs/frontend/': frontend,
 
   '/docs/frontend/translation/babel-ast/index': [
     {
@@ -268,11 +273,11 @@ export default {
       items: [
         {
           text: '进阶',
-          link: '/docs/frontend/typescript/01'
+          link: '/docs/frontend/typescript/02'
         },
         {
           text: '面试',
-          link: '/docs/frontend/typescript/02'
+          link: '/docs/frontend/typescript/03'
         }
       ]
     }
@@ -289,6 +294,62 @@ export default {
         {
           text: '实战案例',
           link: '/docs/frontend/chrome-plugin/02'
+        }
+      ]
+    }
+  ],
+
+  '/docs/frontend/monitoring/': [
+    {
+      text: '前端监控',
+      items: [
+        {
+          text: '前端异常监控',
+          link: '/docs/frontend/monitoring/01'
+        },
+        {
+          text: '前端性能监控',
+          link: '/docs/frontend/monitoring/02'
+        }
+      ]
+    }
+  ],
+
+  '/docs/frontend/devtools/': [
+    {
+      text: 'Chrome DevTools 调试',
+      items: [
+        {
+          text: '调试实战指南',
+          link: '/docs/frontend/devtools/01'
+        }
+      ]
+    }
+  ],
+
+  '/docs/frontend/svg/': [
+    {
+      text: 'SVG',
+      items: [
+        {
+          text: 'SVG 企业级实战',
+          link: '/docs/frontend/svg/01'
+        },
+        {
+          text: 'SVG.js 3.x 实战',
+          link: '/docs/frontend/svg/02'
+        }
+      ]
+    }
+  ],
+
+  '/docs/frontend/pwa/': [
+    {
+      text: 'PWA',
+      items: [
+        {
+          text: 'PWA 实战',
+          link: '/docs/frontend/pwa/01'
         }
       ]
     }

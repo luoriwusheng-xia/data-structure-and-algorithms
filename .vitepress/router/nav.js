@@ -25,29 +25,10 @@ export default [
         link: '/docs/frontend/translation/index',
       },
       {
-        text: '前端工程化',
-        link: '/docs/frontend/engineering'
+        text: '前端总览',
+        link: '/docs/frontend/index',
       },
-      {
-        text: 'typescript',
-        link: '/docs/frontend/typescript/index'
-      },
-      {
-        text: 'threejs',
-        link: '/docs/frontend/threejs/01'
-      },
-      {
-        text: 'webRTC',
-        link: '/docs/frontend/webrtc/webrtc-01'
-      },
-      {
-        text: 'chrome-plugin',
-        link: '/docs/frontend/chrome-plugin/01'
-      },
-      {
-        text: 'indexDB',
-        link: '/docs/frontend/indexDB/01'
-      },
+
     ]
   },
   {
