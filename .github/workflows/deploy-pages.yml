@@ -45,6 +45,15 @@ jobs:
           node-version: 24.15.0
           cache: 'pnpm'  # 👈 新增：加速依赖安装
 
+      # 👇 新增：缓存 VitePress 构建中间文件，减少重复构建开销
+      - name: Cache VitePress build cache
+        uses: actions/cache@v4
+        with:
+          path: .vitepress/cache
+          key: vitepress-cache-${{ github.sha }}
+          restore-keys: |
+            vitepress-cache-
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
@@ -56,6 +65,7 @@ jobs:
         run: pnpm docs:build
         env:
           CI: true # 👈 新增：确保 CI 环境变量
+          NODE_OPTIONS: --max-old-space-size=8192  # 👈 新增
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
