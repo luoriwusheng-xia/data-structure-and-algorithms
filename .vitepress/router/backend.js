@@ -133,6 +133,26 @@ export default {
         {
           text: '06 - 多线程实战',
           link: '/docs/backend/06-node-worker-threads'
+        },
+        {
+          text: '07 - Web Crypto 加解密',
+          link: '/docs/backend/07-web-crypto'
+        },
+        {
+          text: '08 - Cluster 多进程',
+          link: '/docs/backend/08-node-cluster'
+        },
+        {
+          text: '09 - 日志系统设计与实战',
+          link: '/docs/backend/09-node-logging'
+        },
+        {
+          text: '10 - Node.js 监控实战',
+          link: '/docs/backend/10-node-monitoring'
+        },
+        {
+          text: '11 - 消息队列接入与实战',
+          link: '/docs/backend/11-message-queue'
         }
       ]
     },

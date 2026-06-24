@@ -1187,7 +1187,66 @@ export class ImageService {
 
 高频交易系统、实时数据流处理等场景需要在多个 Worker 之间共享大量数据，传统的 `postMessage` 拷贝传输性能不足。`SharedArrayBuffer` 允许多个线程直接读写同一块内存。
 
-### 5.2 共享内存环形缓冲区
+### 5.2 共享内存模型与 Atomics
+
+`SharedArrayBuffer` 是一块可以被多个 Worker 同时访问的共享内存。与 `postMessage` 的拷贝传输不同，所有线程看到的是同一份数据，读写性能更高。
+
+```text
+        SharedArrayBuffer
+        ┌─────────────────────┐
+        │   [1, 2, 3, 4, 5]    │
+        └─────────────────────┘
+           ▲               ▲
+           │               │
+      Worker A        Worker B
+
+两个线程访问的是同一块内存，不需要序列化复制。
+```
+
+多个线程同时读写同一块内存会产生**数据竞争（Data Race）**。`Atomics` 对象提供了一组原子操作，保证读写不可分割，并控制内存可见顺序。
+
+常用 API：
+
+| API | 作用 |
+|-----|------|
+| `Atomics.load(typedArray, index)` | 原子读取 |
+| `Atomics.store(typedArray, index, value)` | 原子写入 |
+| `Atomics.add(typedArray, index, value)` | 原子自增 |
+| `Atomics.sub(typedArray, index, value)` | 原子自减 |
+| `Atomics.compareExchange(typedArray, index, expected, value)` | CAS 比较交换 |
+| `Atomics.wait(typedArray, index, value, timeout)` | 线程阻塞等待 |
+| `Atomics.notify(typedArray, index, count)` | 唤醒等待线程 |
+
+最小示例：
+
+```javascript
+// main.js
+import { Worker } from 'node:worker_threads';
+
+const sab = new SharedArrayBuffer(4);
+const arr = new Int32Array(sab);
+
+const worker = new Worker('./worker.js', { workerData: sab });
+
+// 主线程写入后通知 Worker
+setTimeout(() => {
+  Atomics.store(arr, 0, 42);
+  Atomics.notify(arr, 0, 1);
+}, 1000);
+```
+
+```javascript
+// worker.js
+import { parentPort, workerData } from 'node:worker_threads';
+
+const arr = new Int32Array(workerData);
+
+// 等待 arr[0] 不再是 0
+Atomics.wait(arr, 0, 0);
+console.log('Worker received:', Atomics.load(arr, 0)); // 42
+```
+
+### 5.3 共享内存环形缓冲区
 
 ```javascript
 // lib/shared-ring-buffer.js
@@ -1302,7 +1361,7 @@ export class SharedRingBuffer {
 }
 ```
 
-### 5.3 实时数据流处理
+### 5.4 实时数据流处理
 
 ```javascript
 // workers/stream-processor.js

@@ -4,6 +4,10 @@ export default [
     link: '/docs/frontend/engineering'
   },
   {
+    text: '插件架构设计',
+    link: '/docs/frontend/plugin-architecture/01'
+  },
+  {
     text: 'typescript',
     link: '/docs/frontend/typescript/02'
   },
@@ -42,6 +46,14 @@ export default [
   {
     text: 'Web Worker',
     link: '/docs/frontend/web-worker/01'
+  },
+  {
+    text: 'WASM',
+    link: '/docs/frontend/wasm/01'
+  },
+  {
+    text: 'ArrayBuffer 深度讲解',
+    link: '/docs/frontend/arraybuffer/01'
   },
   {
     text: '数据大屏',
