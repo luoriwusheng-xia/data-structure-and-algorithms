@@ -153,6 +153,10 @@ export default {
         {
           text: '11 - 消息队列接入与实战',
           link: '/docs/backend/11-message-queue'
+        },
+        {
+          text: '12 - redis',
+          link: '/docs/backend/12-redis'
         }
       ]
     },
