@@ -38,8 +38,53 @@ export default {
       ]
     },
     {
-      text: 'api服务',
-      link: '/docs/backend/api-server'
+      text: 'API 接口平台',
+      items: [
+        {
+          text: '概览',
+          link: '/docs/backend/api-server/'
+        },
+        {
+          text: '01 - 平台架构设计',
+          link: '/docs/backend/api-server/01'
+        },
+        {
+          text: '02 - Node 26 + ESM 工程骨架',
+          link: '/docs/backend/api-server/02'
+        },
+        {
+          text: '03 - 鉴权与授权设计',
+          link: '/docs/backend/api-server/03'
+        },
+        {
+          text: '04 - 接口规范与安全治理',
+          link: '/docs/backend/api-server/04'
+        },
+        {
+          text: '05 - 日志、审计与可观测性',
+          link: '/docs/backend/api-server/05'
+        },
+        {
+          text: '06 - 最小可落地实战',
+          link: '/docs/backend/api-server/06'
+        },
+        {
+          text: '07 - API Key 发放与接入流程',
+          link: '/docs/backend/api-server/07'
+        },
+        {
+          text: '08 - 密钥轮换与凭证生命周期',
+          link: '/docs/backend/api-server/08'
+        },
+        {
+          text: '09 - Webhook 回调设计与验签',
+          link: '/docs/backend/api-server/09'
+        },
+        {
+          text: '10 - OpenTelemetry 接入与链路追踪',
+          link: '/docs/backend/api-server/10'
+        }
+      ]
     },
     {
       text: 'Stripe 支付',
